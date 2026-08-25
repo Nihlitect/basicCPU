@@ -1,0 +1,26 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Arithemtic Logic Unit
+entity ALU is
+	port(
+	 A: in std_logic_vector(15 downto 0);
+	 B: in std_logic_vector(15 downto 0);
+	 
+	 control: in std_logic_vector(3 downto 0);
+	 
+	 C: out std_logic_vector(15 downto 0);
+	 carry: out std_logic;
+	 zero: out std_logic;
+	 )
+end entity ALU;
+
+architecture alu of ALU is
+	signal result: std_logic_vector(15 downto 0 (;
+
+begin 
+	
+	
+	case
+	
+	 

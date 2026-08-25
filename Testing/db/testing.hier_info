@@ -1,0 +1,877 @@
+|testing
+HEX0[0] <= interface:inst7.HEX0[0]
+HEX0[1] <= interface:inst7.HEX0[1]
+HEX0[2] <= interface:inst7.HEX0[2]
+HEX0[3] <= interface:inst7.HEX0[3]
+HEX0[4] <= interface:inst7.HEX0[4]
+HEX0[5] <= interface:inst7.HEX0[5]
+HEX0[6] <= interface:inst7.HEX0[6]
+LEDR[0] <= clock_2hz:inst1.clk_2hz
+LEDR[1] <= <GND>
+LEDR[2] <= <GND>
+LEDR[3] <= <GND>
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+MAX10_CLK2_50 => clock_2hz:inst1.clk_50mhz
+SW[0] => ROMTest:inst.DATA[0]
+SW[1] => ROMTest:inst.DATA[1]
+SW[2] => ROMTest:inst.DATA[2]
+SW[3] => ROMTest:inst.DATA[3]
+SW[4] => ROMTest:inst.DATA[4]
+SW[5] => ROMTest:inst.DATA[5]
+SW[6] => ROMTest:inst.DATA[6]
+SW[7] => ROMTest:inst.REO
+SW[8] => inst5.DATAIN
+SW[8] => ROMTest:inst.CO
+SW[9] => inst6.DATAIN
+SW[9] => ROMTest:inst.CE
+PB[0] => inst2.IN0
+PB[1] => inst3.IN0
+HEX1[0] <= interface:inst7.HEX1[0]
+HEX1[1] <= interface:inst7.HEX1[1]
+HEX1[2] <= interface:inst7.HEX1[2]
+HEX1[3] <= interface:inst7.HEX1[3]
+HEX1[4] <= interface:inst7.HEX1[4]
+HEX1[5] <= interface:inst7.HEX1[5]
+HEX1[6] <= interface:inst7.HEX1[6]
+HEX2[0] <= interface:inst7.HEX2[0]
+HEX2[1] <= interface:inst7.HEX2[1]
+HEX2[2] <= interface:inst7.HEX2[2]
+HEX2[3] <= interface:inst7.HEX2[3]
+HEX2[4] <= interface:inst7.HEX2[4]
+HEX2[5] <= interface:inst7.HEX2[5]
+HEX2[6] <= interface:inst7.HEX2[6]
+HEX3[0] <= interface:inst7.HEX3[0]
+HEX3[1] <= interface:inst7.HEX3[1]
+HEX3[2] <= interface:inst7.HEX3[2]
+HEX3[3] <= interface:inst7.HEX3[3]
+HEX3[4] <= interface:inst7.HEX3[4]
+HEX3[5] <= interface:inst7.HEX3[5]
+HEX3[6] <= interface:inst7.HEX3[6]
+ADC_CLK_10 => ~NO_FANOUT~
+MAX10CLK1_50 => ~NO_FANOUT~
+clk => ~NO_FANOUT~
+
+
+|testing|interface:inst7
+HEX0[0] <= Hex_To_7Seg:inst6.seg_out[6]
+HEX0[1] <= Hex_To_7Seg:inst6.seg_out[5]
+HEX0[2] <= Hex_To_7Seg:inst6.seg_out[4]
+HEX0[3] <= Hex_To_7Seg:inst6.seg_out[3]
+HEX0[4] <= Hex_To_7Seg:inst6.seg_out[2]
+HEX0[5] <= Hex_To_7Seg:inst6.seg_out[1]
+HEX0[6] <= Hex_To_7Seg:inst6.seg_out[0]
+SW[0] => Hex_To_7Seg:inst6.hex_in[0]
+SW[1] => Hex_To_7Seg:inst6.hex_in[1]
+SW[2] => Hex_To_7Seg:inst6.hex_in[2]
+SW[3] => Hex_To_7Seg:inst6.hex_in[3]
+SW[4] => Hex_To_7Seg:inst5.hex_in[0]
+SW[5] => Hex_To_7Seg:inst5.hex_in[1]
+SW[6] => Hex_To_7Seg:inst5.hex_in[2]
+SW[7] => Hex_To_7Seg:inst5.hex_in[3]
+SW[8] => Hex_To_7Seg:inst.hex_in[0]
+SW[9] => Hex_To_7Seg:inst.hex_in[1]
+SW[10] => Hex_To_7Seg:inst.hex_in[2]
+SW[11] => Hex_To_7Seg:inst.hex_in[3]
+SW[12] => Hex_To_7Seg:inst4.hex_in[0]
+SW[13] => Hex_To_7Seg:inst4.hex_in[1]
+SW[14] => Hex_To_7Seg:inst4.hex_in[2]
+SW[15] => Hex_To_7Seg:inst4.hex_in[3]
+HEX1[0] <= Hex_To_7Seg:inst5.seg_out[6]
+HEX1[1] <= Hex_To_7Seg:inst5.seg_out[5]
+HEX1[2] <= Hex_To_7Seg:inst5.seg_out[4]
+HEX1[3] <= Hex_To_7Seg:inst5.seg_out[3]
+HEX1[4] <= Hex_To_7Seg:inst5.seg_out[2]
+HEX1[5] <= Hex_To_7Seg:inst5.seg_out[1]
+HEX1[6] <= Hex_To_7Seg:inst5.seg_out[0]
+HEX2[0] <= Hex_To_7Seg:inst.seg_out[6]
+HEX2[1] <= Hex_To_7Seg:inst.seg_out[5]
+HEX2[2] <= Hex_To_7Seg:inst.seg_out[4]
+HEX2[3] <= Hex_To_7Seg:inst.seg_out[3]
+HEX2[4] <= Hex_To_7Seg:inst.seg_out[2]
+HEX2[5] <= Hex_To_7Seg:inst.seg_out[1]
+HEX2[6] <= Hex_To_7Seg:inst.seg_out[0]
+HEX3[0] <= Hex_To_7Seg:inst4.seg_out[6]
+HEX3[1] <= Hex_To_7Seg:inst4.seg_out[5]
+HEX3[2] <= Hex_To_7Seg:inst4.seg_out[4]
+HEX3[3] <= Hex_To_7Seg:inst4.seg_out[3]
+HEX3[4] <= Hex_To_7Seg:inst4.seg_out[2]
+HEX3[5] <= Hex_To_7Seg:inst4.seg_out[1]
+HEX3[6] <= Hex_To_7Seg:inst4.seg_out[0]
+
+
+|testing|interface:inst7|Hex_To_7Seg:inst6
+hex_in[0] => Mux0.IN19
+hex_in[0] => Mux1.IN19
+hex_in[0] => Mux2.IN19
+hex_in[0] => Mux3.IN19
+hex_in[0] => Mux4.IN19
+hex_in[0] => Mux5.IN19
+hex_in[0] => Mux6.IN19
+hex_in[1] => Mux0.IN18
+hex_in[1] => Mux1.IN18
+hex_in[1] => Mux2.IN18
+hex_in[1] => Mux3.IN18
+hex_in[1] => Mux4.IN18
+hex_in[1] => Mux5.IN18
+hex_in[1] => Mux6.IN18
+hex_in[2] => Mux0.IN17
+hex_in[2] => Mux1.IN17
+hex_in[2] => Mux2.IN17
+hex_in[2] => Mux3.IN17
+hex_in[2] => Mux4.IN17
+hex_in[2] => Mux5.IN17
+hex_in[2] => Mux6.IN17
+hex_in[3] => Mux0.IN16
+hex_in[3] => Mux1.IN16
+hex_in[3] => Mux2.IN16
+hex_in[3] => Mux3.IN16
+hex_in[3] => Mux4.IN16
+hex_in[3] => Mux5.IN16
+hex_in[3] => Mux6.IN16
+seg_out[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testing|interface:inst7|Hex_To_7Seg:inst5
+hex_in[0] => Mux0.IN19
+hex_in[0] => Mux1.IN19
+hex_in[0] => Mux2.IN19
+hex_in[0] => Mux3.IN19
+hex_in[0] => Mux4.IN19
+hex_in[0] => Mux5.IN19
+hex_in[0] => Mux6.IN19
+hex_in[1] => Mux0.IN18
+hex_in[1] => Mux1.IN18
+hex_in[1] => Mux2.IN18
+hex_in[1] => Mux3.IN18
+hex_in[1] => Mux4.IN18
+hex_in[1] => Mux5.IN18
+hex_in[1] => Mux6.IN18
+hex_in[2] => Mux0.IN17
+hex_in[2] => Mux1.IN17
+hex_in[2] => Mux2.IN17
+hex_in[2] => Mux3.IN17
+hex_in[2] => Mux4.IN17
+hex_in[2] => Mux5.IN17
+hex_in[2] => Mux6.IN17
+hex_in[3] => Mux0.IN16
+hex_in[3] => Mux1.IN16
+hex_in[3] => Mux2.IN16
+hex_in[3] => Mux3.IN16
+hex_in[3] => Mux4.IN16
+hex_in[3] => Mux5.IN16
+hex_in[3] => Mux6.IN16
+seg_out[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testing|interface:inst7|Hex_To_7Seg:inst
+hex_in[0] => Mux0.IN19
+hex_in[0] => Mux1.IN19
+hex_in[0] => Mux2.IN19
+hex_in[0] => Mux3.IN19
+hex_in[0] => Mux4.IN19
+hex_in[0] => Mux5.IN19
+hex_in[0] => Mux6.IN19
+hex_in[1] => Mux0.IN18
+hex_in[1] => Mux1.IN18
+hex_in[1] => Mux2.IN18
+hex_in[1] => Mux3.IN18
+hex_in[1] => Mux4.IN18
+hex_in[1] => Mux5.IN18
+hex_in[1] => Mux6.IN18
+hex_in[2] => Mux0.IN17
+hex_in[2] => Mux1.IN17
+hex_in[2] => Mux2.IN17
+hex_in[2] => Mux3.IN17
+hex_in[2] => Mux4.IN17
+hex_in[2] => Mux5.IN17
+hex_in[2] => Mux6.IN17
+hex_in[3] => Mux0.IN16
+hex_in[3] => Mux1.IN16
+hex_in[3] => Mux2.IN16
+hex_in[3] => Mux3.IN16
+hex_in[3] => Mux4.IN16
+hex_in[3] => Mux5.IN16
+hex_in[3] => Mux6.IN16
+seg_out[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testing|interface:inst7|Hex_To_7Seg:inst4
+hex_in[0] => Mux0.IN19
+hex_in[0] => Mux1.IN19
+hex_in[0] => Mux2.IN19
+hex_in[0] => Mux3.IN19
+hex_in[0] => Mux4.IN19
+hex_in[0] => Mux5.IN19
+hex_in[0] => Mux6.IN19
+hex_in[1] => Mux0.IN18
+hex_in[1] => Mux1.IN18
+hex_in[1] => Mux2.IN18
+hex_in[1] => Mux3.IN18
+hex_in[1] => Mux4.IN18
+hex_in[1] => Mux5.IN18
+hex_in[1] => Mux6.IN18
+hex_in[2] => Mux0.IN17
+hex_in[2] => Mux1.IN17
+hex_in[2] => Mux2.IN17
+hex_in[2] => Mux3.IN17
+hex_in[2] => Mux4.IN17
+hex_in[2] => Mux5.IN17
+hex_in[2] => Mux6.IN17
+hex_in[3] => Mux0.IN16
+hex_in[3] => Mux1.IN16
+hex_in[3] => Mux2.IN16
+hex_in[3] => Mux3.IN16
+hex_in[3] => Mux4.IN16
+hex_in[3] => Mux5.IN16
+hex_in[3] => Mux6.IN16
+seg_out[6] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[5] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[2] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg_out[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testing|ROMTest:inst
+OUT[0] <= ROM:inst.DATA[0]
+OUT[1] <= ROM:inst.DATA[1]
+OUT[2] <= ROM:inst.DATA[2]
+OUT[3] <= ROM:inst.DATA[3]
+OUT[4] <= ROM:inst.DATA[4]
+OUT[5] <= ROM:inst.DATA[5]
+OUT[6] <= ROM:inst.DATA[6]
+OUT[7] <= ROM:inst.DATA[7]
+OUT[8] <= ROM:inst.DATA[8]
+OUT[9] <= ROM:inst.DATA[9]
+OUT[10] <= ROM:inst.DATA[10]
+OUT[11] <= ROM:inst.DATA[11]
+OUT[12] <= ROM:inst.DATA[12]
+OUT[13] <= ROM:inst.DATA[13]
+OUT[14] <= ROM:inst.DATA[14]
+OUT[15] <= ROM:inst.DATA[15]
+clk => ROM:inst.clk
+clk => ProgramCounter:inst3.clk
+REO => ROM:inst.EN
+REO => ROM:inst.RE
+CLR => ProgramCounter:inst3.CLR
+CE => ProgramCounter:inst3.CE
+J => ProgramCounter:inst3.J
+CO => ProgramCounter:inst3.CO
+DATA[0] => ProgramCounter:inst3.BUS_IN[0]
+DATA[1] => ProgramCounter:inst3.BUS_IN[1]
+DATA[2] => ProgramCounter:inst3.BUS_IN[2]
+DATA[3] => ProgramCounter:inst3.BUS_IN[3]
+DATA[4] => ProgramCounter:inst3.BUS_IN[4]
+DATA[5] => ProgramCounter:inst3.BUS_IN[5]
+DATA[6] => ProgramCounter:inst3.BUS_IN[6]
+
+
+|testing|ROMTest:inst|ROM:inst
+clk => DATA[0]~reg0.CLK
+clk => DATA[1]~reg0.CLK
+clk => DATA[2]~reg0.CLK
+clk => DATA[3]~reg0.CLK
+clk => DATA[4]~reg0.CLK
+clk => DATA[5]~reg0.CLK
+clk => DATA[6]~reg0.CLK
+clk => DATA[7]~reg0.CLK
+clk => DATA[8]~reg0.CLK
+clk => DATA[9]~reg0.CLK
+clk => DATA[10]~reg0.CLK
+clk => DATA[11]~reg0.CLK
+clk => DATA[12]~reg0.CLK
+clk => DATA[13]~reg0.CLK
+clk => DATA[14]~reg0.CLK
+clk => DATA[15]~reg0.CLK
+EN => DATA[1]~reg0.ENA
+EN => DATA[0]~reg0.ENA
+EN => DATA[2]~reg0.ENA
+EN => DATA[3]~reg0.ENA
+EN => DATA[4]~reg0.ENA
+EN => DATA[5]~reg0.ENA
+EN => DATA[6]~reg0.ENA
+EN => DATA[7]~reg0.ENA
+EN => DATA[8]~reg0.ENA
+EN => DATA[9]~reg0.ENA
+EN => DATA[10]~reg0.ENA
+EN => DATA[11]~reg0.ENA
+EN => DATA[12]~reg0.ENA
+EN => DATA[13]~reg0.ENA
+EN => DATA[14]~reg0.ENA
+EN => DATA[15]~reg0.ENA
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+RE => DATA.OUTPUTSELECT
+ADDRESS[0] => Mux0.IN134
+ADDRESS[0] => Mux3.IN134
+ADDRESS[0] => Mux5.IN69
+ADDRESS[1] => Mux0.IN133
+ADDRESS[1] => Mux3.IN133
+ADDRESS[1] => Mux4.IN69
+ADDRESS[2] => Mux0.IN132
+ADDRESS[2] => Mux3.IN132
+ADDRESS[2] => Mux4.IN68
+ADDRESS[2] => Mux5.IN68
+ADDRESS[3] => Mux0.IN131
+ADDRESS[3] => Mux2.IN19
+ADDRESS[3] => Mux3.IN131
+ADDRESS[3] => Mux4.IN67
+ADDRESS[3] => Mux5.IN67
+ADDRESS[4] => Mux0.IN130
+ADDRESS[4] => Mux1.IN10
+ADDRESS[4] => Mux2.IN18
+ADDRESS[4] => Mux3.IN130
+ADDRESS[4] => Mux4.IN66
+ADDRESS[4] => Mux5.IN66
+ADDRESS[5] => Mux0.IN129
+ADDRESS[5] => Mux1.IN9
+ADDRESS[5] => Mux2.IN17
+ADDRESS[5] => Mux3.IN129
+ADDRESS[5] => Mux4.IN65
+ADDRESS[5] => Mux5.IN65
+ADDRESS[6] => Mux0.IN128
+ADDRESS[6] => Mux1.IN8
+ADDRESS[6] => Mux2.IN16
+ADDRESS[6] => Mux3.IN128
+ADDRESS[6] => Mux4.IN64
+ADDRESS[6] => Mux5.IN64
+ADDRESS[7] => ~NO_FANOUT~
+ADDRESS[8] => ~NO_FANOUT~
+ADDRESS[9] => ~NO_FANOUT~
+ADDRESS[10] => ~NO_FANOUT~
+ADDRESS[11] => ~NO_FANOUT~
+ADDRESS[12] => ~NO_FANOUT~
+ADDRESS[13] => ~NO_FANOUT~
+ADDRESS[14] => ~NO_FANOUT~
+ADDRESS[15] => ~NO_FANOUT~
+DATA[0] <= DATA[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[1] <= DATA[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[2] <= DATA[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[3] <= DATA[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[4] <= DATA[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[5] <= DATA[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[6] <= DATA[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[7] <= DATA[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[8] <= DATA[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[9] <= DATA[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[10] <= DATA[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[11] <= DATA[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[12] <= DATA[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[13] <= DATA[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[14] <= DATA[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA[15] <= DATA[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3
+OUT[0] <= NbitBuffer:inst2.output[0]
+OUT[1] <= NbitBuffer:inst2.output[1]
+OUT[2] <= NbitBuffer:inst2.output[2]
+OUT[3] <= NbitBuffer:inst2.output[3]
+OUT[4] <= NbitBuffer:inst2.output[4]
+OUT[5] <= NbitBuffer:inst2.output[5]
+OUT[6] <= NbitBuffer:inst2.output[6]
+OUT[7] <= NbitBuffer:inst2.output[7]
+OUT[8] <= NbitBuffer:inst2.output[8]
+OUT[9] <= NbitBuffer:inst2.output[9]
+OUT[10] <= NbitBuffer:inst2.output[10]
+OUT[11] <= NbitBuffer:inst2.output[11]
+OUT[12] <= NbitBuffer:inst2.output[12]
+OUT[13] <= NbitBuffer:inst2.output[13]
+OUT[14] <= NbitBuffer:inst2.output[14]
+OUT[15] <= NbitBuffer:inst2.output[15]
+CO => NbitBuffer:inst2.enable
+CLR => NbitDFF:inst.CLR
+clk => NbitDFF:inst.clk
+J => Nbit2MUX:inst4.S
+BUS_IN[0] => Nbit2MUX:inst4.V1[0]
+BUS_IN[1] => Nbit2MUX:inst4.V1[1]
+BUS_IN[2] => Nbit2MUX:inst4.V1[2]
+BUS_IN[3] => Nbit2MUX:inst4.V1[3]
+BUS_IN[4] => Nbit2MUX:inst4.V1[4]
+BUS_IN[5] => Nbit2MUX:inst4.V1[5]
+BUS_IN[6] => Nbit2MUX:inst4.V1[6]
+BUS_IN[7] => Nbit2MUX:inst4.V1[7]
+BUS_IN[8] => Nbit2MUX:inst4.V1[8]
+BUS_IN[9] => Nbit2MUX:inst4.V1[9]
+BUS_IN[10] => Nbit2MUX:inst4.V1[10]
+BUS_IN[11] => Nbit2MUX:inst4.V1[11]
+BUS_IN[12] => Nbit2MUX:inst4.V1[12]
+BUS_IN[13] => Nbit2MUX:inst4.V1[13]
+BUS_IN[14] => Nbit2MUX:inst4.V1[14]
+BUS_IN[15] => Nbit2MUX:inst4.V1[15]
+CE => NbitCounter:inst3.Increment
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|NbitBuffer:inst2
+input[0] => output[0].DATAIN
+input[1] => output[1].DATAIN
+input[2] => output[2].DATAIN
+input[3] => output[3].DATAIN
+input[4] => output[4].DATAIN
+input[5] => output[5].DATAIN
+input[6] => output[6].DATAIN
+input[7] => output[7].DATAIN
+input[8] => output[8].DATAIN
+input[9] => output[9].DATAIN
+input[10] => output[10].DATAIN
+input[11] => output[11].DATAIN
+input[12] => output[12].DATAIN
+input[13] => output[13].DATAIN
+input[14] => output[14].DATAIN
+input[15] => output[15].DATAIN
+enable => output[0].OE
+enable => output[1].OE
+enable => output[2].OE
+enable => output[3].OE
+enable => output[4].OE
+enable => output[5].OE
+enable => output[6].OE
+enable => output[7].OE
+enable => output[8].OE
+enable => output[9].OE
+enable => output[10].OE
+enable => output[11].OE
+enable => output[12].OE
+enable => output[13].OE
+enable => output[14].OE
+enable => output[15].OE
+output[0] <= output[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3].DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= output[4].DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= output[5].DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= output[6].DB_MAX_OUTPUT_PORT_TYPE
+output[7] <= output[7].DB_MAX_OUTPUT_PORT_TYPE
+output[8] <= output[8].DB_MAX_OUTPUT_PORT_TYPE
+output[9] <= output[9].DB_MAX_OUTPUT_PORT_TYPE
+output[10] <= output[10].DB_MAX_OUTPUT_PORT_TYPE
+output[11] <= output[11].DB_MAX_OUTPUT_PORT_TYPE
+output[12] <= output[12].DB_MAX_OUTPUT_PORT_TYPE
+output[13] <= output[13].DB_MAX_OUTPUT_PORT_TYPE
+output[14] <= output[14].DB_MAX_OUTPUT_PORT_TYPE
+output[15] <= output[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|NbitDFF:inst
+CLR => \ffmap:0:ffi.ACLR
+CLR => \ffmap:1:ffi.ACLR
+CLR => \ffmap:2:ffi.ACLR
+CLR => \ffmap:3:ffi.ACLR
+CLR => \ffmap:4:ffi.ACLR
+CLR => \ffmap:5:ffi.ACLR
+CLR => \ffmap:6:ffi.ACLR
+CLR => \ffmap:7:ffi.ACLR
+CLR => \ffmap:8:ffi.ACLR
+CLR => \ffmap:9:ffi.ACLR
+CLR => \ffmap:10:ffi.ACLR
+CLR => \ffmap:11:ffi.ACLR
+CLR => \ffmap:12:ffi.ACLR
+CLR => \ffmap:13:ffi.ACLR
+CLR => \ffmap:14:ffi.ACLR
+CLR => \ffmap:15:ffi.ACLR
+clk => \ffmap:0:ffi.CLK
+clk => \ffmap:1:ffi.CLK
+clk => \ffmap:2:ffi.CLK
+clk => \ffmap:3:ffi.CLK
+clk => \ffmap:4:ffi.CLK
+clk => \ffmap:5:ffi.CLK
+clk => \ffmap:6:ffi.CLK
+clk => \ffmap:7:ffi.CLK
+clk => \ffmap:8:ffi.CLK
+clk => \ffmap:9:ffi.CLK
+clk => \ffmap:10:ffi.CLK
+clk => \ffmap:11:ffi.CLK
+clk => \ffmap:12:ffi.CLK
+clk => \ffmap:13:ffi.CLK
+clk => \ffmap:14:ffi.CLK
+clk => \ffmap:15:ffi.CLK
+Din[0] => \ffmap:0:ffi.DATAIN
+Din[1] => \ffmap:1:ffi.DATAIN
+Din[2] => \ffmap:2:ffi.DATAIN
+Din[3] => \ffmap:3:ffi.DATAIN
+Din[4] => \ffmap:4:ffi.DATAIN
+Din[5] => \ffmap:5:ffi.DATAIN
+Din[6] => \ffmap:6:ffi.DATAIN
+Din[7] => \ffmap:7:ffi.DATAIN
+Din[8] => \ffmap:8:ffi.DATAIN
+Din[9] => \ffmap:9:ffi.DATAIN
+Din[10] => \ffmap:10:ffi.DATAIN
+Din[11] => \ffmap:11:ffi.DATAIN
+Din[12] => \ffmap:12:ffi.DATAIN
+Din[13] => \ffmap:13:ffi.DATAIN
+Din[14] => \ffmap:14:ffi.DATAIN
+Din[15] => \ffmap:15:ffi.DATAIN
+Dout[0] <= \ffmap:0:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= \ffmap:1:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= \ffmap:2:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= \ffmap:3:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= \ffmap:4:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[5] <= \ffmap:5:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[6] <= \ffmap:6:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[7] <= \ffmap:7:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[8] <= \ffmap:8:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[9] <= \ffmap:9:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[10] <= \ffmap:10:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[11] <= \ffmap:11:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[12] <= \ffmap:12:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[13] <= \ffmap:13:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[14] <= \ffmap:14:ffi.DB_MAX_OUTPUT_PORT_TYPE
+Dout[15] <= \ffmap:15:ffi.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4
+V1[0] => bit2_1MUX:gen:0:muxi.I1
+V1[1] => bit2_1MUX:gen:1:muxi.I1
+V1[2] => bit2_1MUX:gen:2:muxi.I1
+V1[3] => bit2_1MUX:gen:3:muxi.I1
+V1[4] => bit2_1MUX:gen:4:muxi.I1
+V1[5] => bit2_1MUX:gen:5:muxi.I1
+V1[6] => bit2_1MUX:gen:6:muxi.I1
+V1[7] => bit2_1MUX:gen:7:muxi.I1
+V1[8] => bit2_1MUX:gen:8:muxi.I1
+V1[9] => bit2_1MUX:gen:9:muxi.I1
+V1[10] => bit2_1MUX:gen:10:muxi.I1
+V1[11] => bit2_1MUX:gen:11:muxi.I1
+V1[12] => bit2_1MUX:gen:12:muxi.I1
+V1[13] => bit2_1MUX:gen:13:muxi.I1
+V1[14] => bit2_1MUX:gen:14:muxi.I1
+V1[15] => bit2_1MUX:gen:15:muxi.I1
+V2[0] => bit2_1MUX:gen:0:muxi.I2
+V2[1] => bit2_1MUX:gen:1:muxi.I2
+V2[2] => bit2_1MUX:gen:2:muxi.I2
+V2[3] => bit2_1MUX:gen:3:muxi.I2
+V2[4] => bit2_1MUX:gen:4:muxi.I2
+V2[5] => bit2_1MUX:gen:5:muxi.I2
+V2[6] => bit2_1MUX:gen:6:muxi.I2
+V2[7] => bit2_1MUX:gen:7:muxi.I2
+V2[8] => bit2_1MUX:gen:8:muxi.I2
+V2[9] => bit2_1MUX:gen:9:muxi.I2
+V2[10] => bit2_1MUX:gen:10:muxi.I2
+V2[11] => bit2_1MUX:gen:11:muxi.I2
+V2[12] => bit2_1MUX:gen:12:muxi.I2
+V2[13] => bit2_1MUX:gen:13:muxi.I2
+V2[14] => bit2_1MUX:gen:14:muxi.I2
+V2[15] => bit2_1MUX:gen:15:muxi.I2
+S => bit2_1MUX:gen:0:muxi.S
+S => bit2_1MUX:gen:1:muxi.S
+S => bit2_1MUX:gen:2:muxi.S
+S => bit2_1MUX:gen:3:muxi.S
+S => bit2_1MUX:gen:4:muxi.S
+S => bit2_1MUX:gen:5:muxi.S
+S => bit2_1MUX:gen:6:muxi.S
+S => bit2_1MUX:gen:7:muxi.S
+S => bit2_1MUX:gen:8:muxi.S
+S => bit2_1MUX:gen:9:muxi.S
+S => bit2_1MUX:gen:10:muxi.S
+S => bit2_1MUX:gen:11:muxi.S
+S => bit2_1MUX:gen:12:muxi.S
+S => bit2_1MUX:gen:13:muxi.S
+S => bit2_1MUX:gen:14:muxi.S
+S => bit2_1MUX:gen:15:muxi.S
+O[0] <= bit2_1MUX:gen:0:muxi.O
+O[1] <= bit2_1MUX:gen:1:muxi.O
+O[2] <= bit2_1MUX:gen:2:muxi.O
+O[3] <= bit2_1MUX:gen:3:muxi.O
+O[4] <= bit2_1MUX:gen:4:muxi.O
+O[5] <= bit2_1MUX:gen:5:muxi.O
+O[6] <= bit2_1MUX:gen:6:muxi.O
+O[7] <= bit2_1MUX:gen:7:muxi.O
+O[8] <= bit2_1MUX:gen:8:muxi.O
+O[9] <= bit2_1MUX:gen:9:muxi.O
+O[10] <= bit2_1MUX:gen:10:muxi.O
+O[11] <= bit2_1MUX:gen:11:muxi.O
+O[12] <= bit2_1MUX:gen:12:muxi.O
+O[13] <= bit2_1MUX:gen:13:muxi.O
+O[14] <= bit2_1MUX:gen:14:muxi.O
+O[15] <= bit2_1MUX:gen:15:muxi.O
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:0:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:1:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:2:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:3:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:4:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:5:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:6:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:7:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:8:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:9:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:10:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:11:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:12:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:13:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:14:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|Nbit2MUX:inst4|bit2_1MUX:\gen:15:muxi
+O <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S => inst2.IN0
+S => inst.IN0
+I2 => inst3.IN1
+I1 => inst.IN1
+
+
+|testing|ROMTest:inst|ProgramCounter:inst3|NbitCounter:inst3
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Increment => Cout.OUTPUTSELECT
+Cin[0] => Add0.IN32
+Cin[0] => Cout.DATAA
+Cin[1] => Add0.IN31
+Cin[1] => Cout.DATAA
+Cin[2] => Add0.IN30
+Cin[2] => Cout.DATAA
+Cin[3] => Add0.IN29
+Cin[3] => Cout.DATAA
+Cin[4] => Add0.IN28
+Cin[4] => Cout.DATAA
+Cin[5] => Add0.IN27
+Cin[5] => Cout.DATAA
+Cin[6] => Add0.IN26
+Cin[6] => Cout.DATAA
+Cin[7] => Add0.IN25
+Cin[7] => Cout.DATAA
+Cin[8] => Add0.IN24
+Cin[8] => Cout.DATAA
+Cin[9] => Add0.IN23
+Cin[9] => Cout.DATAA
+Cin[10] => Add0.IN22
+Cin[10] => Cout.DATAA
+Cin[11] => Add0.IN21
+Cin[11] => Cout.DATAA
+Cin[12] => Add0.IN20
+Cin[12] => Cout.DATAA
+Cin[13] => Add0.IN19
+Cin[13] => Cout.DATAA
+Cin[14] => Add0.IN18
+Cin[14] => Cout.DATAA
+Cin[15] => Add0.IN17
+Cin[15] => Cout.DATAA
+Cout[0] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[1] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[2] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[3] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[4] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[5] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[6] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[7] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[8] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[9] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[10] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[11] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[12] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[13] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[14] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+Cout[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testing|clock_2hz:inst1
+clk_50mhz => clk_reg.CLK
+clk_50mhz => counter[0].CLK
+clk_50mhz => counter[1].CLK
+clk_50mhz => counter[2].CLK
+clk_50mhz => counter[3].CLK
+clk_50mhz => counter[4].CLK
+clk_50mhz => counter[5].CLK
+clk_50mhz => counter[6].CLK
+clk_50mhz => counter[7].CLK
+clk_50mhz => counter[8].CLK
+clk_50mhz => counter[9].CLK
+clk_50mhz => counter[10].CLK
+clk_50mhz => counter[11].CLK
+clk_50mhz => counter[12].CLK
+clk_50mhz => counter[13].CLK
+clk_50mhz => counter[14].CLK
+clk_50mhz => counter[15].CLK
+clk_50mhz => counter[16].CLK
+clk_50mhz => counter[17].CLK
+clk_50mhz => counter[18].CLK
+clk_50mhz => counter[19].CLK
+clk_50mhz => counter[20].CLK
+clk_50mhz => counter[21].CLK
+clk_50mhz => counter[22].CLK
+clk_50mhz => counter[23].CLK
+clk_50mhz => counter[24].CLK
+reset => clk_reg.ACLR
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+reset => counter[6].ACLR
+reset => counter[7].ACLR
+reset => counter[8].ACLR
+reset => counter[9].ACLR
+reset => counter[10].ACLR
+reset => counter[11].ACLR
+reset => counter[12].ACLR
+reset => counter[13].ACLR
+reset => counter[14].ACLR
+reset => counter[15].ACLR
+reset => counter[16].ACLR
+reset => counter[17].ACLR
+reset => counter[18].ACLR
+reset => counter[19].ACLR
+reset => counter[20].ACLR
+reset => counter[21].ACLR
+reset => counter[22].ACLR
+reset => counter[23].ACLR
+reset => counter[24].ACLR
+clk_2hz <= clk_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+

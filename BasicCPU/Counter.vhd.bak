@@ -1,0 +1,28 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Counter is
+	generic(
+		WIDTH: integer :=16;
+	);
+	Port(
+		clk:
+		Increment: std_logic; -- increment the counter -> +1
+		--Reset: std_logic; -- Reset the counter to 0
+		Cin: in std_logic_vector(WIDTH-1 downto 0); -- the initial count 
+		Cout: out std_logic_vector(WIDTH-1 downto 0) -- the result after
+	);	
+end Counter;
+
+architecture count of Counter is
+
+begin
+	
+	condition: process(clk, Increment)
+	begin
+		if ( clk'event and Increment='1') then Cout <= Cin + 1;
+		else then 
+			Cout <= Cin;
+		end if;
+	end process;
+end count;

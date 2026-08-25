@@ -1,0 +1,32 @@
+
+
+entity lookAheadAdder is
+	generic(
+		width: integer := 16);
+		
+	port(
+		Cin: in std_logic;
+		A: in std_logic_vector(width-1 downto 0);
+		B: in std_logic_vector(width-1 downto 0);
+		S: out std_logic_vector(width-1 downto 0);
+		Cout: out std_logic);
+end lookAheadAdder;
+
+architecture lookAhead of lookAheadAdder is
+
+signal Gn : std_logic_vector(width-1 downto 0);
+signal Pn : std_logic_vector(width-1 downto 0);
+signal Cn : std_logic_vector(width-1 downto 0);
+
+begin
+
+	for i in 0 to width-1 generate
+	begin
+		Gn(i) := A(i) and B(i);
+		Pn(i) := A(i) xor B(i);
+		
+		for j in 0 to i generate
+		begin
+			C(i) := Gn(i-1) or  
+		
+		

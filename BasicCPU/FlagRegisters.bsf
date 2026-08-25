@@ -1,0 +1,93 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 168 176)
+	(text "FlagRegisters" (rect 5 0 84 13)(font "DejaVu Sans Condensed" (font_size 8)))
+	(text "inst" (rect 8 146 24 156)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 16 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "clk" (rect 21 27 37 40)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "CLR" (rect 0 0 23 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "CLR" (rect 21 43 44 56)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "EN" (rect 0 0 15 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "EN" (rect 21 59 36 72)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "carry" (rect 0 0 29 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "carry" (rect 21 75 50 88)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "negative" (rect 0 0 50 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "negative" (rect 21 91 71 104)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "zero" (rect 0 0 24 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "zero" (rect 21 107 45 120)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "carry" (rect 0 0 29 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "carry" (rect 102 27 131 40)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 152 32)(pt 136 32))
+	)
+	(port
+		(pt 152 48)
+		(output)
+		(text "negative" (rect 0 0 50 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "negative" (rect 81 43 131 56)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 152 48)(pt 136 48))
+	)
+	(port
+		(pt 152 64)
+		(output)
+		(text "zero" (rect 0 0 24 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "zero" (rect 107 59 131 72)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 152 64)(pt 136 64))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 144))
+	)
+)
