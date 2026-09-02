@@ -22,23 +22,7 @@ on the Quartus Prime software download page.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect -224 176 -56 192)
-	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "CO" (rect 5 0 21 10)(font "Arial" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
-	)
-	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
-)
-(pin
-	(input)
-	(rect -224 128 -56 144)
+	(rect -216 -40 -48 -24)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
 	(text "clk" (rect 5 0 19 10)(font "Arial" ))
 	(pt 168 8)
@@ -54,7 +38,7 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect -224 344 -56 360)
+	(rect -224 232 -56 248)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
 	(text "CLR" (rect 5 0 27 10)(font "Arial" ))
 	(pt 168 8)
@@ -70,7 +54,7 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect -224 112 -56 128)
+	(rect -216 -64 -48 -48)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
 	(text "BUS_IN[15..0]" (rect 5 0 76 10)(font "Arial" ))
 	(pt 168 8)
@@ -102,9 +86,41 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect -224 328 -56 344)
+	(rect -232 96 -64 112)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "J" (rect 5 0 10 10)(font "Arial" ))
+	(text "JAL" (rect 5 0 24 10)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect -232 80 -64 96)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "JMP" (rect 5 0 27 10)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect -232 112 -64 128)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "JR" (rect 5 0 20 10)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -118,7 +134,7 @@ on the Quartus Prime software download page.
 )
 (pin
 	(output)
-	(rect 968 232 1144 248)
+	(rect 896 184 1072 200)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
 	(text "OUT[15..0]" (rect 90 0 144 10)(font "Arial" ))
 	(pt 0 8)
@@ -131,41 +147,6 @@ on the Quartus Prime software download page.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-)
-(symbol
-	(rect 728 208 968 288)
-	(text "NbitBuffer" (rect 5 0 58 10)(font "Arial" ))
-	(text "inst2" (rect 8 64 30 74)(font "DejaVu Sans Condensed" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "input[(width-1)..0]" (rect 0 0 84 10)(font "Arial" ))
-		(text "input[(width-1)..0]" (rect 21 27 105 37)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "enable" (rect 0 0 31 10)(font "Arial" ))
-		(text "enable" (rect 21 43 52 53)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 240 32)
-		(output)
-		(text "output[(width-1)..0]" (rect 0 0 92 10)(font "Arial" ))
-		(text "output[(width-1)..0]" (rect 142 27 234 37)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32)(line_width 3))
-	)
-	(parameter
-		"WIDTH"
-		"16"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 224 64))
-	)
-	(annotation_block (parameter)(rect 664 88 856 120))
 )
 (symbol
 	(rect -16 256 216 336)
@@ -203,46 +184,53 @@ on the Quartus Prime software download page.
 	(annotation_block (parameter)(rect 40 72 232 104))
 )
 (symbol
-	(rect 224 240 440 352)
-	(text "Nbit2MUX" (rect 5 0 53 10)(font "Arial" ))
-	(text "inst4" (rect 8 96 30 106)(font "DejaVu Sans Condensed" ))
+	(rect 264 232 376 320)
+	(text "BUSMUX" (rect 28 73 91 88)(font "Arial" (font_size 10)))
+	(text "inst4" (rect 3 1 25 11)(font "DejaVu Sans Condensed" ))
 	(port
-		(pt 0 32)
+		(pt 0 24)
 		(input)
-		(text "V1[(width-1)..0]" (rect 0 0 74 10)(font "Arial" ))
-		(text "V1[(width-1)..0]" (rect 21 27 95 37)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
+		(text "datab[WIDTH-1..0]" (rect 6 51 108 63)(font "Arial" (font_size 8)))
+		(text "datab[]" (rect 6 25 44 37)(font "Arial" (font_size 8)))
+		(line (pt 0 24)(pt 44 24)(line_width 3))
 	)
 	(port
-		(pt 0 48)
+		(pt 56 0)
 		(input)
-		(text "V2[(width-1)..0]" (rect 0 0 74 10)(font "Arial" ))
-		(text "V2[(width-1)..0]" (rect 21 43 95 53)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
+		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
+		(text "sel" (rect 59 6 75 18)(font "Arial" (font_size 8)))
+		(line (pt 56 0)(pt 56 16))
 	)
 	(port
-		(pt 0 64)
+		(pt 0 56)
 		(input)
-		(text "S" (rect 0 0 7 10)(font "Arial" ))
-		(text "S" (rect 21 59 28 69)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
+		(text "dataa[WIDTH-1..0]" (rect 6 19 108 31)(font "Arial" (font_size 8)))
+		(text "dataa[]" (rect 6 57 44 69)(font "Arial" (font_size 8)))
+		(line (pt 0 56)(pt 44 56)(line_width 3))
 	)
 	(port
-		(pt 216 32)
+		(pt 112 40)
 		(output)
-		(text "O[(width-1)..0]" (rect 0 0 69 10)(font "Arial" ))
-		(text "O[(width-1)..0]" (rect 137 27 206 37)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
+		(text "result[WIDTH-1..0]" (rect 75 35 177 47)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 75 41 113 53)(font "Arial" (font_size 8)))
+		(line (pt 68 40)(pt 112 40)(line_width 3))
 	)
 	(parameter
 		"WIDTH"
 		"16"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 200 96))
+		"Width of I/O, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
 	)
-	(annotation_block (parameter)(rect 240 80 432 112))
+	(drawing
+		(text "0" (rect 52 48 56 57)(font "Arial" (font_size 6)))
+		(text "1" (rect 52 24 56 33)(font "Arial" (font_size 6)))
+		(line (pt 68 24)(pt 68 56))
+		(line (pt 44 8)(pt 44 72))
+		(line (pt 44 72)(pt 68 56))
+		(line (pt 44 8)(pt 68 24))
+	)
+	(flipx)
+	(annotation_block (parameter)(rect 376 200 507 226))
 )
 (symbol
 	(rect 464 208 696 320)
@@ -284,17 +272,245 @@ on the Quartus Prime software download page.
 	(drawing
 		(rectangle (rect 16 16 216 96))
 	)
-	(annotation_block (parameter)(rect 440 72 632 104))
+	(annotation_block (parameter)(rect 696 176 888 208))
 )
-(connector
-	(pt 224 288)
-	(pt 216 288)
-	(bus)
+(symbol
+	(rect 744 152 856 240)
+	(text "BUSMUX" (rect 28 73 91 88)(font "Arial" (font_size 10)))
+	(text "inst5" (rect 3 1 25 11)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 24)
+		(input)
+		(text "datab[WIDTH-1..0]" (rect 6 51 108 63)(font "Arial" (font_size 8)))
+		(text "datab[]" (rect 6 25 44 37)(font "Arial" (font_size 8)))
+		(line (pt 0 24)(pt 44 24)(line_width 3))
+	)
+	(port
+		(pt 56 0)
+		(input)
+		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
+		(text "sel" (rect 59 6 75 18)(font "Arial" (font_size 8)))
+		(line (pt 56 0)(pt 56 16))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "dataa[WIDTH-1..0]" (rect 6 19 108 31)(font "Arial" (font_size 8)))
+		(text "dataa[]" (rect 6 57 44 69)(font "Arial" (font_size 8)))
+		(line (pt 0 56)(pt 44 56)(line_width 3))
+	)
+	(port
+		(pt 112 40)
+		(output)
+		(text "result[WIDTH-1..0]" (rect 75 35 177 47)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 75 41 113 53)(font "Arial" (font_size 8)))
+		(line (pt 68 40)(pt 112 40)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		"16"
+		"Width of I/O, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(drawing
+		(text "0" (rect 52 48 56 57)(font "Arial" (font_size 6)))
+		(text "1" (rect 52 24 56 33)(font "Arial" (font_size 6)))
+		(line (pt 68 24)(pt 68 56))
+		(line (pt 44 8)(pt 44 72))
+		(line (pt 44 72)(pt 68 56))
+		(line (pt 44 8)(pt 68 24))
+	)
+	(flipx)
+	(annotation_block (parameter)(rect 856 120 987 146))
 )
-(connector
-	(pt 224 272)
-	(pt 216 272)
-	(bus)
+(symbol
+	(rect 376 -24 608 88)
+	(text "NbitRegister" (rect 165 0 227 10)(font "Arial" ))
+	(text "LINK_REGISTER" (rect 151 96 224 106)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 232 32)
+		(input)
+		(text "Din[(width-1)..0]" (rect 0 0 77 10)(font "Arial" ))
+		(text "Din[(width-1)..0]" (rect 134 27 211 37)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
+	)
+	(port
+		(pt 232 48)
+		(input)
+		(text "clk" (rect 0 0 14 10)(font "Arial" ))
+		(text "clk" (rect 197 43 211 53)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48))
+	)
+	(port
+		(pt 232 64)
+		(input)
+		(text "EN" (rect 0 0 15 10)(font "Arial" ))
+		(text "EN" (rect 196 59 211 69)(font "Arial" ))
+		(line (pt 232 64)(pt 216 64))
+	)
+	(port
+		(pt 232 80)
+		(input)
+		(text "CLR" (rect 0 0 22 10)(font "Arial" ))
+		(text "CLR" (rect 189 75 211 85)(font "Arial" ))
+		(line (pt 232 80)(pt 216 80))
+	)
+	(port
+		(pt 0 32)
+		(output)
+		(text "Dout[(width-1)..0]" (rect 0 0 84 10)(font "Arial" ))
+		(text "Dout[(width-1)..0]" (rect 8 27 92 37)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 216 96))
+	)
+	(flipy)
+	(annotation_block (parameter)(rect 608 -56 800 -24))
+)
+(symbol
+	(rect 104 104 168 152)
+	(text "OR3" (rect 1 0 19 9)(font "Arial" (font_size 6)))
+	(text "inst12" (rect 3 37 31 47)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 24)
+		(input)
+		(text "IN2" (rect 2 15 19 26)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 15 19 26)(font "Courier New" (bold))(invisible))
+		(line (pt 0 24)(pt 18 24))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN3" (rect 2 24 19 35)(font "Courier New" (bold))(invisible))
+		(text "IN3" (rect 2 24 19 35)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 19 18)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 19 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 16 16))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 47 15 64 26)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 47 15 64 26)(font "Courier New" (bold))(invisible))
+		(line (pt 49 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 13)(pt 25 13))
+		(line (pt 14 36)(pt 25 36))
+		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
+		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
+		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
+	)
+)
+(symbol
+	(rect 184 8 272 120)
+	(text "BUSMUX" (rect 73 28 88 91)(font "Arial" (font_size 10))(vertical))
+	(text "inst4" (rect 1 3 11 25)(font "DejaVu Sans Condensed" )(vertical))
+	(port
+		(pt 24 0)
+		(input)
+		(text "datab[WIDTH-1..0]" (rect 6 51 108 63)(font "Arial" (font_size 8)))
+		(text "datab[]" (rect 25 6 37 44)(font "Arial" (font_size 8))(vertical))
+		(line (pt 24 0)(pt 24 44)(line_width 3))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
+		(text "sel" (rect 6 59 18 75)(font "Arial" (font_size 8))(vertical))
+		(line (pt 0 56)(pt 16 56))
+	)
+	(port
+		(pt 56 0)
+		(input)
+		(text "dataa[WIDTH-1..0]" (rect 6 19 108 31)(font "Arial" (font_size 8)))
+		(text "dataa[]" (rect 57 6 69 44)(font "Arial" (font_size 8))(vertical))
+		(line (pt 56 0)(pt 56 44)(line_width 3))
+	)
+	(port
+		(pt 40 112)
+		(output)
+		(text "result[WIDTH-1..0]" (rect 75 35 177 47)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 41 75 53 113)(font "Arial" (font_size 8))(vertical))
+		(line (pt 40 68)(pt 40 112)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		"16"
+		"Width of I/O, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(drawing
+		(text "0" (rect 48 52 57 56)(font "Arial" (font_size 6))(vertical))
+		(text "1" (rect 24 52 33 56)(font "Arial" (font_size 6))(vertical))
+		(line (pt 24 68)(pt 56 68))
+		(line (pt 8 44)(pt 72 44))
+		(line (pt 72 44)(pt 56 68))
+		(line (pt 8 44)(pt 24 68))
+	)
+	(rotate270)
+	(annotation_block (parameter)(rect 280 -16 411 10))
+)
+(symbol
+	(rect 120 40 184 88)
+	(text "OR2" (rect 1 0 19 9)(font "Arial" (font_size 6)))
+	(text "inst" (rect 3 37 20 47)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN2" (rect 2 23 19 34)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 23 19 34)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 15 32))
+	)
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 19 18)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 19 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 15 16))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 48 15 65 26)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 65 26)(font "Courier New" (bold))(invisible))
+		(line (pt 48 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 36)(pt 25 36))
+		(line (pt 14 13)(pt 25 13))
+		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
+		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
+		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
+	)
+)
+(symbol
+	(rect 616 56 648 88)
+	(text "GND" (rect 8 16 29 25)(font "Arial" (font_size 6)))
+	(text "inst15" (rect 3 21 31 31)(font "DejaVu Sans Condensed" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 11)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 11)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
 )
 (connector
 	(pt -16 304)
@@ -307,97 +523,226 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
-	(pt -16 288)
-	(pt -24 288)
-)
-(connector
-	(pt 216 272)
-	(pt 216 120)
-	(bus)
-)
-(connector
-	(pt 448 136)
-	(pt -56 136)
-)
-(connector
-	(pt 216 120)
-	(pt -56 120)
-	(bus)
-)
-(connector
-	(pt -24 288)
-	(pt -24 160)
-)
-(connector
-	(pt -24 160)
-	(pt -56 160)
-)
-(connector
-	(pt -56 184)
-	(pt 712 184)
-)
-(connector
-	(pt 224 304)
-	(pt 224 336)
-)
-(connector
-	(pt 224 336)
-	(pt -56 336)
-)
-(connector
 	(pt -32 152)
-	(pt 704 152)
+	(pt 712 152)
 	(bus)
 )
 (connector
-	(pt 704 240)
-	(pt 704 152)
+	(pt 264 288)
+	(pt 216 288)
 	(bus)
+)
+(connector
+	(pt 376 272)
+	(pt 464 272)
+	(bus)
+)
+(connector
+	(pt -56 160)
+	(pt -16 160)
+)
+(connector
+	(pt -16 160)
+	(pt -16 288)
 )
 (connector
 	(pt 448 256)
 	(pt 464 256)
 )
 (connector
-	(pt 440 272)
-	(pt 464 272)
+	(pt 696 240)
+	(pt 712 240)
 	(bus)
 )
 (connector
+	(pt 712 208)
+	(pt 744 208)
+	(bus)
+)
+(connector
+	(pt 856 192)
+	(pt 896 192)
+	(bus)
+)
+(connector
+	(pt -56 240)
 	(pt 464 240)
-	(pt 456 240)
 )
 (connector
-	(pt 456 240)
-	(pt 456 352)
-)
-(connector
-	(pt -56 352)
-	(pt 456 352)
-)
-(connector
-	(pt 448 136)
+	(pt 448 -32)
 	(pt 448 256)
 )
 (connector
-	(pt 696 240)
-	(pt 704 240)
+	(pt 712 208)
+	(pt 712 240)
 	(bus)
 )
 (connector
-	(pt 704 240)
-	(pt 728 240)
+	(pt 712 8)
+	(pt 608 8)
 	(bus)
 )
 (connector
-	(pt 728 256)
-	(pt 712 256)
+	(pt 712 8)
+	(pt 712 152)
+	(bus)
 )
 (connector
-	(pt 712 256)
-	(pt 712 184)
+	(pt 712 152)
+	(pt 712 208)
+	(bus)
 )
-(junction (pt 704 240))
-(text "When S is '1'  V1 is selected. Otherwise V2." (rect 216 352 466 365)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "This means when LOAD is 1 then BUS_IN is passed through to register and vice versa" (rect 160 392 652 405)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "Might have to check implementation here for this: JUMP or EN" (rect 224 416 581 429)(font "DejaVu Sans Condensed" (font_size 8)))
+(connector
+	(pt 608 40)
+	(pt 664 40)
+)
+(connector
+	(pt 800 152)
+	(pt 800 136)
+)
+(connector
+	(pt 664 40)
+	(pt 664 104)
+)
+(connector
+	(pt 632 56)
+	(pt 608 56)
+)
+(connector
+	(pt 240 8)
+	(pt 376 8)
+	(bus)
+)
+(connector
+	(pt 208 -56)
+	(pt -48 -56)
+	(bus)
+)
+(connector
+	(pt 208 -56)
+	(pt 208 8)
+	(bus)
+)
+(connector
+	(pt 224 256)
+	(pt 264 256)
+	(bus)
+)
+(connector
+	(pt 224 176)
+	(pt 744 176)
+	(bus)
+)
+(connector
+	(pt 224 120)
+	(pt 224 176)
+	(bus)
+)
+(connector
+	(pt 224 176)
+	(pt 224 256)
+	(bus)
+)
+(connector
+	(pt 608 24)
+	(pt 624 24)
+)
+(connector
+	(pt 624 -32)
+	(pt 624 24)
+)
+(connector
+	(pt -48 -32)
+	(pt 448 -32)
+)
+(connector
+	(pt 448 -32)
+	(pt 624 -32)
+)
+(connector
+	(pt 320 136)
+	(pt 800 136)
+)
+(connector
+	(pt 320 128)
+	(pt 168 128)
+)
+(connector
+	(pt 320 128)
+	(pt 320 136)
+)
+(connector
+	(pt 320 136)
+	(pt 320 232)
+)
+(connector
+	(pt -64 88)
+	(pt 104 88)
+)
+(connector
+	(pt 104 128)
+	(pt 96 128)
+)
+(connector
+	(pt 96 128)
+	(pt 96 104)
+)
+(connector
+	(pt -64 104)
+	(pt 96 104)
+)
+(connector
+	(pt 104 136)
+	(pt 88 136)
+)
+(connector
+	(pt 88 136)
+	(pt 88 120)
+)
+(connector
+	(pt -64 120)
+	(pt 88 120)
+)
+(connector
+	(pt 104 56)
+	(pt 120 56)
+)
+(connector
+	(pt 104 56)
+	(pt 104 88)
+)
+(connector
+	(pt 104 88)
+	(pt 104 120)
+)
+(connector
+	(pt 120 72)
+	(pt 112 72)
+)
+(connector
+	(pt 112 72)
+	(pt 112 104)
+)
+(connector
+	(pt 96 104)
+	(pt 112 104)
+)
+(connector
+	(pt 112 104)
+	(pt 664 104)
+)
+(junction (pt 712 208))
+(junction (pt 448 -32))
+(junction (pt 712 152))
+(junction (pt 224 176))
+(junction (pt 320 136))
+(junction (pt 96 104))
+(junction (pt 104 88))
+(junction (pt 112 104))
+(text "When S is '1'  V1 is selected. Otherwise V2." (rect -112 480 138 493)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "Might have to check implementation here for this: JUMP or EN" (rect -176 536 181 549)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "This means when J is 1 then BUS_IN is passed through to register and vice versa" (rect -168 520 293 533)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "This MUX is so that the output bypasses the clock pulse." (rect 720 104 1044 117)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "Instantly when Jump is enabled output becomes value" (rect 728 120 1040 133)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "If not JMP then LR is connected to Jump bus, if" (rect -216 -8 49 5)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "Can only hold one LINK ADDRESS" (rect -224 56 -31 69)(font "DejaVu Sans Condensed" (font_size 8)))

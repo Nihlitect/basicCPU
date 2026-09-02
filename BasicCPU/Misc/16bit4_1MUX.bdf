@@ -1,0 +1,316 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 16 216 184 232)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "V1[15..0]" (rect 5 0 50 10)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 16 232 184 248)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "V2[15..0]" (rect 5 0 50 10)(font "DejaVu Sans Condensed" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 32 328 200 344)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "V3[15..0]" (rect 5 0 50 10)(font "DejaVu Sans Condensed" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 32 344 200 360)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "V4[15..0]" (rect 5 0 50 10)(font "DejaVu Sans Condensed" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 24 536 192 552)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "S[1..0]" (rect 5 0 39 10)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 816 216 992 232)
+	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
+	(text "OUT[15..0]" (rect 90 0 144 10)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(symbol
+	(rect 272 192 488 304)
+	(text "Nbit2MUX" (rect 5 0 53 10)(font "Arial" ))
+	(text "inst" (rect 8 96 25 106)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "V1[(width-1)..0]" (rect 0 0 74 10)(font "Arial" ))
+		(text "V1[(width-1)..0]" (rect 21 27 95 37)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "V2[(width-1)..0]" (rect 0 0 74 10)(font "Arial" ))
+		(text "V2[(width-1)..0]" (rect 21 43 95 53)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "S" (rect 0 0 7 10)(font "Arial" ))
+		(text "S" (rect 21 59 28 69)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "O[(width-1)..0]" (rect 0 0 69 10)(font "Arial" ))
+		(text "O[(width-1)..0]" (rect 137 27 206 37)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 200 96))
+	)
+	(annotation_block (parameter)(rect 296 272 488 304))
+)
+(symbol
+	(rect 272 304 488 416)
+	(text "Nbit2MUX" (rect 5 0 53 10)(font "Arial" ))
+	(text "inst1" (rect 8 96 30 106)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "V1[(width-1)..0]" (rect 0 0 74 10)(font "Arial" ))
+		(text "V1[(width-1)..0]" (rect 21 27 95 37)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "V2[(width-1)..0]" (rect 0 0 74 10)(font "Arial" ))
+		(text "V2[(width-1)..0]" (rect 21 43 95 53)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "S" (rect 0 0 7 10)(font "Arial" ))
+		(text "S" (rect 21 59 28 69)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "O[(width-1)..0]" (rect 0 0 69 10)(font "Arial" ))
+		(text "O[(width-1)..0]" (rect 137 27 206 37)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 200 96))
+	)
+	(annotation_block (parameter)(rect 296 376 488 408))
+)
+(symbol
+	(rect 544 192 760 304)
+	(text "Nbit2MUX" (rect 5 0 53 10)(font "Arial" ))
+	(text "inst2" (rect 8 96 30 106)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "V1[(width-1)..0]" (rect 0 0 74 10)(font "Arial" ))
+		(text "V1[(width-1)..0]" (rect 21 27 95 37)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "V2[(width-1)..0]" (rect 0 0 74 10)(font "Arial" ))
+		(text "V2[(width-1)..0]" (rect 21 43 95 53)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "S" (rect 0 0 7 10)(font "Arial" ))
+		(text "S" (rect 21 59 28 69)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "O[(width-1)..0]" (rect 0 0 69 10)(font "Arial" ))
+		(text "O[(width-1)..0]" (rect 137 27 206 37)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 200 96))
+	)
+	(annotation_block (parameter)(rect 568 272 760 304))
+)
+(connector
+	(pt 488 224)
+	(pt 544 224)
+	(bus)
+)
+(connector
+	(pt 760 224)
+	(pt 816 224)
+	(bus)
+)
+(connector
+	(pt 544 240)
+	(pt 504 240)
+	(bus)
+)
+(connector
+	(pt 504 240)
+	(pt 504 336)
+	(bus)
+)
+(connector
+	(pt 488 336)
+	(pt 504 336)
+	(bus)
+)
+(connector
+	(pt 544 256)
+	(pt 520 256)
+)
+(connector
+	(pt 272 256)
+	(pt 248 256)
+)
+(connector
+	(pt 272 368)
+	(pt 248 368)
+)
+(connector
+	(pt 248 256)
+	(pt 248 368)
+)
+(connector
+	(pt 272 240)
+	(pt 184 240)
+	(bus)
+)
+(connector
+	(pt 272 224)
+	(pt 184 224)
+	(bus)
+)
+(connector
+	(pt 200 336)
+	(pt 272 336)
+	(bus)
+)
+(connector
+	(pt 272 352)
+	(pt 200 352)
+	(bus)
+)
+(connector
+	(text "S[1]" (rect 240 486 250 504)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 248 368)
+	(pt 248 512)
+)
+(connector
+	(text "S[0]" (rect 512 478 522 496)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 520 504)
+	(pt 520 256)
+)
+(junction (pt 248 368))

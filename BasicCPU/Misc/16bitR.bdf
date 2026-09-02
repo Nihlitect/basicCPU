@@ -22,9 +22,9 @@ on the Quartus Prime software download page.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 208 176 376 192)
+	(rect 432 456 600 472)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "DATA[15..0]" (rect 5 0 65 10)(font "Arial" ))
+	(text "clk" (rect 5 0 17 10)(font "DejaVu Sans Condensed" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -38,9 +38,9 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect 208 248 376 264)
+	(rect 408 472 576 488)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "CLR" (rect 5 0 25 10)(font "DejaVu Sans Condensed" ))
+	(text "STALL" (rect 5 0 36 10)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -54,25 +54,9 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect 208 200 376 216)
+	(rect 432 440 600 456)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "clk" (rect 5 0 19 10)(font "Arial" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
-	)
-	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
-)
-(pin
-	(input)
-	(rect 176 224 344 240)
-	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "STALL" (rect 5 0 36 10)(font "DejaVu Sans Condensed" ))
+	(text "I[15..0]" (rect 5 0 41 10)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -86,25 +70,9 @@ on the Quartus Prime software download page.
 )
 (pin
 	(output)
-	(rect 744 200 920 216)
+	(rect 896 440 1072 456)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
-	(text "OPCODE[3..0]" (rect 90 0 163 10)(font "Arial" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-)
-(pin
-	(output)
-	(rect 736 280 912 296)
-	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
-	(text "OPND[11..0]" (rect 90 0 153 10)(font "Arial" ))
+	(text "O[15..0]" (rect 90 0 128 10)(font "DejaVu Sans Condensed" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -117,9 +85,26 @@ on the Quartus Prime software download page.
 	)
 )
 (symbol
-	(rect 344 216 392 248)
+	(rect 592 512 624 544)
+	(text "GND" (rect 8 16 29 25)(font "Arial" (font_size 6)))
+	(text "inst" (rect 3 21 20 31)(font "Arial" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 11)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 11)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(symbol
+	(rect 576 464 624 496)
 	(text "NOT" (rect 1 0 21 9)(font "Arial" (font_size 6)))
-	(text "inst1" (rect 3 21 25 31)(font "DejaVu Sans Condensed" ))
+	(text "inst" (rect 3 21 20 31)(font "Arial" ))
 	(port
 		(pt 0 16)
 		(input)
@@ -142,7 +127,7 @@ on the Quartus Prime software download page.
 	)
 )
 (symbol
-	(rect 432 168 664 280)
+	(rect 640 416 872 528)
 	(text "NbitRegister" (rect 5 0 67 10)(font "Arial" ))
 	(text "inst" (rect 8 96 25 106)(font "Arial" ))
 	(port
@@ -188,66 +173,37 @@ on the Quartus Prime software download page.
 	(drawing
 		(rectangle (rect 16 16 216 96))
 	)
-	(annotation_block (parameter)(rect 664 136 856 168))
+	(annotation_block (parameter)(rect 872 384 1059 410))
 )
 (connector
-	(text "O[15..12]" (rect 704 192 748 202)(font "DejaVu Sans Condensed" ))
-	(pt 712 208)
-	(pt 744 208)
+	(pt 640 464)
+	(pt 600 464)
+)
+(connector
+	(pt 640 448)
+	(pt 600 448)
 	(bus)
 )
 (connector
-	(pt 400 184)
-	(pt 376 184)
+	(pt 608 496)
+	(pt 608 512)
+)
+(connector
+	(pt 640 496)
+	(pt 608 496)
+)
+(connector
+	(pt 872 448)
+	(pt 896 448)
 	(bus)
 )
 (connector
-	(pt 416 208)
-	(pt 376 208)
+	(pt 640 480)
+	(pt 624 480)
 )
-(connector
-	(text "O[11..0]" (rect 688 272 726 282)(font "DejaVu Sans Condensed" ))
-	(pt 736 288)
-	(pt 704 288)
-	(bus)
-)
-(connector
-	(text "O[15..0]" (rect 672 184 710 194)(font "DejaVu Sans Condensed" ))
-	(pt 688 200)
-	(pt 664 200)
-	(bus)
-)
-(connector
-	(pt 392 232)
-	(pt 432 232)
-)
-(connector
-	(pt 408 256)
-	(pt 376 256)
-)
-(connector
-	(pt 408 256)
-	(pt 408 248)
-)
-(connector
-	(pt 408 248)
-	(pt 432 248)
-)
-(connector
-	(pt 416 216)
-	(pt 416 208)
-)
-(connector
-	(pt 416 216)
-	(pt 432 216)
-)
-(connector
-	(pt 432 200)
-	(pt 400 200)
-	(bus)
-)
-(connector
-	(pt 400 184)
-	(pt 400 200)
-	(bus)
-)
+(text "Used for buffering in pipelines, we dont neccessarily want to" (rect 544 320 890 333)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "or have to control the enable and clr pins so we set them constant." (rect 544 336 929 349)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "no harm in keeping it active," (rect 568 232 807 246)(font "Cascadia Mono" (font_size 9)))
+(text "we are just trying to pass it" (rect 568 248 807 262)(font "Cascadia Mono" (font_size 9)))
+(text "through every clock. The clk" (rect 568 264 799 278)(font "Cascadia Mono" (font_size 9)))
+(text "acts as the buffer" (rect 568 280 716 294)(font "Cascadia Mono" (font_size 9)))

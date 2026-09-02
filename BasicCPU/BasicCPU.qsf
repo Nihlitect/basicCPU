@@ -140,6 +140,8 @@ set_location_assignment PIN_B14 -to SW[8]
 set_location_assignment PIN_F15 -to SW[9]
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_FILE Memory/NbitDFF.vhd
+set_global_assignment -name VHDL_FILE ControlUnit.vhd
 set_global_assignment -name VHDL_FILE Memory/ROM.vhd
 set_global_assignment -name VHDL_FILE Memory/registers.vhd
 set_global_assignment -name VHDL_FILE Memory/NbitRegister2.vhd
@@ -165,4 +167,13 @@ set_global_assignment -name VHDL_FILE ArithmeticUnit.vhd
 set_global_assignment -name BDF_FILE RB_ALU.bdf
 set_global_assignment -name BDF_FILE FlagRegisters.bdf
 set_global_assignment -name VHDL_FILE NbitN_1MUX.vhd
+set_global_assignment -name VHDL_FILE Memory/RAM.vhd
+set_global_assignment -name BDF_FILE Misc/16bit4_1MUX.bdf
+set_global_assignment -name VHDL_FILE Misc/Rtype.vhd
+set_global_assignment -name BDF_FILE Misc/16bit2_1.bdf
+set_global_assignment -name BDF_FILE Misc/16bitR.bdf
+set_global_assignment -name BDF_FILE Memory/3bitPSR.bdf
+set_global_assignment -name VHDL_FILE FwdSelUnit.vhd
+set_global_assignment -name VHDL_FILE Memory/NbitPSR.vhd
+set_global_assignment -name VHDL_FILE BranchUnit.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

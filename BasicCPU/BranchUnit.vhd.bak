@@ -1,0 +1,36 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
+
+
+entity BranchUnit is
+	port(
+		cond: in std_logic_vector(2 downto 0);
+		Z: in std_logic;
+		C: in std_logic;
+		N: in std_logic;
+		O: in std_logic;
+		BR: out std_logic
+
+	;)
+end BranchUnit;
+
+architecture branches of BranchUnit is
+
+begin
+	process(Z, C, N, O, cond, BR)
+	begin
+		case cond is
+			when "000" => BR := (Z = '1')-- BEQ: equal
+			when "001" => BR := (Z = '0')-- BNE: not equal
+			when "010" => BR := (N = not V)-- BLT: less than
+			when "011" => BR := (N = V)-- BGE: greater or equal
+			when "100" => BR := (Z ='1' or N = not V)-- BLE: less or equal
+			when "101" => BR := (Z ='0' or N = V)-- BGT
+			when "110" => BR := (C ='0')-- BLTU
+			when "111" => BR := (C = '1')-- GBEU
+			when others => BR := '0';-- Default
+		end case;  
+   end process;
+end branches

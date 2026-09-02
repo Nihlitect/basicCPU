@@ -1,5 +1,5 @@
-Analysis & Synthesis report for BasicCPU
-Wed Aug  5 00:39:17 2026
+Analysis & Elaboration report for BasicCPU
+Tue Aug 25 15:25:39 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -7,10 +7,10 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -35,9 +35,9 @@ on the Quartus Prime software download page.
 
 
 +--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
+; Analysis & Elaboration Summary                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Aug  5 00:39:17 2026               ;
+; Analysis & Elaboration Status      ; Failed - Tue Aug 25 15:25:39 2026               ;
 ; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                      ; BasicCPU                                        ;
 ; Top-level Entity Name              ; BasicCPU                                        ;
@@ -56,8 +56,24 @@ on the Quartus Prime software download page.
 +------------------------------------+-------------------------------------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                              ;
+; Analysis & Elaboration Settings                                                                            ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
@@ -142,47 +158,89 @@ on the Quartus Prime software download page.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 20          ;
-; Maximum allowed            ; 12          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Wed Aug  5 00:39:12 2026
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BasicCPU -c BasicCPU
+    Info: Processing started: Tue Aug 25 15:25:34 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BasicCPU -c BasicCPU --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file memory/rom.vhd
+    Info (12022): Found design unit 1: RAM-rame File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd Line: 25
+    Info (12023): Found entity 1: RAM File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file memory/registers.vhd
+    Info (12022): Found design unit 1: REGISTERS-regin File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/registers.vhd Line: 30
+    Info (12023): Found entity 1: REGISTERS File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/registers.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memory/nbitregister2.vhd
+    Info (12022): Found design unit 1: NbitRegisterE-reg File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister2.vhd Line: 22
+    Info (12023): Found entity 1: NbitRegisterE File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister2.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file memory/nbitregister.vhd
+    Info (12022): Found design unit 1: NbitRegister-reg File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister.vhd Line: 19
+    Info (12023): Found entity 1: NbitRegister File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file memory/instructionregister.bdf
+    Info (12023): Found entity 1: InstructionRegister
+Info (12021): Found 1 design units, including 1 entities, in source file memory/bufferedregister.bdf
+    Info (12023): Found entity 1: BufferedRegister
+Info (12021): Found 2 design units, including 1 entities, in source file memory/bitregister2.vhd
+    Info (12022): Found design unit 1: BitRegister2-flipper File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/BitRegister2.vhd Line: 17
+    Info (12023): Found entity 1: BitRegister2 File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/BitRegister2.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file memory/bitregister.bdf
+    Info (12023): Found entity 1: BitRegister
+Info (12021): Found 2 design units, including 1 entities, in source file misc/retb.vhd
+    Info (12022): Found design unit 1: RETB-Behavioral File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/RETB.vhd Line: 12
+    Info (12023): Found entity 1: RETB File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/RETB.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file misc/nbitdemux.vhd
+    Info (12022): Found design unit 1: NbitDEMUX-demux File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitDEMUX.vhd Line: 17
+    Info (12023): Found entity 1: NbitDEMUX File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitDEMUX.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file misc/nbitbuffer.vhd
+    Info (12022): Found design unit 1: NbitBuffer-buff File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitBuffer.vhd Line: 15
+    Info (12023): Found entity 1: NbitBuffer File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitBuffer.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file misc/nbit2mux.vhd
+    Info (12022): Found design unit 1: Nbit2MUX-busmux File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Nbit2MUX.vhd Line: 18
+    Info (12023): Found entity 1: Nbit2MUX File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Nbit2MUX.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file misc/hex_to_7seg.vhd
+    Info (12022): Found design unit 1: Hex_To_7Seg-Behavioral File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Hex_To_7Seg.vhd Line: 13
+    Info (12023): Found entity 1: Hex_To_7Seg File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Hex_To_7Seg.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file misc/bit2_1mux.bdf
+    Info (12023): Found entity 1: bit2_1MUX
+Info (12021): Found 1 design units, including 1 entities, in source file misc/16bit2ssd.bdf
+    Info (12023): Found entity 1: 16bit2SSD
+Info (12021): Found 1 design units, including 1 entities, in source file misc/4bit3_1mux.bdf
+    Info (12023): Found entity 1: 4bit3_1MUX
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: ALU-alu File: C:/Users/Chamk/Desktop/BasicCPU/ALU.vhd Line: 17
-    Info (12023): Found entity 1: ALU File: C:/Users/Chamk/Desktop/BasicCPU/ALU.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file reg.vhd
-    Info (12022): Found design unit 1: REG-readwrite File: C:/Users/Chamk/Desktop/BasicCPU/reg.vhd Line: 14
-    Info (12023): Found entity 1: REG File: C:/Users/Chamk/Desktop/BasicCPU/reg.vhd Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file d_flipflop.bdf
-    Info (12023): Found entity 1: D_FlipFlop
-Info (12021): Found 2 design units, including 1 entities, in source file registern.vhd
-    Info (12022): Found design unit 1: registerN-reg File: C:/Users/Chamk/Desktop/BasicCPU/RegisterN.vhd Line: 17
-    Info (12023): Found entity 1: registerN File: C:/Users/Chamk/Desktop/BasicCPU/RegisterN.vhd Line: 5
-Error (12007): Top-level design entity "BasicCPU" is undefined
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4811 megabytes
-    Error: Processing ended: Wed Aug  5 00:39:17 2026
+    Info (12022): Found design unit 1: ALU-alu File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU.vhd Line: 21
+    Info (12023): Found entity 1: ALU File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file logicunit.vhd
+    Info (12022): Found design unit 1: LogicUnit-logic File: C:/Users/Chamk/Desktop/Repo/BasicCPU/LogicUnit.vhd Line: 34
+    Info (12023): Found entity 1: LogicUnit File: C:/Users/Chamk/Desktop/Repo/BasicCPU/LogicUnit.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
+    Info (12022): Found design unit 1: NbitCounter-count File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Counter.vhd Line: 19
+    Info (12023): Found entity 1: NbitCounter File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Counter.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file programcounter.bdf
+    Info (12023): Found entity 1: ProgramCounter
+Info (12021): Found 1 design units, including 1 entities, in source file basiccpu.bdf
+    Info (12023): Found entity 1: BasicCPU
+Info (12021): Found 2 design units, including 1 entities, in source file arithmeticunit.vhd
+    Info (12022): Found design unit 1: ArithmeticUnit-arithmetic File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ArithmeticUnit.vhd Line: 23
+    Info (12023): Found entity 1: ArithmeticUnit File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ArithmeticUnit.vhd Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file rb_alu.bdf
+    Info (12023): Found entity 1: RB_ALU
+Info (12021): Found 1 design units, including 1 entities, in source file flagregisters.bdf
+    Info (12023): Found entity 1: FlagRegisters
+Info (12021): Found 2 design units, including 1 entities, in source file nbitn_1mux.vhd
+    Info (12022): Found design unit 1: NbitN_1MUX-muxmaxing File: C:/Users/Chamk/Desktop/Repo/BasicCPU/NbitN_1MUX.vhd Line: 28
+    Info (12023): Found entity 1: NbitN_1MUX File: C:/Users/Chamk/Desktop/Repo/BasicCPU/NbitN_1MUX.vhd Line: 5
+Info (12127): Elaborating entity "BasicCPU" for the top level hierarchy
+Error (275046): Illegal name "carry" -- pin name already exists
+Error (275046): Illegal name "negative" -- pin name already exists
+Error (275046): Illegal name "zero" -- pin name already exists
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Elaboration was unsuccessful. 4 errors, 1 warning
+    Error: Peak virtual memory: 4810 megabytes
+    Error: Processing ended: Tue Aug 25 15:25:39 2026
     Error: Elapsed time: 00:00:05
     Error: Total CPU time (on all processors): 00:00:12
 

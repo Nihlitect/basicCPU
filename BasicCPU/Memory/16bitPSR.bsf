@@ -21,14 +21,14 @@ on the Quartus Prime software download page.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 224 144)
-	(text "InstructionRegister" (rect 5 0 139 13)(font "Cascadia Code" (font_size 8)))
-	(text "inst" (rect 8 114 24 124)(font "DejaVu Sans Condensed" ))
+	(rect 16 16 160 112)
+	(text "16bitR" (rect 5 0 47 13)(font "Cascadia Code" (font_size 8)))
+	(text "inst" (rect 8 82 24 92)(font "DejaVu Sans Condensed" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "DATA[15..0]" (rect 0 0 70 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "DATA[15..0]" (rect 21 27 91 40)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "I[15..0]" (rect 0 0 41 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "I[15..0]" (rect 21 27 62 40)(font "DejaVu Sans Condensed" (font_size 8)))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
@@ -46,27 +46,13 @@ on the Quartus Prime software download page.
 		(line (pt 0 64)(pt 16 64))
 	)
 	(port
-		(pt 0 80)
-		(input)
-		(text "CLR" (rect 0 0 23 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "CLR" (rect 21 75 44 88)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 208 32)
+		(pt 144 32)
 		(output)
-		(text "OPCODE[3..0]" (rect 0 0 81 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "OPCODE[3..0]" (rect 106 27 187 40)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 208 32)(pt 192 32)(line_width 3))
-	)
-	(port
-		(pt 208 48)
-		(output)
-		(text "OPND[11..0]" (rect 0 0 71 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "OPND[11..0]" (rect 116 43 187 56)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 208 48)(pt 192 48)(line_width 3))
+		(text "O[15..0]" (rect 0 0 47 13)(font "DejaVu Sans Condensed" (font_size 8)))
+		(text "O[15..0]" (rect 76 27 123 40)(font "DejaVu Sans Condensed" (font_size 8)))
+		(line (pt 144 32)(pt 128 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 192 112))
+		(rectangle (rect 16 16 128 80))
 	)
 )
