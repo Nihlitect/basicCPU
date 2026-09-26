@@ -5,6 +5,10 @@ use IEEE.std_logic_unsigned.all;
 
 entity ControlUnit is 
 	port(
+		--IF/DE
+		Halt: out std_logic; -- if Halt set flush=true and CE=false
+		Flush: out std_logic;
+		
 		clk: in std_logic;
 		-- OPERATION IN PIPELINE
 		OPCODE: in std_logic_vector(3 downto 0); -- The operation that is fetched
@@ -37,9 +41,8 @@ entity ControlUnit is
 		--REGO: out std_logic; --Allow Register value out to bus. Register Out *Depricated: It is piplined bus isnt shared.
 		CLRR: out std_logic;-- Clears all
 		
-		--IF/DE
-		Flush: out std_logic;
-		Halt: out std_logic;
+		
+		
 		--ALU
 		--AO: out std_logic; -- Arithemtic out
 		EXO: out std_logic;
@@ -53,8 +56,8 @@ entity ControlUnit is
 		SWSel: out std_logic; -- select switch into bus
 		
 		-- SSD. (Seven Segment Display)
-		SSI: out std_logic; -- Seven Segment enable in
-		CLRSS: out std_logic -- Clear Seven Segment
+		SSI: out std_logic -- Seven Segment enable in
+		--CLRSS: out std_logic -- Clear Seven Segment
 	);
 end ControlUnit;
 
@@ -81,8 +84,7 @@ begin
         IMO   <= '0';
         SWSel <= '0';
         SSI   <= '0';
-        CLRSS <= '0';
-
+      
         case OPCODE is
             when "0000" =>  -- NOP
                 null;       -- defaults already cover it. Will do nothing in pipeline

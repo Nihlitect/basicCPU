@@ -13,18 +13,13 @@ entity RAM is
 	port(
 		DIN: in std_logic_vector(D_WIDTH-1 downto 0); -- Data in
 		ADDR_IN: in std_logic_vector(A_WIDTH-1 downto 0); -- Address 1
-		
 		ADDR_OUT1: in std_logic_vector(A_WIDTH-1 downto 0); -- Read Address 1
-		ADDR_OUT2: in std_logic_vector(A_WIDTH-1 downto 0); -- Read Address 2
 		
 		clk : in std_logic; -- clock signal
 		EN: in std_logic; -- Enable
 		WE: in std_logic; -- write enable
 		
-		DOUT: out std_logic_vector(D_WIDTH-1 downto 0); -- Data out bus 1 [ADDR_IN1]
-		DOUT_I: out std_logic_vector(D_WIDTH-1 downto 0);-- Data out bus 1.1 [ADDR_IN1+1]
-		
-		DOUT2: out std_logic_vector(D_WIDTH-1 downto 0) -- Data out bus 2 [ADDR_IN2]
+		DOUT: out std_logic_vector(D_WIDTH-1 downto 0) -- Data out bus 1 [ADDR_IN1]
 	);
 end RAM;
 
@@ -55,12 +50,12 @@ architecture rame of RAM is
 		18 => X"2222",
 		19 => X"2333",
 		20 => X"2444",
-		others => X"0000"); -- Ex. Will set 20 to SIZE 
+		others => X"0000");
 
 		-- With this definition the synthesizer uses onboard memory ?.
 
 begin 
-	process(clk, EN, WE, ADDR_IN, ADDR_OUT1, ADDR_OUT2, DIN)
+	process(clk, EN, WE, ADDR_IN, ADDR_OUT1, DIN)
 	begin
 		if rising_edge(clk) then 
 			if (EN = '1') then
@@ -72,12 +67,6 @@ begin
 				-- READ PORTS
 				-- PORT 1 
 				DOUT <= CODE(to_integer(unsigned(ADDR_OUT1))); -- Data out 
-				-- PORT B+1 - READ (for immediate instructions)
-				DOUT_I <= CODE(to_integer(unsigned(ADDR_OUT1))+1); -- Data out 
-				
-				-- PORT 2
-				DOUT2 <= CODE(to_integer(unsigned(ADDR_OUT2))); -- Data out 
-				
 			end if; -- end ENABLED
 		end if; -- End rising edge
 	end process;

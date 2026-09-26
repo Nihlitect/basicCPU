@@ -1,0 +1,61 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity CmpBranchUnit is
+    generic(
+        WIDTH : integer := 16
+    );
+    port(
+        A    : in  std_logic_vector(WIDTH-1 downto 0);
+        B    : in  std_logic_vector(WIDTH-1 downto 0);
+        cond : in  std_logic_vector(2 downto 0);
+
+        BR   : out std_logic
+    );
+end CmpBranchUnit;
+
+
+architecture compareTheBranches of CmpBranchUnit is
+
+    signal result : signed(WIDTH-1 downto 0);
+
+    signal Z : std_logic;
+    signal N : std_logic;
+    signal O : std_logic;
+
+begin
+    -- COMPARE
+    result <= signed(A) - signed(B);-- Signed subtraction: A - B
+	 
+    Z <= '1' when result = 0 else '0';-- Zero condition
+    N <= result(WIDTH-1);-- Negative flag
+    O <= (A(WIDTH-1) xor B(WIDTH-1)) and -- Signed overflow
+         (A(WIDTH-1) xor result(WIDTH-1));
+	
+	-- BRANCH
+   process(Z, N, O, A, B, cond)
+   begin
+		case cond is
+			when "000" => BR <= Z; 				-- BEQ
+			when "001" =>  BR <= not Z;		-- BNE
+			when "010" => BR <= N xor O;			-- BLT (signed)
+			when "011" => BR <= not (N xor O);	-- BGE (signed)
+			when "100" => BR <= Z or (N xor O);	-- BLE (signed)
+			when "101" => 								-- BGT (signed)
+				BR <= (not Z) and not (N xor O);
+				 
+			when "110" => 								-- BLTU (unsigned)
+				if unsigned(A) < unsigned(B) then
+					BR <= '1'; else BR <= '0';
+				end if;
+			when "111" => 								-- BGEU (unsigned)
+				if unsigned(A) >= unsigned(B) then
+					BR <= '1'; else BR <= '0';
+				end if;
+			when others =>
+				BR <= '0';
+		end case;
+	end process;
+	 
+end compareTheBranches;

@@ -54,13 +54,16 @@ architecture rame of ROM is
 begin 
 	process(clk, EN, ADDR)
 	begin
-		if rising_edge(clk) then 
-			if (EN = '1') then
-				-- PORT B - READ
-				Dout <= CODE(to_integer(unsigned(ADDR))); -- Data out 
-				DoutI <= CODE(to_integer(unsigned(ADDR))+1); -- Data out 
-				
-			end if; -- end ENABLED
+		if rising_edge(clk) then -- Write
+			null; -- No need  to read on clock (was like this before). 
 		end if; -- End rising edge
+		
+		if (EN = '1') then
+			-- PORT B - READ
+			Dout <= CODE(to_integer(unsigned(ADDR))); -- Data out 
+			DoutI <= CODE(to_integer(unsigned(ADDR))+1); -- Data out 
+			
+		end if; -- end ENABLED
+		
 	end process;
 end rame;
