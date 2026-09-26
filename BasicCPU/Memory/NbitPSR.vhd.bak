@@ -30,29 +30,17 @@ architecture stall of NbitPSR is
 		);
 	end component;
 	
-	signal Data : std_logic_vector(WIDTH-1 downto 0);
-	
 begin -- Begin behaviour
 	
 
-	first: NbitRegister
+	ffi : NbitRegister
 		port map(
 			EN => not STALL,
 			CLR => '0',
-			clk => not clk, 
+			clk => clk, 
          Din   => I,
-         Dout   => Data
+         Dout   => O
 		);
-		
-	second: NbitRegister
-		port map(
-			EN => not STALL,
-			CLR => '0',
-			clk => clk,
-			Din => Data,
-			Dout => O
-			);
-		
 end stall;
 
 

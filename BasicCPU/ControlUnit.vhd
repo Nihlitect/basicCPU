@@ -6,55 +6,51 @@ use IEEE.std_logic_unsigned.all;
 entity ControlUnit is 
 	port(
 		clk: in std_logic;
-		-- OPERATION PIPELINE
+		-- OPERATION IN PIPELINE
 		OPCODE: in std_logic_vector(3 downto 0); -- The operation that is fetched
 		OPFUNC: in std_logic_vector(2 downto 0);
-		--DECO_OP: in std_logic_vector(3 downto 0); -- The operation that is to be decoded here
-		--EXEC_OP: in std_logic_vector(3 downto 0); -- The operation that is executing currently
-		--STOR_OP: in std_logic_vector(3 downto 0);
-		
-		--To have enough information on whether to 
-		--DECO_OP1: in std_logic_vector(3 downto 0); -- Operand 1 of instruction in decode
-		--DECO_OP2: in std_logic_vector(3 downto 0); -- Operand 2 of instruction in decode
-		--EXEC_OP3: in std_logic_vector(3 downto 0); -- The register that will be written to
-		
 		
 		-- FLAGS from ALU
-		carry: in std_logic;
-		negative: in std_logic;
-		zero: in std_logic;
+		--carry: in std_logic;
+		--negative: in std_logic;
+		--zero: in std_logic;
 		
 		--RAM. 
 		WE: out std_logic; -- Write enable
-		ERR: out std_logic; -- Enable Read ROM
-		RRO: out std_logic; -- ROM Read OUT. Not sure why theres two...
+		--ERR: out std_logic; -- Enable Read ROM
+		--RRO: out std_logic; -- ROM Read OUT. Not sure why theres two...
 		
 		-- PROGRAM COUNTER
 		CE: out std_logic; -- Count Enable increments the count on next rising edge
-		CO: out std_logic; -- Count Out allows count on bus
-		J: out std_logic;  -- Sets the count to what is on its data bus. J Potential optimization: maybe we could put a register for data in. could save data bus utilization
+		
+		--CO: out std_logic; -- Count Out allows count on bus
+		JMP: out std_logic;  -- Sets the count to what is on its data bus. J Potential optimization: maybe we could put a register for data in. could save data bus utilization
+		JAL: out std_logic; -- Jump and link
+		JR: out std_logic; -- Jump to jump register
+		
 		CLRC: out std_logic; -- count to Clear (straight away) -> no rising edge needed
 		
 		-- INSTRUCTION REGISTER - could have multiple for a pipelined system, or atleast some registers with opcodes
-		II: out std_logic; -- Load instruction into register
-		IO: out std_logic; -- Instruction Out into a bus.
 		
 		--REGISTERS
 		EN: out std_logic; --Allow write to register
-		REGO: out std_logic; --Allow Register value out to bus. Register Out
+		--REGO: out std_logic; --Allow Register value out to bus. Register Out *Depricated: It is piplined bus isnt shared.
 		CLRR: out std_logic;-- Clears all
 		
+		--IF/DE
+		Flush: out std_logic;
+		Halt: out std_logic;
 		--ALU
-		AO: out std_logic; -- Arithemtic out
-		LDA: out std_logic; -- Load A register from bus
-		CLRA: out std_logic;
-		LDB: out std_logic; -- Load B register from bus
-		CLRB: out std_logic;
-		
-		
+		--AO: out std_logic; -- Arithemtic out
+		EXO: out std_logic;
+		IMMB: out std_logic;
+		IMO: out std_logic;
 		
 		-- BUS CONTROL. More bits Will be needed for pipelining 
-		SEL: out std_logic_vector(1 downto 0); -- Select which operand is Addresses the Registers.
+		-- SEL: out std_logic_vector(1 downto 0); -- Select which operand is Addresses the Registers.
+		
+		--SWITCHES
+		SWSel: out std_logic; -- select switch into bus
 		
 		-- SSD. (Seven Segment Display)
 		SSI: out std_logic; -- Seven Segment enable in
@@ -64,62 +60,82 @@ end ControlUnit;
 
 -- Since registers open on rising edge then bits must change on falling edge.
 architecture orchestration of ControlUnit is
-
-	type Pipline_State is (PIPE, STALL, EMPTY); -- Modes required for pipline either Halt on memory dependencies or empty pipline when branch arises.
-	-- STALL: simply waits one microinstruction cycle for any memory dependencies to clear. 
-	-- This allows an instruction on the execute stage to clean-up before a dependent instruction
-	-- accesses memory (I say one because if memory is accessed on EXEC, however if it is accessed on DECODE then two!)
-	
-	-- EMPTY: As soon as a branch is detected on the FETH Cycle we dont allow anymore FETCHES to proceed until the branch has executed.
-	
-	-- PIPE: Proceed normal operation
-	
-	
-	--pipline: process(clk, reset)
 begin
-		--  Which state will get priority need to make sure that stall goes first then empty or have two seperate states
-		--if falling_edge(clk) then
-		
-			--if (FETCH_OP = '1010' or FETCH_OP = '1011') then -- If instruction is a jump instruction.
-				
-			--else then
-				
-				-- write PC to ROM for read
-			--	CO <= '1' -- Count Out
-				
-				-- Read from rom
-			--	ERR <= '1'
-			--	RRO <= '1'
-				
-				
-				
-			--	CE <= '1'; -- Increment
-			
-		
-		--elsif (EXEC_OP3 = DECO_OP2 or EXEC_OP3 = DECO_OP1) then -- Memory Dependency
-		--	curr_state <= STALL;
-		--end if;
-	
-		--if (not STORE_OP ='0000') then --make sure operands are coming through
-		--	if falling_edge(clk) then
-				
-				-- Clean up
-		--		if(STORE_OP(3 downto 2) = '01' or STORE_OP(3 downto 2) = '00' ) -- Will be a 3 operand write instruction.
-			--		ENI <= '1'
-	
-	
-	--programCounter: process(clk, CE, J, CLRC) 
-	--begin
 
-	--	if (OPCODE = '0111') or (OPCODE = '0110') then -- if JMP or BR 
-	--		if (OPCODE = '0111') then -- if JMP then
-	--			CE <= '0' -- stop counting
-	--			
-	--			STALL <= '1' -- Or perhaps 'flush'
-	--		else then 
-	--			
-	--	else then 
-	--		CE <= '1'
-	
-	--begin 
+    process(OPCODE, OPFUNC)
+    begin
+        -- Safe defaults for every output, every time.
+        -- Prevents inferred latches and means each branch
+        -- below only needs to override what's different.
+        WE    <= '0';
+        EN    <= '0';
+        Flush <= '0';
+        CE    <= '0';
+        JMP   <= '0';
+        JAL   <= '0';
+        JR    <= '0';
+        CLRC  <= '0';
+        CLRR  <= '0';
+        EXO   <= '0';
+        IMMB  <= '0';
+        IMO   <= '0';
+        SWSel <= '0';
+        SSI   <= '0';
+        CLRSS <= '0';
+
+        case OPCODE is
+            when "0000" =>  -- NOP
+                null;       -- defaults already cover it. Will do nothing in pipeline
+
+            when "0001" =>  -- ALU: rd <= rs, rt
+                EN   <= '1';
+                EXO  <= '1';
+                IMMB <= '0'; -- register operand, not immediate
+
+            when "0010" =>  -- ALUI: rd = rs, imm16
+                EN   <= '1';
+                EXO  <= '1'; -- enable ALU out
+                IMMB <= '1'; -- enable immediate operand passthrough
+
+            when "0011" =>  -- LW: rd <= Mem(8..0)
+                WE   <= '0';
+                EN   <= '1';
+                IMO  <= '1';
+
+            when "0100" =>  -- SW: Mem(8..0) <= rd
+                EXO <= '0';
+					 WE   <= '1';
+				when "0101" => -- LDI: rd <= imm16
+				
+				when "0110" => --CMP
+				
+				when "0111" => -- BR
+				
+            when "1000" => -- JMP: IR <= [11..0]
+                JMP   <= '1';
+                Flush <= '1'; -- flush IF/DE, wrong instr already fetched
+
+            when "1001" =>  -- JAL: push[IR], IR <= [11..0]
+                JMP   <= '1';
+                JAL   <= '1';
+                Flush <= '1';
+				when "1001" =>  -- JR: IR <= pop[IR]
+                JMP   <= '1';
+                JAL   <= '1';
+                Flush <= '1';
+				when "1111" =>
+					Halt <= '1'; -- feeds op '1111' into instruction register (feedback)
+            when others =>
+                -- undefined opcode: hold safe defaults
+                null;
+        end case;
+
+        -- OPFUNC-dependent tweaks nested inside a branch, if needed:
+        -- case OPCODE is
+        --     when "0001" =>
+        --         if OPFUNC = "000" then ... elsif ... end if;
+        -- end case;
+
+    end process;
+
 end orchestration;

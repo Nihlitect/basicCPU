@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 use IEEE.std_logic_unsigned.all;
 
 -- This implementation is taken from lecture slides in week 1 - VHDL code examples
-entity RAM2 is
+entity RAM is
 	generic(
 		D_WIDTH: integer := 16; -- The width of the data bus -> 16bit
 		A_WIDTH: integer := 16; -- The address length --> Can be 16 bit but we leave as 7 for 128 instructions
@@ -13,20 +13,22 @@ entity RAM2 is
 	port(
 		DIN: in std_logic_vector(D_WIDTH-1 downto 0); -- Data in
 		ADDR_IN: in std_logic_vector(A_WIDTH-1 downto 0); -- Address 1
-		ADDR_OUT: in std_logic_vector(A_WIDTH-1 downto 0); -- Address 2
+		
+		ADDR_OUT1: in std_logic_vector(A_WIDTH-1 downto 0); -- Read Address 1
+		ADDR_OUT2: in std_logic_vector(A_WIDTH-1 downto 0); -- Read Address 2
 		
 		clk : in std_logic; -- clock signal
 		EN: in std_logic; -- Enable
 		WE: in std_logic; -- write enable
 		
-		DOUT: out std_logic_vector(D_WIDTH-1 downto 0); -- Data out  bus 1 [ADDR_IN1]
-		DOUT_I: out std_logic_vector(D_WIDTH-1 downto 0)-- Data out bus 1 [ADDR_IN1+1]
+		DOUT: out std_logic_vector(D_WIDTH-1 downto 0); -- Data out bus 1 [ADDR_IN1]
+		DOUT_I: out std_logic_vector(D_WIDTH-1 downto 0);-- Data out bus 1.1 [ADDR_IN1+1]
 		
-		--DOUT2: out std_logic_vector(D_WIDTH-1 downto 0) -- Data out bus 2 [ADDR_IN2]
+		DOUT2: out std_logic_vector(D_WIDTH-1 downto 0) -- Data out bus 2 [ADDR_IN2]
 	);
-end RAM2;
+end RAM;
 
-architecture rame of RAM2 is 
+architecture rame of RAM is 
 
 	-- Create memory array of size 'SIZE' and width 'WIDTH'
 	type ramdef is array (0 to SIZE-1) of std_logic_vector(D_WIDTH-1 downto 0);
@@ -58,7 +60,7 @@ architecture rame of RAM2 is
 		-- With this definition the synthesizer uses onboard memory ?.
 
 begin 
-	process(clk, EN, WE, ADDR_IN, ADDR_OUT, DIN)
+	process(clk, EN, WE, ADDR_IN, ADDR_OUT1, ADDR_OUT2, DIN)
 	begin
 		if rising_edge(clk) then 
 			if (EN = '1') then
@@ -67,10 +69,14 @@ begin
 					CODE(to_integer(unsigned(ADDR_IN))) <= DIN; -- data in is set
 				end if;
 				
-				-- PORT B - READ
-				DOUT <= CODE(to_integer(unsigned(ADDR_OUT))); -- Data out 
+				-- READ PORTS
+				-- PORT 1 
+				DOUT <= CODE(to_integer(unsigned(ADDR_OUT1))); -- Data out 
 				-- PORT B+1 - READ (for immediate instructions)
-				DOUT_I <= CODE(to_integer(unsigned(ADDR_OUT))+1); -- Data out 
+				DOUT_I <= CODE(to_integer(unsigned(ADDR_OUT1))+1); -- Data out 
+				
+				-- PORT 2
+				DOUT2 <= CODE(to_integer(unsigned(ADDR_OUT2))); -- Data out 
 				
 			end if; -- end ENABLED
 		end if; -- End rising edge

@@ -88,7 +88,7 @@ on the Quartus Prime software download page.
 	(input)
 	(rect -232 96 -64 112)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "JAL" (rect 5 0 24 10)(font "Arial" ))
+	(text "JAL" (rect 5 0 23 10)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -104,7 +104,7 @@ on the Quartus Prime software download page.
 	(input)
 	(rect -232 80 -64 96)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "JMP" (rect 5 0 27 10)(font "Arial" ))
+	(text "JMP" (rect 5 0 26 10)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -120,7 +120,7 @@ on the Quartus Prime software download page.
 	(input)
 	(rect -232 112 -64 128)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "JR" (rect 5 0 20 10)(font "Arial" ))
+	(text "JR" (rect 5 0 19 10)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -533,11 +533,6 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
-	(pt 376 272)
-	(pt 464 272)
-	(bus)
-)
-(connector
 	(pt -56 160)
 	(pt -16 160)
 )
@@ -652,14 +647,6 @@ on the Quartus Prime software download page.
 	(pt 624 24)
 )
 (connector
-	(pt -48 -32)
-	(pt 448 -32)
-)
-(connector
-	(pt 448 -32)
-	(pt 624 -32)
-)
-(connector
 	(pt 320 136)
 	(pt 800 136)
 )
@@ -730,6 +717,19 @@ on the Quartus Prime software download page.
 (connector
 	(pt 112 104)
 	(pt 664 104)
+)
+(connector
+	(pt -48 -32)
+	(pt 448 -32)
+)
+(connector
+	(pt 448 -32)
+	(pt 624 -32)
+)
+(connector
+	(pt 376 272)
+	(pt 464 272)
+	(bus)
 )
 (junction (pt 712 208))
 (junction (pt 448 -32))

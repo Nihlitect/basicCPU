@@ -1,21 +1,31 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
+
 
 -- PSR (Pipeline Stall Register)
-entity NbitPSR is
-	generic( -- Generic Definition
-		WIDTH : integer :=16);
+entity FlagPSR is
 	port(
-		I: in std_logic_vector(WIDTH-1 downto 0);
+		--
+		BR: in std_logic; -- branch instruction
+		-- Decode
+		EXO: in std_logic; -- select ALU bypass
+		FI: in std_logic; -- enable flag register write
+		IMB:  in std_logic; -- enable immediate into B input
+		
+		
+		--WriteBack
+		IMW:  in std_logic; -- enable immediate into B input
+		REG_EW: in std_logic; -- register enable write
+		SSD_WE: in std_logic; -- Seven Segment Display enable write
+		MEM_WE: in std_logic; -- Memory enable write
+		SEL1: in std_logic; -- select bus 1
+		
 		clk: in std_logic; -- clock -> only on rising edge change is allowed
 		STALL: in std_logic; -- Stall pipeline buffer signal
 		O: out std_logic_vector(WIDTH-1 downto 0)
 	);
-end NbitPSR;
+end FlagPSR;
 
 
-architecture stall of NbitPSR is
+architecture stall of FlagPSR is
 
 	
 	component NbitRegister is
@@ -30,30 +40,16 @@ architecture stall of NbitPSR is
 		);
 	end component;
 	
-	signal Data : std_logic_vector(WIDTH-1 downto 0);
-	
 begin -- Begin behaviour
 	
 
-	first: NbitRegister
+	ffi : NbitRegister
 		port map(
 			EN => not STALL,
 			CLR => '0',
-			clk => not clk, 
+			clk => clk, 
          Din   => I,
-         Dout   => Data
+         Dout   => O
 		);
 		
-	second: NbitRegister
-		port map(
-			EN => not STALL,
-			CLR => '0',
-			clk => clk,
-			Din => Data,
-			Dout => O
-			);
-		
 end stall;
-
-
-
