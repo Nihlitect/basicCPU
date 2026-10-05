@@ -1,0 +1,646 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11e vcom 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/Chamk/Desktop/Repo/BasicCPU/simulation/questa
+T_opt
+!i145 1
+!i144 0
+!s110 1791117844
+VcEB@H@6ZL<SgzMM@OR^kf2
+04 3 3 work alu alu 1
+=1-cc28aa34901d-6ac24a14-10e-46f8
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U1 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work
+tCvgOpt 0 defaultOptions 1107585188
+n@_opt
+OL;O;2025.2;82
+Ealu
+Z2 w1791117406
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 7
+R1
+Z7 8C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU.vhd
+Z8 FC:/Users/Chamk/Desktop/Repo/BasicCPU/ALU.vhd
+l0
+L6 1
+VHam_QiE4XX5JYS`^RDM2[2
+!s100 XL>aAO3:lkW=BW=H92IGX2
+Z9 OL;C;2025.2;82
+31
+Z10 !s110 1791117486
+!i10b 1
+Z11 !s108 1791117486.000000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU.vhd|
+Z13 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU.vhd|
+!i113 0
+Z14 o-93 -work work
+Z15 tExplicit 1 CvgOpt 0 defaultOptions 1083072464
+Aalu
+R3
+R4
+R5
+R6
+DEx4 work 3 alu 0 22 Ham_QiE4XX5JYS`^RDM2[2
+!i122 7
+l25
+L20 33
+VdDB_8GJCBWadhDBQX;^BF1
+!s100 ZW804UlV_FkAlE39?lc^i2
+R9
+31
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 0
+R14
+R15
+Ebitregister2
+Z16 w1786920806
+R5
+R6
+!i122 4
+R1
+Z17 8C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/BitRegister2.vhd
+Z18 FC:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/BitRegister2.vhd
+l0
+L4 1
+VlMW8G=T>PoIf6]eb`3UQe2
+!s100 BJ[1C^JRGO8k@1k8BR^FZ0
+R9
+31
+Z19 !s110 1791117485
+!i10b 1
+Z20 !s108 1791117485.000000
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/BitRegister2.vhd|
+Z22 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/BitRegister2.vhd|
+!i113 0
+R14
+R15
+Aflipper
+R5
+R6
+DEx4 work 12 bitregister2 0 22 lMW8G=T>PoIf6]eb`3UQe2
+!i122 4
+l19
+L17 14
+Vl9^eIzl3=3c3b=62Doj_32
+!s100 K_o@XB3]@mFWX3K<@P8jS2
+R9
+31
+R19
+!i10b 1
+R20
+R21
+R22
+!i113 0
+R14
+R15
+Ecmpbranchunit
+Z23 w1790395952
+Z24 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R5
+R6
+!i122 12
+R1
+Z25 8C:/Users/Chamk/Desktop/Repo/BasicCPU/CmpBranchUnit.vhd
+Z26 FC:/Users/Chamk/Desktop/Repo/BasicCPU/CmpBranchUnit.vhd
+l0
+L5 1
+VFge:P21:?]2EYFcYFzad41
+!s100 cMaKfmF2cjMYKaVNKjfIg2
+R9
+31
+R10
+!i10b 1
+R11
+Z27 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/CmpBranchUnit.vhd|
+Z28 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/CmpBranchUnit.vhd|
+!i113 0
+R14
+R15
+Acomparethebranches
+R24
+R5
+R6
+DEx4 work 13 cmpbranchunit 0 22 Fge:P21:?]2EYFcYFzad41
+!i122 12
+l27
+L19 43
+VkL^z3b<bF<R^gL@gAgi?_0
+!s100 ?XflzlYm_UIn;zI@jN0R@3
+R9
+31
+R10
+!i10b 1
+R11
+R27
+R28
+!i113 0
+R14
+R15
+Econtrolunit
+Z29 w1790601213
+R4
+R3
+R24
+R5
+R6
+!i122 1
+R1
+Z30 8C:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd
+Z31 FC:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd
+l0
+L6 1
+Vl]eI1OJU1C[dcKiHam]MD2
+!s100 B_d6@@7jiPn^LSMO[^UmN3
+R9
+31
+R19
+!i10b 1
+R20
+Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd|
+Z33 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd|
+!i113 0
+R14
+R15
+Aorchestration
+R4
+R3
+R24
+R5
+R6
+DEx4 work 11 controlunit 0 22 l]eI1OJU1C[dcKiHam]MD2
+!i122 1
+l68
+L67 79
+VlL>oMI]@h^A^g4:mmIIT^2
+!s100 ?[8F0Gf]ffH?O62ohizmW3
+R9
+31
+R19
+!i10b 1
+R20
+R32
+R33
+!i113 0
+R14
+R15
+Efwdselunit
+Z34 w1788355032
+R24
+R5
+R6
+!i122 11
+R1
+Z35 8C:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd
+Z36 FC:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd
+l0
+L11 1
+VU<Q]o;BR>9I`01h3dU=H33
+!s100 :UC<9_Qf4QV[Jmkl0fjV81
+R9
+31
+R10
+!i10b 1
+R11
+Z37 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd|
+Z38 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd|
+!i113 0
+R14
+R15
+Afwdctrl
+R24
+R5
+R6
+DEx4 work 10 fwdselunit 0 22 U<Q]o;BR>9I`01h3dU=H33
+!i122 11
+l23
+L22 5
+VfE]]STD`edIQ?zOWi`i9f2
+!s100 MnAH_Gn0YmOoZX[cTcFmJ0
+R9
+31
+R10
+!i10b 1
+R11
+R37
+R38
+!i113 0
+R14
+R15
+Ehex_to_7seg
+Z39 w1786836930
+R5
+R6
+!i122 6
+R1
+Z40 8C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Hex_To_7Seg.vhd
+Z41 FC:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Hex_To_7Seg.vhd
+l0
+L5 1
+VcAQ1W<N;l<?mPgK9<lg2k2
+!s100 3D?oM`XPGT7?n5V9clkAc2
+R9
+31
+R10
+!i10b 1
+R11
+Z42 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Hex_To_7Seg.vhd|
+Z43 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Hex_To_7Seg.vhd|
+!i113 0
+R14
+R15
+Abehavioral
+R5
+R6
+DEx4 work 11 hex_to_7seg 0 22 cAQ1W<N;l<?mPgK9<lg2k2
+!i122 6
+l14
+L13 22
+V`[ZFBhDg1XTczSCVZQONf0
+!s100 zfjOkjXU63ofO5M:CJA>]1
+R9
+31
+R10
+!i10b 1
+R11
+R42
+R43
+!i113 0
+R14
+R15
+Enbitcounter
+Z44 w1790595201
+R24
+R5
+R6
+!i122 8
+R1
+Z45 8C:/Users/Chamk/Desktop/Repo/BasicCPU/Counter.vhd
+Z46 FC:/Users/Chamk/Desktop/Repo/BasicCPU/Counter.vhd
+l0
+L5 1
+VRWA0Sa?b;N1c@I5gAf`BI1
+!s100 1=aQCdJBWXFfgi^U:K`M_1
+R9
+31
+R10
+!i10b 1
+R11
+Z47 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/Counter.vhd|
+Z48 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/Counter.vhd|
+!i113 0
+R14
+R15
+Acount
+R24
+R5
+R6
+DEx4 work 11 nbitcounter 0 22 RWA0Sa?b;N1c@I5gAf`BI1
+!i122 8
+l23
+L19 15
+VQj7NiW6bJhm7zVDVko77<1
+!s100 N@hCzWlCzVLlMTFfjOl;<2
+R9
+31
+R10
+!i10b 1
+R11
+R47
+R48
+!i113 0
+R14
+R15
+Enbitdemux
+Z49 w1786836601
+R24
+R5
+R6
+!i122 5
+R1
+Z50 8C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitDEMUX.vhd
+Z51 FC:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitDEMUX.vhd
+l0
+L7 1
+V_dk?eP>m;8h:LB9VUADD63
+!s100 KWUIF[<:DJCXW[PGNQ8?l2
+R9
+31
+R10
+!i10b 1
+R11
+Z52 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitDEMUX.vhd|
+Z53 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitDEMUX.vhd|
+!i113 0
+R14
+R15
+Ademux
+R24
+R5
+R6
+Z54 DEx4 work 9 nbitdemux 0 22 _dk?eP>m;8h:LB9VUADD63
+!i122 5
+l19
+L17 12
+V^371D2=f1KA3JQ?TAo@iC0
+!s100 STFNLz0HdCfzoS6a@R13Z1
+R9
+31
+R10
+!i10b 1
+R11
+R52
+R53
+!i113 0
+R14
+R15
+Enbitdff
+Z55 w1791037830
+Z56 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z57 DPx6 altera 11 dffeas_pack 0 22 HeG`SlgMb6=o0zVGZnEz^3
+Z58 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z59 DPx6 altera 28 altera_primitives_components 0 22 k4Yn[[d=9S17VVF>?>37I3
+R5
+R6
+!i122 0
+R1
+Z60 8C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitDFF.vhd
+Z61 FC:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitDFF.vhd
+l0
+L7 1
+VKji3PILldb2TVH`T7<aFU3
+!s100 =ogO5ga1C9bdaa4e@W@hM0
+R9
+31
+R19
+!i10b 1
+R20
+Z62 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitDFF.vhd|
+Z63 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitDFF.vhd|
+!i113 0
+R14
+R15
+Areg
+R56
+R57
+R58
+R59
+R5
+R6
+DEx4 work 7 nbitdff 0 22 Kji3PILldb2TVH`T7<aFU3
+!i122 0
+l38
+L23 32
+VJXU2:jmk9e;CN_IdOe5dk3
+!s100 8d`GBdgUBOiXT03P>5We?3
+R9
+31
+R19
+!i10b 1
+R20
+R62
+R63
+!i113 0
+R14
+R15
+Enbitn_1mux
+Z64 w1786989769
+R24
+R5
+R6
+!i122 9
+R1
+Z65 8C:/Users/Chamk/Desktop/Repo/BasicCPU/NbitN_1MUX.vhd
+Z66 FC:/Users/Chamk/Desktop/Repo/BasicCPU/NbitN_1MUX.vhd
+l0
+L5 1
+V`eUE=FfM8>0:zTk]M5WUP2
+!s100 i;?@Zdg6_GBQb6d976J7G0
+R9
+31
+R10
+!i10b 1
+R11
+Z67 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/NbitN_1MUX.vhd|
+Z68 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/NbitN_1MUX.vhd|
+!i113 0
+R14
+R15
+Amuxmaxing
+R24
+R5
+R6
+Z69 DEx4 work 10 nbitn_1mux 0 22 `eUE=FfM8>0:zTk]M5WUP2
+!i122 9
+l29
+L28 5
+VLVST?=]K:U[ohLI5M4;Tg2
+!s100 XWPbSYRn]<EIkf9_0z@>W2
+R9
+31
+R10
+!i10b 1
+R11
+R67
+R68
+!i113 0
+R14
+R15
+Enbitregister
+Z70 w1786992043
+R5
+R6
+!i122 3
+R1
+Z71 8C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister.vhd
+Z72 FC:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister.vhd
+l0
+L5 1
+V`D30j5:`Em[UXgfgoIVT_2
+!s100 nKldW8WG;]cR4cF2V3Hb22
+R9
+31
+R19
+!i10b 1
+R20
+Z73 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister.vhd|
+Z74 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister.vhd|
+!i113 0
+R14
+R15
+Areg
+R5
+R6
+DEx4 work 12 nbitregister 0 22 `D30j5:`Em[UXgfgoIVT_2
+!i122 3
+l32
+L19 27
+VgX4=04kioU[PADX?gf32N1
+!s100 d_kefFgMHiI]PJ4MjV84;2
+R9
+31
+R19
+!i10b 1
+R20
+R73
+R74
+!i113 0
+R14
+R15
+Eram
+Z75 w1790391747
+R4
+R3
+R24
+R5
+R6
+!i122 10
+R1
+Z76 8C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd
+Z77 FC:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd
+l0
+L7 1
+V:`@fJ=FTSJ9Go5gVo^Ag81
+!s100 ZQLnHE6^iBGnHdkW9IO8K1
+R9
+31
+R10
+!i10b 1
+R11
+Z78 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd|
+Z79 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd|
+!i113 0
+R14
+R15
+Arame
+R4
+R3
+R24
+R5
+R6
+DEx4 work 3 ram 0 22 :`@fJ=FTSJ9Go5gVo^Ag81
+!i122 10
+l57
+L26 48
+VooQ3ZUWKf3@LCn_<bUPJ]3
+!s100 K_RnDUZ`JKl_c<=3?GU]j3
+R9
+31
+R10
+!i10b 1
+R11
+R78
+R79
+!i113 0
+R14
+R15
+Eregisters
+Z80 w1790473375
+R5
+R6
+!i122 13
+R1
+Z81 8C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/registers.vhd
+Z82 FC:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/registers.vhd
+l0
+L5 1
+V5SlR0fS_Yb<1XHzmM]]1T0
+!s100 ^Y4c84S=0aZ5GjfiA0g8c1
+R9
+31
+Z83 !s110 1791117487
+!i10b 1
+Z84 !s108 1791117487.000000
+Z85 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/registers.vhd|
+Z86 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/registers.vhd|
+!i113 0
+R14
+R15
+Aregin
+R69
+R24
+R54
+R5
+R6
+DEx4 work 9 registers 0 22 5SlR0fS_Yb<1XHzmM]]1T0
+!i122 13
+l53
+L30 59
+VXnFM_eRd6];]j>9JBlThh0
+!s100 ^?@SnHg[[K7A7P1N6GU6M1
+R9
+31
+R83
+!i10b 1
+R84
+R85
+R86
+!i113 0
+R14
+R15
+Erom
+Z87 w1790430903
+R4
+R3
+R24
+R5
+R6
+!i122 2
+R1
+Z88 8C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd
+Z89 FC:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd
+l0
+L7 1
+V[=;czIgFhB7CHM@FKiHJ23
+!s100 Xg6i<NCEzUkKgWQbHaD4C0
+R9
+31
+R19
+!i10b 1
+R20
+Z90 !s90 -reportprogress|300|-93|-work|work|C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd|
+Z91 !s107 C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd|
+!i113 0
+R14
+R15
+Arame
+R4
+R3
+R24
+R5
+R6
+DEx4 work 3 rom 0 22 [=;czIgFhB7CHM@FKiHJ23
+!i122 2
+l54
+L23 47
+VIWAD5?CDdoSU3BKkal8LK1
+!s100 _:DVN9Tz922K<z5EO_8N93
+R9
+31
+R19
+!i10b 1
+R20
+R90
+R91
+!i113 0
+R14
+R15

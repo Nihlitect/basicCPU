@@ -33,7 +33,11 @@ architecture reg of NbitDFF is
 		);
 	end component;
 	
+	signal CLR_n : std_logic;
+
 begin -- Begin behaviour
+	
+	CLR_n <= not CLR;
 	
 	ffmap : for i in 0 to WIDTH-1 generate
 	begin
@@ -42,7 +46,7 @@ begin -- Begin behaviour
 	port map (
 			d => Din(i),--<data_in>, 
 			clk => clk,--<clock_signal>, 
-			clrn => not CLR,--<active_low_clear>,
+			clrn => CLR_n,--<active_low_clear>,
 			prn => '1',--<active_low_preset>,
 			q => Dout(i)--<data_out>
 			);

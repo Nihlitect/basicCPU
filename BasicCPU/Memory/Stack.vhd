@@ -1,0 +1,68 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity Stack is
+    generic (
+        DW : integer := 16;  -- Width of each stack element
+        DEPTH      : integer := 10  -- Maximum number of elements in the stack
+    );
+    port (
+        Clk        : in  std_logic;
+        Reset      : in  std_logic;  -- Active-high synchronous reset
+        Enable     : in  std_logic;  -- Operation enable line
+        Push       : in  std_logic;  -- Assert high to push data
+        Pop        : in  std_logic;  -- Assert high to pop data
+        Data_In    : in  std_logic_vector(DW-1 downto 0);
+        Data_Out   : out std_logic_vector(DW-1 downto 0);
+        Full       : out std_logic;
+        Empty      : out std_logic
+    );
+end entity Stack;
+
+architecture stacker of Stack is
+    -- Define the memory array representing the internal stack storage
+    type stack_mem_t is array (0 to DEPTH-1) of std_logic_vector(DW-1 downto 0);
+    signal stack_mem : stack_mem_t := (others => (others => '0'));
+    
+    -- Stack pointer points to the *next available empty slot* (Empty Descending approach)
+    signal sp        : integer range 0 to DEPTH := 0;
+    
+    -- Internal status signals
+    signal is_full   : std_logic;
+    signal is_empty  : std_logic;
+
+begin
+    -- Drive status flags dynamically based on the Stack Pointer position
+    is_full  <= '1' when (sp = DEPTH) else '0';
+    is_empty <= '1' when (sp = 0)     else '0';
+    
+    Full  <= is_full;
+    Empty <= is_empty;
+
+    -- Core Stack Synchronous Logic Process
+    process(Clk)
+    begin
+        if rising_edge(Clk) then
+            if Reset = '1' then
+                sp       <= 0;
+                Data_Out <= (others => '0');
+            elsif Enable = '1' then
+                
+                -- Priority 1: PUSH operation (Only if stack is not full)
+                if Push = '1' and is_full = '0' then
+                    stack_mem(sp) <= Data_In;
+                    sp <= sp + 1;
+                    
+                -- Priority 2: POP operation (Only if stack is not empty)
+                -- If pushing and popping occur simultaneously, Push takes precedence here
+                elsif Pop = '1' and is_empty = '0' then
+                    Data_Out <= stack_mem(sp - 1);
+                    sp <= sp - 1;
+                end if;
+                
+            end if;
+        end if;
+    end process;
+
+end stacker;

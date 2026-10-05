@@ -190,7 +190,7 @@ on the Quartus Prime software download page.
 )
 (pin
 	(output)
-	(rect 1032 360 1208 376)
+	(rect 1280 336 1456 352)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
 	(text "LEDR[9..0]" (rect 90 0 145 10)(font "Arial" ))
 	(pt 0 8)
@@ -203,7 +203,7 @@ on the Quartus Prime software download page.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1136 376 1208 520))
+	(annotation_block (location)(rect 1552 352 1624 496))
 )
 (symbol
 	(rect 464 584 496 632)
@@ -377,120 +377,11 @@ on the Quartus Prime software download page.
 		(rectangle (rect 16 16 152 112))
 	)
 )
-(symbol
-	(rect 848 128 1024 288)
-	(text "ROMTest" (rect 5 0 58 13)(font "DejaVu Sans Condensed" (font_size 8)))
-	(text "inst" (rect 8 146 24 156)(font "DejaVu Sans Condensed" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 16 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "clk" (rect 21 27 37 40)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "CLR" (rect 0 0 23 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "CLR" (rect 21 43 44 56)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "DATA[6..0]" (rect 0 0 63 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "DATA[6..0]" (rect 21 59 84 72)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "CE" (rect 0 0 15 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "CE" (rect 21 75 36 88)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "J" (rect 0 0 3 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "J" (rect 21 91 24 104)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "CO" (rect 0 0 17 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "CO" (rect 21 107 38 120)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "REO" (rect 0 0 24 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "REO" (rect 21 123 45 136)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 0 128)(pt 16 128))
-	)
-	(port
-		(pt 176 32)
-		(output)
-		(text "OUT[15..0]" (rect 0 0 62 13)(font "DejaVu Sans Condensed" (font_size 8)))
-		(text "OUT[15..0]" (rect 93 27 155 40)(font "DejaVu Sans Condensed" (font_size 8)))
-		(line (pt 176 32)(pt 160 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 160 144))
-	)
-)
 (connector
 	(text "BUS[9..0]" (rect 186 96 232 106)(font "DejaVu Sans Condensed" ))
 	(pt 376 112)
 	(pt 144 112)
 	(bus)
-)
-(connector
-	(text "LEDR[1]" (rect 730 376 768 386)(font "DejaVu Sans Condensed" ))
-	(pt 1008 384)
-	(pt 720 384)
-)
-(connector
-	(text "LEDR[2]" (rect 730 392 768 402)(font "DejaVu Sans Condensed" ))
-	(pt 1008 400)
-	(pt 720 400)
-)
-(connector
-	(pt 1032 368)
-	(pt 1032 520)
-	(bus)
-)
-(connector
-	(text "LEDR[3]" (rect 730 408 768 418)(font "DejaVu Sans Condensed" ))
-	(pt 1008 416)
-	(pt 720 416)
-)
-(connector
-	(text "LEDR[4]" (rect 730 424 768 434)(font "DejaVu Sans Condensed" ))
-	(pt 1008 432)
-	(pt 720 432)
-)
-(connector
-	(text "LEDR[5]" (rect 730 440 768 450)(font "DejaVu Sans Condensed" ))
-	(pt 1008 448)
-	(pt 720 448)
-)
-(connector
-	(text "LEDR[6]" (rect 730 456 768 466)(font "DejaVu Sans Condensed" ))
-	(pt 1008 464)
-	(pt 720 464)
-)
-(connector
-	(text "LEDR[7]" (rect 730 472 768 482)(font "DejaVu Sans Condensed" ))
-	(pt 1008 480)
-	(pt 720 480)
-)
-(connector
-	(text "LEDR[0]" (rect 730 360 768 370)(font "DejaVu Sans Condensed" ))
-	(pt 720 368)
-	(pt 1008 368)
 )
 (connector
 	(text "BUS[0]" (rect 152 418 162 451)(font "DejaVu Sans Condensed" )(vertical))
@@ -545,11 +436,6 @@ on the Quartus Prime software download page.
 	(pt 712 528)
 )
 (connector
-	(text "LEDR[8]" (rect 730 488 768 498)(font "DejaVu Sans Condensed" ))
-	(pt 672 496)
-	(pt 1008 496)
-)
-(connector
 	(pt 376 512)
 	(pt 536 512)
 )
@@ -558,39 +444,12 @@ on the Quartus Prime software download page.
 	(pt 376 576)
 )
 (connector
-	(text "LEDR[9]" (rect 730 504 768 514)(font "DejaVu Sans Condensed" ))
-	(pt 712 512)
-	(pt 1008 512)
-)
-(connector
-	(pt 584 512)
-	(pt 712 512)
-)
-(connector
 	(pt 624 496)
 	(pt 352 496)
 )
 (connector
 	(pt 352 496)
 	(pt 352 576)
-)
-(connector
-	(text "PB[1]" (rect 434 656 459 666)(font "DejaVu Sans Condensed" ))
-	(pt 424 664)
-	(pt 512 664)
-)
-(connector
-	(pt 512 664)
-	(pt 512 632)
-)
-(connector
-	(text "PB[0]" (rect 434 640 459 650)(font "DejaVu Sans Condensed" ))
-	(pt 424 648)
-	(pt 480 648)
-)
-(connector
-	(pt 480 648)
-	(pt 480 632)
 )
 (connector
 	(pt 1216 160)
@@ -709,6 +568,91 @@ on the Quartus Prime software download page.
 	(pt 448 8)
 	(pt 808 8)
 )
+(connector
+	(pt 672 496)
+	(pt 720 496)
+)
+(connector
+	(pt 584 512)
+	(pt 712 512)
+)
+(connector
+	(pt 712 512)
+	(pt 720 512)
+)
+(connector
+	(text "LEDR[1]" (rect 978 352 1016 362)(font "DejaVu Sans Condensed" ))
+	(pt 1256 360)
+	(pt 968 360)
+)
+(connector
+	(text "LEDR[2]" (rect 978 368 1016 378)(font "DejaVu Sans Condensed" ))
+	(pt 1256 376)
+	(pt 968 376)
+)
+(connector
+	(pt 1280 344)
+	(pt 1280 496)
+	(bus)
+)
+(connector
+	(text "LEDR[3]" (rect 978 384 1016 394)(font "DejaVu Sans Condensed" ))
+	(pt 1256 392)
+	(pt 968 392)
+)
+(connector
+	(text "LEDR[4]" (rect 978 400 1016 410)(font "DejaVu Sans Condensed" ))
+	(pt 1256 408)
+	(pt 968 408)
+)
+(connector
+	(text "LEDR[5]" (rect 978 416 1016 426)(font "DejaVu Sans Condensed" ))
+	(pt 1256 424)
+	(pt 968 424)
+)
+(connector
+	(text "LEDR[6]" (rect 978 432 1016 442)(font "DejaVu Sans Condensed" ))
+	(pt 1256 440)
+	(pt 968 440)
+)
+(connector
+	(text "LEDR[7]" (rect 978 448 1016 458)(font "DejaVu Sans Condensed" ))
+	(pt 1256 456)
+	(pt 968 456)
+)
+(connector
+	(text "LEDR[0]" (rect 978 336 1016 346)(font "DejaVu Sans Condensed" ))
+	(pt 968 344)
+	(pt 1256 344)
+)
+(connector
+	(text "LEDR[8]" (rect 978 464 1016 474)(font "DejaVu Sans Condensed" ))
+	(pt 968 472)
+	(pt 1256 472)
+)
+(connector
+	(text "LEDR[9]" (rect 978 480 1016 490)(font "DejaVu Sans Condensed" ))
+	(pt 968 488)
+	(pt 1256 488)
+)
+(connector
+	(text "PB[1]" (rect 386 656 411 666)(font "DejaVu Sans Condensed" ))
+	(pt 512 664)
+	(pt 376 664)
+)
+(connector
+	(pt 512 632)
+	(pt 512 664)
+)
+(connector
+	(text "PB[0]" (rect 386 640 411 650)(font "DejaVu Sans Condensed" ))
+	(pt 480 648)
+	(pt 376 648)
+)
+(connector
+	(pt 480 632)
+	(pt 480 648)
+)
 (junction (pt 712 512))
 (junction (pt 352 496))
 (junction (pt 376 512))
@@ -717,3 +661,5 @@ on the Quartus Prime software download page.
 (junction (pt 352 240))
 (junction (pt 328 256))
 (junction (pt 512 176))
+(text "LEDR[8]" (rect 978 464 1016 474)(font "DejaVu Sans Condensed" ))
+(text "LEDR[9]" (rect 978 480 1016 490)(font "DejaVu Sans Condensed" ))

@@ -28,9 +28,9 @@ begin
 	begin
 		case Operation is
 			when "00" => temp := ('0' & A) + ('0' & B);	-- ADD: A + B
-			when "01" => temp := A + (not B) + 1; 			-- SUB: A - B
+			when "01" => temp := ('0' & A) + ('0' & not B) + 1; 			-- SUB: A - B
 			when "10" => temp := ('0' & A) + 1;				-- INC: A + 1
-			when "11" => temp := (not A) + 1; 				-- NEG:-A Maybe something else is better we can explore later
+			when "11" => temp := ('0' & not A) + 1; 				-- NEG:-A Maybe something else is better we can explore later
 			when others => temp := (others => 'X');-- Default
 		end case;
 		carry <= temp(WIDTH);

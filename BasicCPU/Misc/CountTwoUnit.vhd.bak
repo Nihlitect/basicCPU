@@ -1,0 +1,24 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity CountTwoUnit is -- Simply checks whether the instruction is 32 bit or not if it is it outputs CTE<= '1'
+	generic(
+	W: integer :=16);
+	port(
+		OPCODE: in std_logic_vector(3 downto 0);
+		CTE: out std_logic
+	);
+end CountTwoUnit;
+
+architecture check of CountTwoUnit is
+
+begin
+	CTE <= '0'; -- Default case
+	
+	if (OPCODE = "0010" or OPCODE= "0101") then 
+		CTE <='1';
+	end if;
+	
+end check;
+	

@@ -56,7 +56,7 @@ on the Quartus Prime software download page.
 	(input)
 	(rect 440 432 608 448)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "I[11..0]" (rect 5 0 41 10)(font "Arial" ))
+	(text "I[11..0]" (rect 5 0 40 10)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -99,31 +99,6 @@ on the Quartus Prime software download page.
 		(line (pt 8 8)(pt 16 16))
 		(line (pt 16 16)(pt 24 8))
 		(line (pt 8 8)(pt 24 8))
-	)
-)
-(symbol
-	(rect 552 520 600 552)
-	(text "NOT" (rect 1 0 21 9)(font "Arial" (font_size 6)))
-	(text "inst" (rect 3 21 20 31)(font "Arial" ))
-	(port
-		(pt 0 16)
-		(input)
-		(text "IN" (rect 2 7 13 18)(font "Courier New" (bold))(invisible))
-		(text "IN" (rect 2 7 13 18)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 13 16))
-	)
-	(port
-		(pt 48 16)
-		(output)
-		(text "OUT" (rect 32 7 49 18)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 32 7 49 18)(font "Courier New" (bold))(invisible))
-		(line (pt 39 16)(pt 48 16))
-	)
-	(drawing
-		(line (pt 13 25)(pt 13 7))
-		(line (pt 13 7)(pt 31 16))
-		(line (pt 13 25)(pt 31 16))
-		(circle (rect 31 12 39 20))
 	)
 )
 (symbol
@@ -203,7 +178,7 @@ on the Quartus Prime software download page.
 (symbol
 	(rect 1016 408 1248 520)
 	(text "NbitRegister" (rect 5 0 67 10)(font "Arial" ))
-	(text "inst" (rect 8 96 25 106)(font "Arial" ))
+	(text "instas" (rect 8 96 37 106)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -248,6 +223,31 @@ on the Quartus Prime software download page.
 		(rectangle (rect 16 16 216 96))
 	)
 	(annotation_block (parameter)(rect 1248 376 1435 402))
+)
+(symbol
+	(rect 552 520 600 552)
+	(text "NOT" (rect 1 0 21 9)(font "Arial" (font_size 6)))
+	(text "insat" (rect 3 21 26 31)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 18)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 18)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 18)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
 )
 (connector
 	(pt 936 440)

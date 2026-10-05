@@ -28,13 +28,13 @@ end REGISTERS;
 -- THIS creates 16 addressable read-write registers with 4bit addresses.
 -- *ONLY ADDRESS A CONTROLS THE WRITE*
 architecture regin of REGISTERS is
-	component NbitDEMUX is -- Demultiplexer: routes a signal using an ADDRESS to a single selected wire
-		port(
-			ADDRESS: in std_logic_vector(A_WIDTH-1 downto 0);
-			EN: in std_logic;
-			EN_out: out std_logic_vector(2**A_WIDTH-1 downto 0)
-		);
-	end component;
+	--component NbitDEMUX is -- Demultiplexer: routes a signal using an ADDRESS to a single selected wire
+	--	port(
+	--		ADDRESS: in std_logic_vector(A_WIDTH-1 downto 0);
+	--		EN: in std_logic;
+	--		EN_out: out std_logic_vector(2**A_WIDTH-1 downto 0)
+	--	);
+	--end component;
 	
 	component NbitRegister is -- 16bitRegister with 16bit Tristate-buffer output
 		port(
@@ -51,7 +51,8 @@ architecture regin of REGISTERS is
 	--signal ENOB: std_logic_vector(2**A_WIDTH-1 downto 0);
 	signal rsignal: std_logic_vector((2**A_WIDTH)*WIDTH-1 downto 0);
 begin
-	write_dmux: NbitDEMUX -- Route the Write signal using the address
+	write_dmux: entity work.NbitDEMUX -- Route the Write signal using the address
+		generic map(ADDR_WIDTH => A_WIDTH)
 		port map(
 			ADDRESS => W_ADDR,
 			EN => ENI,
