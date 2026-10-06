@@ -7,34 +7,28 @@ entity CmpBranchUnit is
         WIDTH : integer := 16
     );
     port(
-        A    : in  std_logic_vector(WIDTH-1 downto 0);
-        B    : in  std_logic_vector(WIDTH-1 downto 0);
+        flags: in std_logic_vector(2 downto 0);
         cond : in  std_logic_vector(2 downto 0);
-
         BR   : out std_logic
     );
 end CmpBranchUnit;
 
 
-architecture compareTheBranches of CmpBranchUnit is
+architecture compareTheBranchoes of CmpBranchUnit is
 
-    signal result : signed(WIDTH-1 downto 0);
-
-    signal Z : std_logic;
-    signal N : std_logic;
-    signal O : std_logic;
+    signal Z : std_logic; --flags[0] - carry
+    signal N : std_logic; --flags[1] - negative
+    signal O : std_logic; --flags[2] - zero
 
 begin
-    -- COMPARE
-    result <= signed(A) - signed(B);-- Signed subtraction: A - B
-	 
-    Z <= '1' when result = 0 else '0';-- Zero condition
-    N <= result(WIDTH-1);-- Negative flag
-    O <= (A(WIDTH-1) xor B(WIDTH-1)) and -- Signed overflow
-         (A(WIDTH-1) xor result(WIDTH-1));
+	 O <= flags(0);-- signed overflow
+	 N <= flags(1);-- Negative flag
+    Z <= flags(2);-- Zero condition
+    
+    
 	
 	-- BRANCH
-   process(Z, N, O, A, B, cond)
+   process(Z, N, O, cond)
    begin
 		case cond is
 			when "000" => BR <= Z; 				-- BEQ
@@ -58,4 +52,4 @@ begin
 		end case;
 	end process;
 	 
-end compareTheBranches;
+end compareTheBranchoes;

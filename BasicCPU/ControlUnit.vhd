@@ -27,6 +27,7 @@ entity ControlUnit is
 		EXO: out std_logic; -- select A passthrough in Execute
 		IMMBO: out std_logic; --select immediate into B of ALU
 		SHFTO: out std_logic; -- Slect shift unit output to out bus
+		FLEN: out std_logic; -- enable flag register write
 		
 	--2. WRITEBACK STAGE
 		FWWB: out std_logic; --enable forwarding for writeback

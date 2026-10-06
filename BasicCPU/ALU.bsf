@@ -52,27 +52,6 @@ on the Quartus Prime software download page.
 		(text "O[(w-1)..0]" (rect 122 27 163 39)(font "Arial" ))
 		(line (pt 184 32)(pt 168 32)(line_width 3))
 	)
-	(port
-		(pt 184 48)
-		(output)
-		(text "C" (rect 0 0 7 12)(font "Arial" ))
-		(text "C" (rect 156 43 163 55)(font "Arial" ))
-		(line (pt 184 48)(pt 168 48)(line_width 1))
-	)
-	(port
-		(pt 184 64)
-		(output)
-		(text "N" (rect 0 0 7 12)(font "Arial" ))
-		(text "N" (rect 156 59 163 71)(font "Arial" ))
-		(line (pt 184 64)(pt 168 64)(line_width 1))
-	)
-	(port
-		(pt 184 80)
-		(output)
-		(text "Z" (rect 0 0 7 12)(font "Arial" ))
-		(text "Z" (rect 156 75 163 87)(font "Arial" ))
-		(line (pt 184 80)(pt 168 80)(line_width 1))
-	)
 	(parameter
 		"W"
 		"16"

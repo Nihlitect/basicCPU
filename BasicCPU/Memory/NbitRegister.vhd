@@ -4,13 +4,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- This is a N-bit register
 entity NbitRegister is
 	generic( -- Generic Definition
-		WIDTH : integer :=16);
+		W : integer :=16);
 	port(
-		Din: in std_logic_vector(WIDTH-1 downto 0);
+		Din: in std_logic_vector(W-1 downto 0);
 		clk: in std_logic; -- clock -> only on rising edge change is allowed
 		EN: in std_logic; -- Enable write
 		CLR: in std_logic; -- Clear Register
-		Dout: out std_logic_vector(WIDTH-1 downto 0)
+		Dout: out std_logic_vector(W-1 downto 0)
 	);
 end NbitRegister;
 
@@ -31,7 +31,7 @@ architecture reg of NbitRegister is
 	
 begin -- Begin behaviour
 	
-	ffmap : for i in 0 to WIDTH-1 generate
+	ffmap : for i in 0 to W-1 generate
 	begin
 		-- flip flop map to output using for 
 		ffi : BitRegister2

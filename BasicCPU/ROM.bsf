@@ -21,14 +21,14 @@ on the Quartus Prime software download page.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 288 128)
+	(rect 16 16 248 128)
 	(text "ROM" (rect 5 0 28 12)(font "Arial" ))
 	(text "inst" (rect 8 96 20 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "ADDR[(a_width-1)..0]" (rect 0 0 88 12)(font "Arial" ))
-		(text "ADDR[(a_width-1)..0]" (rect 21 27 109 39)(font "Arial" ))
+		(text "ADDR[(aw-1)..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "ADDR[(aw-1)..0]" (rect 21 27 90 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
@@ -46,26 +46,26 @@ on the Quartus Prime software download page.
 		(line (pt 0 64)(pt 16 64)(line_width 1))
 	)
 	(port
-		(pt 272 32)
+		(pt 232 32)
 		(output)
-		(text "Dout[(d_width-1)..0]" (rect 0 0 76 12)(font "Arial" ))
-		(text "Dout[(d_width-1)..0]" (rect 175 27 251 39)(font "Arial" ))
-		(line (pt 272 32)(pt 256 32)(line_width 3))
+		(text "Dout[(dw-1)..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "Dout[(dw-1)..0]" (rect 154 27 211 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
 	)
 	(port
-		(pt 272 48)
+		(pt 232 48)
 		(output)
-		(text "DoutI[(d_width-1)..0]" (rect 0 0 79 12)(font "Arial" ))
-		(text "DoutI[(d_width-1)..0]" (rect 172 43 251 55)(font "Arial" ))
-		(line (pt 272 48)(pt 256 48)(line_width 3))
+		(text "DoutI[(dw-1)..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "DoutI[(dw-1)..0]" (rect 151 43 211 55)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48)(line_width 3))
 	)
 	(parameter
-		"D_WIDTH"
+		"DW"
 		"16"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"A_WIDTH"
+		"AW"
 		"16"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
@@ -75,7 +75,7 @@ on the Quartus Prime software download page.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 256 96)(line_width 1))
+		(rectangle (rect 16 16 216 96)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 288 -64 388 16))
+	(annotation_block (parameter)(rect 248 -64 348 16))
 )

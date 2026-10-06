@@ -16,6 +16,11 @@ entity FwdSelUnit is
 		na: in std_logic_vector(2 downto 0);  -- next A register address
 		nb: in std_logic_vector(2 downto 0);  -- next B register address
 		
+		-- Determine if the instruction is to be forwarded i.e. instr writes to a register
+		FWEX: in std_logic; -- Forward execute stage
+		FWWB: in std_logic; -- Forward writebeack stage
+		
+		
 		selexa: out std_logic;--select a value from execute or writeback stage
 		sela: out std_logic;  -- sel forward into A mux input
 		
@@ -31,24 +36,29 @@ begin
 		sela <= '0'; --default: no dependencies dont do anything
 		selb <= '0';
 		
-		if wbdr = na then-- then this assumes writeback value is the default path
-			sela <= '1'; 
-			selexa <= '0';
+		if(FWWB='1') then --If writeback is forwarded
+			if wbdr = nb then-- then this assumes writeback value is the default path
+				selb <= '1'; 
+				selexb <= '0';
+			end if;
+			
+			if wbdr = na then-- then this assumes writeback value is the default path
+				sela <= '1'; 
+				selexa <= '0';
+			end if;
 		end if;
 		
-		if exdr = na then --overwrites the previous if
-			sela <= '1';
-			selexa <= '1';
+		if(FWEX='1') then -- since after in the process it will prioritise this if both are on.
+			if exdr = na then --overwrites the previous if
+				sela <= '1';
+				selexa <= '1';
+			end if;
+			
+			if exdr = nb then --overwrites the previous if
+				selb <= '1';
+				selexb <= '1';
+			end if;
 		end if;
 		
-		if wbdr = nb then-- then this assumes writeback value is the default path
-			selb <= '1'; 
-			selexb <= '0';
-		end if;
-		
-		if exdr = nb then --overwrites the previous if
-			selb <= '1';
-			selexb <= '1';
-		end if;
 	end process;
 end fwdCtrl;

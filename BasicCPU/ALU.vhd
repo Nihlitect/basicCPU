@@ -9,11 +9,7 @@ entity ALU is
 		F:	in  std_logic_vector(2 downto 0);
 		A:      	in  std_logic_vector(W-1 downto 0);
 		B:       in  std_logic_vector(W-1 downto 0);
-
-		O:        out std_logic_vector(W-1 downto 0);
-		C:    out std_logic;
-		N: out std_logic;
-		Z:     out std_logic );
+		O:        out std_logic_vector(W-1 downto 0));
 end ALU;
 
 
@@ -45,8 +41,6 @@ begin
 
 	O<= final;
 	
-   C <= arith(W) when F(2) = '0' else '0'; -- Carry only applies to arithmetic operations
-   N <= final(W-1);-- Flags based on final output
-   Z <= '1' when final = (final'range => '0') else '0';
+  
 
 end alu;
