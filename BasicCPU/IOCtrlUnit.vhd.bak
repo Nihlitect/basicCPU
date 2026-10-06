@@ -1,0 +1,15 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_arith.ALL;
+use IEEE.std_logic_unsigned.all;
+
+entity IOCtrlUnit is
+	generic( W: integer := 16 );
+	port(
+		F:	in  std_logic_vector(2 downto 0);
+		IO: in  std_logic;
+		
+		SWO: out std_logic; -- Make output switch
+		SSEN: out std_logic -- Turn on SSD write enable
+		);
+end IOCtrlUnit;

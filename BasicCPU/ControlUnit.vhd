@@ -20,25 +20,23 @@ entity ControlUnit is
 		--Control pipeline from decode stage
 		Halt: out std_logic; -- if Halt set flush=true and CE=false
 		Flush: out std_logic;
+		RDIN: out std_logic; -- enable rd register read
 		
 		
+	 --FW: out std_logic; -- enable forwarding for the instruction *Depricated: Can just use REN bit
 	--1. EXECUTE STAGE
-		FWEX: out std_logic; --enable forwarding for execute
+		IO: out std_logic; -- is IO operation
+		IMMO: out std_logic; -- Selects Immediate value into bus
 		EXO: out std_logic; -- select A passthrough in Execute
 		IMMBO: out std_logic; --select immediate into B of ALU
 		SHFTO: out std_logic; -- Slect shift unit output to out bus
-		FLEN: out std_logic; -- enable flag register write
-		
-	--2. WRITEBACK STAGE
-		FWWB: out std_logic; --enable forwarding for writeback
-	--2.1. INPUT SELECTION
-		IMO: out std_logic; -- Selects Immediate value into bus
-		SWO: out std_logic; -- select switch into bus
+		FLGEN: out std_logic; -- enable flag register write
 		LIO: out std_logic; -- load instruction out
 		
+	--2. WRITEBACK STAGE
+	--2.1. INPUT SELECTION
+		-- *Depricated
 	--2.2. DEVICE SELECTION
-		-- SSD 
-		SSEN: out std_logic; -- Seven Segment enable in
 		-- REGISTERS
 		REN: out std_logic; --Allow write to register
 		CLRR: out std_logic;-- Clears the all contents
@@ -62,26 +60,26 @@ begin
 		JMP   <= '0';
 		JAL   <= '0';
 		JR    <= '0';
+		BR		<= '0';
 		CLRC  <= '0';
 		CLRR  <= '0';
-
-		--Forwarding Defaults
-		FWEX <= '0'; -- most instructions store to register thus have an rd which would need to be forwarded.
-		FWWB <='0';
-
-		--select EX output
+		
+		RDIN  <= '0';
+		
+		--FW 	<= '0'; -- most instructions store to register thus have an rd which would need to be forwarded.
+		
+		IO		<= '0';
 		EXO   <= '0';
 		IMMBO <= '0';
 		SHFTO <= '0';
-
-		--select WB input
-		IMO   <= '0';
+		IMMO   <= '0';
 		SWO   <= '0';
 		LIO   <= '0';
-		--select WB device
+		FLGEN <= '0';
+		
 		MEN   <= '0';
 		REN   <= '0';
-		SSEN  <= '0';
+	 --SSEN  <= '0'; * Depricated: moved to EX
 
 		-- below only needs to override what's different.
 		case OPCODE is
@@ -90,58 +88,60 @@ begin
 
 			when "0001" =>  -- ALU: rd <= rs, rt
 				REN   <= '1'; --Enable Register IN Write 
-				-- Dont need to do anything else for this
-				FWEX <='1';
-				FWWB <='1';
+				
 			when "0010" =>  -- ALUI: rd = rs, imm16
 				REN   <= '1'; --Enable Register IN Write 
 				IMMBO <= '1'; -- enable immediate operand passthrough
 
-			when "0011" =>  -- LW: rd <= Mem(8..0)
+			when "0011" =>  -- LW: rd <= [addr]
 				REN   <= '1';
-				IMO  <= '1';
-
-			when "0100" =>  -- SW: Mem(8..0) <= rd
+				LIO 	<= '1'; --select load instruction passthrough to bus
+			when "0100" =>  -- SW: [addr] <= rd
 				MEN   <= '1'; -- Memory write enable
-				EXO <= '1'; -- enable A passthrough 
-
+				EXO 	<= '1'; -- enable A passthrough 
+				RDIN 	<= '1';
+				
 			when "0101" => -- LDI: rd <= imm16
-				IMO <= '1'; --select imm16 passthrough on bus
-				LIO <= '1'; --select load instruction passthrough to bus
-
+				REN	<= '1';
+				IMMO 	<= '1'; --select imm16 passthrough on bus
+			
 			when "0110" => --CMP
-
+				null; -- * Depricated
+				
 			when "0111" => -- BR
-
+				BR 	<= '1';
 			when "1000" => -- JMP: IR <= [11..0]
 				JMP   <= '1';
-				Flush <= '1'; -- flush IF/DE, wrong instr already fetched
-
 			when "1001" =>  -- JAL: push[IR], IR <= [11..0]
-				JMP   <= '1';
 				JAL   <= '1';
-				Flush <= '1';
 			when "1010" =>  -- JR: IR <= pop[IR]
-				JMP   <= '1';
-				JAL   <= '1';
-				Flush <= '1';
-
+				JR   	<= '1';
+			
 			when "1010" =>  -- SHIFT: IR <= pop[IR]
-				REN <= '1';
+				REN 	<= '1';
 				SHFTO <= '1';
-
+			when "1100" => -- ALU2: 
+				FLGEN <= '1';
+			when "1110" => -- IO: Instruction register
+				IO <= '1'; 
+				
 			when "1111" =>
 				Halt <= '1'; -- feeds op '1111' into instruction register (feedback)
 			when others =>
 				null;-- undefined opcode: hold safe defaults
 		end case;
-
+		
+		--Not needed
 		-- OPFUNC-dependent tweaks nested inside a branch, if needed:
 		-- case OPCODE is
 		--     when "0001" =>
 		--         if OPFUNC = "000" then ... elsif ... end if;
 		-- end case;
-
+		
+		if BR = '1' or JMP = '1' or JAL = '1' or JR = '1' then-- flush IF/DE, wrong instr already fetched
+			Flush = '1';
+		end if;
+		
 	end process;
 
 end orchestration;

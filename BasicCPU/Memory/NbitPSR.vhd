@@ -3,41 +3,39 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 -- PSR (Pipeline Stall Register)
-entity NbitPSR is
+entity NbitPR is
 	generic( -- Generic Definition
-		WIDTH : integer :=16);
+		W : integer :=16);
 	port(
-		I: in std_logic_vector(WIDTH-1 downto 0);
+		I: in std_logic_vector(W-1 downto 0);
 		clk: in std_logic; -- clock -> only on rising edge change is allowed
-		STALL: in std_logic; -- Stall pipeline buffer signal
-		O: out std_logic_vector(WIDTH-1 downto 0)
+		STL: in std_logic; -- Stall pipeline buffer signal
+		O: out std_logic_vector(W-1 downto 0)
 	);
-end NbitPSR;
+end NbitPR;
 
 
-architecture stall of NbitPSR is
-
-	
+architecture stall of NbitPR is
 	component NbitRegister is
 		--generic( -- Generic Definition
 			--WIDTH : integer :=16);
 		port(
-			Din: in std_logic_vector(WIDTH-1 downto 0);
+			Din: in std_logic_vector(W-1 downto 0);
 			clk: in std_logic; -- clock -> only on rising edge change is allowed
 			EN: in std_logic; -- Enable write
 			CLR: in std_logic; -- Clear Register
-			Dout: out std_logic_vector(WIDTH-1 downto 0)
+			Dout: out std_logic_vector(W-1 downto 0)
 		);
 	end component;
 	
-	signal Data : std_logic_vector(WIDTH-1 downto 0);
+	signal Data : std_logic_vector(W-1 downto 0);
 	
 begin -- Begin behaviour
 	
 
 	first: NbitRegister
 		port map(
-			EN => not STALL,
+			EN => not STL,
 			CLR => '0',
 			clk => not clk, 
          Din   => I,
@@ -46,7 +44,7 @@ begin -- Begin behaviour
 		
 	second: NbitRegister
 		port map(
-			EN => not STALL,
+			EN => not STL,
 			CLR => '0',
 			clk => clk,
 			Din => Data,
