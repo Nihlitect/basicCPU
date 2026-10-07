@@ -56,6 +56,22 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 
 
+#============================================================
+# CLOCK
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CLK_10
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MAX10_CLK1_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MAX10_CLK2_50
+set_location_assignment PIN_N5 -to ADC_CLK_10
+set_location_assignment PIN_P11 -to MAX10_CLK1_50
+set_location_assignment PIN_N14 -to MAX10_CLK2_50
+
+#============================================================
+# KEY
+#============================================================
+set_location_assignment PIN_B8 -to PB[0]
+set_location_assignment PIN_A7 -to PB[1]
+
 
 # https://gist.github.com/wecacuee/54901b1fca9c5034af2ab47f6c1f06aa
 # SEVEN SEGMENT DISPLAYS
@@ -70,6 +86,7 @@ set_location_assignment PIN_C17 -to HEX0[6]
 
 #set_location_assignment PIN_D15 -to HEX0[7]
 
+
 set_location_assignment PIN_C18 -to HEX1[0]
 set_location_assignment PIN_D18 -to HEX1[1]
 set_location_assignment PIN_E18 -to HEX1[2]
@@ -79,6 +96,7 @@ set_location_assignment PIN_A18 -to HEX1[5]
 set_location_assignment PIN_B17 -to HEX1[6]
 
 #set_location_assignment PIN_A16 -to HEX1[7]
+
 
 set_location_assignment PIN_B20 -to HEX2[0]
 set_location_assignment PIN_A20 -to HEX2[1]
@@ -90,6 +108,7 @@ set_location_assignment PIN_B22 -to HEX2[6]
 
 #set_location_assignment PIN_A19 -to HEX2[7]
 
+
 set_location_assignment PIN_F21 -to HEX3[0]
 set_location_assignment PIN_E22 -to HEX3[1]
 set_location_assignment PIN_E21 -to HEX3[2]
@@ -98,29 +117,44 @@ set_location_assignment PIN_C20 -to HEX3[4]
 set_location_assignment PIN_D19 -to HEX3[5]
 set_location_assignment PIN_E17 -to HEX3[6]
 
-
 # set_location_assignment PIN_D22 -to HEX3[7]
 
-# not using left 2 for now
 
-#set_location_assignment PIN_F18 -to HEX4[0]
-#set_location_assignment PIN_E20 -to HEX4[1]
-#set_location_assignment PIN_E19 -to HEX4[2]
-#set_location_assignment PIN_J18 -to HEX4[3]
-#set_location_assignment PIN_H19 -to HEX4[4]
-#set_location_assignment PIN_F19 -to HEX4[5]
-#set_location_assignment PIN_F20 -to HEX4[6]
+set_location_assignment PIN_F18 -to HEX4[0]
+set_location_assignment PIN_E20 -to HEX4[1]
+set_location_assignment PIN_E19 -to HEX4[2]
+set_location_assignment PIN_J18 -to HEX4[3]
+set_location_assignment PIN_H19 -to HEX4[4]
+set_location_assignment PIN_F19 -to HEX4[5]
+set_location_assignment PIN_F20 -to HEX4[6]
 
 #set_location_assignment PIN_F17 -to HEX4[7]
 
-#set_location_assignment PIN_J20 -to HEX5[0]
-#set_location_assignment PIN_K20 -to HEX5[1]
-#set_location_assignment PIN_L18 -to HEX5[2]
-#set_location_assignment PIN_N18 -to HEX5[3]
-#set_location_assignment PIN_M20 -to HEX5[4]
-#set_location_assignment PIN_N19 -to HEX5[5]
-#set_location_assignment PIN_N20 -to HEX5[6]
+
+set_location_assignment PIN_J20 -to HEX5[0]
+set_location_assignment PIN_K20 -to HEX5[1]
+set_location_assignment PIN_L18 -to HEX5[2]
+set_location_assignment PIN_N18 -to HEX5[3]
+set_location_assignment PIN_M20 -to HEX5[4]
+set_location_assignment PIN_N19 -to HEX5[5]
+set_location_assignment PIN_N20 -to HEX5[6]
+
 #set_location_assignment PIN_L19 -to HEX5[7]
+
+
+#
+# LED
+#
+set_location_assignment PIN_A8 -to LED[0]
+set_location_assignment PIN_A9 -to LED[1]
+set_location_assignment PIN_A10 -to LED[2]
+set_location_assignment PIN_B10 -to LED[3]
+set_location_assignment PIN_D13 -to LED[4]
+set_location_assignment PIN_C13 -to LED[5]
+set_location_assignment PIN_E14 -to LED[6]
+set_location_assignment PIN_D14 -to LED[7]
+set_location_assignment PIN_A11 -to LED[8]
+set_location_assignment PIN_B11 -to LED[9]
 
 #
 # SWITCHES
@@ -146,7 +180,10 @@ set_global_assignment -name EDA_TEST_BENCH_NAME BasicCPUTest -section_id eda_sim
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id BasicCPUTest
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME BasicCPUTest -section_id BasicCPUTest
 set_global_assignment -name EDA_TEST_BENCH_FILE ../tester.vhd -section_id BasicCPUTest
-set_global_assignment -name VHDL_FILE BranchUnitOld.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE Misc/NbitN_1MUX.vhd
+set_global_assignment -name VHDL_FILE CountTwoUnit.vhd
+set_global_assignment -name VHDL_FILE ALU2.vhd
 set_global_assignment -name VHDL_FILE Memory/NbitDFF.vhd
 set_global_assignment -name VHDL_FILE ControlUnit.vhd
 set_global_assignment -name VHDL_FILE Memory/ROM.vhd
@@ -157,7 +194,6 @@ set_global_assignment -name BDF_FILE Memory/InstructionRegister.bdf
 set_global_assignment -name BDF_FILE Memory/BufferedRegister.bdf
 set_global_assignment -name VHDL_FILE Memory/BitRegister2.vhd
 set_global_assignment -name BDF_FILE Memory/BitRegister.bdf
-set_global_assignment -name VHDL_FILE Misc/RETB.vhd
 set_global_assignment -name VHDL_FILE Misc/NbitDEMUX.vhd
 set_global_assignment -name VHDL_FILE Misc/NbitBuffer.vhd
 set_global_assignment -name VHDL_FILE Misc/Nbit2MUX.vhd
@@ -166,30 +202,16 @@ set_global_assignment -name BDF_FILE Misc/bit2_1MUX.bdf
 set_global_assignment -name BDF_FILE Misc/16bit2SSD.bdf
 set_global_assignment -name BDF_FILE Misc/4bit3_1MUX.bdf
 set_global_assignment -name VHDL_FILE ALU.vhd
-set_global_assignment -name VHDL_FILE LogicUnit.vhd
 set_global_assignment -name VHDL_FILE Counter.vhd
 set_global_assignment -name BDF_FILE ProgramCounter.bdf
 set_global_assignment -name BDF_FILE BasicCPU.bdf
-set_global_assignment -name VHDL_FILE ArithmeticUnit.vhd
-set_global_assignment -name BDF_FILE RB_ALU.bdf
-set_global_assignment -name BDF_FILE FlagRegisters.bdf
-set_global_assignment -name VHDL_FILE NbitN_1MUX.vhd
 set_global_assignment -name VHDL_FILE Memory/RAM.vhd
 set_global_assignment -name BDF_FILE Misc/16bit4_1MUX.bdf
-set_global_assignment -name VHDL_FILE Misc/Rtype.vhd
-set_global_assignment -name BDF_FILE Misc/16bit2_1.bdf
-set_global_assignment -name BDF_FILE Misc/16bitR.bdf
-set_global_assignment -name BDF_FILE Memory/3bitPSR.bdf
 set_global_assignment -name VHDL_FILE FwdSelUnit.vhd
 set_global_assignment -name VHDL_FILE BranchUnit.vhd
 set_global_assignment -name VHDL_FILE CmpUnit.vhd
-set_global_assignment -name BDF_FILE Misc/12bitR.bdf
-set_global_assignment -name BDF_FILE Memory/1bitBR.bdf
 set_global_assignment -name VHDL_FILE ShiftUnit.vhd
 set_global_assignment -name VHDL_FILE Memory/Stack.vhd
-set_global_assignment -name VHDL_FILE Misc/CountTwoUnit.vhd
-set_global_assignment -name VHDL_FILE Misc/ALU2.vhd
 set_global_assignment -name VHDL_FILE Memory/NbitLatch.vhd
 set_global_assignment -name VHDL_FILE IOCtrlUnit.vhd
 set_global_assignment -name VHDL_FILE Memory/NbitPR.vhd
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

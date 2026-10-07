@@ -4,19 +4,22 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity Stack is
     generic (
-        DW : integer := 16;  -- Width of each stack element
-        DEPTH      : integer := 10  -- Maximum number of elements in the stack
+        DW: integer := 16;  -- Width of each stack element
+        DEPTH: integer := 10  -- Maximum number of elements in the stack
     );
     port (
-        Clk        : in  std_logic;
-        Reset      : in  std_logic;  -- Active-high synchronous reset
-        Enable     : in  std_logic;  -- Operation enable line
-        Push       : in  std_logic;  -- Assert high to push data
-        Pop        : in  std_logic;  -- Assert high to pop data
-        Data_In    : in  std_logic_vector(DW-1 downto 0);
-        Data_Out   : out std_logic_vector(DW-1 downto 0);
-        Full       : out std_logic;
-        Empty      : out std_logic
+        Clk: in  std_logic;
+        Reset: in  std_logic;  -- Active-high synchronous reset
+        Enable: in  std_logic;  -- Operation enable line
+        Push: in  std_logic;  -- Assert high to push data
+        Pop: in  std_logic;  -- Assert high to pop data
+        Data_In: in  std_logic_vector(DW-1 downto 0);
+		  
+        Data_Out: out std_logic_vector(DW-1 downto 0);
+        Full: out std_logic;
+        Empty: out std_logic;
+		  AMT: out std_logic_vector(3 downto 0)
+		  
     );
 end entity Stack;
 
@@ -64,5 +67,6 @@ begin
             end if;
         end if;
     end process;
-
+	 
+	 AMT <= std_logic_vector(to_unsigned(sp, 4)); -- The amount of items in stack
 end stacker;

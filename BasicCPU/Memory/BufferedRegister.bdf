@@ -70,7 +70,7 @@ on the Quartus Prime software download page.
 )
 (pin
 	(input)
-	(rect 56 104 224 120)
+	(rect -32 216 136 232)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
 	(text "ENO" (rect 5 0 28 10)(font "Arial" ))
 	(pt 168 8)
@@ -223,11 +223,19 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
+	(pt 480 96)
+	(pt 496 96)
+	(bus)
+)
+(connector
 	(pt 240 112)
 	(pt 224 112)
 )
 (connector
-	(pt 480 96)
-	(pt 496 96)
-	(bus)
+	(pt 136 224)
+	(pt 224 224)
+)
+(connector
+	(pt 224 224)
+	(pt 224 112)
 )

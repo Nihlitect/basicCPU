@@ -87,6 +87,13 @@ on the Quartus Prime software download page.
 		(text "Empty" (rect 199 59 227 71)(font "Arial" ))
 		(line (pt 248 64)(pt 232 64)(line_width 1))
 	)
+	(port
+		(pt 248 80)
+		(output)
+		(text "AMT[3..0]" (rect 0 0 42 12)(font "Arial" ))
+		(text "AMT[3..0]" (rect 185 75 227 87)(font "Arial" ))
+		(line (pt 248 80)(pt 232 80)(line_width 3))
+	)
 	(parameter
 		"DW"
 		"16"

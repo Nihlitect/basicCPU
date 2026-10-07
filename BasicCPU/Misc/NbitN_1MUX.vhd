@@ -8,9 +8,9 @@ entity NbitN_1MUX is
         WIDTH : integer := 16
     );
     port (
-        D   : in  std_logic_vector((2**BITS)*WIDTH-1 downto 0);
-        SEL : in  std_logic_vector(integer(BITS-1) downto 0);
-        Y   : out std_logic_vector(WIDTH-1 downto 0)
+        D : in  std_logic_vector((2**BITS)*WIDTH-1 downto 0);
+        SEL: in  std_logic_vector(BITS-1 downto 0);
+        Y: out std_logic_vector(WIDTH-1 downto 0)
     );
 end NbitN_1MUX;
 
