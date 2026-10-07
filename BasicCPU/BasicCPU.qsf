@@ -181,7 +181,6 @@ set_global_assignment -name BDF_FILE Misc/16bit2_1.bdf
 set_global_assignment -name BDF_FILE Misc/16bitR.bdf
 set_global_assignment -name BDF_FILE Memory/3bitPSR.bdf
 set_global_assignment -name VHDL_FILE FwdSelUnit.vhd
-set_global_assignment -name VHDL_FILE Memory/NbitPSR.vhd
 set_global_assignment -name VHDL_FILE BranchUnit.vhd
 set_global_assignment -name VHDL_FILE CmpUnit.vhd
 set_global_assignment -name BDF_FILE Misc/12bitR.bdf
@@ -192,4 +191,5 @@ set_global_assignment -name VHDL_FILE Misc/CountTwoUnit.vhd
 set_global_assignment -name VHDL_FILE Misc/ALU2.vhd
 set_global_assignment -name VHDL_FILE Memory/NbitLatch.vhd
 set_global_assignment -name VHDL_FILE IOCtrlUnit.vhd
+set_global_assignment -name VHDL_FILE Memory/NbitPR.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
