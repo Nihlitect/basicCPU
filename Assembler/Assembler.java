@@ -51,7 +51,7 @@ import java.util.TreeSet;
 public class Assembler {
     // 1. CONFIGURATION
     /** true = comma-separated operands, false = whitespace-separated. */
-    static final boolean USE_CSV_INPUT = false;
+    static final boolean USE_CSV_INPUT = true;
     static final int INSTRUCTION_WIDTH = 16;   // bits per word
     static final int OPCODE_WIDTH = 4;
     static final int HEX_DIGITS = (INSTRUCTION_WIDTH + 3) / 4;
@@ -830,7 +830,7 @@ public class Assembler {
             if (csv) {
                 out.append(toCsvRow(line));
             } else {
-                out.append(toHex(line.encoded)).append('\n');
+                out.append(String.format("%d => x\"%s\", -- %s", line.address,toHex(line.encoded), line.sourceLine)).append('\n');
             }
         }
         Files.write(Paths.get(outputPath), out.toString().getBytes());
