@@ -1,0 +1,117 @@
+# =============================================================================
+# calc.csv -- interactive switch calculator with peak hold
+# =============================================================================
+# Reads the switches on every pass, performs one operation and shows the
+# result on the seven-segment display, forever. Flip switches while it runs
+# and the display follows.
+#
+# SWITCH LAYOUT (value returned by SWI)
+#   SW[3:0]    A     0..15
+#   SW[7:4]    B     0..15
+#   SW[9:8]    OP    0 = A + B
+#                    1 = A - B   (negative shows as 16-bit two's complement,
+#                                 e.g. 3 - 4 = FFFF)
+#                    2 = A x B   (shift-and-add loop)
+#                    3 = show PEAK: the largest result seen in OP 0..2
+#                        since reset. Hold A = B = 0 with OP = 3 to clear it.
+#   SW[15:10]  ignored
+#
+# THINGS TO TRY (A, B, OP -> display), in this order
+#    3,  4, 0 -> 0007        3,  4, 1 -> FFFF        3,  4, 2 -> 000C
+#   15, 15, 0 -> 001E       15, 15, 2 -> 00E1       15, 15, 3 -> 00E1 (peak held)
+#    0,  0, 3 -> 0000 (peak cleared)
+#    9,  2, 0 -> 000B        9,  2, 3 -> 000B (new, lower peak)
+#   While OP = 3 the peak stays put however you change A and B, as long as
+#   they are not both 0.
+#
+# REGISTERS
+#   R0  scratch: the (unused) destination of every CMP
+#   R1  switch value, then shifted switch value, then the RESULT
+#   R2  shift count / temporary
+#   R3  A          R4  B          R5  OP
+#   R6  constant 0 (never modified after START)
+#   R7  link register for JAL/JR (assumed; nothing here keeps data in R7)
+#
+# MEMORY
+#   0x1F0  peak value (kept high so it cannot overlap the code)
+#
+# ASSUMES: CMP sets flags that BEQ/BNE/... test, and every branch directly
+# follows its CMP; JAL saves the return address and JR returns to it;
+# SLR is a logical shift right by one bit; MAX is a signed maximum.
+#
+# Exercises: SWI, SSD, LDI, AND(imm), OR, ADD, SUB, MAX, SL, SLR, DEC, CMP,
+#            BEQ, BNE, JMP, JAL, JR, LW, SW.
+# =============================================================================
+
+START:
+LDI,R6,0                    # R6 = 0 for the rest of the run
+SW,R6,0x1F0                 # peak = 0
+
+MAIN:
+SWI,R1                      # R1 = raw switches
+AND,R3,R1,0x0F              # R3 = A = SW[3:0]
+LDI,R2,4
+JAL,SHR                     # R1 = SW >> 4
+AND,R4,R1,0x0F              # R4 = B = SW[7:4]
+LDI,R2,4
+JAL,SHR                     # R1 = SW >> 8
+AND,R5,R1,0x03              # R5 = OP = SW[9:8]
+
+# ---- choose the operation: OP 0, 1, 2, else 3 ----
+CMP,R0,R5,R6
+BEQ,DO_ADD
+LDI,R2,1
+CMP,R0,R5,R2
+BEQ,DO_SUB
+LDI,R2,2
+CMP,R0,R5,R2
+BEQ,DO_MUL
+JMP,DO_PEAK
+
+DO_ADD:
+ADD,R1,R3,R4                # result = A + B
+JMP,UPDATE
+
+DO_SUB:
+SUB,R1,R3,R4                # result = A - B
+JMP,UPDATE
+
+DO_MUL:                     # result = A x B by shift-and-add
+LDI,R1,0                    # accumulator
+MUL_LOOP:
+CMP,R0,R4,R6                # multiplier (B) used up?
+BEQ,UPDATE                  # yes -> result is in R1
+AND,R2,R4,1                 # lowest bit of the multiplier
+CMP,R0,R2,R6
+BEQ,MUL_SKIP                # bit clear -> nothing to add
+ADD,R1,R1,R3                # accumulator += multiplicand
+MUL_SKIP:
+SL,R3,R3                    # multiplicand *= 2
+SLR,R4,R4                   # multiplier /= 2
+JMP,MUL_LOOP
+
+DO_PEAK:                    # OP 3: show (or clear) the peak
+OR,R2,R3,R4                 # R2 = A | B
+CMP,R0,R2,R6
+BNE,PEAK_SHOW               # some value switch is up -> just show the peak
+SW,R6,0x1F0                 # A = B = 0 -> clear the peak
+PEAK_SHOW:
+LW,R1,0x1F0
+JMP,SHOW
+
+UPDATE:                     # remember the biggest result so far
+LW,R2,0x1F0
+MAX,R2,R2,R1
+SW,R2,0x1F0
+
+SHOW:
+SSD,R1
+JMP,MAIN
+
+# ---- subroutine: R1 = R1 >> R2 (logical), R2 must be >= 1; clobbers R2, R0 ----
+SHR:
+SLR,R1,R1
+DEC,R2,R2,R2
+CMP,R0,R2,R6
+BNE,SHR
+JR

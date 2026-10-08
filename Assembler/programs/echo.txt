@@ -1,0 +1,17 @@
+# =============================================================================
+# echo.csv -- bring-up test: switches -> display
+# =============================================================================
+# The smallest possible "is the CPU alive" program. Reads the switches and
+# shows the value on the seven-segment display, forever.
+#
+# Expected: the display always equals the switch value (e.g. all switches
+# down -> 0000, SW0 up -> 0001, SW3 and SW0 up -> 0009).
+#
+# Exercises: SWI, SSD, JMP (backwards).
+# =============================================================================
+
+LOOP:
+SWI R1
+SSD R1
+JMP LOOP
+

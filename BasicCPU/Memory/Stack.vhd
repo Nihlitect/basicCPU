@@ -18,7 +18,7 @@ entity Stack is
         Data_Out: out std_logic_vector(DW-1 downto 0);
         Full: out std_logic;
         Empty: out std_logic;
-		  AMT: out std_logic_vector(3 downto 0)
+		AMT: out std_logic_vector(3 downto 0)
 		  
     );
 end entity Stack;
