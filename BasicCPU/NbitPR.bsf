@@ -57,6 +57,11 @@ on the Quartus Prime software download page.
 		"16"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"CLKN"
+		"1"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 160 96)(line_width 1))
 	)

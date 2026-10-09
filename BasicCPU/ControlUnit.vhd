@@ -50,7 +50,6 @@ end ControlUnit;
 -- Since registers open on rising edge then bits must change on falling edge.
 architecture orchestration of ControlUnit is
 begin
-
 	process(OPCODE)
 	begin
 		-- Safe defaults for every output, every time.
@@ -59,7 +58,7 @@ begin
 		CLRR  <= '0';
 		
 		Flush <= '0';
-		
+		Halt 	<= '0';
 		CE    <= '1';
 		JMP   <= '0';
 		JAL   <= '0';
@@ -116,7 +115,7 @@ begin
 			when "1010" =>  -- JR: IR <= pop[IR]
 				JR   	<= '1';
 			
-			when "1010" =>  -- SHIFT: rd<= rs<<amt
+			when "1011" =>  -- SHIFT: rd<= rs<<amt
 				REN 	<= '1';
 				SHFTO <= '1';
 			when "1100" => -- ALU2: 
