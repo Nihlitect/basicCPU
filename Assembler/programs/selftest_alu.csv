@@ -14,18 +14,19 @@
 # Every check ends in CMP + BNE, so run echo.csv first and make sure branches
 # work; selftest_flow.csv then tests the branches themselves.
 #
-# REGISTERS   R0 sink for CMP's destination (never read)   R1,R2 operands
-#             R3 result   R4 expected value   R5 spare   R6 failure code
-#             R7 link register for JAL/JR (assumed)
+# REGISTERS   R1,R2 operands   R3 result   R4 expected value   R5 spare
+#             R6 failure code   R7 link register for JAL/JR (assumed)
+#             R0 is not used (CMP has no destination)
 #
 # Failure codes are loaded with LDI right before each check, so a broken ALU
-# cannot corrupt them. R0, R6 and R7 are not tested individually.
+# cannot corrupt them. R6 and R7 are not tested individually.
 # MEMORY      0x1F0, 0x1F1, 0x1FF are used as test cells (above the code)
 #
 # ASSUMED SEMANTICS (edit the expected constants if yours differ)
-#   * CMP Rd,Rs1,Rs2 sets flags from Rs1 - Rs2, BNE tests them
+#   * CMP Rs1,Rs2 sets flags from Rs1 - Rs2 (no destination), BNE tests them
 #   * INC DEC NOT NEG are unary: they use Rs1 and ignore Rs2
-#   * shifts move one bit: SR arithmetic, SLR logical, SL/SLL left
+#   * a shift moves by its 3-bit amount operand (0..7): SR arithmetic,
+#     SLR logical, SL/SLL left
 #   * MIN/MAX are signed, MINU/MAXU unsigned
 #   * LDI and the ALU immediates carry a full 16 bits
 # =============================================================================
@@ -43,7 +44,7 @@ ADD,R1,R1,R3
 ADD,R1,R1,R4
 ADD,R1,R1,R5
 LDI,R4,0x001F
-CMP,R0,R1,R4
+CMP,R1,R4
 BNE,FAIL
 
 # ---- add / subtract, register form ---------------------------------------
@@ -53,25 +54,25 @@ LDI,R2,0x0FFF
 LDI,R6,0xE002
 ADD,R3,R1,R2
 LDI,R4,0x2233
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T03  SUB  0x1234 - 0x0FFF = 0x0235 (operand order)
 LDI,R6,0xE003
 SUB,R3,R1,R2
 LDI,R4,0x0235
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T04  INC  0x1234 -> 0x1235
 LDI,R6,0xE004
 INC,R3,R1,R1
 LDI,R4,0x1235
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T05  DEC  0x1234 -> 0x1233
 LDI,R6,0xE005
 DEC,R3,R1,R1
 LDI,R4,0x1233
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 
 # ---- ALU, immediate form (two-word instruction) --------------------------
@@ -79,32 +80,32 @@ BNE,FAIL
 LDI,R6,0xE006
 ADD,R3,R1,0x0100
 LDI,R4,0x1334
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T07  SUB imm  0x0FFF - 0x1000 = 0xFFFF (borrow wraps, full 16-bit imm)
 LDI,R6,0xE007
 SUB,R3,R2,0x1000
 LDI,R4,0xFFFF
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 LDI,R1,0xF0F0
 # T08  AND imm  0xF0F0 & 0x00FF = 0x00F0
 LDI,R6,0xE008
 AND,R3,R1,0x00FF
 LDI,R4,0x00F0
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T09  OR imm   0xF0F0 | 0x000F = 0xF0FF
 LDI,R6,0xE009
 OR,R3,R1,0x000F
 LDI,R4,0xF0FF
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T10  XOR imm  0xF0F0 ^ 0xFFFF = 0x0F0F
 LDI,R6,0xE00A
 XOR,R3,R1,0xFFFF
 LDI,R4,0x0F0F
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 
 # ---- logic, register form ------------------------------------------------
@@ -113,37 +114,37 @@ LDI,R2,0x3C3C
 LDI,R6,0xE00B
 AND,R3,R1,R2
 LDI,R4,0x3030
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T12  OR    0xF0F0 | 0x3C3C = 0xFCFC
 LDI,R6,0xE00C
 OR,R3,R1,R2
 LDI,R4,0xFCFC
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T13  XOR   0xF0F0 ^ 0x3C3C = 0xCCCC
 LDI,R6,0xE00D
 XOR,R3,R1,R2
 LDI,R4,0xCCCC
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T14  NOT   ~0xF0F0 = 0x0F0F
 LDI,R6,0xE00E
 NOT,R3,R1,R1
 LDI,R4,0x0F0F
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T15  NAND  ~(0xF0F0 & 0x3C3C) = 0xCFCF
 LDI,R6,0xE00F
 NAND,R3,R1,R2
 LDI,R4,0xCFCF
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T16  XNOR  ~(0xF0F0 ^ 0x3C3C) = 0x3333
 LDI,R6,0xE010
 XNOR,R3,R1,R2
 LDI,R4,0x3333
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 
 # ---- min / max / negate, signed and unsigned -----------------------------
@@ -153,59 +154,59 @@ LDI,R2,0x0003
 LDI,R6,0xE011
 MIN,R3,R1,R2
 LDI,R4,0xFFFB
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T18  MAX   max(-5, 3) = 3
 LDI,R6,0xE012
 MAX,R3,R1,R2
 LDI,R4,0x0003
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T19  MINU  minu(0xFFFB, 3) = 3
 LDI,R6,0xE013
 MINU,R3,R1,R2
 LDI,R4,0x0003
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T20  MAXU  maxu(0xFFFB, 3) = 0xFFFB
 LDI,R6,0xE014
 MAXU,R3,R1,R2
 LDI,R4,0xFFFB
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T21  NEG   -(3) = 0xFFFD
 LDI,R6,0xE015
 NEG,R3,R2,R2
 LDI,R4,0xFFFD
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 
-# ---- shifts (one bit) ----------------------------------------------------
+# ---- shifts (the 3-bit amount operand) -----------------------------------
 # T22  SL    0x1234 << 1 = 0x2468
 LDI,R6,0xE016
 LDI,R1,0x1234
-SL,R3,R1
+SL,R3,R1,1
 LDI,R4,0x2468
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
-# T23  SLL   0x1234 << 1 = 0x2468
+# T23  SLL   0x1234 << 7 = 0x1A00 (largest amount)
 LDI,R6,0xE017
-SLL,R3,R1
-LDI,R4,0x2468
-CMP,R0,R3,R4
+SLL,R3,R1,7
+LDI,R4,0x1A00
+CMP,R3,R4
 BNE,FAIL
-# T24  SLR   0x8002 >> 1 = 0x4001 (logical: zero fills)
+# T24  SLR   0x8002 >> 3 = 0x1000 (logical: zero fills)
 LDI,R6,0xE018
 LDI,R1,0x8002
-SLR,R3,R1
-LDI,R4,0x4001
-CMP,R0,R3,R4
+SLR,R3,R1,3
+LDI,R4,0x1000
+CMP,R3,R4
 BNE,FAIL
-# T25  SR    0x8002 >> 1 = 0xC001 (arithmetic: sign fills)
+# T25  SR    0x8002 >> 3 = 0xF000 (arithmetic: sign fills)
 LDI,R6,0xE019
-SR,R3,R1
-LDI,R4,0xC001
-CMP,R0,R3,R4
+SR,R3,R1,3
+LDI,R4,0xF000
+CMP,R3,R4
 BNE,FAIL
 
 # ---- memory --------------------------------------------------------------
@@ -216,7 +217,7 @@ SW,R1,0x1F0
 LDI,R3,0
 LW,R3,0x1F0
 LDI,R4,0xBEEF
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T27  a second cell at 0x1F1 is independent
 LDI,R6,0xE01B
@@ -224,13 +225,13 @@ LDI,R2,0x1357
 SW,R2,0x1F1
 LW,R3,0x1F1
 LDI,R4,0x1357
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T28  0x1F0 still holds its value
 LDI,R6,0xE01C
 LW,R3,0x1F0
 LDI,R4,0xBEEF
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T29  top address 0x1FF (all 9 address bits)
 LDI,R6,0xE01D
@@ -238,7 +239,7 @@ LDI,R5,0xA5A5
 SW,R5,0x1FF
 LW,R3,0x1FF
 LDI,R4,0xA5A5
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 
 # ---- all checks passed ------------------------------------------------------

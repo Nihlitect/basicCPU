@@ -57,17 +57,18 @@ architecture rame of RAM is
 begin 
 	process(clk, EN, WE, ADDR_IN, ADDR_OUT1, DIN)
 	begin
-		if rising_edge(clk) then 
-			if (EN = '1') then
-				-- PORT A - WRITE
+		if (EN = '1') then
+			if falling_edge(clk) then --WRITE
+				-- PORT A -
 				if (WE = '1') then -- If write enabled
 					CODE(to_integer(unsigned(ADDR_IN))) <= DIN; -- data in is set
 				end if;
+			end if;
+			if rising_edge(clk) then -- READ PORTS
 				
-				-- READ PORTS
 				-- PORT 1 
 				DOUT <= CODE(to_integer(unsigned(ADDR_OUT1))); -- Data out 
 			end if; -- end ENABLED
-		end if; -- End rising edge
+		end if; -- End E edge
 	end process;
 end rame;

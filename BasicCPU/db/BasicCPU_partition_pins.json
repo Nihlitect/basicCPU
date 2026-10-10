@@ -36,6 +36,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "LED[7]",
+					"strict" : false
+				},
+				{
 					"name" : "LED[4]",
 					"strict" : false
 				},
@@ -49,6 +53,10 @@
 				},
 				{
 					"name" : "LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[0]",
 					"strict" : false
 				},
 				{
@@ -192,11 +200,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "PB[1]",
 					"strict" : false
 				},
 				{
-					"name" : "PB[1]",
+					"name" : "PB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
@@ -233,10 +245,6 @@
 				},
 				{
 					"name" : "SW[9]",
-					"strict" : false
-				},
-				{
-					"name" : "PB[0]",
 					"strict" : false
 				},
 				{

@@ -11,7 +11,7 @@
 #   SW[9:8]    OP    0 = A + B
 #                    1 = A - B   (negative shows as 16-bit two's complement,
 #                                 e.g. 3 - 4 = FFFF)
-#                    2 = A x B   (shift-and-add loop)
+#                    2 = A x B   (shift-and-add subroutine)
 #                    3 = show PEAK: the largest result seen in OP 0..2
 #                        since reset. Hold A = B = 0 with OP = 3 to clear it.
 #   SW[15:10]  ignored
@@ -25,22 +25,22 @@
 #   they are not both 0.
 #
 # REGISTERS
-#   R0  scratch: the (unused) destination of every CMP
 #   R1  switch value, then shifted switch value, then the RESULT
-#   R2  shift count / temporary
-#   R3  A          R4  B          R5  OP
+#   R2  temporary                  R3  A (the multiplicand in MULTIPLY)
+#   R4  B (the multiplier)         R5  OP
 #   R6  constant 0 (never modified after START)
 #   R7  link register for JAL/JR (assumed; nothing here keeps data in R7)
+#   R0  not used
 #
 # MEMORY
 #   0x1F0  peak value (kept high so it cannot overlap the code)
 #
-# ASSUMES: CMP sets flags that BEQ/BNE/... test, and every branch directly
-# follows its CMP; JAL saves the return address and JR returns to it;
-# SLR is a logical shift right by one bit; MAX is a signed maximum.
+# ASSUMES: CMP sets the flags that BEQ/BNE test and every branch directly
+# follows its CMP; JAL saves the return address and JR returns to it; SLR is
+# a logical right shift by its amount operand; MAX is a signed maximum.
 #
-# Exercises: SWI, SSD, LDI, AND(imm), OR, ADD, SUB, MAX, SL, SLR, DEC, CMP,
-#            BEQ, BNE, JMP, JAL, JR, LW, SW.
+# Exercises: SWI, SSD, LDI, AND(imm), OR, ADD, SUB, MAX, SL, SLR, CMP, BEQ,
+#            BNE, JMP, JAL, JR, LW, SW.
 # =============================================================================
 
 START:
@@ -50,21 +50,19 @@ SW,R6,0x1F0                 # peak = 0
 MAIN:
 SWI,R1                      # R1 = raw switches
 AND,R3,R1,0x0F              # R3 = A = SW[3:0]
-LDI,R2,4
-JAL,SHR                     # R1 = SW >> 4
+SLR,R1,R1,4                 # R1 = SW >> 4
 AND,R4,R1,0x0F              # R4 = B = SW[7:4]
-LDI,R2,4
-JAL,SHR                     # R1 = SW >> 8
+SLR,R1,R1,4                 # R1 = SW >> 8
 AND,R5,R1,0x03              # R5 = OP = SW[9:8]
 
 # ---- choose the operation: OP 0, 1, 2, else 3 ----
-CMP,R0,R5,R6
+CMP,R5,R6
 BEQ,DO_ADD
 LDI,R2,1
-CMP,R0,R5,R2
+CMP,R5,R2
 BEQ,DO_SUB
 LDI,R2,2
-CMP,R0,R5,R2
+CMP,R5,R2
 BEQ,DO_MUL
 JMP,DO_PEAK
 
@@ -76,23 +74,13 @@ DO_SUB:
 SUB,R1,R3,R4                # result = A - B
 JMP,UPDATE
 
-DO_MUL:                     # result = A x B by shift-and-add
-LDI,R1,0                    # accumulator
-MUL_LOOP:
-CMP,R0,R4,R6                # multiplier (B) used up?
-BEQ,UPDATE                  # yes -> result is in R1
-AND,R2,R4,1                 # lowest bit of the multiplier
-CMP,R0,R2,R6
-BEQ,MUL_SKIP                # bit clear -> nothing to add
-ADD,R1,R1,R3                # accumulator += multiplicand
-MUL_SKIP:
-SL,R3,R3                    # multiplicand *= 2
-SLR,R4,R4                   # multiplier /= 2
-JMP,MUL_LOOP
+DO_MUL:
+JAL,MULTIPLY                # result = A x B
+JMP,UPDATE
 
 DO_PEAK:                    # OP 3: show (or clear) the peak
 OR,R2,R3,R4                 # R2 = A | B
-CMP,R0,R2,R6
+CMP,R2,R6
 BNE,PEAK_SHOW               # some value switch is up -> just show the peak
 SW,R6,0x1F0                 # A = B = 0 -> clear the peak
 PEAK_SHOW:
@@ -108,10 +96,19 @@ SHOW:
 SSD,R1
 JMP,MAIN
 
-# ---- subroutine: R1 = R1 >> R2 (logical), R2 must be >= 1; clobbers R2, R0 ----
-SHR:
-SLR,R1,R1
-DEC,R2,R2,R2
-CMP,R0,R2,R6
-BNE,SHR
+# ---- subroutine: R1 = R3 x R4 by shift-and-add; clobbers R2, R3, R4 ----
+MULTIPLY:
+LDI,R1,0                    # accumulator
+MUL_LOOP:
+CMP,R4,R6                   # multiplier used up?
+BEQ,MUL_DONE
+AND,R2,R4,1                 # lowest bit of the multiplier
+CMP,R2,R6
+BEQ,MUL_SKIP                # bit clear -> nothing to add
+ADD,R1,R1,R3                # accumulator += multiplicand
+MUL_SKIP:
+SL,R3,R3,1                  # multiplicand *= 2
+SLR,R4,R4,1                 # multiplier /= 2
+JMP,MUL_LOOP
+MUL_DONE:
 JR

@@ -12,15 +12,15 @@
 #
 # Run selftest_alu.csv first; this file trusts LDI, ADD, SUB and CMP.
 #
-# REGISTERS   R0 sink for CMP's destination (never read)   R1,R2 operands
-#             R3 result   R4 expected value   R5 spare   R6 failure code
-#             R7 link register for JAL/JR (assumed)
+# REGISTERS   R1,R2 operands   R3 result   R4 expected value   R5 spare
+#             R6 failure code   R7 link register for JAL/JR (assumed)
+#             R0 is not used (CMP has no destination)
 #
 # Failure codes are loaded with LDI right before each check, so a broken ALU
-# cannot corrupt them. R0, R6 and R7 are not tested individually.
+# cannot corrupt them. R6 and R7 are not tested individually.
 #
 # ASSUMED SEMANTICS (edit if yours differ)
-#   * CMP Rd,Rs1,Rs2 sets flags from Rs1 - Rs2 and each branch directly
+#   * CMP Rs1,Rs2 sets flags from Rs1 - Rs2 and each branch directly
 #     follows its CMP. BLT/BGE/BLE/BGT are signed, BLTU/BGEU unsigned.
 #   * JAL saves the address of the next instruction; JR returns to it
 #   * no branch delay slots
@@ -32,137 +32,137 @@ LDI,R2,0x0007
 LDI,R3,0xFFFE
 # T01  BEQ taken: 5 == 5
 LDI,R6,0xE101
-CMP,R0,R1,R1
+CMP,R1,R1
 BEQ,OK_01
 JMP,FAIL
 OK_01:
 # T02  BEQ not taken: 5 != 7
 LDI,R6,0xE102
-CMP,R0,R1,R2
+CMP,R1,R2
 BEQ,FAIL
 # T03  BNE taken: 5 != 7
 LDI,R6,0xE103
-CMP,R0,R1,R2
+CMP,R1,R2
 BNE,OK_03
 JMP,FAIL
 OK_03:
 # T04  BNE not taken: 5 == 5
 LDI,R6,0xE104
-CMP,R0,R1,R1
+CMP,R1,R1
 BNE,FAIL
 # T05  BLT taken: 5 < 7
 LDI,R6,0xE105
-CMP,R0,R1,R2
+CMP,R1,R2
 BLT,OK_05
 JMP,FAIL
 OK_05:
 # T06  BLT not taken: 7 < 5 is false
 LDI,R6,0xE106
-CMP,R0,R2,R1
+CMP,R2,R1
 BLT,FAIL
 # T07  BLT not taken: 5 < 5 is false
 LDI,R6,0xE107
-CMP,R0,R1,R1
+CMP,R1,R1
 BLT,FAIL
 # T08  BLT taken: -2 < 5 (signed)
 LDI,R6,0xE108
-CMP,R0,R3,R1
+CMP,R3,R1
 BLT,OK_08
 JMP,FAIL
 OK_08:
 # T09  BGE taken: 7 >= 5
 LDI,R6,0xE109
-CMP,R0,R2,R1
+CMP,R2,R1
 BGE,OK_09
 JMP,FAIL
 OK_09:
 # T10  BGE taken: 5 >= 5
 LDI,R6,0xE10A
-CMP,R0,R1,R1
+CMP,R1,R1
 BGE,OK_10
 JMP,FAIL
 OK_10:
 # T11  BGE not taken: 5 >= 7 is false
 LDI,R6,0xE10B
-CMP,R0,R1,R2
+CMP,R1,R2
 BGE,FAIL
 # T12  BGE taken: 5 >= -2 (signed)
 LDI,R6,0xE10C
-CMP,R0,R1,R3
+CMP,R1,R3
 BGE,OK_12
 JMP,FAIL
 OK_12:
 # T13  BLE taken: 5 <= 7
 LDI,R6,0xE10D
-CMP,R0,R1,R2
+CMP,R1,R2
 BLE,OK_13
 JMP,FAIL
 OK_13:
 # T14  BLE taken: 5 <= 5
 LDI,R6,0xE10E
-CMP,R0,R1,R1
+CMP,R1,R1
 BLE,OK_14
 JMP,FAIL
 OK_14:
 # T15  BLE not taken: 7 <= 5 is false
 LDI,R6,0xE10F
-CMP,R0,R2,R1
+CMP,R2,R1
 BLE,FAIL
 # T16  BLE taken: -2 <= 5 (signed)
 LDI,R6,0xE110
-CMP,R0,R3,R1
+CMP,R3,R1
 BLE,OK_16
 JMP,FAIL
 OK_16:
 # T17  BGT taken: 7 > 5
 LDI,R6,0xE111
-CMP,R0,R2,R1
+CMP,R2,R1
 BGT,OK_17
 JMP,FAIL
 OK_17:
 # T18  BGT not taken: 5 > 5 is false
 LDI,R6,0xE112
-CMP,R0,R1,R1
+CMP,R1,R1
 BGT,FAIL
 # T19  BGT not taken: 5 > 7 is false
 LDI,R6,0xE113
-CMP,R0,R1,R2
+CMP,R1,R2
 BGT,FAIL
 # T20  BGT taken: 5 > -2 (signed)
 LDI,R6,0xE114
-CMP,R0,R1,R3
+CMP,R1,R3
 BGT,OK_20
 JMP,FAIL
 OK_20:
 # T21  BLTU taken: 5 <u 0xFFFE (unsigned)
 LDI,R6,0xE115
-CMP,R0,R1,R3
+CMP,R1,R3
 BLTU,OK_21
 JMP,FAIL
 OK_21:
 # T22  BLTU not taken: 0xFFFE <u 5 is false
 LDI,R6,0xE116
-CMP,R0,R3,R1
+CMP,R3,R1
 BLTU,FAIL
 # T23  BLTU not taken: 5 <u 5 is false
 LDI,R6,0xE117
-CMP,R0,R1,R1
+CMP,R1,R1
 BLTU,FAIL
 # T24  BGEU taken: 0xFFFE >=u 5
 LDI,R6,0xE118
-CMP,R0,R3,R1
+CMP,R3,R1
 BGEU,OK_24
 JMP,FAIL
 OK_24:
 # T25  BGEU taken: 5 >=u 5
 LDI,R6,0xE119
-CMP,R0,R1,R1
+CMP,R1,R1
 BGEU,OK_25
 JMP,FAIL
 OK_25:
 # T26  BGEU not taken: 5 >=u 0xFFFE is false
 LDI,R6,0xE11A
-CMP,R0,R1,R3
+CMP,R1,R3
 BGEU,FAIL
 
 # ---- branches: signed overflow cases (need the V flag, not just N) -------
@@ -170,25 +170,25 @@ LDI,R4,0x8000
 LDI,R5,0x0001
 # T27  BLT taken: -32768 < 1 (0x8000 - 1 overflows)
 LDI,R6,0xE11B
-CMP,R0,R4,R5
+CMP,R4,R5
 BLT,OK_27
 JMP,FAIL
 OK_27:
 # T28  BGE not taken: -32768 >= 1 is false
 LDI,R6,0xE11C
-CMP,R0,R4,R5
+CMP,R4,R5
 BGE,FAIL
 LDI,R4,0x7FFF
 LDI,R5,0xFFFF
 # T29  BGT taken: 32767 > -1 (0x7FFF - 0xFFFF overflows)
 LDI,R6,0xE11D
-CMP,R0,R4,R5
+CMP,R4,R5
 BGT,OK_29
 JMP,FAIL
 OK_29:
 # T30  BLE not taken: 32767 <= -1 is false
 LDI,R6,0xE11E
-CMP,R0,R4,R5
+CMP,R4,R5
 BLE,FAIL
 
 # ---- jumps, call/return, nop ---------------------------------------------
@@ -204,12 +204,12 @@ LDI,R5,0
 JAL,SUBR
 LDI,R5,1
 LDI,R4,0x0A0A
-CMP,R0,R3,R4
+CMP,R3,R4
 BNE,FAIL
 # T33  ...and it came back to the instruction right after JAL
 LDI,R6,0xE121
 LDI,R4,0x0001
-CMP,R0,R5,R4
+CMP,R5,R4
 BNE,FAIL
 # T34  NOP changes nothing
 LDI,R6,0xE122
@@ -218,7 +218,7 @@ NOP
 NOP
 NOP
 LDI,R4,0x5A5A
-CMP,R0,R1,R4
+CMP,R1,R4
 BNE,FAIL
 
 # ---- all checks passed ------------------------------------------------------

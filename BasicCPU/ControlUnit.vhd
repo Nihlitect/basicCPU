@@ -5,8 +5,8 @@ use IEEE.std_logic_unsigned.all;
 
 entity ControlUnit is 
 	port(
-		clk: in std_logic;
 		OPCODE: in std_logic_vector(3 downto 0); -- The operation that is fetched
+		funct: in std_logic_vector(2 downto 0); -- The function of instruction
 		
 	-- IF/DECODE STAGE
 		Halt: out std_logic; -- if Halt set flush=true and CE=false
@@ -14,6 +14,7 @@ entity ControlUnit is
 		
 		-- PROGRAM COUNTER
 		CE: out std_logic; -- Count Enable increments the count on next rising edge
+		CTE: out std_logic;
 		JMP: out std_logic;  -- Sets the count to what is on its data bus. J Potential optimization: maybe we could put a register for data in. could save data bus utilization
 		JAL: out std_logic; -- Jump and link
 		JR: out std_logic; -- Jump to jump register
@@ -21,19 +22,17 @@ entity ControlUnit is
 		CLRC: out std_logic; -- count to Clear (straight away) -> no rising edge needed
 		
 		--Control pipeline from decode stage
-		
 		RDIN: out std_logic; -- enable rd as register read into A
-		
 		
 	 --FW: out std_logic; -- enable forwarding for the instruction *Depricated: Can just use REN bit
 	--1. EXECUTE STAGE
-		IO: out std_logic; -- is IO operation
-		IMMO: out std_logic; -- Selects Immediate value into bus
+		SWO: out std_logic; -- is IO operation
 		EXO: out std_logic; -- select A passthrough in Execute
-		IMMBO: out std_logic; --select immediate into B of ALU
+		IMMO: out std_logic; -- Selects Immediate value into bus
 		SHFTO: out std_logic; -- Slect shift unit output to out bus
+		ALU2: out std_logic; -- Select ALU2 output to execute bus
 		MEMO: out std_logic; -- load instruction, memory out
-		ALU2: out std_logic;
+		IMMBO: out std_logic; --select immediate into B of ALU
 	--2. WRITEBACK STAGE
 	--2.1. INPUT SELECTION
 		-- *Depricated
@@ -42,8 +41,9 @@ entity ControlUnit is
 		REN: out std_logic; --Allow write to register
 		CLRR: out std_logic;-- Clears the all contents
 		-- RAM. 
-		MEN: out std_logic -- Memory Write enable
-		
+		MEN: out std_logic; -- Memory Write enable
+		-- SSD
+		SSEN: out std_logic -- Seven Segment Write Enable
 	);
 end ControlUnit;
 
@@ -60,6 +60,7 @@ begin
 		Flush <= '0';
 		Halt 	<= '0';
 		CE    <= '1';
+		CTE 	<= '0';
 		JMP   <= '0';
 		JAL   <= '0';
 		JR    <= '0';
@@ -67,7 +68,7 @@ begin
 		
 		RDIN  <= '0';
 		
-		IO		<= '0';
+		SWO	<= '0';
 		ALU2 	<= '0';
 		EXO   <= '0';
 		IMMBO <= '0';
@@ -77,7 +78,7 @@ begin
 		
 		MEN   <= '0';
 		REN   <= '0';
-	 --SSEN  <= '0'; * Depricated: moved to EX
+		SSEN  <= '0'; --* Depricated: moved to EX
 
 		-- below only needs to override what's different.
 		case OPCODE is
@@ -88,6 +89,7 @@ begin
 				REN   <= '1'; --Enable Register IN Write 
 				
 			when "0010" =>  -- ALUI: rd = rs, imm16
+				CTE <= '1';
 				REN   <= '1'; --Enable Register IN Write 
 				IMMBO <= '1'; -- enable immediate operand passthrough
 
@@ -100,6 +102,7 @@ begin
 				RDIN 	<= '1';
 				
 			when "0101" => -- LDI: rd <= imm16
+				CTE <= '1';
 				REN	<= '1';
 				IMMO 	<= '1'; --select imm16 passthrough on bus
 			
@@ -114,16 +117,24 @@ begin
 				JAL   <= '1';
 			when "1010" =>  -- JR: IR <= pop[IR]
 				JR   	<= '1';
-			
 			when "1011" =>  -- SHIFT: rd<= rs<<amt
 				REN 	<= '1';
 				SHFTO <= '1';
 			when "1100" => -- ALU2: 
-				REN  	<= '1';
+				if not funct = "111" then -- If not CMP Instruction
+					REN  	<= '1'; 
+				end if;
 				ALU2  <= '1';
 				
 			when "1110" => -- IO: Instruction register
-				IO <= '1'; 
+				if(funct="000") then
+					EXO <= '1'; -- Register passthrough to Execute output
+					RDIN <='1';
+					SSEN <= '1'; --enable Seven Segment Display
+				elsif funct="001" then
+					SWO <= '1'; -- Enable switch to bus
+					REN <= '1'; -- enable register write
+				end if;
 				
 			when "1111" =>
 				Halt <= '1'; -- feeds op '1111' into instruction register (endless inescapable feedback)

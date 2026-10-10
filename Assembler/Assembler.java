@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 /**
@@ -33,7 +34,8 @@ import java.util.TreeSet;
  *     ADD,R1,R2,10     immediate form (ALUI) -- chosen automatically because
  *                      the last operand is a number, not a register
  *     MIN,R1,R2,R3     ALU2
- *     SL,R1,R2         shift
+ *     CMP,R1,R2        compare: sets the flags, no destination register
+ *     SR,R1,R2,3       shift: R1 = R2 >> 3 (amount 0..7)
  *     SSD,R1           I/O
  *     BEQ,LOOP         branch
  *
@@ -44,6 +46,7 @@ import java.util.TreeSet;
  *
  *         LDI,R4,32   ->  [n]   5800   0101 100X XXXX XXXX  (X written as 0)
  *                         [n+1] 0020   immediate = 32
+ *
  * Output:
  *     *.csv  ->  address,hex,binary,source   (one row per 16-bit word)
  *     other  ->  one hex word per line
@@ -55,11 +58,13 @@ public class Assembler {
     static final int INSTRUCTION_WIDTH = 16;   // bits per word
     static final int OPCODE_WIDTH = 4;
     static final int HEX_DIGITS = (INSTRUCTION_WIDTH + 3) / 4;
-
     /** Shown in the "source" column for the second word of a 32-bit instruction. */
     static final String IMMEDIATE_WORD_LABEL = "(immediate)";
 
+
+    // =========================================================================
     // 2. FUNCTION / CONDITION TABLES  ({mnemonic, bit pattern})
+    // =========================================================================
     // Every name here becomes a mnemonic (see buildIsa). These must be
     // declared above ISA_DEFINITION, which is built during class
     // initialization and reads them.
@@ -72,6 +77,15 @@ public class Assembler {
         {"OR",  "101"},
         {"XOR", "110"},
         {"NOT", "111"}};
+    static final String[][] ALUI = {
+        {"ADD", "000"},
+        {"SUB", "001"},
+        {"INC", "010"},
+        {"DEC", "011"},
+        {"AND", "100"},
+        {"OR",  "101"},
+        {"XOR", "110"},
+        {"NOT", "111"}};   
     static final String[][] ALU2 = {
         {"MIN",  "000"},
         {"MAX",  "001"},
@@ -79,8 +93,10 @@ public class Assembler {
         {"MAXU", "011"},
         {"NEG",  "100"},
         {"NAND", "101"},
-        {"XNOR", "110"},
-        {"CMP",  "111"}};
+        {"XNOR", "110"}};
+    /** Compare has its own table because it takes no destination register. */
+    static final String[][] CMP = {
+        {"CMP", "111"}};
     static final String[][] SHIFT = {
         {"SL",  "000"},
         {"SLL", "001"},
@@ -112,6 +128,7 @@ public class Assembler {
     //     immNextWord()  16-bit immediate stored in a second word
     //                    (makes the instruction two words long)
     //     addr(n)        numeric address or label
+    //     amt(n)         small unsigned number such as a shift amount (0..2^n-1)
     //     func(n)        function bits, supplied by the mnemonic (ADD, SUB, ...);
     //                    no operand in the source
     //     cond(n)        same as func(n); reads better for branch conditions
@@ -124,27 +141,28 @@ public class Assembler {
     //                        the given layout(s). If a family has several
     //                        layouts, the assembler picks the one whose
     //                        operands fit (ADD,R1,R2,R3 vs ADD,R1,R2,10).
-
     static final Map<String, List<Form>> ISA_DEFINITION = buildIsa();
 
     static Map<String, List<Form>> buildIsa() {
         Map<String, List<Form>> isa = new LinkedHashMap<>();
-        define(isa, "NOP", instr("0000", unused(12)));                                                // NOP                          e.g.  NOP
-        defineFamily(isa, ALU,
-                                    instr("0001", reg(3), reg(3), reg(3), func(3)),     //                     ADD,Rd,Rs1,Rs2   register form  (ALU)
-                                    instr("0010", reg(3), reg(3), unused(3),  func(3), immNextWord())//          ADD,Rd,Rs1,imm   immediate form (ALUI, two words)
-                    );
-        define(isa, "LW",  instr("0011", reg(3),   addr(9)));                                  // LW    Rd, address           e.g.  LW,R1,0x20
-        define(isa, "SW",  instr("0100", reg(3),       addr(9)));                              // SW    Rs, address           e.g.  SW,R1,0x20
-        define(isa, "LDI", instr("0101", reg(3),       unused(9), immNextWord()));             // LDI   Rd, immediate         e.g.  LDI,R1,10      (two words)
-        defineFamily(isa, BR,       instr("0111", cond(3),     addr(9)));                               // BEQ,address  (BR)
-        define(isa, "JMP", instr("1000", unused(3),    addr(9)));                              // JMP   NULL, address         e.g.  JMP,LOOP
-        define(isa, "JAL", instr("1001", unused(3),    addr(9)));                              // JAL   NULL, address         e.g.  JAL,FUNC_START
-        define(isa, "JR",  instr("1010", unused(12)));                                                // JR                          e.g. JR
-        defineFamily(isa, SHIFT,    instr("1011", reg(3),  reg(3),   unused(3), func(3)));  // SL,Rd,Rs  (SHIFT)
-        defineFamily(isa, ALU2,     instr("1100", reg(3),  reg(3),   reg(3),    func(3)));  // MIN,Rd,Rs1,Rs2  (ALU2)
-        defineFamily(isa, IO,       instr("1110", reg(3),  unused(6),func(3)));                    // SSD, Rs  (IO)
-        define(isa, "HALT",instr("1111", unused(12)));                                                // HALT                        e.g. HALT
+        
+        define(isa, "NOP", instr("0000", unused(12)));                      // NOP              e.g.  NOP
+        
+        defineFamily(isa, ALU,      instr("0001", reg(3), reg(3), reg(3), func(3)));             // ADD,Rd,Rs1,Rs2   register form   (ALU)
+        defineFamily(isa, ALUI,     instr("0010", reg(3), reg(3),unused(3), func(3),imm16())); // ADD,Rd,Rs1,imm   immediate form  (ALUI, two words)
+        define(isa, "LW",  instr("0011", reg(3), addr(9)));           // LW    Rd, address                          e.g.  LW,R1,0x20
+        define(isa, "SW",  instr("0100", reg(3), addr(9)));           // SW    Rs, address                         e.g.  SW,R1,0x20
+        define(isa, "LDI", instr("0101", reg(3), unused(9), imm16()));// LDI   Rd, immediate                        e.g.  LDI,R1,10      (two words)
+        defineFamily(isa, BR,       instr("0111", cond(3), addr(9)));           // BEQ,address                              e.g.  BEQ,LOOP       (BR)
+        define(isa, "JMP", instr("1000", unused(3),addr(9)));        // JMP   address                             e.g.  JMP,LOOP
+        define(isa, "JAL", instr("1001", unused(3),addr(9)));        // JAL   address                              e.g.  JAL,FUNC_START
+        define(isa, "JR",  instr("1010", unused(12)));                        // JR                                        e.g.  JR
+        defineFamily(isa, SHIFT,    instr("1011", reg(3), reg(3), amt(3), func(3)));    // SL,Rd,Rs,amt         e.g.  SR,R1,R2,3     R1 = R2 >> 3   (SHIFT)
+        defineFamily(isa, ALU2,     instr("1100", reg(3), reg(3), reg(3), func(3)));    // MIN,Rd,Rs1,Rs2       e.g.  MIN,R1,R2,R3                  (ALU2)
+        defineFamily(isa, CMP,      instr("1100", unused(3),reg(3), reg(3), func(3))); // CMP,Rs1,Rs2          e.g.  CMP,R1,R2      sets the flags, no destination
+        defineFamily(isa, IO,       instr("1110", reg(3), unused(6), func(3)));                // SSD,Rs               e.g.  SSD,R1         (IO)
+        
+        define(isa, "HALT", instr("1111", unused(12)));// HALT                             e.g.  HALT
         return isa;
     }
 
@@ -186,6 +204,7 @@ public class Assembler {
             forms = new ArrayList<>();
             isa.put(key, forms);
         }
+
         // Two forms of one mnemonic must be told apart by their operands.
         for (Form existing : forms) {
             if (existing.def.describeOperands().equals(form.def.describeOperands())) {
@@ -196,9 +215,11 @@ public class Assembler {
         }
         forms.add(form);
     }
+    // =========================================================================
     // 4. DATA STRUCTURES
+    // =========================================================================
     enum FieldType {
-        NULL("NULL"), UNUSED("unused"), REG("reg"), IMM("imm"), ADDR("addr"), FUNC("func");
+        NULL("NULL"), UNUSED("unused"), REG("reg"), IMM("imm"), ADDR("addr"), FUNC("func"), AMT("amt");
 
         /** How the operand is described in error messages ("reg,reg,imm"). */
         final String displayName;
@@ -220,6 +241,7 @@ public class Assembler {
             this.width = width;
             this.word = word;
         }
+
         /**
          * UNUSED fields are encoded as zeros and FUNC fields come from the
          * mnemonic, so neither has an operand in the source.
@@ -228,6 +250,7 @@ public class Assembler {
             return type != FieldType.UNUSED && type != FieldType.FUNC;
         }
     }
+
     /** An opcode plus the fields that follow it. */
     static final class InstrDef {
         final int opcodeValue;
@@ -240,7 +263,7 @@ public class Assembler {
         final FieldSpec functionField;
 
         InstrDef(String opcodeBits, List<FieldSpec> fields) {
-            if (opcodeBits.length() != OPCODE_WIDTH || !opcodeBits.matches("[01]+")) { // VALIDATE OPCODE
+            if (opcodeBits.length() != OPCODE_WIDTH || !opcodeBits.matches("[01]+")) {
                 throw new AssemblyException(
                     "ISA_DEFINITION: opcode '" + opcodeBits
                     + "' must be a binary string of exactly " + OPCODE_WIDTH + " bits");
@@ -251,16 +274,16 @@ public class Assembler {
             FieldSpec function = null;
             for (FieldSpec field : fields) {
                 lastWord = Math.max(lastWord, field.word);
-                if (field.takesOperand()) { // To determine how it is written
+                if (field.takesOperand()) {
                     operands++;
                 }
                 if (field.type == FieldType.FUNC) {
-                    if (function != null) {      // Validate
+                    if (function != null) {
                         throw new AssemblyException(
                             "ISA_DEFINITION: opcode '" + opcodeBits
                             + "' has more than one func/cond field");
                     }
-                    function = field; 
+                    function = field;
                 }
             }
 
@@ -285,7 +308,6 @@ public class Assembler {
             this.operandCount = operands;
             this.functionField = function;
         }
-
         /** The operand kinds in source order, e.g. "reg,reg,imm". */
         String describeOperands() {
             List<String> names = new ArrayList<>();
@@ -311,7 +333,6 @@ public class Assembler {
             this.functionValue = functionValue;
         }
     }
-
     /** A cleaned-up instruction line together with its line number, for error messages. */
     static final class SourceLine {
         final int lineNo;
@@ -322,7 +343,6 @@ public class Assembler {
             this.text = text;
         }
     }
-
     /** One assembled 16-bit word. A 32-bit instruction produces two of these. */
     static final class AssembledLine {
         final int address;
@@ -338,7 +358,6 @@ public class Assembler {
             this.isContinuation = isContinuation;
         }
     }
-
     /** Thrown for problems in the assembly source or the ISA definition. */
     static final class AssemblyException extends RuntimeException {
         private static final long serialVersionUID = 1L;
@@ -365,13 +384,17 @@ public class Assembler {
         return new FieldSpec(FieldType.IMM, width, 0);
     }
     /** A full-word immediate stored in the second word of the instruction. */
-    static FieldSpec immNextWord() {
+    static FieldSpec imm16() {
         return new FieldSpec(FieldType.IMM, INSTRUCTION_WIDTH, 1);
     }
     static FieldSpec addr(int width) {
         return new FieldSpec(FieldType.ADDR, width, 0);
     }
     /** Function bits taken from the mnemonic (ADD, SUB, ...). */
+    /** A small unsigned number such as a shift amount, written as a decimal/hex literal. */
+    static FieldSpec amt(int width) {
+        return new FieldSpec(FieldType.AMT, width, 0);
+    }
     static FieldSpec func(int width) {
         return new FieldSpec(FieldType.FUNC, width, 0);
     }
@@ -379,26 +402,28 @@ public class Assembler {
     static FieldSpec cond(int width) {
         return func(width);
     }
-    
+
+
     // =========================================================================
     // 5. MAIN
     // =========================================================================
     public static void main(String[] args) {
-        if (args.length < 1) { // VALIDATE INPUT
+        if (args.length < 1) {
             System.err.println("Usage: java Assembler <program> [output.(txt|csv)]");
             System.err.println("Input format: " + inputFormatName());
             System.exit(1);
         }
 
         String programPath = args[0];
-        String outputPath = (args.length >= 2) ? args[1] : defaultOutputPath(programPath); // validate
+        String outputPath = (args.length >= 2) ? args[1] : defaultOutputPath(programPath);
 
         try {
             List<String> sourceLines = loadProgramLines(programPath);
-            List<AssembledLine> program = assembleProgram(sourceLines); // Main Assembly Process
+            Map<String, Integer> labels = new HashMap<>();            
+            List<AssembledLine> program = assembleProgram(sourceLines, labels);
 
             printHex(program);
-            writeOutput(program, outputPath);
+            writeOutput(program, labels, outputPath);
 
             System.out.println(
                 "Assembled " + countInstructions(program) + " instruction(s) ("
@@ -434,6 +459,8 @@ public class Assembler {
         }
         return count;
     }
+
+
     // =========================================================================
     // 6. LOADING THE PROGRAM FILE
     // =========================================================================
@@ -456,8 +483,7 @@ public class Assembler {
     // =========================================================================
     // 7. ASSEMBLY (two passes)
     // =========================================================================
-    static List<AssembledLine> assembleProgram(List<String> lines) {
-        Map<String, Integer> labels = new HashMap<>();
+    static List<AssembledLine> assembleProgram(List<String> lines, Map<String, Integer> labels) {
         List<SourceLine> instructions = new ArrayList<>();
 
         // Pass 1: record each label's address and collect the instruction lines.
@@ -475,9 +501,10 @@ public class Assembler {
                 labels.put(name, address);
             } else {
                 instructions.add(new SourceLine(lineNo, text));
-                address += instructionSizeInWords(text); // 1: 16bit, 2: 32bit
+                address += instructionSizeInWords(text);
             }
         }
+
         // Pass 2: encode every instruction, now that all labels are known.
         List<AssembledLine> program = new ArrayList<>();
         address = 0;
@@ -493,7 +520,6 @@ public class Assembler {
         }
         return program;
     }
-
     /**
      * How many words the instruction on this line will occupy. The size
      * depends on which form is chosen (ADD,R1,R2,R3 is one word, ADD,R1,R2,10
@@ -505,7 +531,6 @@ public class Assembler {
         if (tokens.length == 0) {
             return 1;
         }
-
         try {
             return resolveForm(tokens, 0, line).def.wordCount;
         } catch (AssemblyException e) {
@@ -516,7 +541,6 @@ public class Assembler {
     static boolean isLabelDefinition(String line) {
         return line.matches("^[A-Za-z_][A-Za-z0-9_]*:$");
     }
-
     static AssemblyException error(int lineNo, String message) {
         return new AssemblyException("line " + lineNo + ": " + message);
     }
@@ -530,12 +554,11 @@ public class Assembler {
         int lineNo = source.lineNo;
         String[] tokens = tokenize(source.text);
 
-        if (tokens.length == 0) {   // Validate
+        if (tokens.length == 0) {
             throw error(lineNo, "empty instruction");
         }
 
-        String mnemonic = tokens[0].toUpperCase(); // Clean
-
+        String mnemonic = tokens[0].toUpperCase();
         Form form = resolveForm(tokens, lineNo, source.text);
         InstrDef def = form.def;
 
@@ -569,16 +592,14 @@ public class Assembler {
         }
         return result;
     }
-
     /**
      * Decides which form of the mnemonic a line uses. Some mnemonics have
      * several (ADD with a register or with an immediate); the operands pick.
      */
     static Form resolveForm(String[] tokens, int lineNo, String sourceText) {
-        String mnemonic = tokens[0].toUpperCase();              // Clean
+        String mnemonic = tokens[0].toUpperCase();
         List<Form> candidates = ISA_DEFINITION.get(mnemonic);
-
-        if (candidates == null) {                               // Validate 
+        if (candidates == null) {
             throw error(lineNo, "unknown instruction '" + mnemonic + "'");
         }
 
@@ -590,7 +611,6 @@ public class Assembler {
                 sameLength.add(form);
             }
         }
-
         if (sameLength.isEmpty()) {
             throw error(lineNo,
                 mnemonic + " expects " + describeOperandCounts(candidates)
@@ -629,7 +649,8 @@ public class Assembler {
         switch (type) {
             case NULL: return operand.equalsIgnoreCase("NULL") || operand.equals("0");
             case REG:  return operand.matches("(?i)R[0-9]+");
-            case IMM:  return looksLikeNumber(operand);
+            case IMM:
+            case AMT:  return looksLikeNumber(operand);
             case ADDR: return looksLikeNumber(operand) || operand.matches("[A-Za-z_][A-Za-z0-9_]*");
             default:   return false;
         }
@@ -697,6 +718,7 @@ public class Assembler {
             case NULL: return encodeNull(operand, lineNo, mnemonic);
             case REG:  return encodeRegister(field, operand, lineNo, mnemonic);
             case IMM:  return encodeImmediate(field, operand, lineNo);
+            case AMT:  return encodeAmount(field, operand, lineNo);
             case ADDR: return encodeAddress(field, operand, labels, lineNo);
             default:   throw new IllegalStateException(
                            "Field type " + field.type + " does not take an operand");
@@ -749,6 +771,24 @@ public class Assembler {
         return value;
     }
 
+    /** A shift amount: an unsigned number that fits in the field (3 bits -> 0..7). */
+    static long encodeAmount(FieldSpec field, String operand, int lineNo) {
+        long max = mask(field.width);
+
+        if (!looksLikeNumber(operand)) {
+            throw error(lineNo,
+                "expected a shift amount 0.." + max + ", got '" + operand + "'");
+        }
+
+        long value = parseNumber(operand, lineNo);
+        if (value < 0 || value > max) {
+            throw error(lineNo,
+                "shift amount " + operand + " does not fit in " + field.width
+                + " bits (range 0.." + max + ")");
+        }
+        return value;
+    }
+
     /** An address: a decimal/hex number, or the name of a label. */
     static long encodeAddress(
             FieldSpec field, String operand, Map<String, Integer> labels, int lineNo) {
@@ -778,13 +818,12 @@ public class Assembler {
 
 
     // =========================================================================
-    // 10. NUMBER PARSING
+    // 10. NUMBER PARSING (Capable of both decimal and Hex)
     // =========================================================================
     /** True for decimal ("12", "-3") or hex ("0x0C", "-0x0C") literals. */
     static boolean looksLikeNumber(String token) {
         return token.matches("-?(0[xX][0-9a-fA-F]+|[0-9]+)");
     }
-
     /** Parses a decimal or hex literal (hex may be negated: -0x10). */
     static long parseNumber(String token, int lineNo) {
         try {
@@ -803,26 +842,28 @@ public class Assembler {
             throw error(lineNo, "invalid immediate '" + token + "'");
         }
     }
-    static int parseIntStrict(String text, int lineNo) { // With Validation/Error Handling
+    static int parseIntStrict(String text, int lineNo) {
         try {
             return Integer.parseInt(text);
         } catch (NumberFormatException e) {
             throw error(lineNo, "expected an integer, got '" + text + "'");
         }
     }
+
     // =========================================================================
     // 11. OUTPUT
+    // =========================================================================
     /** Echoes each encoded word to stdout as hex. */
     static void printHex(List<AssembledLine> program) {
         for (AssembledLine line : program) {
             System.out.println(toHex(line.encoded));
         }
     }
-
     /** Writes the program to a file: CSV if the name ends in .csv, else plain hex. */
-    static void writeOutput(List<AssembledLine> program, String outputPath) throws IOException {
+    static void writeOutput(List<AssembledLine> program,Map<String, Integer> labels, String outputPath) throws IOException {
         boolean csv = outputPath.toLowerCase().endsWith(".csv");
         StringBuilder out = new StringBuilder();
+
         if (csv) {
             out.append("address,hex,binary,source\n");
         }
@@ -830,12 +871,18 @@ public class Assembler {
             if (csv) {
                 out.append(toCsvRow(line));
             } else {
+                labels.entrySet().stream()
+                    .filter(entry -> Objects.equals(entry.getValue(), line.address))
+                    .map(Map.Entry::getKey)
+                    .findFirst()
+                    .ifPresent(
+                        label -> {out.append("--" + label + ":");}
+                    ); 
                 out.append(String.format("%d => x\"%s\", -- %s", line.address,toHex(line.encoded), line.sourceLine)).append('\n');
             }
         }
         Files.write(Paths.get(outputPath), out.toString().getBytes());
     }
-
     /** address,hex,binary,"source"  (double quotes in the source become single quotes). */
     static String toCsvRow(AssembledLine line) {
         String source = line.sourceLine.replace("\"", "'");

@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sat Oct 10 01:10:09 2026
+Analysis & Synthesis Status : Successful - Sat Oct 10 20:43:57 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : BasicCPU
 Top-level Entity Name : BasicCPU
 Family : MAX 10
-Total logic elements : 468
-    Total combinational functions : 407
-    Dedicated logic registers : 159
-Total registers : 159
+Total logic elements : 5,050
+    Total combinational functions : 2,861
+    Dedicated logic registers : 2,475
+Total registers : 2475
 Total pins : 65
 Total virtual pins : 0
 Total memory bits : 0

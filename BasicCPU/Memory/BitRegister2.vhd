@@ -21,7 +21,7 @@ begin
 	begin
 		 if CLR = '1' then
 			  Q <= '0';
-		 elsif rising_edge(clk) then
+		 elsif falling_edge(clk) then
 			  if EN = '1' then
 					Q <= D;
 			  end if;
