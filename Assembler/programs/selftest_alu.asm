@@ -1,5 +1,5 @@
 # =============================================================================
-# selftest_alu.csv -- self-checking test: registers, ALU, shifts, memory
+# selftest_alu.asm -- self-checking test: registers, ALU, shifts, memory
 # =============================================================================
 # Runs each data instruction with known operands, compares the result with a
 # constant and stops at the first mismatch.
@@ -9,10 +9,10 @@
 #                  see the instruction and operands that went wrong
 #   anything else, nothing at all, or the CPU never halts
 #                  something basic is broken (LDI, SSD, HALT, a runaway
-#                  branch...); go back to echo.csv
+#                  branch...); go back to echo.asm
 #
-# Every check ends in CMP + BNE, so run echo.csv first and make sure branches
-# work; selftest_flow.csv then tests the branches themselves.
+# Every check ends in CMP + BNE, so run echo.asm first and make sure branches
+# work; selftest_flow.asm then tests the branches themselves.
 #
 # REGISTERS   R1,R2 operands   R3 result   R4 expected value   R5 spare
 #             R6 failure code   R7 link register for JAL/JR (assumed)
@@ -25,229 +25,229 @@
 # ASSUMED SEMANTICS (edit the expected constants if yours differ)
 #   * CMP Rs1,Rs2 sets flags from Rs1 - Rs2 (no destination), BNE tests them
 #   * INC DEC NOT NEG are unary: they use Rs1 and ignore Rs2
-#   * a shift moves by its 3-bit amount operand (0..7): SR arithmetic,
-#     SLR logical, SL/SLL left
+#   * a shift moves by its 4-bit amount operand (0..15): SLL left, SRL right
+#     with zero fill, SRA right with sign fill, ROL rotates left
 #   * MIN/MAX are signed, MINU/MAXU unsigned
 #   * LDI and the ALU immediates carry a full 16 bits
 # =============================================================================
 
 # ---- register file: five registers are independent -----------------------
 # T01  R1..R5 hold 1,2,4,8,16; their sum is 0x1F
-LDI,R6,0xE001
-LDI,R1,0x0001
-LDI,R2,0x0002
-LDI,R3,0x0004
-LDI,R4,0x0008
-LDI,R5,0x0010
-ADD,R1,R1,R2
-ADD,R1,R1,R3
-ADD,R1,R1,R4
-ADD,R1,R1,R5
-LDI,R4,0x001F
-CMP,R1,R4
-BNE,FAIL
+LDI R6 0xE001
+LDI R1 0x0001
+LDI R2 0x0002
+LDI R3 0x0004
+LDI R4 0x0008
+LDI R5 0x0010
+ADD R1 R1 R2
+ADD R1 R1 R3
+ADD R1 R1 R4
+ADD R1 R1 R5
+LDI R4 0x001F
+CMP R1 R4
+BNE FAIL
 
 # ---- add / subtract, register form ---------------------------------------
-LDI,R1,0x1234
-LDI,R2,0x0FFF
+LDI R1 0x1234
+LDI R2 0x0FFF
 # T02  ADD  0x1234 + 0x0FFF = 0x2233
-LDI,R6,0xE002
-ADD,R3,R1,R2
-LDI,R4,0x2233
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE002
+ADD R3 R1 R2
+LDI R4 0x2233
+CMP R3 R4
+BNE FAIL
 # T03  SUB  0x1234 - 0x0FFF = 0x0235 (operand order)
-LDI,R6,0xE003
-SUB,R3,R1,R2
-LDI,R4,0x0235
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE003
+SUB R3 R1 R2
+LDI R4 0x0235
+CMP R3 R4
+BNE FAIL
 # T04  INC  0x1234 -> 0x1235
-LDI,R6,0xE004
-INC,R3,R1,R1
-LDI,R4,0x1235
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE004
+INC R3 R1 R1
+LDI R4 0x1235
+CMP R3 R4
+BNE FAIL
 # T05  DEC  0x1234 -> 0x1233
-LDI,R6,0xE005
-DEC,R3,R1,R1
-LDI,R4,0x1233
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE005
+DEC R3 R1 R1
+LDI R4 0x1233
+CMP R3 R4
+BNE FAIL
 
 # ---- ALU, immediate form (two-word instruction) --------------------------
 # T06  ADD imm  0x1234 + 0x0100 = 0x1334
-LDI,R6,0xE006
-ADD,R3,R1,0x0100
-LDI,R4,0x1334
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE006
+ADD R3 R1 0x0100
+LDI R4 0x1334
+CMP R3 R4
+BNE FAIL
 # T07  SUB imm  0x0FFF - 0x1000 = 0xFFFF (borrow wraps, full 16-bit imm)
-LDI,R6,0xE007
-SUB,R3,R2,0x1000
-LDI,R4,0xFFFF
-CMP,R3,R4
-BNE,FAIL
-LDI,R1,0xF0F0
+LDI R6 0xE007
+SUB R3 R2 0x1000
+LDI R4 0xFFFF
+CMP R3 R4
+BNE FAIL
+LDI R1 0xF0F0
 # T08  AND imm  0xF0F0 & 0x00FF = 0x00F0
-LDI,R6,0xE008
-AND,R3,R1,0x00FF
-LDI,R4,0x00F0
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE008
+AND R3 R1 0x00FF
+LDI R4 0x00F0
+CMP R3 R4
+BNE FAIL
 # T09  OR imm   0xF0F0 | 0x000F = 0xF0FF
-LDI,R6,0xE009
-OR,R3,R1,0x000F
-LDI,R4,0xF0FF
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE009
+OR R3 R1 0x000F
+LDI R4 0xF0FF
+CMP R3 R4
+BNE FAIL
 # T10  XOR imm  0xF0F0 ^ 0xFFFF = 0x0F0F
-LDI,R6,0xE00A
-XOR,R3,R1,0xFFFF
-LDI,R4,0x0F0F
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE00A
+XOR R3 R1 0xFFFF
+LDI R4 0x0F0F
+CMP R3 R4
+BNE FAIL
 
 # ---- logic, register form ------------------------------------------------
-LDI,R2,0x3C3C
+LDI R2 0x3C3C
 # T11  AND   0xF0F0 & 0x3C3C = 0x3030
-LDI,R6,0xE00B
-AND,R3,R1,R2
-LDI,R4,0x3030
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE00B
+AND R3 R1 R2
+LDI R4 0x3030
+CMP R3 R4
+BNE FAIL
 # T12  OR    0xF0F0 | 0x3C3C = 0xFCFC
-LDI,R6,0xE00C
-OR,R3,R1,R2
-LDI,R4,0xFCFC
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE00C
+OR R3 R1 R2
+LDI R4 0xFCFC
+CMP R3 R4
+BNE FAIL
 # T13  XOR   0xF0F0 ^ 0x3C3C = 0xCCCC
-LDI,R6,0xE00D
-XOR,R3,R1,R2
-LDI,R4,0xCCCC
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE00D
+XOR R3 R1 R2
+LDI R4 0xCCCC
+CMP R3 R4
+BNE FAIL
 # T14  NOT   ~0xF0F0 = 0x0F0F
-LDI,R6,0xE00E
-NOT,R3,R1,R1
-LDI,R4,0x0F0F
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE00E
+NOT R3 R1 R1
+LDI R4 0x0F0F
+CMP R3 R4
+BNE FAIL
 # T15  NAND  ~(0xF0F0 & 0x3C3C) = 0xCFCF
-LDI,R6,0xE00F
-NAND,R3,R1,R2
-LDI,R4,0xCFCF
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE00F
+NAND R3 R1 R2
+LDI R4 0xCFCF
+CMP R3 R4
+BNE FAIL
 # T16  XNOR  ~(0xF0F0 ^ 0x3C3C) = 0x3333
-LDI,R6,0xE010
-XNOR,R3,R1,R2
-LDI,R4,0x3333
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE010
+XNOR R3 R1 R2
+LDI R4 0x3333
+CMP R3 R4
+BNE FAIL
 
 # ---- min / max / negate, signed and unsigned -----------------------------
-LDI,R1,0xFFFB
-LDI,R2,0x0003
+LDI R1 0xFFFB
+LDI R2 0x0003
 # T17  MIN   min(-5, 3) = -5 (0xFFFB)
-LDI,R6,0xE011
-MIN,R3,R1,R2
-LDI,R4,0xFFFB
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE011
+MIN R3 R1 R2
+LDI R4 0xFFFB
+CMP R3 R4
+BNE FAIL
 # T18  MAX   max(-5, 3) = 3
-LDI,R6,0xE012
-MAX,R3,R1,R2
-LDI,R4,0x0003
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE012
+MAX R3 R1 R2
+LDI R4 0x0003
+CMP R3 R4
+BNE FAIL
 # T19  MINU  minu(0xFFFB, 3) = 3
-LDI,R6,0xE013
-MINU,R3,R1,R2
-LDI,R4,0x0003
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE013
+MINU R3 R1 R2
+LDI R4 0x0003
+CMP R3 R4
+BNE FAIL
 # T20  MAXU  maxu(0xFFFB, 3) = 0xFFFB
-LDI,R6,0xE014
-MAXU,R3,R1,R2
-LDI,R4,0xFFFB
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE014
+MAXU R3 R1 R2
+LDI R4 0xFFFB
+CMP R3 R4
+BNE FAIL
 # T21  NEG   -(3) = 0xFFFD
-LDI,R6,0xE015
-NEG,R3,R2,R2
-LDI,R4,0xFFFD
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE015
+NEG R3 R2 R2
+LDI R4 0xFFFD
+CMP R3 R4
+BNE FAIL
 
-# ---- shifts (the 3-bit amount operand) -----------------------------------
-# T22  SL    0x1234 << 1 = 0x2468
-LDI,R6,0xE016
-LDI,R1,0x1234
-SL,R3,R1,1
-LDI,R4,0x2468
-CMP,R3,R4
-BNE,FAIL
-# T23  SLL   0x1234 << 7 = 0x1A00 (largest amount)
-LDI,R6,0xE017
-SLL,R3,R1,7
-LDI,R4,0x1A00
-CMP,R3,R4
-BNE,FAIL
-# T24  SLR   0x8002 >> 3 = 0x1000 (logical: zero fills)
-LDI,R6,0xE018
-LDI,R1,0x8002
-SLR,R3,R1,3
-LDI,R4,0x1000
-CMP,R3,R4
-BNE,FAIL
-# T25  SR    0x8002 >> 3 = 0xF000 (arithmetic: sign fills)
-LDI,R6,0xE019
-SR,R3,R1,3
-LDI,R4,0xF000
-CMP,R3,R4
-BNE,FAIL
+# ---- shifts and rotate (the 4-bit amount operand) ------------------------
+# T22  SLL   0x1234 << 12 = 0x4000 (amount bits 3 and 2)
+LDI R6 0xE016
+LDI R1 0x1234
+SLL R3 R1 12
+LDI R4 0x4000
+CMP R3 R4
+BNE FAIL
+# T23  SRL   0x8002 >> 3 = 0x1000 (zero fills)
+LDI R6 0xE017
+LDI R1 0x8002
+SRL R3 R1 3
+LDI R4 0x1000
+CMP R3 R4
+BNE FAIL
+# T24  SRA   0x8002 >> 9 = 0xFFC0 (all nine vacated bits get the sign)
+LDI R6 0xE018
+SRA R3 R1 9
+LDI R4 0xFFC0
+CMP R3 R4
+BNE FAIL
+# T25  ROL   0x8002 rotated left 4 = 0x0028 (top bits wrap round)
+LDI R6 0xE019
+ROL R3 R1 4
+LDI R4 0x0028
+CMP R3 R4
+BNE FAIL
 
 # ---- memory --------------------------------------------------------------
 # T26  SW/LW round trip at 0x1F0
-LDI,R6,0xE01A
-LDI,R1,0xBEEF
-SW,R1,0x1F0
-LDI,R3,0
-LW,R3,0x1F0
-LDI,R4,0xBEEF
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE01A
+LDI R1 0xBEEF
+SW R1 0x1F0
+LDI R3 0
+LW R3 0x1F0
+LDI R4 0xBEEF
+CMP R3 R4
+BNE FAIL
 # T27  a second cell at 0x1F1 is independent
-LDI,R6,0xE01B
-LDI,R2,0x1357
-SW,R2,0x1F1
-LW,R3,0x1F1
-LDI,R4,0x1357
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE01B
+LDI R2 0x1357
+SW R2 0x1F1
+LW R3 0x1F1
+LDI R4 0x1357
+CMP R3 R4
+BNE FAIL
 # T28  0x1F0 still holds its value
-LDI,R6,0xE01C
-LW,R3,0x1F0
-LDI,R4,0xBEEF
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE01C
+LW R3 0x1F0
+LDI R4 0xBEEF
+CMP R3 R4
+BNE FAIL
 # T29  top address 0x1FF (all 9 address bits)
-LDI,R6,0xE01D
-LDI,R5,0xA5A5
-SW,R5,0x1FF
-LW,R3,0x1FF
-LDI,R4,0xA5A5
-CMP,R3,R4
-BNE,FAIL
+LDI R6 0xE01D
+LDI R5 0xA5A5
+SW R5 0x1FF
+LW R3 0x1FF
+LDI R4 0xA5A5
+CMP R3 R4
+BNE FAIL
 
 # ---- all checks passed ------------------------------------------------------
-LDI,R1,0x600D
-SSD,R1
+LDI R1 0x600D
+SSD R1
 HALT
 
 # ---- the first failing check lands here: show its code and stop ------------
 FAIL:
-SSD,R6
+SSD R6
 HALT

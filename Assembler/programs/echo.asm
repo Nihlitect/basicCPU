@@ -1,5 +1,5 @@
 # =============================================================================
-# echo.csv -- bring-up test: switches -> display
+# echo.asm -- bring-up test: switches -> display
 # =============================================================================
 # The smallest possible "is the CPU alive" program. Reads the switches and
 # shows the value on the seven-segment display, forever.
@@ -14,4 +14,3 @@ LOOP:
 SWI R1
 SSD R1
 JMP LOOP
-

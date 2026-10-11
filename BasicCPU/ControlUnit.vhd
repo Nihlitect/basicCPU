@@ -120,11 +120,20 @@ begin
 			when "1011" =>  -- SHIFT: rd<= rs<<amt
 				REN 	<= '1';
 				SHFTO <= '1';
+				
 			when "1100" => -- ALU2: 
 				if not funct = "111" then -- If not CMP Instruction
 					REN  	<= '1'; 
 				end if;
 				ALU2  <= '1';
+
+			when "1101" => -- ALU2I: 
+				CTE <= '1';
+				if not funct = "111" then -- If not CMP Instruction
+					REN  	<= '1'; 
+				end if;
+				ALU2  <= '1';
+				IMMBO <= '1'; -- enable immediate operand passthrough
 				
 			when "1110" => -- IO: Instruction register
 				if(funct="000") then

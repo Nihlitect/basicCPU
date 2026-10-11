@@ -150,7 +150,7 @@ on the Quartus Prime software download page.
 )
 (pin
 	(output)
-	(rect 888 184 1064 200)
+	(rect 880 184 1056 200)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
 	(text "CO[8..0]" (rect 90 0 132 10)(font "Arial" ))
 	(pt 0 8)
@@ -656,7 +656,7 @@ on the Quartus Prime software download page.
 	(annotation_block (parameter)(rect 264 224 451 250))
 )
 (symbol
-	(rect 664 160 776 248)
+	(rect 656 160 768 248)
 	(text "BUSMUX" (rect 28 0 91 15)(font "Arial" (font_size 10)))
 	(text "busmo" (rect 3 77 34 87)(font "DejaVu Sans Condensed" ))
 	(port
@@ -701,10 +701,10 @@ on the Quartus Prime software download page.
 		(line (pt 44 16)(pt 68 32))
 		(line (pt 44 80)(pt 68 64))
 	)
-	(annotation_block (parameter)(rect 776 128 907 154))
+	(annotation_block (parameter)(rect 768 128 899 154))
 )
 (symbol
-	(rect 696 248 744 312)
+	(rect 688 248 736 312)
 	(text "OR2" (rect 0 45 9 63)(font "Arial" (font_size 6))(vertical))
 	(text "inst3" (rect 37 39 47 61)(font "DejaVu Sans Condensed" )(vertical))
 	(port
@@ -738,26 +738,12 @@ on the Quartus Prime software download page.
 	(rotate90)
 )
 (connector
-	(pt 264 256)
-	(pt 248 256)
-	(bus)
-)
-(connector
-	(pt 320 128)
-	(pt 320 232)
-)
-(connector
 	(pt 32 72)
 	(pt 144 72)
 )
 (connector
 	(pt 32 72)
 	(pt 32 120)
-)
-(connector
-	(pt 376 272)
-	(pt 400 272)
-	(bus)
 )
 (connector
 	(pt 336 256)
@@ -851,16 +837,6 @@ on the Quartus Prime software download page.
 	(pt 768 -80)
 )
 (connector
-	(pt 352 -16)
-	(pt 432 -16)
-	(bus)
-)
-(connector
-	(pt 352 152)
-	(pt 352 -16)
-	(bus)
-)
-(connector
 	(pt 432 -80)
 	(pt 328 -80)
 )
@@ -887,16 +863,6 @@ on the Quartus Prime software download page.
 (connector
 	(pt 48 -32)
 	(pt 48 136)
-)
-(connector
-	(pt 24 152)
-	(pt 352 152)
-	(bus)
-)
-(connector
-	(pt 352 152)
-	(pt 632 152)
-	(bus)
 )
 (connector
 	(pt 32 -48)
@@ -947,18 +913,67 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
+	(pt 832 128)
+	(pt 832 152)
+)
+(connector
+	(pt 248 176)
+	(pt 776 176)
+	(bus)
+)
+(connector
+	(pt 888 192)
+	(pt 880 192)
+	(bus)
+)
+(connector
+	(pt 776 208)
+	(pt 768 208)
+	(bus)
+)
+(connector
+	(pt 656 352)
+	(pt 656 224)
+	(bus)
+)
+(connector
+	(pt 632 192)
+	(pt 656 192)
+	(bus)
+)
+(connector
+	(text "CE" (rect 696 323 706 335)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 704 312)
+	(pt 704 344)
+)
+(connector
+	(text "CTE" (rect 712 318 722 336)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 720 312)
+	(pt 720 344)
+)
+(connector
+	(pt 632 152)
+	(pt 632 192)
+	(bus)
+)
+(connector
+	(pt 632 192)
+	(pt 632 240)
+	(bus)
+)
+(connector
+	(pt 320 128)
+	(pt 320 232)
+)
+(connector
 	(pt 264 352)
 	(pt 264 288)
 	(bus)
 )
 (connector
-	(pt 264 352)
-	(pt 656 352)
+	(pt 248 256)
+	(pt 264 256)
 	(bus)
-)
-(connector
-	(pt 832 128)
-	(pt 832 152)
 )
 (connector
 	(pt 208 128)
@@ -979,48 +994,36 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
-	(pt 248 176)
-	(pt 776 176)
+	(pt 376 272)
+	(pt 400 272)
 	(bus)
 )
 (connector
-	(pt 656 224)
-	(pt 656 352)
-	(bus)
-)
-(connector
-	(pt 656 224)
-	(pt 664 224)
-	(bus)
-)
-(connector
-	(pt 664 192)
-	(pt 632 192)
-	(bus)
-)
-(connector
+	(pt 24 152)
 	(pt 632 152)
-	(pt 632 192)
 	(bus)
 )
 (connector
-	(pt 632 192)
-	(pt 632 240)
+	(pt 384 -16)
+	(pt 432 -16)
 	(bus)
 )
 (connector
-	(text "CE" (rect 704 323 714 335)(font "DejaVu Sans Condensed" )(vertical))
-	(pt 712 312)
-	(pt 712 344)
+	(pt 384 -16)
+	(pt 384 352)
+	(bus)
 )
 (connector
-	(text "CTE" (rect 720 318 730 336)(font "DejaVu Sans Condensed" )(vertical))
-	(pt 728 312)
-	(pt 728 344)
+	(pt 656 352)
+	(pt 384 352)
+	(bus)
 )
-(junction (pt 352 152))
+(connector
+	(pt 384 352)
+	(pt 264 352)
+	(bus)
+)
 (junction (pt 248 176))
-(junction (pt 320 128))
 (junction (pt 48 136))
 (junction (pt 32 120))
 (junction (pt 32 72))
@@ -1029,6 +1032,8 @@ on the Quartus Prime software download page.
 (junction (pt 32 -48))
 (junction (pt 16 -16))
 (junction (pt 632 192))
+(junction (pt 320 128))
+(junction (pt 384 352))
 (text "When S is '1'  V1 is selected. Otherwise V2." (rect -112 480 138 493)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "Might have to check implementation here for this: JUMP or EN" (rect -176 536 181 549)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "This means when J is 1 then BUS_IN is passed through to register and vice versa" (rect -168 520 293 533)(font "DejaVu Sans Condensed" (font_size 8)))

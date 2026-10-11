@@ -54,7 +54,7 @@ import java.util.TreeSet;
 public class Assembler {
     // 1. CONFIGURATION
     /** true = comma-separated operands, false = whitespace-separated. */
-    static final boolean USE_CSV_INPUT = true;
+    static final boolean USE_CSV_INPUT = false;
     static final int INSTRUCTION_WIDTH = 16;   // bits per word
     static final int OPCODE_WIDTH = 4;
     static final int HEX_DIGITS = (INSTRUCTION_WIDTH + 3) / 4;
@@ -98,10 +98,10 @@ public class Assembler {
     static final String[][] CMP = {
         {"CMP", "111"}};
     static final String[][] SHIFT = {
-        {"SL",  "000"},
-        {"SLL", "001"},
-        {"SR",  "010"},
-        {"SLR", "011"}};
+        {"SLL",  "00"},
+        {"SRL", "01"},
+        {"SRA",  "10"},
+        {"ROL", "11"}};
     static final String[][] IO = {
         {"SSD", "000"},
         {"SWI", "001"}};
@@ -149,7 +149,7 @@ public class Assembler {
         define(isa, "NOP", instr("0000", unused(12)));                      // NOP              e.g.  NOP
         
         defineFamily(isa, ALU,      instr("0001", reg(3), reg(3), reg(3), func(3)));             // ADD,Rd,Rs1,Rs2   register form   (ALU)
-        defineFamily(isa, ALUI,     instr("0010", reg(3), reg(3),unused(3), func(3),imm16())); // ADD,Rd,Rs1,imm   immediate form  (ALUI, two words)
+        defineFamily(isa, ALU,     instr("0010", reg(3), reg(3),unused(3), func(3),imm16())); // ADD,Rd,Rs1,imm   immediate form  (ALUI, two words)
         define(isa, "LW",  instr("0011", reg(3), addr(9)));           // LW    Rd, address                          e.g.  LW,R1,0x20
         define(isa, "SW",  instr("0100", reg(3), addr(9)));           // SW    Rs, address                         e.g.  SW,R1,0x20
         define(isa, "LDI", instr("0101", reg(3), unused(9), imm16()));// LDI   Rd, immediate                        e.g.  LDI,R1,10      (two words)
@@ -157,9 +157,11 @@ public class Assembler {
         define(isa, "JMP", instr("1000", unused(3),addr(9)));        // JMP   address                             e.g.  JMP,LOOP
         define(isa, "JAL", instr("1001", unused(3),addr(9)));        // JAL   address                              e.g.  JAL,FUNC_START
         define(isa, "JR",  instr("1010", unused(12)));                        // JR                                        e.g.  JR
-        defineFamily(isa, SHIFT,    instr("1011", reg(3), reg(3), amt(3), func(3)));    // SL,Rd,Rs,amt         e.g.  SR,R1,R2,3     R1 = R2 >> 3   (SHIFT)
+        defineFamily(isa, SHIFT,    instr("1011", reg(3), reg(3), amt(4), func(2)));    // SL,Rd,Rs,amt         e.g.  SR,R1,R2,3     R1 = R2 >> 3   (SHIFT)
         defineFamily(isa, ALU2,     instr("1100", reg(3), reg(3), reg(3), func(3)));    // MIN,Rd,Rs1,Rs2       e.g.  MIN,R1,R2,R3                  (ALU2)
         defineFamily(isa, CMP,      instr("1100", unused(3),reg(3), reg(3), func(3))); // CMP,Rs1,Rs2          e.g.  CMP,R1,R2      sets the flags, no destination
+        defineFamily(isa, ALU2,     instr("1101", reg(3), reg(3), unused(3), func(3), imm16()));    // MIN,Rd,Rs1,Rs2       e.g.  MIN,R1,R2,R3                  (ALU2)
+        defineFamily(isa, CMP,      instr("1101", unused(3),reg(3), unused(3), func(3), imm16())); // CMP,Rs1,Rs2          e.g.  CMP,R1,R2      sets the flags, no destination
         defineFamily(isa, IO,       instr("1110", reg(3), unused(6), func(3)));                // SSD,Rs               e.g.  SSD,R1         (IO)
         
         define(isa, "HALT", instr("1111", unused(12)));// HALT                             e.g.  HALT
@@ -876,7 +878,7 @@ public class Assembler {
                     .map(Map.Entry::getKey)
                     .findFirst()
                     .ifPresent(
-                        label -> {out.append("--" + label + ":");}
+                        label -> {out.append("--" + label + ":\n");}
                     ); 
                 out.append(String.format("%d => x\"%s\", -- %s", line.address,toHex(line.encoded), line.sourceLine)).append('\n');
             }
