@@ -152,13 +152,6 @@ begin
 				null;-- undefined opcode: hold safe defaults
 		end case;
 		
-		--Not needed
-		-- OPFUNC-dependent tweaks nested inside a branch, if needed:
-		-- case OPCODE is
-		--     when "0001" =>
-		--         if OPFUNC = "000" then ... elsif ... end if;
-		-- end case;
-		
 		--if (BR = '1' or JMP = '1' or JAL = '1' or JR = '1') then-- flush IF/DE, wrong instr already fetched
 		--	Flush = '1';
 		--end if;

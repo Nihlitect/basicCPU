@@ -8,19 +8,18 @@ entity REGISTERS is -- Two read busses and seperate write bus
 		W: integer :=16 
 	);
 	port(
-		A_ADDR: in std_logic_vector(AW-1 downto 0); -- Address 1 - For reading
-		B_ADDR: in std_logic_vector(AW-1 downto 0); -- Address 2 - For reading
+		A_ADDR: in std_logic_vector(AW-1 downto 0); -- Address 1 - For reading A
+		B_ADDR: in std_logic_vector(AW-1 downto 0); -- Address 2 - For reading B
 		
-		W_ADDR: in std_logic_vector(AW-1 downto 0); -- Address 3 - For writing
+		W_ADDR: in std_logic_vector(AW-1 downto 0); -- Address 3 - For writing 
 		DATA: in std_logic_vector(W-1 downto 0); -- Data to write
 		
-		ENI: in std_logic; -- Write
-		ENO: in std_logic; -- READ both
-		CLR: in std_logic; -- Clears 
-		clk: in std_logic;
+		ENI: in std_logic; -- Enable Write In 
+		CLR: in std_logic; -- Clears all registers
+		clk: in std_logic; -- Clock signal
 		
-		AOUT: out std_logic_vector(W-1 downto 0);
-		BOUT: out std_logic_vector(W-1 downto 0)
+		AOUT: out std_logic_vector(W-1 downto 0); -- Output word at A address
+		BOUT: out std_logic_vector(W-1 downto 0) -- Output word at B address
 	);
 end REGISTERS;
 
