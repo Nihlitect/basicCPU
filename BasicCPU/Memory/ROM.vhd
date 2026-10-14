@@ -26,77 +26,91 @@ architecture rame of ROM is
 	type ramdef is array (0 to SIZE-1) of std_logic_vector(DW-1 downto 0);
 	
 	signal CODE: ramdef := (
-		--START:
-		0 => x"5C00", -- LDI R6 0
-		1 => x"0000", -- (immediate)
-		2 => x"4DF0", -- SW  R6 0x1F0
 		--MAIN:
-		3 => x"E201", -- SWI R1       -- 0001,B,A
-		4 => x"2644", -- AND R3 R1 0x0F    = R3 <- A
+		0 => x"E201", -- SWI R1
+		1 => x"2644", -- AND R3 R1 0x0F
+		2 => x"000F", -- (immediate)
+		3 => x"B851", -- SRL R4 R1 4
+		4 => x"2904", -- AND R4 R4 0x0F
 		5 => x"000F", -- (immediate)
-		6 => x"B851", -- SRL R4 R1 4       = 0,1,B
-		7 => x"2904", -- AND R4 R4 0x0F    = R4 <- B
-		8 => x"000F", -- (immediate)
-		9 => x"BA61", -- SRL R5 R1 8       =    
-		10 => x"2B44", -- AND R5 R5 0x03   = R5 <- SW[9..8]
-		11 => x"0003", -- (immediate)
-		12 => x"C177", -- CMP R5 R6    = If input SW[9..8] is 0
-		13 => x"7017", -- BEQ DO_ADD   = go to DO_ADD
-		14 => x"5400", -- LDI R2 1     = 
-		15 => x"0001", -- (immediate)
-		16 => x"C157", -- CMP R5 R2	 If input is 1
-		17 => x"7019", -- BEQ DO_SUB   then go to DO_SUB
-		18 => x"5400", -- LDI R2 2     
-		19 => x"0002", -- (immediate)   
-		20 => x"C157", -- CMP R5 R2	  If input is 2 then go to 
-		21 => x"701B", -- BEQ DO_MUL    DO_MUL
-		22 => x"801D", -- JMP DO_PEAK   Otherwise go to DO_PEAK
-		
+		6 => x"BA61", -- SRL R5 R1 8
+		7 => x"2B44", -- AND R5 R5 0x03
+		8 => x"0003", -- (immediate)
+		9 => x"D147", -- CMP R5 0
+		10 => x"0000", -- (immediate)
+		11 => x"7013", -- BEQ DO_ADD
+		12 => x"D147", -- CMP R5 1
+		13 => x"0001", -- (immediate)
+		14 => x"7015", -- BEQ DO_SUB
+		15 => x"D147", -- CMP R5 2
+		16 => x"0002", -- (immediate)
+		17 => x"7017", -- BEQ DO_MUL
+		18 => x"8019", -- JMP DO_DIV
 		--DO_ADD:
-		23 => x"12E0", -- ADD R1 R3 R4
-		24 => x"8023", -- JMP UPDATE
+		19 => x"12E0", -- ADD R1 R3 R4
+		20 => x"801A", -- JMP SHOW
 		--DO_SUB:
-		25 => x"12E1", -- SUB R1 R3 R4
-		26 => x"8023", -- JMP UPDATE
-		
+		21 => x"12E1", -- SUB R1 R3 R4
+		22 => x"801A", -- JMP SHOW
 		--DO_MUL:
-		27 => x"9028", -- JAL MULTIPLY
-		28 => x"8023", -- JMP UPDATE
-		
-		--DO_PEAK:
-		29 => x"14E5", -- OR  R2 R3 R4
-		30 => x"C0B7", -- CMP R2 R6
-		31 => x"7221", -- BNE PEAK_SHOW
-		32 => x"4DF0", -- SW  R6 0x1F0
-		--PEAK_SHOW:
-		33 => x"33F0", -- LW  R1 0x1F0
-		34 => x"8026", -- JMP SHOW
-		
-		--UPDATE:
-		35 => x"35F0", -- LW  R2 0x1F0
-		36 => x"C489", -- MAX R2 R2 R1
-		37 => x"45F0", -- SW  R2 0x1F0
+		23 => x"9023", -- JAL MULTIPLY
+		24 => x"801A", -- JMP SHOW
+		--DO_DIV:
+		25 => x"9034", -- JAL DIVIDE
 		--SHOW:
-		38 => x"E200", -- SSD R1
-		39 => x"8003", -- JMP MAIN
+		26 => x"D047", -- CMP R1 0xBADB
+		27 => x"BADB", -- (immediate)
+		28 => x"7021", -- BEQ SHOW_RAW
+		29 => x"B260", -- SLL R1 R1 8
+		30 => x"B4D0", -- SLL R2 R3 4
+		31 => x"1255", -- OR  R1 R1 R2
+		32 => x"1265", -- OR  R1 R1 R4
+		--SHOW_RAW:
+		33 => x"E200", -- SSD R1
+		34 => x"8000", -- JMP MAIN
 		--MULTIPLY:
-		40 => x"5200", -- LDI R1 0
-		41 => x"0000", -- (immediate)
+		35 => x"5200", -- LDI R1 0
+		36 => x"0000", -- (immediate)
+		37 => x"1ADD", -- OR  R5 R3 R3
+		38 => x"1D25", -- OR  R6 R4 R4
 		--MUL_LOOP:
-		42 => x"C137", -- CMP R4 R6
-		43 => x"7034", -- BEQ MUL_DONE
-		44 => x"2504", -- AND R2 R4 1
-		45 => x"0001", -- (immediate)
-		46 => x"C0B7", -- CMP R2 R6
-		47 => x"7031", -- BEQ MUL_SKIP
-		48 => x"1258", -- ADD R1 R1 R3
+		39 => x"D187", -- CMP R6 0
+		40 => x"0000", -- (immediate)
+		41 => x"7033", -- BEQ MUL_DONE
+		42 => x"2584", -- AND R2 R6 1
+		43 => x"0001", -- (immediate)
+		44 => x"D087", -- CMP R2 0
+		45 => x"0000", -- (immediate)
+		46 => x"7030", -- BEQ MUL_SKIP
+		47 => x"1268", -- ADD R1 R1 R5
 		--MUL_SKIP:
-		49 => x"B6C4", -- SLL R3 R3 1
-		50 => x"B905", -- SRL R4 R4 1
-		51 => x"802A", -- JMP MUL_LOOP
+		48 => x"BB44", -- SLL R5 R5 1
+		49 => x"BD85", -- SRL R6 R6 1
+		50 => x"8027", -- JMP MUL_LOOP
 		--MUL_DONE:
-		52 => x"A000", -- JR
-
+		51 => x"A000", -- JR
+		--DIVIDE:
+		52 => x"D107", -- CMP R4 0
+		53 => x"0000", -- (immediate)
+		54 => x"7042", -- BEQ DIV_ZERO
+		55 => x"5200", -- LDI R1 0
+		56 => x"0000", -- (immediate)
+		57 => x"1CDD", -- OR  R6 R3 R3
+		--DIV_LOOP:
+		58 => x"C1A7", -- CMP R6 R4
+		59 => x"7C3F", -- BLTU DIV_DONE
+		60 => x"1DA1", -- SUB R6 R6 R4
+		61 => x"1242", -- INC R1 R1
+		62 => x"803A", -- JMP DIV_LOOP
+		--DIV_DONE:
+		63 => x"BD90", -- SLL R6 R6 4
+		64 => x"1275", -- OR  R1 R1 R6
+		65 => x"A000", -- JR
+		--DIV_ZERO:
+		66 => x"5200", -- LDI R1 0xBADB
+		67 => x"BADB", -- (immediate)
+		68 => x"A000", -- JR
+		
 		others => X"0000"); -- Ex. Will set 20 to SIZE 
 
 		-- With this definition the synthesizer uses onboard memory ?.

@@ -68,35 +68,51 @@ public class Assembler {
     // Every name here becomes a mnemonic (see buildIsa). These must be
     // declared above ISA_DEFINITION, which is built during class
     // initialization and reads them.
-    static final String[][] ALU = {
+    String[][] variables = { //ID and Bits required 
+        {"R", "3","RX"},
+        {"ADDR", "9", "LABEL|X"}
+
+    };
+    String[][][] inst = {
+        {{"ADD R R R"}, {"0001","R","R","R","000"}},
+        {{"SUB R R R"}, {"0001","R","R","R","001"}},
+        {{"AND R R R"}, {"0001","R","R","R","100"}},
+        {{"OR R R R"},  {"0001","R","R","R","101"}},
+        {{"XOR R R R"}, {"0001","R","R","R","110"}},
+        {{"INC R R"},   {"0001", "R", "R","-", "010"}},
+        {{"DEC R R"},   {"0001", "R", "R","-", "011"}},
+        {{"NOT R R"},   {"0001", "R", "R","-", "111"}},
+        
+        {{}}
+    };
+
+    static final String[][] ALU = { // These take 2 inputs and can be defined together for ALU1
         {"ADD", "000"},
         {"SUB", "001"},
-        {"INC", "010"},
-        {"DEC", "011"},
         {"AND", "100"},
         {"OR",  "101"},
         {"XOR", "110"},
+        };
+    static final String[][] ALU1IN = { // These take 1 input define interpret seperately for ALU1 
+        {"INC", "010"},
+        {"DEC", "011"},
         {"NOT", "111"}};
-    static final String[][] ALUI = {
-        {"ADD", "000"},
-        {"SUB", "001"},
-        {"INC", "010"},
-        {"DEC", "011"},
-        {"AND", "100"},
-        {"OR",  "101"},
-        {"XOR", "110"},
-        {"NOT", "111"}};   
+
     static final String[][] ALU2 = {
-        {"MIN",  "000"},
+        {"MIN",  "000"}, 
         {"MAX",  "001"},
-        {"MINU", "010"},
+        {"MINU", "010"}, 
         {"MAXU", "011"},
-        {"NEG",  "100"},
         {"NAND", "101"},
         {"XNOR", "110"}};
+        
+    static final String[][] ALU21IN = {
+        {"NEG",  "100"}};
+
     /** Compare has its own table because it takes no destination register. */
     static final String[][] CMP = {
         {"CMP", "111"}};
+
     static final String[][] SHIFT = {
         {"SLL",  "00"},
         {"SRL", "01"},
@@ -147,9 +163,12 @@ public class Assembler {
         Map<String, List<Form>> isa = new LinkedHashMap<>();
         
         define(isa, "NOP", instr("0000", unused(12)));                      // NOP              e.g.  NOP
-        
+        //ALU
         defineFamily(isa, ALU,      instr("0001", reg(3), reg(3), reg(3), func(3)));             // ADD,Rd,Rs1,Rs2   register form   (ALU)
+        defineFamily(isa, ALU1IN,      instr("0001", reg(3), reg(3), unused(3), func(3))); 
+        //ALUI
         defineFamily(isa, ALU,     instr("0010", reg(3), reg(3),unused(3), func(3),imm16())); // ADD,Rd,Rs1,imm   immediate form  (ALUI, two words)
+        
         define(isa, "LW",  instr("0011", reg(3), addr(9)));           // LW    Rd, address                          e.g.  LW,R1,0x20
         define(isa, "SW",  instr("0100", reg(3), addr(9)));           // SW    Rs, address                         e.g.  SW,R1,0x20
         define(isa, "LDI", instr("0101", reg(3), unused(9), imm16()));// LDI   Rd, immediate                        e.g.  LDI,R1,10      (two words)
@@ -158,10 +177,14 @@ public class Assembler {
         define(isa, "JAL", instr("1001", unused(3),addr(9)));        // JAL   address                              e.g.  JAL,FUNC_START
         define(isa, "JR",  instr("1010", unused(12)));                        // JR                                        e.g.  JR
         defineFamily(isa, SHIFT,    instr("1011", reg(3), reg(3), amt(4), func(2)));    // SL,Rd,Rs,amt         e.g.  SR,R1,R2,3     R1 = R2 >> 3   (SHIFT)
+        // ALU2
         defineFamily(isa, ALU2,     instr("1100", reg(3), reg(3), reg(3), func(3)));    // MIN,Rd,Rs1,Rs2       e.g.  MIN,R1,R2,R3                  (ALU2)
+        defineFamily(isa, ALU21IN,     instr("1100", reg(3), reg(3), unused(3), func(3)));
         defineFamily(isa, CMP,      instr("1100", unused(3),reg(3), reg(3), func(3))); // CMP,Rs1,Rs2          e.g.  CMP,R1,R2      sets the flags, no destination
+        // ALU2I
         defineFamily(isa, ALU2,     instr("1101", reg(3), reg(3), unused(3), func(3), imm16()));    // MIN,Rd,Rs1,Rs2       e.g.  MIN,R1,R2,R3                  (ALU2)
         defineFamily(isa, CMP,      instr("1101", unused(3),reg(3), unused(3), func(3), imm16())); // CMP,Rs1,Rs2          e.g.  CMP,R1,R2      sets the flags, no destination
+        
         defineFamily(isa, IO,       instr("1110", reg(3), unused(6), func(3)));                // SSD,Rs               e.g.  SSD,R1         (IO)
         
         define(isa, "HALT", instr("1111", unused(12)));// HALT                             e.g.  HALT
