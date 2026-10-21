@@ -1,5 +1,5 @@
 Timing Analyzer report for BasicCPU
-Sun Oct 11 16:57:09 2026
+Wed Oct 14 18:38:56 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -92,15 +92,15 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 20          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 2.74        ;
+; Average used               ; 2.60        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  17.7%      ;
-;     Processor 3            ;  16.5%      ;
-;     Processor 4            ;  16.2%      ;
-;     Processors 5-12        ;  15.5%      ;
+;     Processor 2            ;  16.4%      ;
+;     Processor 3            ;  15.5%      ;
+;     Processor 4            ;  14.9%      ;
+;     Processors 5-12        ;  14.1%      ;
 +----------------------------+-------------+
 
 
@@ -120,8 +120,8 @@ on the Quartus Prime software download page.
 +------------+-----------------+-------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                    ; Note ;
 +------------+-----------------+-------------------------------+------+
-; 59.57 MHz  ; 59.57 MHz       ; MAX10_CLK2_50                 ;      ;
-; 196.93 MHz ; 196.93 MHz      ; NbitPR:DeviceSelRegister|Q[0] ;      ;
+; 65.76 MHz  ; 65.76 MHz       ; MAX10_CLK2_50                 ;      ;
+; 224.22 MHz ; 224.22 MHz      ; NbitPR:DeviceSelRegister|Q[0] ;      ;
 +------------+-----------------+-------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -131,9 +131,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------+---------+---------------+
 ; Clock                         ; Slack   ; End Point TNS ;
 +-------------------------------+---------+---------------+
-; MAX10_CLK2_50                 ; -14.818 ; -9571.042     ;
-; NbitPR:DEVICESELECT|Q[0]      ; -12.129 ; -22.024       ;
-; NbitPR:DeviceSelRegister|Q[0] ; -11.839 ; -62.948       ;
+; MAX10_CLK2_50                 ; -14.206 ; -10173.031    ;
+; NbitPR:DEVICESELECT|Q[0]      ; -10.557 ; -18.836       ;
+; NbitPR:DeviceSelRegister|Q[0] ; -10.339 ; -55.378       ;
 +-------------------------------+---------+---------------+
 
 
@@ -142,9 +142,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------+--------+---------------+
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
-; MAX10_CLK2_50                 ; -0.225 ; -0.225        ;
-; NbitPR:DeviceSelRegister|Q[0] ; 0.568  ; 0.000         ;
-; NbitPR:DEVICESELECT|Q[0]      ; 2.851  ; 0.000         ;
+; MAX10_CLK2_50                 ; -0.562 ; -0.868        ;
+; NbitPR:DeviceSelRegister|Q[0] ; 0.538  ; 0.000         ;
+; NbitPR:DEVICESELECT|Q[0]      ; 1.098  ; 0.000         ;
 +-------------------------------+--------+---------------+
 
 
@@ -166,8 +166,8 @@ No paths to report.
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
 ; MAX10_CLK2_50                 ; -3.000 ; -3475.425     ;
-; NbitPR:DEVICESELECT|Q[0]      ; 0.381  ; 0.000         ;
-; NbitPR:DeviceSelRegister|Q[0] ; 0.387  ; 0.000         ;
+; NbitPR:DeviceSelRegister|Q[0] ; 0.290  ; 0.000         ;
+; NbitPR:DEVICESELECT|Q[0]      ; 0.314  ; 0.000         ;
 +-------------------------------+--------+---------------+
 
 
@@ -183,8 +183,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------+-----------------+-------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                    ; Note ;
 +------------+-----------------+-------------------------------+------+
-; 65.02 MHz  ; 65.02 MHz       ; MAX10_CLK2_50                 ;      ;
-; 202.43 MHz ; 202.43 MHz      ; NbitPR:DeviceSelRegister|Q[0] ;      ;
+; 71.43 MHz  ; 71.43 MHz       ; MAX10_CLK2_50                 ;      ;
+; 233.75 MHz ; 233.75 MHz      ; NbitPR:DeviceSelRegister|Q[0] ;      ;
 +------------+-----------------+-------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -194,9 +194,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------+---------+---------------+
 ; Clock                         ; Slack   ; End Point TNS ;
 +-------------------------------+---------+---------------+
-; MAX10_CLK2_50                 ; -13.757 ; -9139.423     ;
-; NbitPR:DEVICESELECT|Q[0]      ; -11.274 ; -20.503       ;
-; NbitPR:DeviceSelRegister|Q[0] ; -11.022 ; -58.681       ;
+; MAX10_CLK2_50                 ; -12.999 ; -9350.104     ;
+; NbitPR:DEVICESELECT|Q[0]      ; -9.709  ; -17.362       ;
+; NbitPR:DeviceSelRegister|Q[0] ; -9.479  ; -50.857       ;
 +-------------------------------+---------+---------------+
 
 
@@ -205,9 +205,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------+--------+---------------+
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
-; MAX10_CLK2_50                 ; -0.200 ; -0.200        ;
-; NbitPR:DeviceSelRegister|Q[0] ; 0.499  ; 0.000         ;
-; NbitPR:DEVICESELECT|Q[0]      ; 2.536  ; 0.000         ;
+; MAX10_CLK2_50                 ; -0.579 ; -0.773        ;
+; NbitPR:DeviceSelRegister|Q[0] ; 0.505  ; 0.000         ;
+; NbitPR:DEVICESELECT|Q[0]      ; 0.988  ; 0.000         ;
 +-------------------------------+--------+---------------+
 
 
@@ -229,8 +229,8 @@ No paths to report.
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
 ; MAX10_CLK2_50                 ; -3.000 ; -3475.425     ;
-; NbitPR:DeviceSelRegister|Q[0] ; 0.399  ; 0.000         ;
-; NbitPR:DEVICESELECT|Q[0]      ; 0.411  ; 0.000         ;
+; NbitPR:DeviceSelRegister|Q[0] ; 0.227  ; 0.000         ;
+; NbitPR:DEVICESELECT|Q[0]      ; 0.358  ; 0.000         ;
 +-------------------------------+--------+---------------+
 
 
@@ -246,9 +246,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------+--------+---------------+
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
-; MAX10_CLK2_50                 ; -6.590 ; -2190.200     ;
-; NbitPR:DEVICESELECT|Q[0]      ; -5.036 ; -9.052        ;
-; NbitPR:DeviceSelRegister|Q[0] ; -4.165 ; -22.895       ;
+; MAX10_CLK2_50                 ; -6.149 ; -2909.601     ;
+; NbitPR:DEVICESELECT|Q[0]      ; -4.512 ; -8.022        ;
+; NbitPR:DeviceSelRegister|Q[0] ; -4.253 ; -21.141       ;
 +-------------------------------+--------+---------------+
 
 
@@ -257,9 +257,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------+--------+---------------+
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
-; MAX10_CLK2_50                 ; -0.111 ; -0.111        ;
-; NbitPR:DeviceSelRegister|Q[0] ; 0.401  ; 0.000         ;
-; NbitPR:DEVICESELECT|Q[0]      ; 1.462  ; 0.000         ;
+; MAX10_CLK2_50                 ; -0.397 ; -0.667        ;
+; NbitPR:DeviceSelRegister|Q[0] ; 0.432  ; 0.000         ;
+; NbitPR:DEVICESELECT|Q[0]      ; 0.702  ; 0.000         ;
 +-------------------------------+--------+---------------+
 
 
@@ -280,9 +280,9 @@ No paths to report.
 +-------------------------------+--------+---------------+
 ; Clock                         ; Slack  ; End Point TNS ;
 +-------------------------------+--------+---------------+
-; MAX10_CLK2_50                 ; -3.000 ; -4078.171     ;
-; NbitPR:DeviceSelRegister|Q[0] ; 0.249  ; 0.000         ;
-; NbitPR:DEVICESELECT|Q[0]      ; 0.403  ; 0.000         ;
+; MAX10_CLK2_50                 ; -3.000 ; -3147.798     ;
+; NbitPR:DeviceSelRegister|Q[0] ; 0.356  ; 0.000         ;
+; NbitPR:DEVICESELECT|Q[0]      ; 0.387  ; 0.000         ;
 +-------------------------------+--------+---------------+
 
 
@@ -293,20 +293,20 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 
 
 
-+------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                            ;
-+--------------------------------+-----------+--------+----------+---------+---------------------+
-; Clock                          ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+--------------------------------+-----------+--------+----------+---------+---------------------+
-; Worst-case Slack               ; -14.818   ; -0.225 ; N/A      ; N/A     ; -3.000              ;
-;  MAX10_CLK2_50                 ; -14.818   ; -0.225 ; N/A      ; N/A     ; -3.000              ;
-;  NbitPR:DEVICESELECT|Q[0]      ; -12.129   ; 1.462  ; N/A      ; N/A     ; 0.381               ;
-;  NbitPR:DeviceSelRegister|Q[0] ; -11.839   ; 0.401  ; N/A      ; N/A     ; 0.249               ;
-; Design-wide TNS                ; -9656.014 ; -0.225 ; 0.0      ; 0.0     ; -4078.171           ;
-;  MAX10_CLK2_50                 ; -9571.042 ; -0.225 ; N/A      ; N/A     ; -4078.171           ;
-;  NbitPR:DEVICESELECT|Q[0]      ; -22.024   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
-;  NbitPR:DeviceSelRegister|Q[0] ; -62.948   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
-+--------------------------------+-----------+--------+----------+---------+---------------------+
++-------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                             ;
++--------------------------------+------------+--------+----------+---------+---------------------+
+; Clock                          ; Setup      ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++--------------------------------+------------+--------+----------+---------+---------------------+
+; Worst-case Slack               ; -14.206    ; -0.579 ; N/A      ; N/A     ; -3.000              ;
+;  MAX10_CLK2_50                 ; -14.206    ; -0.579 ; N/A      ; N/A     ; -3.000              ;
+;  NbitPR:DEVICESELECT|Q[0]      ; -10.557    ; 0.702  ; N/A      ; N/A     ; 0.314               ;
+;  NbitPR:DeviceSelRegister|Q[0] ; -10.339    ; 0.432  ; N/A      ; N/A     ; 0.227               ;
+; Design-wide TNS                ; -10247.245 ; -0.868 ; 0.0      ; 0.0     ; -3475.425           ;
+;  MAX10_CLK2_50                 ; -10173.031 ; -0.868 ; N/A      ; N/A     ; -3475.425           ;
+;  NbitPR:DEVICESELECT|Q[0]      ; -18.836    ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  NbitPR:DeviceSelRegister|Q[0] ; -55.378    ; 0.000  ; N/A      ; N/A     ; 0.000               ;
++--------------------------------+------------+--------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -586,12 +586,12 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------------+-------------------------------+----------+----------+----------+----------+
 ; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------+-------------------------------+----------+----------+----------+----------+
-; MAX10_CLK2_50                 ; MAX10_CLK2_50                 ; 134857   ; 2304     ; 18976    ; 0        ;
-; NbitPR:DEVICESELECT|Q[0]      ; MAX10_CLK2_50                 ; 97       ; 145      ; 128      ; 128      ;
-; NbitPR:DeviceSelRegister|Q[0] ; MAX10_CLK2_50                 ; 13282    ; 146      ; 0        ; 0        ;
-; MAX10_CLK2_50                 ; NbitPR:DEVICESELECT|Q[0]      ; 0        ; 0        ; 39       ; 0        ;
+; MAX10_CLK2_50                 ; MAX10_CLK2_50                 ; 347204   ; 2304     ; 18976    ; 0        ;
+; NbitPR:DEVICESELECT|Q[0]      ; MAX10_CLK2_50                 ; 97       ; 144      ; 128      ; 128      ;
+; NbitPR:DeviceSelRegister|Q[0] ; MAX10_CLK2_50                 ; 74846    ; 145      ; 0        ; 0        ;
+; MAX10_CLK2_50                 ; NbitPR:DEVICESELECT|Q[0]      ; 0        ; 0        ; 66       ; 0        ;
 ; NbitPR:DeviceSelRegister|Q[0] ; NbitPR:DEVICESELECT|Q[0]      ; 0        ; 0        ; 2        ; 2        ;
-; MAX10_CLK2_50                 ; NbitPR:DeviceSelRegister|Q[0] ; 5203     ; 0        ; 39       ; 0        ;
+; MAX10_CLK2_50                 ; NbitPR:DeviceSelRegister|Q[0] ; 5238     ; 0        ; 66       ; 0        ;
 ; NbitPR:DeviceSelRegister|Q[0] ; NbitPR:DeviceSelRegister|Q[0] ; 0        ; 0        ; 2        ; 2        ;
 +-------------------------------+-------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -602,12 +602,12 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------+-------------------------------+----------+----------+----------+----------+
 ; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------+-------------------------------+----------+----------+----------+----------+
-; MAX10_CLK2_50                 ; MAX10_CLK2_50                 ; 134857   ; 2304     ; 18976    ; 0        ;
-; NbitPR:DEVICESELECT|Q[0]      ; MAX10_CLK2_50                 ; 97       ; 145      ; 128      ; 128      ;
-; NbitPR:DeviceSelRegister|Q[0] ; MAX10_CLK2_50                 ; 13282    ; 146      ; 0        ; 0        ;
-; MAX10_CLK2_50                 ; NbitPR:DEVICESELECT|Q[0]      ; 0        ; 0        ; 39       ; 0        ;
+; MAX10_CLK2_50                 ; MAX10_CLK2_50                 ; 347204   ; 2304     ; 18976    ; 0        ;
+; NbitPR:DEVICESELECT|Q[0]      ; MAX10_CLK2_50                 ; 97       ; 144      ; 128      ; 128      ;
+; NbitPR:DeviceSelRegister|Q[0] ; MAX10_CLK2_50                 ; 74846    ; 145      ; 0        ; 0        ;
+; MAX10_CLK2_50                 ; NbitPR:DEVICESELECT|Q[0]      ; 0        ; 0        ; 66       ; 0        ;
 ; NbitPR:DeviceSelRegister|Q[0] ; NbitPR:DEVICESELECT|Q[0]      ; 0        ; 0        ; 2        ; 2        ;
-; MAX10_CLK2_50                 ; NbitPR:DeviceSelRegister|Q[0] ; 5203     ; 0        ; 39       ; 0        ;
+; MAX10_CLK2_50                 ; NbitPR:DeviceSelRegister|Q[0] ; 5238     ; 0        ; 66       ; 0        ;
 ; NbitPR:DeviceSelRegister|Q[0] ; NbitPR:DeviceSelRegister|Q[0] ; 0        ; 0        ; 2        ; 2        ;
 +-------------------------------+-------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -634,8 +634,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 13    ; 13   ;
 ; Unconstrained Input Port Paths  ; 192   ; 192  ;
-; Unconstrained Output Ports      ; 49    ; 49   ;
-; Unconstrained Output Port Paths ; 2636  ; 2636 ;
+; Unconstrained Output Ports      ; 51    ; 51   ;
+; Unconstrained Output Port Paths ; 2641  ; 2641 ;
 +---------------------------------+-------+------+
 
 
@@ -723,8 +723,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; LED[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LED[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LED[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LED[7]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LED[8]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[9]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -801,8 +803,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; LED[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LED[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LED[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LED[7]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LED[8]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LED[9]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -812,7 +816,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Sun Oct 11 16:57:06 2026
+    Info: Processing started: Wed Oct 14 18:38:54 2026
 Info: Command: quartus_sta BasicCPU -c BasicCPU
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -826,32 +830,46 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name MAX10_CLK2_50 MAX10_CLK2_50
     Info (332105): create_clock -period 1.000 -name NbitPR:DEVICESELECT|Q[0] NbitPR:DEVICESELECT|Q[0]
     Info (332105): create_clock -period 1.000 -name NbitPR:DeviceSelRegister|Q[0] NbitPR:DeviceSelRegister|Q[0]
+Warning (332125): Found combinational loop of 13 nodes File: C:/Users/Chamk/Desktop/Repo/BasicCPU/db/mux_06c.tdf Line: 30
+    Warning (332126): Node "inst62|$00000|auto_generated|result_node[0]|combout"
+    Warning (332126): Node "CONTROL_UNIT|Mux3~0|datab"
+    Warning (332126): Node "CONTROL_UNIT|Mux3~0|combout"
+    Warning (332126): Node "inst62|$00000|auto_generated|result_node[0]|dataa"
+    Warning (332126): Node "inst62|$00000|auto_generated|result_node[2]|datab"
+    Warning (332126): Node "inst62|$00000|auto_generated|result_node[2]|combout"
+    Warning (332126): Node "CONTROL_UNIT|Mux3~0|datad"
+    Warning (332126): Node "inst62|$00000|auto_generated|result_node[1]|datab"
+    Warning (332126): Node "inst62|$00000|auto_generated|result_node[1]|combout"
+    Warning (332126): Node "CONTROL_UNIT|Mux3~0|dataa"
+    Warning (332126): Node "CONTROL_UNIT|Mux5~18|datab"
+    Warning (332126): Node "CONTROL_UNIT|Mux5~18|combout"
+    Warning (332126): Node "CONTROL_UNIT|Mux3~0|datac"
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -14.818
+Info (332146): Worst-case setup slack is -14.206
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -14.818           -9571.042 MAX10_CLK2_50 
-    Info (332119):   -12.129             -22.024 NbitPR:DEVICESELECT|Q[0] 
-    Info (332119):   -11.839             -62.948 NbitPR:DeviceSelRegister|Q[0] 
-Info (332146): Worst-case hold slack is -0.225
+    Info (332119):   -14.206          -10173.031 MAX10_CLK2_50 
+    Info (332119):   -10.557             -18.836 NbitPR:DEVICESELECT|Q[0] 
+    Info (332119):   -10.339             -55.378 NbitPR:DeviceSelRegister|Q[0] 
+Info (332146): Worst-case hold slack is -0.562
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.225              -0.225 MAX10_CLK2_50 
-    Info (332119):     0.568               0.000 NbitPR:DeviceSelRegister|Q[0] 
-    Info (332119):     2.851               0.000 NbitPR:DEVICESELECT|Q[0] 
+    Info (332119):    -0.562              -0.868 MAX10_CLK2_50 
+    Info (332119):     0.538               0.000 NbitPR:DeviceSelRegister|Q[0] 
+    Info (332119):     1.098               0.000 NbitPR:DEVICESELECT|Q[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000           -3475.425 MAX10_CLK2_50 
-    Info (332119):     0.381               0.000 NbitPR:DEVICESELECT|Q[0] 
-    Info (332119):     0.387               0.000 NbitPR:DeviceSelRegister|Q[0] 
+    Info (332119):     0.290               0.000 NbitPR:DeviceSelRegister|Q[0] 
+    Info (332119):     0.314               0.000 NbitPR:DEVICESELECT|Q[0] 
 Info (332114): Report Metastability: Found 16 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1200mV 0C Model
@@ -859,59 +877,59 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -13.757
+Info (332146): Worst-case setup slack is -12.999
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -13.757           -9139.423 MAX10_CLK2_50 
-    Info (332119):   -11.274             -20.503 NbitPR:DEVICESELECT|Q[0] 
-    Info (332119):   -11.022             -58.681 NbitPR:DeviceSelRegister|Q[0] 
-Info (332146): Worst-case hold slack is -0.200
+    Info (332119):   -12.999           -9350.104 MAX10_CLK2_50 
+    Info (332119):    -9.709             -17.362 NbitPR:DEVICESELECT|Q[0] 
+    Info (332119):    -9.479             -50.857 NbitPR:DeviceSelRegister|Q[0] 
+Info (332146): Worst-case hold slack is -0.579
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.200              -0.200 MAX10_CLK2_50 
-    Info (332119):     0.499               0.000 NbitPR:DeviceSelRegister|Q[0] 
-    Info (332119):     2.536               0.000 NbitPR:DEVICESELECT|Q[0] 
+    Info (332119):    -0.579              -0.773 MAX10_CLK2_50 
+    Info (332119):     0.505               0.000 NbitPR:DeviceSelRegister|Q[0] 
+    Info (332119):     0.988               0.000 NbitPR:DEVICESELECT|Q[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000           -3475.425 MAX10_CLK2_50 
-    Info (332119):     0.399               0.000 NbitPR:DeviceSelRegister|Q[0] 
-    Info (332119):     0.411               0.000 NbitPR:DEVICESELECT|Q[0] 
+    Info (332119):     0.227               0.000 NbitPR:DeviceSelRegister|Q[0] 
+    Info (332119):     0.358               0.000 NbitPR:DEVICESELECT|Q[0] 
 Info (332114): Report Metastability: Found 16 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -6.590
+Info (332146): Worst-case setup slack is -6.149
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.590           -2190.200 MAX10_CLK2_50 
-    Info (332119):    -5.036              -9.052 NbitPR:DEVICESELECT|Q[0] 
-    Info (332119):    -4.165             -22.895 NbitPR:DeviceSelRegister|Q[0] 
-Info (332146): Worst-case hold slack is -0.111
+    Info (332119):    -6.149           -2909.601 MAX10_CLK2_50 
+    Info (332119):    -4.512              -8.022 NbitPR:DEVICESELECT|Q[0] 
+    Info (332119):    -4.253             -21.141 NbitPR:DeviceSelRegister|Q[0] 
+Info (332146): Worst-case hold slack is -0.397
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.111              -0.111 MAX10_CLK2_50 
-    Info (332119):     0.401               0.000 NbitPR:DeviceSelRegister|Q[0] 
-    Info (332119):     1.462               0.000 NbitPR:DEVICESELECT|Q[0] 
+    Info (332119):    -0.397              -0.667 MAX10_CLK2_50 
+    Info (332119):     0.432               0.000 NbitPR:DeviceSelRegister|Q[0] 
+    Info (332119):     0.702               0.000 NbitPR:DEVICESELECT|Q[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000           -4078.171 MAX10_CLK2_50 
-    Info (332119):     0.249               0.000 NbitPR:DeviceSelRegister|Q[0] 
-    Info (332119):     0.403               0.000 NbitPR:DEVICESELECT|Q[0] 
+    Info (332119):    -3.000           -3147.798 MAX10_CLK2_50 
+    Info (332119):     0.356               0.000 NbitPR:DeviceSelRegister|Q[0] 
+    Info (332119):     0.387               0.000 NbitPR:DEVICESELECT|Q[0] 
 Info (332114): Report Metastability: Found 16 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5006 megabytes
-    Info: Processing ended: Sun Oct 11 16:57:09 2026
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:06
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 5008 megabytes
+    Info: Processing ended: Wed Oct 14 18:38:56 2026
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:05
 
 

@@ -419,22 +419,6 @@ on the Quartus Prime software download page.
 	(flipx_rotate90)
 )
 (symbol
-	(rect 680 -600 696 -568)
-	(text "VCC" (rect 0 7 9 27)(font "Arial" (font_size 6))(vertical))
-	(text "inst64" (rect 5 3 15 31)(font "DejaVu Sans Condensed" )(vertical)(invisible))
-	(port
-		(pt 16 16)
-		(output)
-		(text "1" (rect 19 7 24 18)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 7 19 18 24)(font "Courier New" (bold))(vertical)(invisible))
-		(line (pt 16 16)(pt 8 16))
-	)
-	(drawing
-		(line (pt 8 8)(pt 8 24))
-	)
-	(flipy_rotate90)
-)
-(symbol
 	(rect 936 -80 1000 -32)
 	(text "AND2" (rect 39 39 63 48)(font "Arial" (font_size 6)))
 	(text "inst5" (rect 39 1 61 11)(font "DejaVu Sans Condensed" ))
@@ -1661,55 +1645,6 @@ on the Quartus Prime software download page.
 	(flipy)
 )
 (symbol
-	(rect 576 -704 688 -616)
-	(text "BUSMUX" (rect 28 73 91 88)(font "Arial" (font_size 10)))
-	(text "SelA9" (rect 3 1 30 11)(font "DejaVu Sans Condensed" ))
-	(port
-		(pt 0 24)
-		(input)
-		(text "datab[WIDTH-1..0]" (rect 6 51 108 63)(font "Arial" (font_size 8)))
-		(text "datab[]" (rect 6 25 44 37)(font "Arial" (font_size 8)))
-		(line (pt 0 24)(pt 44 24)(line_width 3))
-	)
-	(port
-		(pt 56 0)
-		(input)
-		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
-		(text "sel" (rect 59 6 75 18)(font "Arial" (font_size 8)))
-		(line (pt 56 0)(pt 56 16))
-	)
-	(port
-		(pt 0 56)
-		(input)
-		(text "dataa[WIDTH-1..0]" (rect 6 19 108 31)(font "Arial" (font_size 8)))
-		(text "dataa[]" (rect 6 57 44 69)(font "Arial" (font_size 8)))
-		(line (pt 0 56)(pt 44 56)(line_width 3))
-	)
-	(port
-		(pt 112 40)
-		(output)
-		(text "result[WIDTH-1..0]" (rect 75 35 177 47)(font "Arial" (font_size 8)))
-		(text "result[]" (rect 75 41 113 53)(font "Arial" (font_size 8)))
-		(line (pt 68 40)(pt 112 40)(line_width 3))
-	)
-	(parameter
-		"WIDTH"
-		"3"
-		"Width of I/O, any integer > 0"
-		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(text "0" (rect 52 48 56 57)(font "Arial" (font_size 6)))
-		(text "1" (rect 52 24 56 33)(font "Arial" (font_size 6)))
-		(line (pt 68 24)(pt 68 56))
-		(line (pt 44 8)(pt 44 72))
-		(line (pt 44 72)(pt 68 56))
-		(line (pt 44 8)(pt 68 24))
-	)
-	(flipx)
-	(annotation_block (parameter)(rect 632 -952 819 -926))
-)
-(symbol
 	(rect 552 -1376 584 -1344)
 	(text "GND" (rect 8 7 29 16)(font "Arial" (font_size 6)))
 	(text "inst22" (rect 3 1 31 11)(font "DejaVu Sans Condensed" )(invisible))
@@ -1900,95 +1835,6 @@ on the Quartus Prime software download page.
 		(rectangle (rect 16 16 184 96))
 	)
 	(annotation_block (parameter)(rect 2592 -528 2784 -496))
-)
-(symbol
-	(rect 760 -696 1008 -520)
-	(text "REGISTERS" (rect 5 0 67 10)(font "Arial" ))
-	(text "registerFile" (rect 8 160 59 170)(font "DejaVu Sans Condensed" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "A_ADDR[(aw-1)..0]" (rect 0 0 94 10)(font "Arial" ))
-		(text "A_ADDR[(aw-1)..0]" (rect 21 27 115 37)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "B_ADDR[(aw-1)..0]" (rect 0 0 94 10)(font "Arial" ))
-		(text "B_ADDR[(aw-1)..0]" (rect 21 43 115 53)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "W_ADDR[(aw-1)..0]" (rect 0 0 97 10)(font "Arial" ))
-		(text "W_ADDR[(aw-1)..0]" (rect 21 59 118 69)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "DATA[(w-1)..0]" (rect 0 0 71 10)(font "Arial" ))
-		(text "DATA[(w-1)..0]" (rect 21 75 92 85)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "ENI" (rect 0 0 18 10)(font "Arial" ))
-		(text "ENI" (rect 21 91 39 101)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "ENO" (rect 0 0 23 10)(font "Arial" ))
-		(text "ENO" (rect 21 107 44 117)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "CLR" (rect 0 0 22 10)(font "Arial" ))
-		(text "CLR" (rect 21 123 43 133)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128))
-	)
-	(port
-		(pt 0 144)
-		(input)
-		(text "clk" (rect 0 0 14 10)(font "Arial" ))
-		(text "clk" (rect 21 139 35 149)(font "Arial" ))
-		(line (pt 0 144)(pt 16 144))
-	)
-	(port
-		(pt 248 32)
-		(output)
-		(text "AOUT[(w-1)..0]" (rect 0 0 73 10)(font "Arial" ))
-		(text "AOUT[(w-1)..0]" (rect 166 27 239 37)(font "Arial" ))
-		(line (pt 248 32)(pt 232 32)(line_width 3))
-	)
-	(port
-		(pt 248 48)
-		(output)
-		(text "BOUT[(w-1)..0]" (rect 0 0 73 10)(font "Arial" ))
-		(text "BOUT[(w-1)..0]" (rect 166 43 239 53)(font "Arial" ))
-		(line (pt 248 48)(pt 232 48)(line_width 3))
-	)
-	(parameter
-		"AW"
-		"3"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"W"
-		"16"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 232 160))
-	)
-	(annotation_block (parameter)(rect 1008 -736 1195 -697))
 )
 (symbol
 	(rect 144 -592 376 -480)
@@ -2888,7 +2734,7 @@ on the Quartus Prime software download page.
 	(annotation_block (parameter)(rect 2248 -720 2435 -681))
 )
 (symbol
-	(rect 720 -568 752 -536)
+	(rect 728 -560 760 -528)
 	(text "GND" (rect 8 16 29 25)(font "Arial" (font_size 6)))
 	(text "inst4" (rect 3 21 25 31)(font "DejaVu Sans Condensed" )(invisible))
 	(port
@@ -3508,6 +3354,137 @@ on the Quartus Prime software download page.
 		(line (pt 44 80)(pt 68 64))
 	)
 	(annotation_block (parameter)(rect 2648 -1248 2849 -1222))
+)
+(symbol
+	(rect 576 -704 688 -616)
+	(text "BUSMUX" (rect 28 73 91 88)(font "Arial" (font_size 10)))
+	(text "SelA9q" (rect 3 1 36 11)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 24)
+		(input)
+		(text "datab[WIDTH-1..0]" (rect 6 51 108 63)(font "Arial" (font_size 8)))
+		(text "datab[]" (rect 6 25 44 37)(font "Arial" (font_size 8)))
+		(line (pt 0 24)(pt 44 24)(line_width 3))
+	)
+	(port
+		(pt 56 0)
+		(input)
+		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
+		(text "sel" (rect 59 6 75 18)(font "Arial" (font_size 8)))
+		(line (pt 56 0)(pt 56 16))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "dataa[WIDTH-1..0]" (rect 6 19 108 31)(font "Arial" (font_size 8)))
+		(text "dataa[]" (rect 6 57 44 69)(font "Arial" (font_size 8)))
+		(line (pt 0 56)(pt 44 56)(line_width 3))
+	)
+	(port
+		(pt 112 40)
+		(output)
+		(text "result[WIDTH-1..0]" (rect 75 35 177 47)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 75 41 113 53)(font "Arial" (font_size 8)))
+		(line (pt 68 40)(pt 112 40)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		"3"
+		"Width of I/O, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(text "0" (rect 52 48 56 57)(font "Arial" (font_size 6)))
+		(text "1" (rect 52 24 56 33)(font "Arial" (font_size 6)))
+		(line (pt 68 24)(pt 68 56))
+		(line (pt 44 8)(pt 44 72))
+		(line (pt 44 72)(pt 68 56))
+		(line (pt 44 8)(pt 68 24))
+	)
+	(flipx)
+	(annotation_block (parameter)(rect 632 -952 819 -926))
+)
+(symbol
+	(rect 760 -696 1008 -520)
+	(text "REGISTERS" (rect 5 0 67 10)(font "Arial" ))
+	(text "inst14" (rect 8 160 36 170)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "A_ADDR[(aw-1)..0]" (rect 0 0 94 10)(font "Arial" ))
+		(text "A_ADDR[(aw-1)..0]" (rect 21 27 115 37)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "B_ADDR[(aw-1)..0]" (rect 0 0 94 10)(font "Arial" ))
+		(text "B_ADDR[(aw-1)..0]" (rect 21 43 115 53)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "W_ADDR[(aw-1)..0]" (rect 0 0 97 10)(font "Arial" ))
+		(text "W_ADDR[(aw-1)..0]" (rect 21 59 118 69)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "DATA[(w-1)..0]" (rect 0 0 71 10)(font "Arial" ))
+		(text "DATA[(w-1)..0]" (rect 21 75 92 85)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "ENI" (rect 0 0 18 10)(font "Arial" ))
+		(text "ENI" (rect 21 91 39 101)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "CLR" (rect 0 0 22 10)(font "Arial" ))
+		(text "CLR" (rect 21 107 43 117)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "clk" (rect 0 0 14 10)(font "Arial" ))
+		(text "clk" (rect 21 123 35 133)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "AOUT[(w-1)..0]" (rect 0 0 73 10)(font "Arial" ))
+		(text "AOUT[(w-1)..0]" (rect 166 27 239 37)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 3))
+	)
+	(port
+		(pt 248 48)
+		(output)
+		(text "BOUT[(w-1)..0]" (rect 0 0 73 10)(font "Arial" ))
+		(text "BOUT[(w-1)..0]" (rect 166 43 239 53)(font "Arial" ))
+		(line (pt 248 48)(pt 232 48)(line_width 3))
+	)
+	(parameter
+		"AW"
+		"3"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"W"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 232 160))
+	)
+	(annotation_block (parameter)(rect 1008 -736 1195 -697))
 )
 (connector
 	(text "const_0" (rect 18 -888 53 -878)(font "DejaVu Sans Condensed" ))
@@ -4287,10 +4264,6 @@ on the Quartus Prime software download page.
 	(pt 2448 -232)
 )
 (connector
-	(pt 760 -584)
-	(pt 696 -584)
-)
-(connector
 	(pt 864 -1088)
 	(pt 888 -1088)
 )
@@ -4371,14 +4344,6 @@ on the Quartus Prime software download page.
 	(pt 2608 -432)
 	(pt 2608 -368)
 	(bus)
-)
-(connector
-	(pt 472 -552)
-	(pt 760 -552)
-)
-(connector
-	(pt 736 -568)
-	(pt 760 -568)
 )
 (connector
 	(text "OPND[5..3]" (rect 1001 -433 1054 -423)(font "DejaVu Sans Condensed" ))
@@ -4726,14 +4691,6 @@ on the Quartus Prime software download page.
 (connector
 	(pt 144 -528)
 	(pt 144 -480)
-)
-(connector
-	(pt 472 -552)
-	(pt 472 -280)
-)
-(connector
-	(pt 472 -280)
-	(pt 472 -8)
 )
 (connector
 	(text "LED[9]" (rect 826 -1144 857 -1134)(font "DejaVu Sans Condensed" ))
@@ -5151,6 +5108,26 @@ on the Quartus Prime software download page.
 	(text "DEVICE[1]" (rect 2392 -1152 2440 -1142)(font "DejaVu Sans Condensed" ))
 	(pt 2416 -1136)
 	(pt 2440 -1136)
+)
+(connector
+	(pt 472 -568)
+	(pt 760 -568)
+)
+(connector
+	(pt 472 -568)
+	(pt 472 -280)
+)
+(connector
+	(pt 472 -280)
+	(pt 472 -8)
+)
+(connector
+	(pt 760 -584)
+	(pt 744 -584)
+)
+(connector
+	(pt 744 -584)
+	(pt 744 -560)
 )
 (junction (pt 472 -280))
 (junction (pt 1104 -8))

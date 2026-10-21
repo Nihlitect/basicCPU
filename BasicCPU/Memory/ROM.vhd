@@ -46,17 +46,21 @@ architecture rame of ROM is
 		16 => x"0002", -- (immediate)
 		17 => x"7017", -- BEQ DO_MUL
 		18 => x"8019", -- JMP DO_DIV
+		
 		--DO_ADD:
 		19 => x"12E0", -- ADD R1 R3 R4
 		20 => x"801A", -- JMP SHOW
+		
 		--DO_SUB:
 		21 => x"12E1", -- SUB R1 R3 R4
 		22 => x"801A", -- JMP SHOW
+		
 		--DO_MUL:
 		23 => x"9023", -- JAL MULTIPLY
 		24 => x"801A", -- JMP SHOW
 		--DO_DIV:
 		25 => x"9034", -- JAL DIVIDE
+		
 		--SHOW:
 		26 => x"D047", -- CMP R1 0xBADB
 		27 => x"BADB", -- (immediate)
@@ -68,6 +72,8 @@ architecture rame of ROM is
 		--SHOW_RAW:
 		33 => x"E200", -- SSD R1
 		34 => x"8000", -- JMP MAIN
+		
+		
 		--MULTIPLY:
 		35 => x"5200", -- LDI R1 0
 		36 => x"0000", -- (immediate)
@@ -89,6 +95,8 @@ architecture rame of ROM is
 		50 => x"8027", -- JMP MUL_LOOP
 		--MUL_DONE:
 		51 => x"A000", -- JR
+
+
 		--DIVIDE:
 		52 => x"D107", -- CMP R4 0
 		53 => x"0000", -- (immediate)
@@ -110,7 +118,7 @@ architecture rame of ROM is
 		66 => x"5200", -- LDI R1 0xBADB
 		67 => x"BADB", -- (immediate)
 		68 => x"A000", -- JR
-		
+
 		others => X"0000"); -- Ex. Will set 20 to SIZE 
 
 		-- With this definition the synthesizer uses onboard memory ?.

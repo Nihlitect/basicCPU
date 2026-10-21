@@ -32,11 +32,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "LED[9]",
+					"strict" : false
+				},
+				{
 					"name" : "LED[8]",
 					"strict" : false
 				},
 				{
 					"name" : "LED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[5]",
 					"strict" : false
 				},
 				{
