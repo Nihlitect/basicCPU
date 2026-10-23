@@ -38,14 +38,14 @@
 37 => x"72FC", -- BNE FAIL
 38 => x"5C00", -- LDI R6 0xE004
 39 => x"E004", -- (immediate)
-40 => x"164A", -- INC R3 R1 R1
+40 => x"1642", -- INC R3 R1
 41 => x"5800", -- LDI R4 0x1235
 42 => x"1235", -- (immediate)
 43 => x"C0E7", -- CMP R3 R4
 44 => x"72FC", -- BNE FAIL
 45 => x"5C00", -- LDI R6 0xE005
 46 => x"E005", -- (immediate)
-47 => x"164B", -- DEC R3 R1 R1
+47 => x"1643", -- DEC R3 R1
 48 => x"5800", -- LDI R4 0x1233
 49 => x"1233", -- (immediate)
 50 => x"C0E7", -- CMP R3 R4
@@ -117,7 +117,7 @@
 116 => x"72FC", -- BNE FAIL
 117 => x"5C00", -- LDI R6 0xE00E
 118 => x"E00E", -- (immediate)
-119 => x"164F", -- NOT R3 R1 R1
+119 => x"1647", -- NOT R3 R1
 120 => x"5800", -- LDI R4 0x0F0F
 121 => x"0F0F", -- (immediate)
 122 => x"C0E7", -- CMP R3 R4
@@ -170,7 +170,7 @@
 169 => x"72FC", -- BNE FAIL
 170 => x"5C00", -- LDI R6 0xE015
 171 => x"E015", -- (immediate)
-172 => x"C694", -- NEG R3 R2 R2
+172 => x"C684", -- NEG R3 R2
 173 => x"5800", -- LDI R4 0xFFFD
 174 => x"FFFD", -- (immediate)
 175 => x"C0E7", -- CMP R3 R4

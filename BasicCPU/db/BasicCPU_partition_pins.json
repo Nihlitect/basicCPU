@@ -208,7 +208,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "PB[1]",
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
@@ -216,7 +216,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "PB[1]",
 					"strict" : false
 				},
 				{

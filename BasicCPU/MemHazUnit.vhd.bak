@@ -1,0 +1,57 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+-- Detects data hazards for the SW and LW Writes and reads 
+entity MemHazUnit is
+	generic(
+		W: integer := 16
+	);
+	port(
+		MRE: in std_logic;
+		deaddr: in std_logic_vector(2 downto 0);  -- next read address
+		exaddr: in std_logic_vector(2 downto 0);  --  address in Execute stage
+		wbaddr: in std_logic_vector(2 downto 0); -- Current address in Writeback stage (yet to be written)
+		
+		-- Determine if the Memory is to be forwarded i.e. instr writes to a register
+		MENEX: in std_logic; -- Forward execute stage
+		MENWB: in std_logic; -- Forward writebeack stage
+		EXO: in std_logic_vector(W-1 downto 0);
+		WBO: in std_logic_vector(W-1 downto 0);
+		
+		O: out std_logic_vector(W-1 downto 0)
+	);
+end MemHazUnit;
+
+architecture fwdCtrl of MemHazUnit is
+begin
+	process(exdr,wbdr,na, nb )
+	begin
+		sela <= '0'; --default: no dependencies dont do anything
+		selb <= '0';
+		
+		if(FWWB='1') then --If writeback is forwarded
+			if wbdr = nb then-- then this assumes writeback value is the default path
+				selb <= '1'; 
+				selexb <= '0';
+			end if;
+			
+			if wbdr = na then-- then this assumes writeback value is the default path
+				sela <= '1'; 
+				selexa <= '0';
+			end if;
+		end if;
+		
+		if(FWEX='1') then -- since after in the process it will prioritise this if both are on.
+			if exdr = na then --overwrites the previous if
+				sela <= '1';
+				selexa <= '1';
+			end if;
+			
+			if exdr = nb then --overwrites the previous if
+				selb <= '1';
+				selexb <= '1';
+			end if;
+		end if;
+	end process;
+end fwdCtrl;

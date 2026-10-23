@@ -22,7 +22,7 @@ architecture count of NbitCounter is
 
 
 begin
-	process(Cin, CE)
+	process(Cin, CE, CTE)
 	begin
 		if CTE = '1' then -- If CTE (Count Two Enable)
 			Cout <= std_logic_vector(unsigned(Cin) + 2); -- add 1 to Cin vector A + 0 + 1

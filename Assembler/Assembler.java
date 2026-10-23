@@ -68,24 +68,6 @@ public class Assembler {
     // Every name here becomes a mnemonic (see buildIsa). These must be
     // declared above ISA_DEFINITION, which is built during class
     // initialization and reads them.
-    String[][] variables = { //ID and Bits required 
-        {"R", "3","RX"},
-        {"ADDR", "9", "LABEL|X"}
-
-    };
-    String[][][] inst = {
-        {{"ADD R R R"}, {"0001","R","R","R","000"}},
-        {{"SUB R R R"}, {"0001","R","R","R","001"}},
-        {{"AND R R R"}, {"0001","R","R","R","100"}},
-        {{"OR R R R"},  {"0001","R","R","R","101"}},
-        {{"XOR R R R"}, {"0001","R","R","R","110"}},
-        {{"INC R R"},   {"0001", "R", "R","-", "010"}},
-        {{"DEC R R"},   {"0001", "R", "R","-", "011"}},
-        {{"NOT R R"},   {"0001", "R", "R","-", "111"}},
-        
-        {{}}
-    };
-
     static final String[][] ALU = { // These take 2 inputs and can be defined together for ALU1
         {"ADD", "000"},
         {"SUB", "001"},
@@ -190,6 +172,25 @@ public class Assembler {
         define(isa, "HALT", instr("1111", unused(12)));// HALT                             e.g.  HALT
         return isa;
     }
+    // Alternative fixed arrangement
+    //    String[][] variables = { //ID and Bits required 
+    //     {"R", "3","RX"},
+    //     {"ADDR", "9", "LABEL|X"}
+
+    // };
+    // String[][][] inst = {
+    //     {{"ADD R R R"}, {"0001","R","R","R","000"}},
+    //     {{"SUB R R R"}, {"0001","R","R","R","001"}},
+    //     {{"AND R R R"}, {"0001","R","R","R","100"}},
+    //     {{"OR R R R"},  {"0001","R","R","R","101"}},
+    //     {{"XOR R R R"}, {"0001","R","R","R","110"}},
+    //     {{"INC R R"},   {"0001", "R", "R","-", "010"}},
+    //     {{"DEC R R"},   {"0001", "R", "R","-", "011"}},
+    //     {{"NOT R R"},   {"0001", "R", "R","-", "111"}},
+        
+    //     {{}}
+    // };
+
 
     /** Registers one mnemonic with one layout. */
     static void define(Map<String, List<Form>> isa, String mnemonic, InstrDef def) {
@@ -447,7 +448,7 @@ public class Assembler {
             Map<String, Integer> labels = new HashMap<>();            
             List<AssembledLine> program = assembleProgram(sourceLines, labels);
 
-            printHex(program);
+            // printHex(program);
             writeOutput(program, labels, outputPath);
 
             System.out.println(

@@ -1,0 +1,65 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity StartupReset is
+    generic (
+        RESET_CYCLES : positive := 256
+    );
+    port (
+        CLK       : in  std_logic;  -- 50 MHz clock
+        BTN_N     : in  std_logic;  -- Active-low button, e.g. KEY0
+        RESET_OUT : out std_logic   -- Active-high reset
+    );
+end entity StartupReset;
+
+architecture RTL of StartupReset is
+    signal counter : natural range 0 to RESET_CYCLES - 1 := 0;
+
+    -- Initial values are supported as FPGA power-up values by Intel FPGAs.
+    signal reset_active : std_logic := '1';
+    signal startup_done : std_logic := '0';
+
+    -- Synchronise the asynchronous push button to CLK.
+    signal btn_meta : std_logic := '1';
+    signal btn_sync : std_logic := '1';
+    signal btn_prev : std_logic := '1';
+
+begin
+    RESET_OUT <= reset_active;
+
+    process(CLK)
+    begin
+        if rising_edge(CLK) then
+            btn_meta <= BTN_N;-- Two-stage button synchroniser.
+            btn_sync <= btn_meta;
+            btn_prev <= btn_sync;
+
+            if reset_active = '1' then
+                -- Keep reset asserted for 256 clock cycles.
+                if counter = RESET_CYCLES - 1 then
+                    counter      <= 0;
+                    reset_active <= '0';
+
+                    if startup_done = '0' then
+                        startup_done <= '1';
+                    end if;
+                else
+                    counter <= counter + 1;
+                end if;
+
+            elsif startup_done = '0' then
+                -- Startup reset has not yet completed.
+                reset_active <= '1';
+                counter      <= 0;
+
+            elsif btn_prev = '1' and btn_sync = '0' then
+
+                -- One reset pulse per button press.
+                reset_active <= '1';
+                counter      <= 0;
+
+            end if;
+        end if;
+    end process;
+end architecture RTL;

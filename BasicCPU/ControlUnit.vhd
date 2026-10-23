@@ -3,6 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use IEEE.std_logic_unsigned.all;
 
+-- Control unit is in decode stage and executes combinationally for the instruction within the stage.
 entity ControlUnit is 
 	port(
 		OPCODE: in std_logic_vector(3 downto 0); -- The operation that is fetched
@@ -21,6 +22,8 @@ entity ControlUnit is
 		BR: out std_logic; -- Branch Instruction
 		CLRC: out std_logic; -- count to Clear (straight away) -> no rising edge needed
 		
+		MRE: out std_logic; -- Memory read enable (enable memory read in decode stage- to be accessed in execute)
+		
 		--Control pipeline from decode stage
 		RDIN: out std_logic; -- enable rd as register read into A
 		
@@ -34,9 +37,7 @@ entity ControlUnit is
 		MEMO: out std_logic; -- load instruction, memory out
 		IMMBO: out std_logic; --select immediate into B of ALU
 	--2. WRITEBACK STAGE
-	--2.1. INPUT SELECTION
-		-- *Depricated
-	--2.2. DEVICE SELECTION
+	--2.1. DEVICE SELECTION
 		-- REGISTERS
 		REN: out std_logic; --Allow write to register
 		CLRR: out std_logic;-- Clears the all contents
@@ -50,7 +51,7 @@ end ControlUnit;
 -- Since registers open on rising edge then bits must change on falling edge.
 architecture orchestration of ControlUnit is
 begin
-	process(OPCODE)
+	process(OPCODE, funct)
 	begin
 		-- Safe defaults for every output, every time.
 		-- Prevents inferred latches and means each branch
@@ -65,7 +66,7 @@ begin
 		JAL   <= '0';
 		JR    <= '0';
 		BR		<= '0';
-		
+		MRE	<= '0';
 		RDIN  <= '0';
 		
 		SWO	<= '0';
@@ -86,15 +87,16 @@ begin
 				null;       -- defaults already cover it. Will do nothing in pipeline
 
 			when "0001" =>  -- ALU: rd <= rs, rt
-				REN   <= '1'; --Enable Register IN Write 
+				REN   <= '1'; 	-- Register File write Enable 
 				
 			when "0010" =>  -- ALUI: rd = rs, imm16
 				CTE <= '1';
-				REN   <= '1'; --Enable Register IN Write 
+				REN   <= '1'; -- Register File write Enable
 				IMMBO <= '1'; -- enable immediate operand passthrough
 
 			when "0011" =>  -- LW: rd <= [addr]
-				REN   <= '1';
+				REN   <= '1';	-- Register File write Enable
+				MRE 	<= '1';
 				MEMO 	<= '1'; --select load instruction passthrough to bus
 			when "0100" =>  -- SW: [addr] <= rd
 				MEN   <= '1'; -- Memory write enable
@@ -122,14 +124,14 @@ begin
 				SHFTO <= '1';
 				
 			when "1100" => -- ALU2: 
-				if not funct = "111" then -- If not CMP Instruction
+				if funct /= "111" then -- If not CMP Instruction
 					REN  	<= '1'; 
 				end if;
 				ALU2  <= '1';
 
 			when "1101" => -- ALU2I: 
 				CTE <= '1';
-				if not funct = "111" then -- If not CMP Instruction
+				if funct /= "111" then -- If not CMP Instruction
 					REN  	<= '1'; 
 				end if;
 				ALU2  <= '1';
@@ -151,11 +153,5 @@ begin
 			when others =>
 				null;-- undefined opcode: hold safe defaults
 		end case;
-		
-		--if (BR = '1' or JMP = '1' or JAL = '1' or JR = '1') then-- flush IF/DE, wrong instr already fetched
-		--	Flush = '1';
-		--end if;
-		
 	end process;
-
 end orchestration;

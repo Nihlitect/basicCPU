@@ -2,6 +2,10 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
+-- Combinational logic that outputs a branch signal based on whether the condition is true, for given input flags. 
+-- The branch is gated by the BR signal from the CPU, this is not shown here, 
+-- this is more like "if conditions are right Ill let CPU know it should branch. 
+-- So to use: {branch signal to PC} = BR (from CPU) and BR (from Branch unit).
 entity BranchUnit is
     port(
         flags: in std_logic_vector(3 downto 0);
@@ -12,7 +16,6 @@ end BranchUnit;
 
 
 architecture compareTheBranches of BranchUnit is
-
 	signal Z : std_logic; --flags[0] - carry
 	signal N : std_logic; --flags[1] - negative
 	signal O : std_logic; --flags[2] - zero

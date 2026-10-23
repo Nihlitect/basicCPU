@@ -22,7 +22,7 @@ on the Quartus Prime software download page.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 1536 -1248 1552 -1080)
+	(rect 1400 -1248 1416 -1080)
 	(text "INPUT" (rect 0 125 9 153)(font "Arial" (font_size 6))(vertical))
 	(text "SW[9..0]" (rect 0 5 10 48)(font "Arial" )(vertical))
 	(pt 8 168)
@@ -36,11 +36,11 @@ on the Quartus Prime software download page.
 	)
 	(flipy_rotate90)
 	(text "VCC" (rect 7 128 16 148)(font "Arial" (font_size 6))(vertical))
-	(annotation_block (location)(rect 1568 -1408 1624 -1272))
+	(annotation_block (location)(rect 1432 -1408 1488 -1272))
 )
 (pin
 	(input)
-	(rect 1712 -1248 1728 -1080)
+	(rect 1576 -1248 1592 -1080)
 	(text "INPUT" (rect 7 125 16 153)(font "Arial" (font_size 6))(vertical))
 	(text "PB[1..0]" (rect 6 5 16 45)(font "Arial" )(vertical))
 	(pt 8 168)
@@ -54,11 +54,11 @@ on the Quartus Prime software download page.
 	)
 	(rotate270)
 	(text "VCC" (rect 0 128 9 148)(font "Arial" (font_size 6))(vertical))
-	(annotation_block (location)(rect 1584 -1264 1640 -1224))
+	(annotation_block (location)(rect 1448 -1264 1504 -1224))
 )
 (pin
 	(input)
-	(rect -512 -168 -272 -152)
+	(rect -432 -192 -192 -176)
 	(text "INPUT" (rect 197 0 225 9)(font "Arial" (font_size 6)))
 	(text "MAX10_CLK2_50" (rect 8 0 91 10)(font "Arial" ))
 	(pt 240 8)
@@ -71,11 +71,11 @@ on the Quartus Prime software download page.
 		(line (pt 181 12)(pt 185 8))
 	)
 	(text "VCC" (rect 200 7 220 16)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -512 -152 -456 -136))
+	(annotation_block (location)(rect -432 -176 -376 -160))
 )
 (pin
 	(output)
-	(rect 2936 -472 3112 -456)
+	(rect 2936 -704 3112 -688)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
 	(text "HEX0[6..0]" (rect 90 0 143 10)(font "Arial" ))
 	(pt 0 8)
@@ -88,11 +88,11 @@ on the Quartus Prime software download page.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 3112 -536 3176 -440))
+	(annotation_block (location)(rect 3112 -768 3176 -672))
 )
 (pin
 	(output)
-	(rect 2936 -456 3112 -440)
+	(rect 2936 -688 3112 -672)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
 	(text "HEX1[6..0]" (rect 90 0 141 10)(font "DejaVu Sans Condensed" ))
 	(pt 0 8)
@@ -105,11 +105,11 @@ on the Quartus Prime software download page.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 3176 -512 3240 -416))
+	(annotation_block (location)(rect 3176 -744 3240 -648))
 )
 (pin
 	(output)
-	(rect 2936 -440 3112 -424)
+	(rect 2936 -672 3112 -656)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
 	(text "HEX2[6..0]" (rect 90 0 141 10)(font "DejaVu Sans Condensed" ))
 	(pt 0 8)
@@ -122,11 +122,11 @@ on the Quartus Prime software download page.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 3112 -440 3176 -344))
+	(annotation_block (location)(rect 3112 -672 3176 -576))
 )
 (pin
 	(output)
-	(rect 2936 -424 3112 -408)
+	(rect 2936 -656 3112 -640)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
 	(text "HEX3[6..0]" (rect 90 0 141 10)(font "DejaVu Sans Condensed" ))
 	(pt 0 8)
@@ -139,7 +139,7 @@ on the Quartus Prime software download page.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 3176 -416 3240 -320))
+	(annotation_block (location)(rect 3176 -648 3240 -552))
 )
 (pin
 	(output)
@@ -191,37 +191,6 @@ on the Quartus Prime software download page.
 		(line (pt 78 12)(pt 82 8))
 	)
 	(annotation_block (location)(rect 3336 -1104 3392 -960))
-)
-(symbol
-	(rect -120 -904 -8 -856)
-	(text "LPM_CONSTANT" (rect 4 0 125 15)(font "Arial" (font_size 10)))
-	(text "ZERO_CONSTANT" (rect 3 37 97 47)(font "DejaVu Sans Condensed" (bold)))
-	(port
-		(pt 112 32)
-		(output)
-		(text "result[LPM_WIDTH-1..0]" (rect 75 19 208 31)(font "Arial" (font_size 8)))
-		(text "result[]" (rect 75 19 113 31)(font "Arial" (font_size 8)))
-		(line (pt 64 32)(pt 112 32)(line_width 3))
-	)
-	(parameter
-		"LPM_CVALUE"
-		"0"
-		"Unsigned value to which outputs will be set"
-	)
-	(parameter
-		"LPM_WIDTH"
-		"16"
-		"Width of output, any integer > 0"
-		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" 
-	)
-	(drawing
-		(text "(cvalue)" (rect 21 26 68 38)(font "Arial" (font_size 8)))
-		(line (pt 16 24)(pt 64 24))
-		(line (pt 16 40)(pt 64 40))
-		(line (pt 64 40)(pt 64 24))
-		(line (pt 16 40)(pt 16 24))
-	)
-	(annotation_block (parameter)(rect -8 -944 135 -905))
 )
 (symbol
 	(rect 568 -1272 632 -1224)
@@ -326,7 +295,7 @@ on the Quartus Prime software download page.
 	(flipy)
 )
 (symbol
-	(rect 128 -480 160 -464)
+	(rect 96 -480 128 -464)
 	(text "VCC" (rect 7 7 27 16)(font "Arial" (font_size 6)))
 	(text "inst7" (rect 3 1 25 11)(font "DejaVu Sans Condensed" )(invisible))
 	(port
@@ -342,23 +311,7 @@ on the Quartus Prime software download page.
 	(flipx)
 )
 (symbol
-	(rect 2384 -248 2400 -216)
-	(text "VCC" (rect 0 5 9 25)(font "Arial" (font_size 6))(vertical))
-	(text "inst17" (rect 5 7 15 35)(font "DejaVu Sans Condensed" )(vertical)(invisible))
-	(port
-		(pt 16 16)
-		(output)
-		(text "1" (rect 19 7 24 18)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 7 8 18 13)(font "Courier New" (bold))(vertical)(invisible))
-		(line (pt 16 16)(pt 8 16))
-	)
-	(drawing
-		(line (pt 8 24)(pt 8 8))
-	)
-	(rotate90)
-)
-(symbol
-	(rect 2720 -496 2888 -368)
+	(rect 2720 -728 2888 -600)
 	(text "16bit2SSD" (rect 5 0 65 13)(font "DejaVu Sans Condensed" (font_size 8)))
 	(text "inst1" (rect 8 114 30 124)(font "DejaVu Sans Condensed" ))
 	(port
@@ -401,7 +354,7 @@ on the Quartus Prime software download page.
 	)
 )
 (symbol
-	(rect 2352 -432 2384 -400)
+	(rect 2352 -664 2384 -632)
 	(text "GND" (rect 7 3 16 24)(font "Arial" (font_size 6))(vertical))
 	(text "inst72" (rect 1 1 11 29)(font "DejaVu Sans Condensed" )(vertical)(invisible))
 	(port
@@ -450,79 +403,6 @@ on the Quartus Prime software download page.
 		(arc (pt 33 11)(pt 34 36)(rect 21 11 46 36))
 	)
 	(rotate180)
-)
-(symbol
-	(rect 2448 -328 2752 -184)
-	(text "RAM" (rect 5 0 28 10)(font "Arial" ))
-	(text "ProgramMemory" (rect 8 128 89 138)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "DIN[(d_width-1)..0]" (rect 0 0 93 10)(font "Arial" ))
-		(text "DIN[(d_width-1)..0]" (rect 21 27 114 37)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "ADDR_IN[(a_width-1)..0]" (rect 0 0 122 10)(font "Arial" ))
-		(text "ADDR_IN[(a_width-1)..0]" (rect 21 43 143 53)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "ADDR_OUT1[(a_width-1)..0]" (rect 0 0 139 10)(font "Arial" ))
-		(text "ADDR_OUT1[(a_width-1)..0]" (rect 21 59 160 69)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "clk" (rect 0 0 14 10)(font "Arial" ))
-		(text "clk" (rect 21 75 35 85)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "EN" (rect 0 0 15 10)(font "Arial" ))
-		(text "EN" (rect 21 91 36 101)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "WE" (rect 0 0 17 10)(font "Arial" ))
-		(text "WE" (rect 21 107 38 117)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 304 32)
-		(output)
-		(text "DOUT[(d_width-1)..0]" (rect 0 0 103 10)(font "Arial" ))
-		(text "DOUT[(d_width-1)..0]" (rect 196 27 299 37)(font "Arial" ))
-		(line (pt 304 32)(pt 288 32)(line_width 3))
-	)
-	(parameter
-		"D_WIDTH"
-		"16"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"A_WIDTH"
-		"9"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"SIZE"
-		"128"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 288 128))
-	)
-	(annotation_block (parameter)(rect 2752 -384 2939 -332))
 )
 (symbol
 	(rect 456 -1272 504 -1240)
@@ -654,7 +534,7 @@ on the Quartus Prime software download page.
 	(flipx)
 )
 (symbol
-	(rect 1576 -1152 1608 -1120)
+	(rect 1440 -1136 1472 -1104)
 	(text "GND" (rect 8 7 29 16)(font "Arial" (font_size 6)))
 	(text "inst20" (rect 3 1 31 11)(font "DejaVu Sans Condensed" )(invisible))
 	(port
@@ -1696,7 +1576,7 @@ on the Quartus Prime software download page.
 	(flipy)
 )
 (symbol
-	(rect -232 -640 -48 -448)
+	(rect -120 -640 64 -448)
 	(text "ProgramCounter" (rect 5 0 100 13)(font "DejaVu Sans Condensed" (font_size 8)))
 	(text "inst25" (rect 8 178 36 188)(font "DejaVu Sans Condensed" ))
 	(port
@@ -1788,7 +1668,7 @@ on the Quartus Prime software download page.
 	)
 )
 (symbol
-	(rect 2392 -496 2592 -384)
+	(rect 2392 -728 2592 -616)
 	(text "NbitRegister" (rect 5 0 67 10)(font "Arial" ))
 	(text "SevenSegmentRegister" (rect 8 96 118 106)(font "DejaVu Sans Condensed" ))
 	(port
@@ -1834,10 +1714,10 @@ on the Quartus Prime software download page.
 	(drawing
 		(rectangle (rect 16 16 184 96))
 	)
-	(annotation_block (parameter)(rect 2592 -528 2784 -496))
+	(annotation_block (parameter)(rect 2592 -760 2784 -728))
 )
 (symbol
-	(rect 144 -592 376 -480)
+	(rect 136 -592 368 -480)
 	(text "ROM" (rect 5 0 29 10)(font "Arial" ))
 	(text "inst45" (rect 8 96 36 106)(font "DejaVu Sans Condensed" ))
 	(port
@@ -1893,39 +1773,10 @@ on the Quartus Prime software download page.
 	(drawing
 		(rectangle (rect 16 16 216 96))
 	)
-	(annotation_block (parameter)(rect 376 -648 563 -596))
+	(annotation_block (parameter)(rect 368 -648 555 -596))
 )
 (symbol
-	(rect -176 -248 0 -168)
-	(text "clock_2hz" (rect 5 0 53 10)(font "Arial" ))
-	(text "inst" (rect 8 64 25 74)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk_50mhz" (rect 0 0 51 10)(font "Arial" ))
-		(text "clk_50mhz" (rect 21 27 72 37)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reset" (rect 0 0 24 10)(font "Arial" ))
-		(text "reset" (rect 21 43 45 53)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 176 32)
-		(output)
-		(text "clk_2hz" (rect 0 0 36 10)(font "Arial" ))
-		(text "clk_2hz" (rect 125 27 161 37)(font "Arial" ))
-		(line (pt 176 32)(pt 160 32))
-	)
-	(drawing
-		(rectangle (rect 16 16 160 64))
-	)
-)
-(symbol
-	(rect -208 -200 -176 -168)
+	(rect -144 -136 -112 -104)
 	(text "GND" (rect 8 16 29 25)(font "Arial" (font_size 6)))
 	(text "inst1012" (rect 3 21 43 31)(font "DejaVu Sans Condensed" )(invisible))
 	(port
@@ -1942,7 +1793,7 @@ on the Quartus Prime software download page.
 	)
 )
 (symbol
-	(rect 1776 -1200 1824 -1168)
+	(rect 1640 -1184 1688 -1152)
 	(text "NOT" (rect 1 0 21 9)(font "Arial" (font_size 6)))
 	(text "inst27" (rect 3 21 31 31)(font "DejaVu Sans Condensed" ))
 	(port
@@ -1967,7 +1818,7 @@ on the Quartus Prime software download page.
 	)
 )
 (symbol
-	(rect 1776 -1168 1824 -1136)
+	(rect 1640 -1152 1688 -1120)
 	(text "NOT" (rect 1 0 21 9)(font "Arial" (font_size 6)))
 	(text "inst28" (rect 3 21 31 31)(font "DejaVu Sans Condensed" ))
 	(port
@@ -2285,23 +2136,6 @@ on the Quartus Prime software download page.
 		(rectangle (rect 16 16 160 64))
 	)
 	(annotation_block (parameter)(rect 2616 -1360 2803 -1334))
-)
-(symbol
-	(rect 2400 -1104 2432 -1072)
-	(text "GND" (rect 8 16 29 25)(font "Arial" (font_size 6)))
-	(text "inst63" (rect 3 21 31 31)(font "DejaVu Sans Condensed" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 18 0 23 11)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 23 11)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0))
-	)
-	(drawing
-		(line (pt 8 8)(pt 16 16))
-		(line (pt 16 16)(pt 24 8))
-		(line (pt 8 8)(pt 24 8))
-	)
 )
 (symbol
 	(rect 2736 -1320 2928 -1176)
@@ -2798,7 +2632,7 @@ on the Quartus Prime software download page.
 	(annotation_block (parameter)(rect 1328 -1120 1515 -1081))
 )
 (symbol
-	(rect 1976 -272 2008 -224)
+	(rect 1968 -272 2000 -224)
 	(text "NOT" (rect 23 1 32 21)(font "Arial" (font_size 6))(vertical))
 	(text "inst2" (rect 1 3 11 25)(font "DejaVu Sans Condensed" )(vertical))
 	(port
@@ -2824,7 +2658,7 @@ on the Quartus Prime software download page.
 	(rotate270)
 )
 (symbol
-	(rect 1960 -224 2008 -160)
+	(rect 1952 -224 2000 -160)
 	(text "AND2" (rect 39 1 48 25)(font "Arial" (font_size 6))(vertical))
 	(text "inst3" (rect 1 3 11 25)(font "DejaVu Sans Condensed" )(vertical))
 	(port
@@ -2904,38 +2738,7 @@ on the Quartus Prime software download page.
 	(annotation_block (parameter)(rect 2248 -1096 2435 -1057))
 )
 (symbol
-	(rect 376 -1088 488 -1040)
-	(text "LPM_CONSTANT" (rect 4 0 125 15)(font "Arial" (font_size 10)))
-	(text "HALTOP_CONSTANT" (rect 3 37 100 47)(font "DejaVu Sans Condensed" ))
-	(port
-		(pt 112 32)
-		(output)
-		(text "result[LPM_WIDTH-1..0]" (rect 75 19 208 31)(font "Arial" (font_size 8)))
-		(text "result[]" (rect 75 19 113 31)(font "Arial" (font_size 8)))
-		(line (pt 64 32)(pt 112 32)(line_width 3))
-	)
-	(parameter
-		"LPM_CVALUE"
-		"2**4-1"
-		"Unsigned value to which outputs will be set"
-	)
-	(parameter
-		"LPM_WIDTH"
-		"4"
-		"Width of output, any integer > 0"
-		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" 
-	)
-	(drawing
-		(text "(cvalue)" (rect 21 26 68 38)(font "Arial" (font_size 8)))
-		(line (pt 16 24)(pt 64 24))
-		(line (pt 16 40)(pt 64 40))
-		(line (pt 64 40)(pt 64 24))
-		(line (pt 16 40)(pt 16 24))
-	)
-	(annotation_block (parameter)(rect 488 -1128 634 -1089))
-)
-(symbol
-	(rect -200 -448 -136 -400)
+	(rect -184 -448 -120 -400)
 	(text "AND2" (rect 1 0 25 9)(font "Arial" (font_size 6)))
 	(text "inst24" (rect 3 37 31 47)(font "DejaVu Sans Condensed" ))
 	(port
@@ -2967,7 +2770,7 @@ on the Quartus Prime software download page.
 	)
 )
 (symbol
-	(rect -112 -432 -48 -384)
+	(rect -96 -432 -32 -384)
 	(text "OR2" (rect 1 39 19 48)(font "Arial" (font_size 6)))
 	(text "inst8" (rect 3 1 25 11)(font "DejaVu Sans Condensed" ))
 	(port
@@ -3043,224 +2846,7 @@ on the Quartus Prime software download page.
 	(annotation_block (parameter)(rect 1800 -624 1992 -592))
 )
 (symbol
-	(rect 672 -1120 864 -720)
-	(text "ControlUnit" (rect 5 0 60 10)(font "Arial" ))
-	(text "CONTROL_UNIT" (rect 8 384 83 394)(font "DejaVu Sans Condensed" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "OPCODE[3..0]" (rect 0 0 73 10)(font "Arial" ))
-		(text "OPCODE[3..0]" (rect 21 27 94 37)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "funct[2..0]" (rect 0 0 51 10)(font "Arial" ))
-		(text "funct[2..0]" (rect 21 43 72 53)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 192 32)
-		(output)
-		(text "Halt" (rect 0 0 20 10)(font "Arial" ))
-		(text "Halt" (rect 155 27 175 37)(font "Arial" ))
-		(line (pt 192 32)(pt 176 32))
-	)
-	(port
-		(pt 192 48)
-		(output)
-		(text "Flush" (rect 0 0 27 10)(font "Arial" ))
-		(text "Flush" (rect 149 43 176 53)(font "Arial" ))
-		(line (pt 192 48)(pt 176 48))
-	)
-	(port
-		(pt 192 64)
-		(output)
-		(text "CE" (rect 0 0 15 10)(font "Arial" ))
-		(text "CE" (rect 159 59 174 69)(font "Arial" ))
-		(line (pt 192 64)(pt 176 64))
-	)
-	(port
-		(pt 192 80)
-		(output)
-		(text "CTE" (rect 0 0 21 10)(font "Arial" ))
-		(text "CTE" (rect 154 75 175 85)(font "Arial" ))
-		(line (pt 192 80)(pt 176 80))
-	)
-	(port
-		(pt 192 96)
-		(output)
-		(text "JMP" (rect 0 0 21 10)(font "Arial" ))
-		(text "JMP" (rect 154 91 175 101)(font "Arial" ))
-		(line (pt 192 96)(pt 176 96))
-	)
-	(port
-		(pt 192 112)
-		(output)
-		(text "JAL" (rect 0 0 18 10)(font "Arial" ))
-		(text "JAL" (rect 156 107 174 117)(font "Arial" ))
-		(line (pt 192 112)(pt 176 112))
-	)
-	(port
-		(pt 192 128)
-		(output)
-		(text "JR" (rect 0 0 14 10)(font "Arial" ))
-		(text "JR" (rect 160 123 174 133)(font "Arial" ))
-		(line (pt 192 128)(pt 176 128))
-	)
-	(port
-		(pt 192 144)
-		(output)
-		(text "BR" (rect 0 0 15 10)(font "Arial" ))
-		(text "BR" (rect 159 139 174 149)(font "Arial" ))
-		(line (pt 192 144)(pt 176 144))
-	)
-	(port
-		(pt 192 160)
-		(output)
-		(text "CLRC" (rect 0 0 30 10)(font "Arial" ))
-		(text "CLRC" (rect 146 155 176 165)(font "Arial" ))
-		(line (pt 192 160)(pt 176 160))
-	)
-	(port
-		(pt 192 176)
-		(output)
-		(text "RDIN" (rect 0 0 28 10)(font "Arial" ))
-		(text "RDIN" (rect 148 171 176 181)(font "Arial" ))
-		(line (pt 192 176)(pt 176 176))
-	)
-	(port
-		(pt 192 192)
-		(output)
-		(text "SWO" (rect 0 0 25 10)(font "Arial" ))
-		(text "SWO" (rect 150 187 175 197)(font "Arial" ))
-		(line (pt 192 192)(pt 176 192))
-	)
-	(port
-		(pt 192 208)
-		(output)
-		(text "EXO" (rect 0 0 21 10)(font "Arial" ))
-		(text "EXO" (rect 154 203 175 213)(font "Arial" ))
-		(line (pt 192 208)(pt 176 208))
-	)
-	(port
-		(pt 192 224)
-		(output)
-		(text "IMMO" (rect 0 0 28 10)(font "Arial" ))
-		(text "IMMO" (rect 148 219 176 229)(font "Arial" ))
-		(line (pt 192 224)(pt 176 224))
-	)
-	(port
-		(pt 192 240)
-		(output)
-		(text "SHFTO" (rect 0 0 36 10)(font "Arial" ))
-		(text "SHFTO" (rect 141 235 177 245)(font "Arial" ))
-		(line (pt 192 240)(pt 176 240))
-	)
-	(port
-		(pt 192 256)
-		(output)
-		(text "ALU2" (rect 0 0 27 10)(font "Arial" ))
-		(text "ALU2" (rect 149 251 176 261)(font "Arial" ))
-		(line (pt 192 256)(pt 176 256))
-	)
-	(port
-		(pt 192 272)
-		(output)
-		(text "MEMO" (rect 0 0 31 10)(font "Arial" ))
-		(text "MEMO" (rect 145 267 176 277)(font "Arial" ))
-		(line (pt 192 272)(pt 176 272))
-	)
-	(port
-		(pt 192 288)
-		(output)
-		(text "IMMBO" (rect 0 0 35 10)(font "Arial" ))
-		(text "IMMBO" (rect 142 283 177 293)(font "Arial" ))
-		(line (pt 192 288)(pt 176 288))
-	)
-	(port
-		(pt 192 304)
-		(output)
-		(text "REN" (rect 0 0 23 10)(font "Arial" ))
-		(text "REN" (rect 152 299 175 309)(font "Arial" ))
-		(line (pt 192 304)(pt 176 304))
-	)
-	(port
-		(pt 192 320)
-		(output)
-		(text "CLRR" (rect 0 0 30 10)(font "Arial" ))
-		(text "CLRR" (rect 146 315 176 325)(font "Arial" ))
-		(line (pt 192 320)(pt 176 320))
-	)
-	(port
-		(pt 192 336)
-		(output)
-		(text "MEN" (rect 0 0 23 10)(font "Arial" ))
-		(text "MEN" (rect 152 331 175 341)(font "Arial" ))
-		(line (pt 192 336)(pt 176 336))
-	)
-	(port
-		(pt 192 352)
-		(output)
-		(text "SSEN" (rect 0 0 29 10)(font "Arial" ))
-		(text "SSEN" (rect 147 347 176 357)(font "Arial" ))
-		(line (pt 192 352)(pt 176 352))
-	)
-	(drawing
-		(rectangle (rect 16 16 176 384))
-	)
-)
-(symbol
-	(rect 8 -248 120 -160)
-	(text "BUSMUX" (rect 28 0 91 15)(font "Arial" (font_size 10)))
-	(text "SelA9" (rect 3 77 30 87)(font "DejaVu Sans Condensed" ))
-	(port
-		(pt 0 64)
-		(input)
-		(text "datab[WIDTH-1..0]" (rect 6 51 108 63)(font "Arial" (font_size 8)))
-		(text "datab[]" (rect 6 51 44 63)(font "Arial" (font_size 8)))
-		(line (pt 0 64)(pt 44 64)(line_width 3))
-	)
-	(port
-		(pt 56 88)
-		(input)
-		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
-		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
-		(line (pt 56 88)(pt 56 72))
-	)
-	(port
-		(pt 0 32)
-		(input)
-		(text "dataa[WIDTH-1..0]" (rect 6 19 108 31)(font "Arial" (font_size 8)))
-		(text "dataa[]" (rect 6 19 44 31)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 44 32)(line_width 3))
-	)
-	(port
-		(pt 112 48)
-		(output)
-		(text "result[WIDTH-1..0]" (rect 75 35 177 47)(font "Arial" (font_size 8)))
-		(text "result[]" (rect 75 35 113 47)(font "Arial" (font_size 8)))
-		(line (pt 68 48)(pt 112 48)(line_width 3))
-	)
-	(parameter
-		"WIDTH"
-		"1"
-		"Width of I/O, any integer > 0"
-		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(text "0" (rect 52 31 56 40)(font "Arial" (font_size 6)))
-		(text "1" (rect 52 55 56 64)(font "Arial" (font_size 6)))
-		(line (pt 68 64)(pt 68 32))
-		(line (pt 44 80)(pt 44 16))
-		(line (pt 44 16)(pt 68 32))
-		(line (pt 44 80)(pt 68 64))
-	)
-	(annotation_block (parameter)(rect 64 -496 251 -470))
-)
-(symbol
-	(rect 2608 -496 2720 -408)
+	(rect 2608 -728 2720 -640)
 	(text "BUSMUX" (rect 28 0 91 15)(font "Arial" (font_size 10)))
 	(text "Debugging" (rect 3 77 53 87)(font "DejaVu Sans Condensed" ))
 	(port
@@ -3305,7 +2891,7 @@ on the Quartus Prime software download page.
 		(line (pt 44 16)(pt 68 32))
 		(line (pt 44 80)(pt 68 64))
 	)
-	(annotation_block (parameter)(rect 2632 -536 2833 -510))
+	(annotation_block (parameter)(rect 2632 -768 2833 -742))
 )
 (symbol
 	(rect 2624 -1208 2736 -1120)
@@ -3486,11 +3072,684 @@ on the Quartus Prime software download page.
 	)
 	(annotation_block (parameter)(rect 1008 -736 1195 -697))
 )
-(connector
-	(text "const_0" (rect 18 -888 53 -878)(font "DejaVu Sans Condensed" ))
-	(pt -8 -872)
-	(pt 40 -872)
-	(bus)
+(symbol
+	(rect 672 -1120 864 -720)
+	(text "ControlUnit" (rect 5 0 60 10)(font "Arial" ))
+	(text "inst40" (rect 8 384 36 394)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "OPCODE[3..0]" (rect 0 0 73 10)(font "Arial" ))
+		(text "OPCODE[3..0]" (rect 21 27 94 37)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "funct[2..0]" (rect 0 0 51 10)(font "Arial" ))
+		(text "funct[2..0]" (rect 21 43 72 53)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 192 32)
+		(output)
+		(text "Halt" (rect 0 0 20 10)(font "Arial" ))
+		(text "Halt" (rect 155 27 175 37)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32))
+	)
+	(port
+		(pt 192 48)
+		(output)
+		(text "Flush" (rect 0 0 27 10)(font "Arial" ))
+		(text "Flush" (rect 149 43 176 53)(font "Arial" ))
+		(line (pt 192 48)(pt 176 48))
+	)
+	(port
+		(pt 192 64)
+		(output)
+		(text "CE" (rect 0 0 15 10)(font "Arial" ))
+		(text "CE" (rect 159 59 174 69)(font "Arial" ))
+		(line (pt 192 64)(pt 176 64))
+	)
+	(port
+		(pt 192 80)
+		(output)
+		(text "CTE" (rect 0 0 21 10)(font "Arial" ))
+		(text "CTE" (rect 154 75 175 85)(font "Arial" ))
+		(line (pt 192 80)(pt 176 80))
+	)
+	(port
+		(pt 192 96)
+		(output)
+		(text "JMP" (rect 0 0 21 10)(font "Arial" ))
+		(text "JMP" (rect 154 91 175 101)(font "Arial" ))
+		(line (pt 192 96)(pt 176 96))
+	)
+	(port
+		(pt 192 112)
+		(output)
+		(text "JAL" (rect 0 0 18 10)(font "Arial" ))
+		(text "JAL" (rect 156 107 174 117)(font "Arial" ))
+		(line (pt 192 112)(pt 176 112))
+	)
+	(port
+		(pt 192 128)
+		(output)
+		(text "JR" (rect 0 0 14 10)(font "Arial" ))
+		(text "JR" (rect 160 123 174 133)(font "Arial" ))
+		(line (pt 192 128)(pt 176 128))
+	)
+	(port
+		(pt 192 144)
+		(output)
+		(text "BR" (rect 0 0 15 10)(font "Arial" ))
+		(text "BR" (rect 159 139 174 149)(font "Arial" ))
+		(line (pt 192 144)(pt 176 144))
+	)
+	(port
+		(pt 192 160)
+		(output)
+		(text "CLRC" (rect 0 0 30 10)(font "Arial" ))
+		(text "CLRC" (rect 146 155 176 165)(font "Arial" ))
+		(line (pt 192 160)(pt 176 160))
+	)
+	(port
+		(pt 192 176)
+		(output)
+		(text "MRE" (rect 0 0 23 10)(font "Arial" ))
+		(text "MRE" (rect 152 171 175 181)(font "Arial" ))
+		(line (pt 192 176)(pt 176 176))
+	)
+	(port
+		(pt 192 192)
+		(output)
+		(text "RDIN" (rect 0 0 28 10)(font "Arial" ))
+		(text "RDIN" (rect 148 187 176 197)(font "Arial" ))
+		(line (pt 192 192)(pt 176 192))
+	)
+	(port
+		(pt 192 208)
+		(output)
+		(text "SWO" (rect 0 0 25 10)(font "Arial" ))
+		(text "SWO" (rect 150 203 175 213)(font "Arial" ))
+		(line (pt 192 208)(pt 176 208))
+	)
+	(port
+		(pt 192 224)
+		(output)
+		(text "EXO" (rect 0 0 21 10)(font "Arial" ))
+		(text "EXO" (rect 154 219 175 229)(font "Arial" ))
+		(line (pt 192 224)(pt 176 224))
+	)
+	(port
+		(pt 192 240)
+		(output)
+		(text "IMMO" (rect 0 0 28 10)(font "Arial" ))
+		(text "IMMO" (rect 148 235 176 245)(font "Arial" ))
+		(line (pt 192 240)(pt 176 240))
+	)
+	(port
+		(pt 192 256)
+		(output)
+		(text "SHFTO" (rect 0 0 36 10)(font "Arial" ))
+		(text "SHFTO" (rect 141 251 177 261)(font "Arial" ))
+		(line (pt 192 256)(pt 176 256))
+	)
+	(port
+		(pt 192 272)
+		(output)
+		(text "ALU2" (rect 0 0 27 10)(font "Arial" ))
+		(text "ALU2" (rect 149 267 176 277)(font "Arial" ))
+		(line (pt 192 272)(pt 176 272))
+	)
+	(port
+		(pt 192 288)
+		(output)
+		(text "MEMO" (rect 0 0 31 10)(font "Arial" ))
+		(text "MEMO" (rect 145 283 176 293)(font "Arial" ))
+		(line (pt 192 288)(pt 176 288))
+	)
+	(port
+		(pt 192 304)
+		(output)
+		(text "IMMBO" (rect 0 0 35 10)(font "Arial" ))
+		(text "IMMBO" (rect 142 299 177 309)(font "Arial" ))
+		(line (pt 192 304)(pt 176 304))
+	)
+	(port
+		(pt 192 320)
+		(output)
+		(text "REN" (rect 0 0 23 10)(font "Arial" ))
+		(text "REN" (rect 152 315 175 325)(font "Arial" ))
+		(line (pt 192 320)(pt 176 320))
+	)
+	(port
+		(pt 192 336)
+		(output)
+		(text "CLRR" (rect 0 0 30 10)(font "Arial" ))
+		(text "CLRR" (rect 146 331 176 341)(font "Arial" ))
+		(line (pt 192 336)(pt 176 336))
+	)
+	(port
+		(pt 192 352)
+		(output)
+		(text "MEN" (rect 0 0 23 10)(font "Arial" ))
+		(text "MEN" (rect 152 347 175 357)(font "Arial" ))
+		(line (pt 192 352)(pt 176 352))
+	)
+	(port
+		(pt 192 368)
+		(output)
+		(text "SSEN" (rect 0 0 29 10)(font "Arial" ))
+		(text "SSEN" (rect 147 363 176 373)(font "Arial" ))
+		(line (pt 192 368)(pt 176 368))
+	)
+	(drawing
+		(rectangle (rect 16 16 176 384))
+	)
+)
+(symbol
+	(rect -112 -184 64 -104)
+	(text "clock1Hz" (rect 5 0 49 10)(font "Arial" ))
+	(text "inst" (rect 8 64 25 74)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk_50MHz" (rect 0 0 53 10)(font "Arial" ))
+		(text "clk_50MHz" (rect 21 27 74 37)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 24 10)(font "Arial" ))
+		(text "reset" (rect 21 43 45 53)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 176 32)
+		(output)
+		(text "clk_1Hz" (rect 0 0 38 10)(font "Arial" ))
+		(text "clk_1Hz" (rect 123 27 161 37)(font "Arial" ))
+		(line (pt 176 32)(pt 160 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 160 64))
+	)
+)
+(symbol
+	(rect 2464 -344 2768 -200)
+	(text "RAM" (rect 5 0 28 10)(font "Arial" ))
+	(text "inst23" (rect 8 128 36 138)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "DIN[(d_width-1)..0]" (rect 0 0 93 10)(font "Arial" ))
+		(text "DIN[(d_width-1)..0]" (rect 21 27 114 37)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "ADDR_IN[(a_width-1)..0]" (rect 0 0 122 10)(font "Arial" ))
+		(text "ADDR_IN[(a_width-1)..0]" (rect 21 43 143 53)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "ADDR_OUT1[(a_width-1)..0]" (rect 0 0 139 10)(font "Arial" ))
+		(text "ADDR_OUT1[(a_width-1)..0]" (rect 21 59 160 69)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "clk" (rect 0 0 14 10)(font "Arial" ))
+		(text "clk" (rect 21 75 35 85)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "EN" (rect 0 0 15 10)(font "Arial" ))
+		(text "EN" (rect 21 91 36 101)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "WE" (rect 0 0 17 10)(font "Arial" ))
+		(text "WE" (rect 21 107 38 117)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 304 32)
+		(output)
+		(text "DOUT[(d_width-1)..0]" (rect 0 0 103 10)(font "Arial" ))
+		(text "DOUT[(d_width-1)..0]" (rect 196 27 299 37)(font "Arial" ))
+		(line (pt 304 32)(pt 288 32)(line_width 3))
+	)
+	(parameter
+		"D_WIDTH"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"A_WIDTH"
+		"9"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"SIZE"
+		"512"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 288 128))
+	)
+	(annotation_block (parameter)(rect 2768 -400 2955 -348))
+)
+(symbol
+	(rect 432 -1088 464 -1072)
+	(text "VCC" (rect 7 0 27 9)(font "Arial" (font_size 6)))
+	(text "inst70" (rect 3 5 31 15)(font "DejaVu Sans Condensed" )(invisible))
+	(port
+		(pt 16 16)
+		(output)
+		(text "1" (rect 19 7 24 18)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 19 7 24 18)(font "Courier New" (bold))(invisible))
+		(line (pt 16 16)(pt 16 8))
+	)
+	(drawing
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(symbol
+	(rect 80 -216 192 -128)
+	(text "BUSMUX" (rect 28 0 91 15)(font "Arial" (font_size 10)))
+	(text "inst71" (rect 3 77 31 87)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 64)
+		(input)
+		(text "datab[WIDTH-1..0]" (rect 6 51 108 63)(font "Arial" (font_size 8)))
+		(text "datab[]" (rect 6 51 44 63)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 44 64)(line_width 3))
+	)
+	(port
+		(pt 56 88)
+		(input)
+		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
+		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
+		(line (pt 56 88)(pt 56 72))
+	)
+	(port
+		(pt 0 32)
+		(input)
+		(text "dataa[WIDTH-1..0]" (rect 6 19 108 31)(font "Arial" (font_size 8)))
+		(text "dataa[]" (rect 6 19 44 31)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 44 32)(line_width 3))
+	)
+	(port
+		(pt 112 48)
+		(output)
+		(text "result[WIDTH-1..0]" (rect 75 35 177 47)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 75 35 113 47)(font "Arial" (font_size 8)))
+		(line (pt 68 48)(pt 112 48)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		"1"
+		"Width of I/O, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(drawing
+		(text "0" (rect 52 31 56 40)(font "Arial" (font_size 6)))
+		(text "1" (rect 52 55 56 64)(font "Arial" (font_size 6)))
+		(line (pt 68 64)(pt 68 32))
+		(line (pt 44 80)(pt 44 16))
+		(line (pt 44 16)(pt 68 32))
+		(line (pt 44 80)(pt 68 64))
+	)
+	(annotation_block (parameter)(rect 192 -248 323 -222))
+)
+(symbol
+	(rect -176 -944 -8 -864)
+	(text "StartupReset" (rect 5 0 69 10)(font "Arial" ))
+	(text "inst90" (rect 8 64 36 74)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 10)(font "Arial" ))
+		(text "clk" (rect 21 27 35 37)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "BTN_N" (rect 0 0 35 10)(font "Arial" ))
+		(text "BTN_N" (rect 21 43 56 53)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 168 32)
+		(output)
+		(text "RESET" (rect 0 0 35 10)(font "Arial" ))
+		(text "RESET" (rect 118 27 153 37)(font "Arial" ))
+		(line (pt 168 32)(pt 152 32))
+	)
+	(parameter
+		"RESET_CYCLES"
+		"256"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 152 64))
+	)
+	(annotation_block (parameter)(rect -8 -976 208 -944))
+)
+(symbol
+	(rect 696 -1192 760 -1144)
+	(text "AND2" (rect 39 0 63 9)(font "Arial" (font_size 6)))
+	(text "inst91" (rect 33 37 61 47)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 64 16)
+		(input)
+		(text "IN1" (rect 2 7 19 18)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 45 7 62 18)(font "Courier New" (bold))(invisible))
+		(line (pt 64 16)(pt 50 16))
+	)
+	(port
+		(pt 64 32)
+		(input)
+		(text "IN2" (rect 2 23 19 34)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 45 23 62 34)(font "Courier New" (bold))(invisible))
+		(line (pt 64 32)(pt 50 32))
+	)
+	(port
+		(pt 0 24)
+		(output)
+		(text "OUT" (rect 48 15 65 26)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect -1 15 16 26)(font "Courier New" (bold))(invisible))
+		(line (pt 22 24)(pt 0 24))
+	)
+	(drawing
+		(line (pt 50 12)(pt 34 12))
+		(line (pt 50 37)(pt 33 37))
+		(line (pt 50 12)(pt 50 37))
+		(arc (pt 34 12)(pt 33 37)(rect 21 12 46 37))
+	)
+	(flipy)
+)
+(symbol
+	(rect 24 -928 72 -896)
+	(text "NOT" (rect 1 0 21 9)(font "Arial" (font_size 6)))
+	(text "inst92" (rect 3 21 31 31)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 18)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 18)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 18)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
+)
+(symbol
+	(rect 24 -896 88 -848)
+	(text "OR2" (rect 1 0 19 9)(font "Arial" (font_size 6)))
+	(text "inst93" (rect 3 37 31 47)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN2" (rect 2 23 19 34)(font "Courier New" (bold))(invisible))
+		(text "IN2" (rect 2 23 19 34)(font "Courier New" (bold))(invisible))
+		(line (pt 0 32)(pt 15 32))
+	)
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN1" (rect 2 7 19 18)(font "Courier New" (bold))(invisible))
+		(text "IN1" (rect 2 7 19 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 15 16))
+	)
+	(port
+		(pt 64 24)
+		(output)
+		(text "OUT" (rect 48 15 65 26)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 48 15 65 26)(font "Courier New" (bold))(invisible))
+		(line (pt 48 24)(pt 64 24))
+	)
+	(drawing
+		(line (pt 14 36)(pt 25 36))
+		(line (pt 14 13)(pt 25 13))
+		(arc (pt 7 29)(pt 7 19)(rect -14 8 19 41))
+		(arc (pt 49 24)(pt 25 13)(rect -6 13 57 76))
+		(arc (pt 25 35)(pt 49 24)(rect -6 -27 57 36))
+	)
+)
+(symbol
+	(rect 344 -720 432 -608)
+	(text "BUSMUX" (rect 73 21 88 84)(font "Arial" (font_size 10))(vertical))
+	(text "inst94" (rect 1 81 11 109)(font "DejaVu Sans Condensed" )(vertical))
+	(port
+		(pt 24 112)
+		(input)
+		(text "datab[WIDTH-1..0]" (rect 6 51 108 63)(font "Arial" (font_size 8)))
+		(text "datab[]" (rect 25 68 37 106)(font "Arial" (font_size 8))(vertical))
+		(line (pt 24 112)(pt 24 68)(line_width 3))
+	)
+	(port
+		(pt 0 56)
+		(input)
+		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
+		(text "sel" (rect 6 37 18 53)(font "Arial" (font_size 8))(vertical))
+		(line (pt 0 56)(pt 16 56))
+	)
+	(port
+		(pt 56 112)
+		(input)
+		(text "dataa[WIDTH-1..0]" (rect 6 19 108 31)(font "Arial" (font_size 8)))
+		(text "dataa[]" (rect 57 68 69 106)(font "Arial" (font_size 8))(vertical))
+		(line (pt 56 112)(pt 56 68)(line_width 3))
+	)
+	(port
+		(pt 40 0)
+		(output)
+		(text "result[WIDTH-1..0]" (rect 75 35 177 47)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 41 -1 53 37)(font "Arial" (font_size 8))(vertical))
+		(line (pt 40 44)(pt 40 0)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		"16"
+		"Width of I/O, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(drawing
+		(text "0" (rect 48 56 57 60)(font "Arial" (font_size 6))(vertical))
+		(text "1" (rect 24 56 33 60)(font "Arial" (font_size 6))(vertical))
+		(line (pt 24 44)(pt 56 44))
+		(line (pt 8 68)(pt 72 68))
+		(line (pt 72 68)(pt 56 44))
+		(line (pt 8 68)(pt 24 44))
+	)
+	(flipx_rotate90)
+	(annotation_block (parameter)(rect 424 -728 555 -702))
+)
+(symbol
+	(rect 312 -624 344 -592)
+	(text "GND" (rect 7 3 16 24)(font "Arial" (font_size 6))(vertical))
+	(text "inst95" (rect 1 1 11 29)(font "DejaVu Sans Condensed" )(vertical)(invisible))
+	(port
+		(pt 32 16)
+		(output)
+		(text "1" (rect 18 0 23 11)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 21 9 32 14)(font "Courier New" (bold))(vertical)(invisible))
+		(line (pt 24 16)(pt 32 16))
+	)
+	(drawing
+		(line (pt 24 24)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 24 24)(pt 24 8))
+	)
+	(flipx_rotate90)
+)
+(symbol
+	(rect 2768 -312 2856 -200)
+	(text "BUSMUX" (rect 0 28 15 91)(font "Arial" (font_size 10))(vertical))
+	(text "inst99" (rect 77 3 87 31)(font "DejaVu Sans Condensed" )(vertical))
+	(port
+		(pt 64 0)
+		(input)
+		(text "datab[WIDTH-1..0]" (rect 6 51 108 63)(font "Arial" (font_size 8)))
+		(text "datab[]" (rect 51 6 63 44)(font "Arial" (font_size 8))(vertical))
+		(line (pt 64 0)(pt 64 44)(line_width 3))
+	)
+	(port
+		(pt 88 56)
+		(input)
+		(text "sel" (rect 59 70 75 82)(font "Arial" (font_size 8)))
+		(text "sel" (rect 70 59 82 75)(font "Arial" (font_size 8))(vertical))
+		(line (pt 88 56)(pt 72 56))
+	)
+	(port
+		(pt 32 0)
+		(input)
+		(text "dataa[WIDTH-1..0]" (rect 6 19 108 31)(font "Arial" (font_size 8)))
+		(text "dataa[]" (rect 19 6 31 44)(font "Arial" (font_size 8))(vertical))
+		(line (pt 32 0)(pt 32 44)(line_width 3))
+	)
+	(port
+		(pt 48 112)
+		(output)
+		(text "result[WIDTH-1..0]" (rect 75 35 177 47)(font "Arial" (font_size 8)))
+		(text "result[]" (rect 35 75 47 113)(font "Arial" (font_size 8))(vertical))
+		(line (pt 48 68)(pt 48 112)(line_width 3))
+	)
+	(parameter
+		"WIDTH"
+		"16"
+		"Width of I/O, any integer > 0"
+		" 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" " 9" "10" "11" "12" "13" "14" "15" "16" "20" "24" "28" "32" "40" "48" "56" "64" 
+	)
+	(drawing
+		(text "0" (rect 31 52 40 56)(font "Arial" (font_size 6))(vertical))
+		(text "1" (rect 55 52 64 56)(font "Arial" (font_size 6))(vertical))
+		(line (pt 64 68)(pt 32 68))
+		(line (pt 80 44)(pt 16 44))
+		(line (pt 16 44)(pt 32 68))
+		(line (pt 80 44)(pt 64 68))
+	)
+	(flipy_rotate90)
+	(annotation_block (parameter)(rect 2864 -328 2995 -302))
+)
+(symbol
+	(rect 2608 -552 2816 -344)
+	(text "MemHazUnit" (rect 5 0 67 10)(font "Arial" ))
+	(text "inst101" (rect 8 192 42 202)(font "DejaVu Sans Condensed" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 10)(font "Arial" ))
+		(text "clk" (rect 21 27 35 37)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "MRE" (rect 0 0 23 10)(font "Arial" ))
+		(text "MRE" (rect 21 43 44 53)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "deaddr[(aw-1)..0]" (rect 0 0 82 10)(font "Arial" ))
+		(text "deaddr[(aw-1)..0]" (rect 21 59 103 69)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "exaddr[(aw-1)..0]" (rect 0 0 82 10)(font "Arial" ))
+		(text "exaddr[(aw-1)..0]" (rect 21 75 103 85)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "wbaddr[(aw-1)..0]" (rect 0 0 83 10)(font "Arial" ))
+		(text "wbaddr[(aw-1)..0]" (rect 21 91 104 101)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "MENEX" (rect 0 0 36 10)(font "Arial" ))
+		(text "MENEX" (rect 21 107 57 117)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "MENWB" (rect 0 0 41 10)(font "Arial" ))
+		(text "MENWB" (rect 21 123 62 133)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "EXO[(w-1)..0]" (rect 0 0 64 10)(font "Arial" ))
+		(text "EXO[(w-1)..0]" (rect 21 139 85 149)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "WBO[(w-1)..0]" (rect 0 0 69 10)(font "Arial" ))
+		(text "WBO[(w-1)..0]" (rect 21 155 90 165)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "fwded" (rect 0 0 29 10)(font "Arial" ))
+		(text "fwded" (rect 163 27 192 37)(font "Arial" ))
+		(line (pt 208 32)(pt 192 32))
+	)
+	(port
+		(pt 208 48)
+		(output)
+		(text "O[(w-1)..0]" (rect 0 0 51 10)(font "Arial" ))
+		(text "O[(w-1)..0]" (rect 144 43 195 53)(font "Arial" ))
+		(line (pt 208 48)(pt 192 48)(line_width 3))
+	)
+	(parameter
+		"W"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AW"
+		"9"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 192 192))
+	)
+	(annotation_block (parameter)(rect 2816 -592 3008 -552))
 )
 (connector
 	(pt 1112 -1216)
@@ -4233,99 +4492,8 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
-	(text "MEM[15..0]" (rect 2760 -264 2770 -210)(font "DejaVu Sans Condensed" )(vertical))
-	(pt 2752 -296)
-	(pt 2752 -184)
-	(bus)
-)
-(connector
-	(pt 2288 -248)
-	(pt 2448 -248)
-)
-(connector
-	(text "OPNDWB[8..0]" (rect 2378 -288 2447 -278)(font "DejaVu Sans Condensed" ))
-	(pt 2448 -280)
-	(pt 2352 -280)
-	(bus)
-)
-(connector
-	(text "OPND[8..0]" (rect 2378 -272 2431 -262)(font "DejaVu Sans Condensed" ))
-	(pt 2448 -264)
-	(pt 2352 -264)
-	(bus)
-)
-(connector
-	(text "DEVICE[1]" (rect 2410 -224 2458 -214)(font "DejaVu Sans Condensed" ))
-	(pt 2392 -216)
-	(pt 2448 -216)
-)
-(connector
-	(pt 2400 -232)
-	(pt 2448 -232)
-)
-(connector
 	(pt 864 -1088)
 	(pt 888 -1088)
-)
-(connector
-	(pt 2288 -448)
-	(pt 2392 -448)
-)
-(connector
-	(text "DEVICE[2]" (rect 2338 -440 2386 -430)(font "DejaVu Sans Condensed" ))
-	(pt 2336 -432)
-	(pt 2392 -432)
-)
-(connector
-	(pt 2392 -416)
-	(pt 2384 -416)
-)
-(connector
-	(pt 2288 -448)
-	(pt 2288 -248)
-)
-(connector
-	(pt 2288 -248)
-	(pt 2288 -16)
-)
-(connector
-	(pt 2592 -464)
-	(pt 2608 -464)
-	(bus)
-)
-(connector
-	(pt 2720 -448)
-	(pt 2720 -464)
-	(bus)
-)
-(connector
-	(pt 2888 -464)
-	(pt 2936 -464)
-	(bus)
-)
-(connector
-	(pt 2888 -448)
-	(pt 2936 -448)
-	(bus)
-)
-(connector
-	(pt 2888 -432)
-	(pt 2936 -432)
-	(bus)
-)
-(connector
-	(pt 2888 -416)
-	(pt 2936 -416)
-	(bus)
-)
-(connector
-	(pt 2664 -408)
-	(pt 2664 -392)
-)
-(connector
-	(text "SW[11]" (rect 2674 -400 2708 -390)(font "DejaVu Sans Condensed" ))
-	(pt 2664 -392)
-	(pt 2696 -392)
 )
 (connector
 	(text "DE_A[15..0]" (rect 826 -384 882 -374)(font "DejaVu Sans Condensed" ))
@@ -4340,37 +4508,9 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
-	(text "SSDTAP[15..0]" (rect 2592 -429 2602 -360)(font "DejaVu Sans Condensed" )(vertical))
-	(pt 2608 -432)
-	(pt 2608 -368)
-	(bus)
-)
-(connector
 	(text "OPND[5..3]" (rect 1001 -433 1054 -423)(font "DejaVu Sans Condensed" ))
 	(pt 984 -424)
 	(pt 1064 -424)
-	(bus)
-)
-(connector
-	(text "SHARED_BUS[15..0]" (rect 2362 -312 2458 -302)(font "DejaVu Sans Condensed" ))
-	(pt 2320 -296)
-	(pt 2448 -296)
-	(bus)
-)
-(connector
-	(text "SHARED_BUS[15..0]" (rect 2304 -472 2400 -462)(font "DejaVu Sans Condensed" ))
-	(pt 2320 -464)
-	(pt 2392 -464)
-	(bus)
-)
-(connector
-	(pt 2320 -760)
-	(pt 2320 -464)
-	(bus)
-)
-(connector
-	(pt 2320 -464)
-	(pt 2320 -296)
 	(bus)
 )
 (connector
@@ -4389,24 +4529,6 @@ on the Quartus Prime software download page.
 	(text "OUTPUT[0]" (rect 1586 -976 1637 -966)(font "DejaVu Sans Condensed" ))
 	(pt 1592 -960)
 	(pt 1640 -960)
-)
-(connector
-	(pt 2056 -144)
-	(pt 1984 -144)
-)
-(connector
-	(pt 1984 -160)
-	(pt 1984 -144)
-)
-(connector
-	(text "DEV[0]" (rect 2000 -318 2010 -285)(font "DejaVu Sans Condensed" )(vertical))
-	(pt 1992 -304)
-	(pt 1992 -272)
-)
-(connector
-	(text "OUTPUT[4]" (rect 1960 -318 1970 -267)(font "DejaVu Sans Condensed" )(vertical))
-	(pt 1976 -304)
-	(pt 1976 -224)
 )
 (connector
 	(text "DEV[2..0]" (rect 2098 -1072 2144 -1062)(font "DejaVu Sans Condensed" ))
@@ -4431,12 +4553,6 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
-	(text "SHARED_BUS[15..0]" (rect 2378 -776 2474 -766)(font "DejaVu Sans Condensed" ))
-	(pt 2320 -760)
-	(pt 2440 -760)
-	(bus)
-)
-(connector
 	(text "JMP" (rect 874 -1032 890 -1022)(font "DejaVu Sans Condensed" ))
 	(pt 864 -1024)
 	(pt 936 -1024)
@@ -4452,90 +4568,14 @@ on the Quartus Prime software download page.
 	(pt 936 -976)
 )
 (connector
-	(text "CountClear" (rect 874 -968 927 -958)(font "DejaVu Sans Condensed" ))
-	(pt 864 -960)
-	(pt 936 -960)
-)
-(connector
-	(text "RDIN" (rect 874 -952 897 -942)(font "DejaVu Sans Condensed" ))
-	(pt 864 -944)
-	(pt 936 -944)
-)
-(connector
-	(text "DEDEV[0]" (rect 874 -824 920 -814)(font "DejaVu Sans Condensed" ))
-	(pt 864 -816)
-	(pt 936 -816)
-)
-(connector
-	(text "DEDEV[1]" (rect 874 -792 920 -782)(font "DejaVu Sans Condensed" ))
-	(pt 864 -784)
-	(pt 936 -784)
-)
-(connector
-	(text "RegisterClearAll" (rect 866 -808 941 -798)(font "DejaVu Sans Condensed" ))
-	(pt 936 -800)
-	(pt 864 -800)
-)
-(connector
 	(text "CountJumpAndLink" (rect 874 -1016 964 -1006)(font "DejaVu Sans Condensed" ))
 	(pt 864 -1008)
 	(pt 936 -1008)
 )
 (connector
-	(text "DEDEV[2]" (rect 874 -776 920 -766)(font "DejaVu Sans Condensed" ))
-	(pt 864 -768)
-	(pt 936 -768)
-)
-(connector
-	(text "OUTSEL[1]" (rect 890 -920 940 -910)(font "DejaVu Sans Condensed" ))
-	(pt 864 -912)
-	(pt 936 -912)
-)
-(connector
-	(text "OUTSEL[2]" (rect 890 -904 940 -894)(font "DejaVu Sans Condensed" ))
-	(pt 864 -896)
-	(pt 936 -896)
-)
-(connector
-	(text "OUTSEL[3]" (rect 890 -888 940 -878)(font "DejaVu Sans Condensed" ))
-	(pt 864 -880)
-	(pt 936 -880)
-)
-(connector
-	(text "OUTSEL[4]" (rect 890 -872 940 -862)(font "DejaVu Sans Condensed" ))
-	(pt 864 -864)
-	(pt 936 -864)
-)
-(connector
-	(text "OUTSEL[5]" (rect 890 -856 940 -846)(font "DejaVu Sans Condensed" ))
-	(pt 864 -848)
-	(pt 936 -848)
-)
-(connector
-	(text "OUTSEL[6]" (rect 890 -840 940 -830)(font "DejaVu Sans Condensed" ))
-	(pt 864 -832)
-	(pt 936 -832)
-)
-(connector
-	(text "OUTSEL[0]" (rect 890 -936 940 -926)(font "DejaVu Sans Condensed" ))
-	(pt 936 -928)
-	(pt 864 -928)
-)
-(connector
 	(text "CTE" (rect 874 -1048 892 -1038)(font "DejaVu Sans Condensed" ))
 	(pt 864 -1040)
 	(pt 936 -1040)
-)
-(connector
-	(pt 672 -1072)
-	(pt 664 -1072)
-	(bus)
-)
-(connector
-	(text "OPND[2..0]" (rect 648 -1071 658 -1018)(font "DejaVu Sans Condensed" )(vertical))
-	(pt 664 -1072)
-	(pt 664 -1016)
-	(bus)
 )
 (connector
 	(text "B[15..0]" (rect 1402 -280 1440 -270)(font "DejaVu Sans Condensed" ))
@@ -4607,53 +4647,6 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
-	(pt 888 -1128)
-	(pt 888 -1088)
-)
-(connector
-	(pt 1592 -1104)
-	(pt 1592 -1120)
-	(bus)
-)
-(connector
-	(text "SW[15..12]" (rect 1618 -1120 1671 -1110)(font "DejaVu Sans Condensed" ))
-	(pt 1664 -1104)
-	(pt 1592 -1104)
-	(bus)
-)
-(connector
-	(text "SW[11]" (rect 1834 -1192 1868 -1182)(font "DejaVu Sans Condensed" ))
-	(pt 1824 -1184)
-	(pt 1856 -1184)
-)
-(connector
-	(text "SW[10]" (rect 1834 -1160 1868 -1150)(font "DejaVu Sans Condensed" ))
-	(pt 1824 -1152)
-	(pt 1864 -1152)
-)
-(connector
-	(text "PB[1]" (rect 1746 -1192 1771 -1182)(font "DejaVu Sans Condensed" ))
-	(pt 1744 -1184)
-	(pt 1776 -1184)
-)
-(connector
-	(text "PB[0]" (rect 1746 -1160 1771 -1150)(font "DejaVu Sans Condensed" ))
-	(pt 1744 -1152)
-	(pt 1776 -1152)
-)
-(connector
-	(text "PB[1..0]" (rect 1656 -1096 1694 -1086)(font "DejaVu Sans Condensed" ))
-	(pt 1656 -1080)
-	(pt 1720 -1080)
-	(bus)
-)
-(connector
-	(text "SW[9..0]" (rect 1562 -1096 1603 -1086)(font "DejaVu Sans Condensed" ))
-	(pt 1544 -1080)
-	(pt 1616 -1080)
-	(bus)
-)
-(connector
 	(text "notStalled" (rect 418 -1240 465 -1230)(font "DejaVu Sans Condensed" ))
 	(pt 456 -1256)
 	(pt 432 -1256)
@@ -4677,245 +4670,14 @@ on the Quartus Prime software download page.
 	(pt 368 -1264)
 )
 (connector
-	(text "OPND[15..0]" (rect 376 -568 435 -558)(font "DejaVu Sans Condensed" ))
-	(pt 376 -560)
-	(pt 440 -560)
-	(bus)
-)
-(connector
-	(text "ImmDE[15..0]" (rect 376 -552 442 -542)(font "DejaVu Sans Condensed" ))
-	(pt 376 -544)
-	(pt 440 -544)
-	(bus)
-)
-(connector
-	(pt 144 -528)
-	(pt 144 -480)
-)
-(connector
-	(text "LED[9]" (rect 826 -1144 857 -1134)(font "DejaVu Sans Condensed" ))
-	(pt 888 -1128)
-	(pt 576 -1128)
-)
-(connector
-	(pt 576 -1128)
-	(pt 576 -1080)
-)
-(connector
 	(text "OPND[15..12]" (rect 504 -1001 514 -937)(font "DejaVu Sans Condensed" )(vertical))
 	(pt 520 -1024)
 	(pt 520 -936)
 	(bus)
 )
 (connector
-	(pt 672 -1088)
-	(pt 648 -1088)
-	(bus)
-)
-(connector
 	(pt 632 -1040)
 	(pt 648 -1040)
-	(bus)
-)
-(connector
-	(text "STAT1[3..0]" (rect 632 -1114 642 -1058)(font "DejaVu Sans Condensed" )(vertical))
-	(pt 648 -1040)
-	(pt 648 -1088)
-	(bus)
-)
-(connector
-	(pt 144 -544)
-	(pt 24 -544)
-)
-(connector
-	(pt 24 -544)
-	(pt 24 -280)
-)
-(connector
-	(text "LED[0]" (rect -48 -637 -38 -606)(font "DejaVu Sans Condensed" )(vertical))
-	(pt -32 -632)
-	(pt -32 -608)
-)
-(connector
-	(text "LED[1]" (rect -32 -629 -22 -598)(font "DejaVu Sans Condensed" )(vertical))
-	(pt -16 -632)
-	(pt -16 -592)
-)
-(connector
-	(pt -264 -280)
-	(pt -264 -608)
-)
-(connector
-	(text "CountEnable" (rect -160 -378 -100 -368)(font "DejaVu Sans Condensed" ))
-	(pt -120 -384)
-	(pt -168 -384)
-)
-(connector
-	(pt -120 -424)
-	(pt -120 -416)
-)
-(connector
-	(text "CountTwoEnable" (rect -136 -440 -56 -430)(font "DejaVu Sans Condensed" ))
-	(pt -120 -416)
-	(pt -112 -416)
-)
-(connector
-	(pt -120 -384)
-	(pt -120 -400)
-)
-(connector
-	(pt -120 -400)
-	(pt -112 -400)
-)
-(connector
-	(pt -48 -608)
-	(pt -32 -608)
-)
-(connector
-	(pt -48 -592)
-	(pt -16 -592)
-)
-(connector
-	(pt -136 -424)
-	(pt -120 -424)
-)
-(connector
-	(text "LED[7]" (rect -38 -402 -7 -392)(font "DejaVu Sans Condensed" ))
-	(pt -48 -408)
-	(pt -16 -408)
-)
-(connector
-	(text "STAT2[8..0]" (rect 10 -576 66 -566)(font "DejaVu Sans Condensed" ))
-	(pt 144 -560)
-	(pt -48 -560)
-	(bus)
-)
-(connector
-	(pt -48 -576)
-	(pt -40 -576)
-	(bus)
-)
-(connector
-	(text "STAT1[7..4]" (rect -32 -562 -22 -506)(font "DejaVu Sans Condensed" )(vertical))
-	(pt -40 -512)
-	(pt -40 -576)
-	(bus)
-)
-(connector
-	(pt -264 -280)
-	(pt 24 -280)
-)
-(connector
-	(pt -264 -608)
-	(pt -232 -608)
-)
-(connector
-	(text "OPND[8..0]" (rect -366 -600 -313 -590)(font "DejaVu Sans Condensed" ))
-	(pt -368 -592)
-	(pt -232 -592)
-	(bus)
-)
-(connector
-	(text "CountJump" (rect -366 -584 -315 -574)(font "DejaVu Sans Condensed" ))
-	(pt -368 -576)
-	(pt -232 -576)
-)
-(connector
-	(text "CountJumpAndLink" (rect -366 -568 -276 -558)(font "DejaVu Sans Condensed" ))
-	(pt -368 -560)
-	(pt -232 -560)
-)
-(connector
-	(text "JumpRegister" (rect -366 -552 -304 -542)(font "DejaVu Sans Condensed" ))
-	(pt -368 -544)
-	(pt -232 -544)
-)
-(connector
-	(text "CountEnable" (rect -366 -536 -306 -526)(font "DejaVu Sans Condensed" ))
-	(pt -368 -528)
-	(pt -232 -528)
-)
-(connector
-	(text "CountTwoEnable" (rect -366 -520 -286 -510)(font "DejaVu Sans Condensed" ))
-	(pt -368 -512)
-	(pt -232 -512)
-)
-(connector
-	(text "CountClear" (rect -358 -504 -305 -494)(font "DejaVu Sans Condensed" ))
-	(pt -368 -496)
-	(pt -232 -496)
-)
-(connector
-	(text "CountEnable" (rect -248 -440 -188 -430)(font "DejaVu Sans Condensed" ))
-	(pt -240 -432)
-	(pt -200 -432)
-)
-(connector
-	(text "CTE" (rect -238 -424 -220 -414)(font "DejaVu Sans Condensed" ))
-	(pt -240 -416)
-	(pt -200 -416)
-)
-(connector
-	(pt -216 -216)
-	(pt -216 -160)
-)
-(connector
-	(text "SW[0]" (rect 48 -154 58 -126)(font "DejaVu Sans Condensed" )(vertical))
-	(pt 64 -128)
-	(pt 64 -160)
-)
-(connector
-	(pt 8 -160)
-	(pt 8 -184)
-)
-(connector
-	(pt 0 -216)
-	(pt 8 -216)
-)
-(connector
-	(text "LED[8]" (rect 169 -244 179 -213)(font "DejaVu Sans Condensed" )(vertical))
-	(pt 168 -280)
-	(pt 168 -200)
-)
-(connector
-	(pt 120 -200)
-	(pt 168 -200)
-)
-(connector
-	(pt 24 -280)
-	(pt 168 -280)
-)
-(connector
-	(pt 168 -280)
-	(pt 472 -280)
-)
-(connector
-	(pt -272 -160)
-	(pt -216 -160)
-)
-(connector
-	(pt -216 -160)
-	(pt 8 -160)
-)
-(connector
-	(pt -216 -216)
-	(pt -176 -216)
-)
-(connector
-	(pt -192 -200)
-	(pt -176 -200)
-)
-(connector
-	(pt 568 -1216)
-	(pt 192 -1216)
-)
-(connector
-	(pt 192 -624)
-	(pt 192 -1216)
-)
-(connector
-	(pt 520 -1056)
-	(pt 488 -1056)
 	(bus)
 )
 (connector
@@ -4925,7 +4687,7 @@ on the Quartus Prime software download page.
 	(bus)
 )
 (connector
-	(text "EX_OUT[15..0]" (rect 2575 -1158 2585 -1089)(font "DejaVu Sans Condensed" )(vertical))
+	(text "EX_OUT[15..0]" (rect 2574 -1159 2584 -1090)(font "DejaVu Sans Condensed" )(vertical))
 	(pt 2592 -1080)
 	(pt 2592 -1176)
 	(bus)
@@ -4969,11 +4731,6 @@ on the Quartus Prime software download page.
 	(text "LED[5]" (rect 2536 -1144 2567 -1134)(font "DejaVu Sans Condensed" ))
 	(pt 2536 -1136)
 	(pt 2560 -1136)
-)
-(connector
-	(text "LED[6]" (rect 2536 -1112 2567 -1102)(font "DejaVu Sans Condensed" ))
-	(pt 2536 -1104)
-	(pt 2560 -1104)
 )
 (connector
 	(text "STAT3[7..6]" (rect 2618 -1264 2674 -1254)(font "DejaVu Sans Condensed" ))
@@ -5025,10 +4782,6 @@ on the Quartus Prime software download page.
 	(text " DEVICE[0]" (rect 2386 -1184 2437 -1174)(font "DejaVu Sans Condensed" ))
 	(pt 2416 -1168)
 	(pt 2440 -1168)
-)
-(connector
-	(pt 2416 -1104)
-	(pt 2440 -1104)
 )
 (connector
 	(text "OUTPUT[5..0]" (rect 2376 -1304 2440 -1294)(font "DejaVu Sans Condensed" ))
@@ -5118,10 +4871,6 @@ on the Quartus Prime software download page.
 	(pt 472 -280)
 )
 (connector
-	(pt 472 -280)
-	(pt 472 -8)
-)
-(connector
 	(pt 760 -584)
 	(pt 744 -584)
 )
@@ -5129,11 +4878,715 @@ on the Quartus Prime software download page.
 	(pt 744 -584)
 	(pt 744 -560)
 )
+(connector
+	(text "RDIN" (rect 874 -936 897 -926)(font "DejaVu Sans Condensed" ))
+	(pt 864 -928)
+	(pt 936 -928)
+)
+(connector
+	(text "DEDEV[0]" (rect 874 -808 920 -798)(font "DejaVu Sans Condensed" ))
+	(pt 864 -800)
+	(pt 936 -800)
+)
+(connector
+	(text "DEDEV[1]" (rect 874 -776 920 -766)(font "DejaVu Sans Condensed" ))
+	(pt 864 -768)
+	(pt 936 -768)
+)
+(connector
+	(text "RegisterClearAll" (rect 866 -792 941 -782)(font "DejaVu Sans Condensed" ))
+	(pt 936 -784)
+	(pt 864 -784)
+)
+(connector
+	(text "DEDEV[2]" (rect 874 -760 920 -750)(font "DejaVu Sans Condensed" ))
+	(pt 864 -752)
+	(pt 936 -752)
+)
+(connector
+	(text "OUTSEL[1]" (rect 890 -904 940 -894)(font "DejaVu Sans Condensed" ))
+	(pt 864 -896)
+	(pt 936 -896)
+)
+(connector
+	(text "OUTSEL[2]" (rect 890 -888 940 -878)(font "DejaVu Sans Condensed" ))
+	(pt 864 -880)
+	(pt 936 -880)
+)
+(connector
+	(text "OUTSEL[3]" (rect 890 -872 940 -862)(font "DejaVu Sans Condensed" ))
+	(pt 864 -864)
+	(pt 936 -864)
+)
+(connector
+	(text "OUTSEL[4]" (rect 890 -856 940 -846)(font "DejaVu Sans Condensed" ))
+	(pt 864 -848)
+	(pt 936 -848)
+)
+(connector
+	(text "OUTSEL[5]" (rect 890 -840 940 -830)(font "DejaVu Sans Condensed" ))
+	(pt 864 -832)
+	(pt 936 -832)
+)
+(connector
+	(text "OUTSEL[6]" (rect 890 -824 940 -814)(font "DejaVu Sans Condensed" ))
+	(pt 864 -816)
+	(pt 936 -816)
+)
+(connector
+	(text "OUTSEL[0]" (rect 890 -920 940 -910)(font "DejaVu Sans Condensed" ))
+	(pt 936 -912)
+	(pt 864 -912)
+)
+(connector
+	(text "STAT1[3..0]" (rect 632 -1114 642 -1058)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 648 -1040)
+	(pt 648 -1088)
+	(bus)
+)
+(connector
+	(pt 648 -1088)
+	(pt 672 -1088)
+	(bus)
+)
+(connector
+	(pt 672 -1072)
+	(pt 664 -1072)
+	(bus)
+)
+(connector
+	(text "OPND[2..0]" (rect 648 -1071 658 -1018)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 664 -1072)
+	(pt 664 -1016)
+	(bus)
+)
+(connector
+	(text "MRE" (rect 874 -952 895 -942)(font "DejaVu Sans Condensed" ))
+	(pt 864 -944)
+	(pt 936 -944)
+)
+(connector
+	(text "DEV[0]" (rect 1992 -318 2002 -285)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 1984 -304)
+	(pt 1984 -272)
+)
+(connector
+	(text "OUTPUT[4]" (rect 1952 -318 1962 -267)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 1968 -304)
+	(pt 1968 -224)
+)
+(connector
+	(pt 1976 -144)
+	(pt 2056 -144)
+)
+(connector
+	(pt 1976 -160)
+	(pt 1976 -144)
+)
+(connector
+	(pt 448 -1056)
+	(pt 520 -1056)
+	(bus)
+)
+(connector
+	(pt 448 -1056)
+	(pt 448 -1072)
+	(bus)
+)
+(connector
+	(pt 192 -624)
+	(pt 192 -848)
+)
+(connector
+	(pt 568 -1216)
+	(pt 384 -1216)
+)
+(connector
+	(pt 192 -848)
+	(pt 384 -848)
+)
+(connector
+	(pt 384 -1216)
+	(pt 384 -848)
+)
+(connector
+	(pt -152 -152)
+	(pt -112 -152)
+)
+(connector
+	(pt -128 -136)
+	(pt -112 -136)
+)
+(connector
+	(pt 80 -152)
+	(pt 64 -152)
+)
+(connector
+	(pt 240 -280)
+	(pt 472 -280)
+)
+(connector
+	(pt -152 -184)
+	(pt -152 -152)
+)
+(connector
+	(pt 184 -168)
+	(pt 192 -168)
+)
+(connector
+	(text "SW[10]" (rect 136 -130 146 -96)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 136 -96)
+	(pt 136 -128)
+)
+(connector
+	(pt 136 -96)
+	(pt 96 -96)
+)
+(connector
+	(pt -192 -184)
+	(pt -152 -184)
+)
+(connector
+	(pt -152 -184)
+	(pt 80 -184)
+)
+(connector
+	(text "CLRC" (rect 874 -968 901 -958)(font "DejaVu Sans Condensed" ))
+	(pt 864 -960)
+	(pt 936 -960)
+)
+(connector
+	(text "<<__$DEF_ALIAS14740>>" (rect 448 -21 458 108)(font "DejaVu Sans Condensed" )(vertical)(invisible))
+	(pt 472 -280)
+	(pt 472 -8)
+)
+(connector
+	(text "clk" (rect 2418 -1112 2430 -1102)(font "DejaVu Sans Condensed" ))
+	(pt 2416 -1104)
+	(pt 2440 -1104)
+)
+(connector
+	(text "<<__$DEF_ALIAS14744>>" (rect 240 -205 250 -76)(font "DejaVu Sans Condensed" )(vertical)(invisible))
+	(pt 240 -280)
+	(pt 240 -168)
+)
+(connector
+	(text "clk" (rect 202 -176 214 -166)(font "DejaVu Sans Condensed" ))
+	(pt 192 -168)
+	(pt 240 -168)
+)
+(connector
+	(text "LED[8]" (rect 2536 -1112 2567 -1102)(font "DejaVu Sans Condensed" ))
+	(pt 2536 -1104)
+	(pt 2560 -1104)
+)
+(connector
+	(text "LED[0]" (rect 64 -637 74 -606)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 80 -632)
+	(pt 80 -608)
+)
+(connector
+	(text "LED[1]" (rect 80 -629 90 -598)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 96 -632)
+	(pt 96 -592)
+)
+(connector
+	(pt 64 -608)
+	(pt 80 -608)
+)
+(connector
+	(pt 64 -592)
+	(pt 96 -592)
+)
+(connector
+	(pt 64 -576)
+	(pt 72 -576)
+	(bus)
+)
+(connector
+	(text "STAT1[7..4]" (rect 80 -562 90 -506)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 72 -512)
+	(pt 72 -576)
+	(bus)
+)
+(connector
+	(text "OPND[8..0]" (rect -238 -600 -185 -590)(font "DejaVu Sans Condensed" ))
+	(pt -120 -592)
+	(pt -240 -592)
+	(bus)
+)
+(connector
+	(text "CountJump" (rect -238 -584 -187 -574)(font "DejaVu Sans Condensed" ))
+	(pt -120 -576)
+	(pt -240 -576)
+)
+(connector
+	(text "CountJumpAndLink" (rect -238 -568 -148 -558)(font "DejaVu Sans Condensed" ))
+	(pt -120 -560)
+	(pt -240 -560)
+)
+(connector
+	(text "JumpRegister" (rect -238 -552 -176 -542)(font "DejaVu Sans Condensed" ))
+	(pt -120 -544)
+	(pt -240 -544)
+)
+(connector
+	(text "CountEnable" (rect -238 -536 -178 -526)(font "DejaVu Sans Condensed" ))
+	(pt -120 -528)
+	(pt -240 -528)
+)
+(connector
+	(text "CountTwoEnable" (rect -238 -520 -158 -510)(font "DejaVu Sans Condensed" ))
+	(pt -120 -512)
+	(pt -240 -512)
+)
+(connector
+	(pt -272 -280)
+	(pt -272 -608)
+)
+(connector
+	(pt -120 -608)
+	(pt -272 -608)
+)
+(connector
+	(pt 576 -1080)
+	(pt 576 -1168)
+)
+(connector
+	(pt 576 -1168)
+	(pt 696 -1168)
+)
+(connector
+	(pt 888 -1088)
+	(pt 888 -1160)
+)
+(connector
+	(text "LED[9]" (rect 810 -1168 841 -1158)(font "DejaVu Sans Condensed" ))
+	(pt 888 -1160)
+	(pt 760 -1160)
+)
+(connector
+	(text "NOT_RESET" (rect 760 -1184 816 -1174)(font "DejaVu Sans Condensed" ))
+	(pt 760 -1176)
+	(pt 800 -1176)
+)
+(connector
+	(text "RESET" (rect -6 -928 25 -918)(font "DejaVu Sans Condensed" ))
+	(pt -8 -912)
+	(pt 24 -912)
+)
+(connector
+	(text "clk" (rect -206 -920 -194 -910)(font "DejaVu Sans Condensed" ))
+	(pt -208 -912)
+	(pt -176 -912)
+)
+(connector
+	(text "PB[1]" (rect -214 -904 -189 -894)(font "DejaVu Sans Condensed" ))
+	(pt -176 -896)
+	(pt -216 -896)
+)
+(connector
+	(text "NOT_RESET" (rect 72 -920 128 -910)(font "DejaVu Sans Condensed" ))
+	(pt 72 -912)
+	(pt 96 -912)
+)
+(connector
+	(pt 24 -912)
+	(pt 24 -880)
+)
+(connector
+	(text "CLRC" (rect 2 -880 29 -870)(font "DejaVu Sans Condensed" ))
+	(pt 24 -864)
+	(pt 0 -864)
+)
+(connector
+	(text "CountClear" (rect -230 -504 -177 -494)(font "DejaVu Sans Condensed" ))
+	(pt -120 -496)
+	(pt -240 -496)
+)
+(connector
+	(text "CountClear" (rect 88 -880 141 -870)(font "DejaVu Sans Condensed" ))
+	(pt 88 -872)
+	(pt 128 -872)
+)
+(connector
+	(text "CountEnable" (rect -144 -378 -84 -368)(font "DejaVu Sans Condensed" ))
+	(pt -104 -384)
+	(pt -152 -384)
+)
+(connector
+	(pt -104 -424)
+	(pt -104 -416)
+)
+(connector
+	(text "CountTwoEnable" (rect -120 -440 -40 -430)(font "DejaVu Sans Condensed" ))
+	(pt -104 -416)
+	(pt -96 -416)
+)
+(connector
+	(pt -104 -384)
+	(pt -104 -400)
+)
+(connector
+	(pt -104 -400)
+	(pt -96 -400)
+)
+(connector
+	(text "CountEnable" (rect -232 -440 -172 -430)(font "DejaVu Sans Condensed" ))
+	(pt -224 -432)
+	(pt -184 -432)
+)
+(connector
+	(text "CTE" (rect -222 -424 -204 -414)(font "DejaVu Sans Condensed" ))
+	(pt -224 -416)
+	(pt -184 -416)
+)
+(connector
+	(pt -120 -424)
+	(pt -104 -424)
+)
+(connector
+	(text "LED[7]" (rect -22 -402 9 -392)(font "DejaVu Sans Condensed" ))
+	(pt -32 -408)
+	(pt 0 -408)
+)
+(connector
+	(text "OPND[15..0]" (rect 386 -752 445 -742)(font "DejaVu Sans Condensed" ))
+	(pt 384 -736)
+	(pt 440 -736)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS17755>>" (rect 401 -780 411 -651)(font "DejaVu Sans Condensed" )(vertical)(invisible))
+	(pt 384 -736)
+	(pt 384 -720)
+	(bus)
+)
+(connector
+	(text "RESET" (rect 301 -660 332 -650)(font "DejaVu Sans Condensed" ))
+	(pt 304 -664)
+	(pt 344 -664)
+)
+(connector
+	(pt 344 -608)
+	(pt 368 -608)
+	(bus)
+)
+(connector
+	(pt 96 -280)
+	(pt 96 -544)
+)
+(connector
+	(pt 112 -480)
+	(pt 112 -528)
+)
+(connector
+	(text "ImmDE[15..0]" (rect 368 -552 434 -542)(font "DejaVu Sans Condensed" ))
+	(pt 368 -544)
+	(pt 432 -544)
+	(bus)
+)
+(connector
+	(pt 400 -608)
+	(pt 400 -560)
+	(bus)
+)
+(connector
+	(pt 400 -560)
+	(pt 368 -560)
+	(bus)
+)
+(connector
+	(pt -272 -280)
+	(pt 96 -280)
+)
+(connector
+	(pt 96 -280)
+	(pt 240 -280)
+)
+(connector
+	(text "STAT2[8..0]" (rect 82 -576 138 -566)(font "DejaVu Sans Condensed" ))
+	(pt 64 -560)
+	(pt 136 -560)
+	(bus)
+)
+(connector
+	(pt 96 -544)
+	(pt 136 -544)
+)
+(connector
+	(pt 112 -528)
+	(pt 136 -528)
+)
+(connector
+	(pt 2288 -264)
+	(pt 2464 -264)
+)
+(connector
+	(text "OPNDWB[8..0]" (rect 2394 -304 2463 -294)(font "DejaVu Sans Condensed" ))
+	(pt 2464 -296)
+	(pt 2368 -296)
+	(bus)
+)
+(connector
+	(text "OPND[8..0]" (rect 2394 -288 2447 -278)(font "DejaVu Sans Condensed" ))
+	(pt 2464 -280)
+	(pt 2368 -280)
+	(bus)
+)
+(connector
+	(text "DEVICE[1]" (rect 2418 -240 2466 -230)(font "DejaVu Sans Condensed" ))
+	(pt 2408 -232)
+	(pt 2464 -232)
+)
+(connector
+	(text "SHARED_BUS[15..0]" (rect 2378 -328 2474 -318)(font "DejaVu Sans Condensed" ))
+	(pt 2320 -312)
+	(pt 2464 -312)
+	(bus)
+)
+(connector
+	(text "MRE" (rect 2418 -256 2439 -246)(font "DejaVu Sans Condensed" ))
+	(pt 2464 -248)
+	(pt 2408 -248)
+)
+(connector
+	(text "SHARED_BUS[15..0]" (rect 2378 -872 2474 -862)(font "DejaVu Sans Condensed" ))
+	(pt 2320 -856)
+	(pt 2440 -856)
+	(bus)
+)
+(connector
+	(pt 2320 -856)
+	(pt 2320 -760)
+	(bus)
+)
+(connector
+	(pt 2288 -680)
+	(pt 2392 -680)
+)
+(connector
+	(text "DEVICE[2]" (rect 2338 -672 2386 -662)(font "DejaVu Sans Condensed" ))
+	(pt 2336 -664)
+	(pt 2392 -664)
+)
+(connector
+	(pt 2392 -648)
+	(pt 2384 -648)
+)
+(connector
+	(pt 2592 -696)
+	(pt 2608 -696)
+	(bus)
+)
+(connector
+	(pt 2888 -696)
+	(pt 2936 -696)
+	(bus)
+)
+(connector
+	(pt 2888 -680)
+	(pt 2936 -680)
+	(bus)
+)
+(connector
+	(pt 2888 -664)
+	(pt 2936 -664)
+	(bus)
+)
+(connector
+	(pt 2888 -648)
+	(pt 2936 -648)
+	(bus)
+)
+(connector
+	(text "SW[11]" (rect 2674 -632 2708 -622)(font "DejaVu Sans Condensed" ))
+	(pt 2664 -624)
+	(pt 2696 -624)
+)
+(connector
+	(text "SHARED_BUS[15..0]" (rect 2304 -704 2400 -694)(font "DejaVu Sans Condensed" ))
+	(pt 2320 -696)
+	(pt 2392 -696)
+	(bus)
+)
+(connector
+	(pt 2320 -760)
+	(pt 2320 -696)
+	(bus)
+)
+(connector
+	(pt 2320 -696)
+	(pt 2320 -312)
+	(bus)
+)
+(connector
+	(pt 2288 -264)
+	(pt 2288 -16)
+)
+(connector
+	(pt 2720 -696)
+	(pt 2720 -680)
+	(bus)
+)
+(connector
+	(text "SSDTAP[15..0]" (rect 2592 -661 2602 -592)(font "DejaVu Sans Condensed" )(vertical))
+	(pt 2608 -664)
+	(pt 2608 -600)
+	(bus)
+)
+(connector
+	(pt 2664 -640)
+	(pt 2664 -624)
+)
+(connector
+	(pt 2768 -312)
+	(pt 2800 -312)
+	(bus)
+)
+(connector
+	(pt 2816 -176)
+	(pt 2816 -200)
+	(bus)
+)
+(connector
+	(text "MEM[15..0]" (rect 2762 -192 2816 -182)(font "DejaVu Sans Condensed" ))
+	(pt 2776 -176)
+	(pt 2816 -176)
+	(bus)
+)
+(connector
+	(pt 2856 -520)
+	(pt 2816 -520)
+)
+(connector
+	(pt 2832 -504)
+	(pt 2816 -504)
+	(bus)
+)
+(connector
+	(pt 2832 -312)
+	(pt 2832 -504)
+	(bus)
+)
+(connector
+	(pt 2856 -256)
+	(pt 2856 -520)
+)
+(connector
+	(pt 2288 -680)
+	(pt 2288 -520)
+)
+(connector
+	(pt 2288 -520)
+	(pt 2288 -264)
+)
+(connector
+	(pt 2288 -520)
+	(pt 2608 -520)
+)
+(connector
+	(text "MRE" (rect 2554 -512 2575 -502)(font "DejaVu Sans Condensed" ))
+	(pt 2544 -504)
+	(pt 2608 -504)
+)
+(connector
+	(text "OPND[8..0]" (rect 2546 -496 2599 -486)(font "DejaVu Sans Condensed" ))
+	(pt 2536 -488)
+	(pt 2608 -488)
+	(bus)
+)
+(connector
+	(text "OPNDEX[8..0]" (rect 2546 -480 2612 -470)(font "DejaVu Sans Condensed" ))
+	(pt 2536 -472)
+	(pt 2608 -472)
+	(bus)
+)
+(connector
+	(text "OPNDWB[8..0]" (rect 2546 -464 2615 -454)(font "DejaVu Sans Condensed" ))
+	(pt 2536 -456)
+	(pt 2608 -456)
+	(bus)
+)
+(connector
+	(text "DEV[1]" (rect 2554 -448 2587 -438)(font "DejaVu Sans Condensed" ))
+	(pt 2544 -440)
+	(pt 2608 -440)
+)
+(connector
+	(text "DEVICE[1]" (rect 2554 -432 2602 -422)(font "DejaVu Sans Condensed" ))
+	(pt 2544 -424)
+	(pt 2608 -424)
+)
+(connector
+	(text "EX_OUT[15..0]" (rect 2544 -416 2613 -406)(font "DejaVu Sans Condensed" ))
+	(pt 2512 -408)
+	(pt 2608 -408)
+	(bus)
+)
+(connector
+	(text "SHARED_BUS[15..0]" (rect 2528 -400 2624 -390)(font "DejaVu Sans Condensed" ))
+	(pt 2512 -392)
+	(pt 2608 -392)
+	(bus)
+)
+(connector
+	(text "SW[15..12]" (rect 1482 -1104 1535 -1094)(font "DejaVu Sans Condensed" ))
+	(pt 1528 -1088)
+	(pt 1456 -1088)
+	(bus)
+)
+(connector
+	(pt 1584 -1080)
+	(pt 1584 -1064)
+	(bus)
+)
+(connector
+	(text "PB[1..0]" (rect 1520 -1080 1558 -1070)(font "DejaVu Sans Condensed" ))
+	(pt 1584 -1064)
+	(pt 1520 -1064)
+	(bus)
+)
+(connector
+	(pt 1408 -1080)
+	(pt 1408 -1064)
+	(bus)
+)
+(connector
+	(text "SW[9..0]" (rect 1426 -1080 1467 -1070)(font "DejaVu Sans Condensed" ))
+	(pt 1408 -1064)
+	(pt 1480 -1064)
+	(bus)
+)
+(connector
+	(pt 1456 -1104)
+	(pt 1456 -1088)
+	(bus)
+)
+(connector
+	(text "PB[1]" (rect 1610 -1176 1635 -1166)(font "DejaVu Sans Condensed" ))
+	(pt 1608 -1168)
+	(pt 1640 -1168)
+)
+(connector
+	(text "PB[0]" (rect 1610 -1144 1635 -1134)(font "DejaVu Sans Condensed" ))
+	(pt 1608 -1136)
+	(pt 1640 -1136)
+)
+(connector
+	(text "SW[11]" (rect 1698 -1176 1732 -1166)(font "DejaVu Sans Condensed" ))
+	(pt 1688 -1168)
+	(pt 1720 -1168)
+)
+(connector
+	(text "SW[10]" (rect 1698 -1144 1732 -1134)(font "DejaVu Sans Condensed" ))
+	(pt 1688 -1136)
+	(pt 1728 -1136)
+)
 (junction (pt 472 -280))
 (junction (pt 1104 -8))
 (junction (pt 736 -1232))
 (junction (pt 2024 -112))
-(junction (pt 2288 -248))
 (junction (pt 1920 -840))
 (junction (pt 1640 -960))
 (junction (pt 1640 -688))
@@ -5159,21 +5612,22 @@ on the Quartus Prime software download page.
 (junction (pt 1104 -920))
 (junction (pt 1112 -904))
 (junction (pt 2320 -760))
-(junction (pt 2320 -464))
-(junction (pt 24 -280))
-(junction (pt 168 -280))
-(junction (pt -216 -160))
-(text "Chihab Chamkhi, Vishaal Chopra, Xavier Curr, Afeef Ahmed" (rect -264 -1128 132 -1115)(font "Cascadia Code" (color 0 111 0)(font_size 8)))
-(text "Curtin University" (rect -264 -1240 -144 -1227)(font "Cascadia Code" (color 0 111 0)(font_size 8)))
-(text "Date: 13/09/2026 version: 1.0 " (rect -264 -1168 -17 -1154)(font "Cascadia Mono" (font_size 9)))
-(text "By group 10:" (rect -264 -1144 -180 -1131)(font "Cascadia Code" (color 0 111 0)(font_size 8)))
-(text "CMPE4003 - CPU and GPU Architectures" (rect -264 -1224 118 -1205)(font "Cascadia Code" (color 95 0 143)(font_size 12)))
+(junction (pt 240 -280))
+(junction (pt -152 -184))
+(junction (pt 192 -168))
+(junction (pt 24 -912))
+(junction (pt 96 -280))
+(junction (pt 2288 -264))
+(junction (pt 2320 -696))
+(junction (pt 2288 -520))
+(text "Chihab Chamkhi, Vishaal Chopra, Xavier Curr, Afeef Ahmed" (rect -256 -1128 140 -1115)(font "Cascadia Code" (color 0 111 0)(font_size 8)))
+(text "Curtin University" (rect -256 -1240 -136 -1227)(font "Cascadia Code" (color 0 111 0)(font_size 8)))
+(text "By group 10:" (rect -256 -1144 -172 -1131)(font "Cascadia Code" (color 0 111 0)(font_size 8)))
+(text "CMPE4003 - CPU and GPU Architectures" (rect -256 -1224 126 -1205)(font "Cascadia Code" (color 95 0 143)(font_size 12)))
 (text "DE/EX" (rect 1136 -1136 1223 -1117)(font "AniMe Vision - MB_EN" (color 0 0 127)(font_size 12)))
 (text "EX/WB" (rect 2056 -1136 2144 -1117)(font "AniMe Vision - MB_EN" (color 0 0 127)(font_size 12)))
 (text "WRITEBACK" (rect 2320 -1024 2466 -1005)(font "AniMe Vision - MB_EN" (color 171 212 36)(font_size 12)))
 (text "DECODE" (rect 504 -1136 604 -1117)(font "AniMe Vision - MB_EN" (color 0 133 195)(font_size 12)))
-(text "Disable EN of 'flagRegisters' for 1cycle when CMP is called" (rect 2000 -1192 2336 -1179)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "This will allow it to hold onto the flags for any proceeding BR instructions " (rect 1984 -1176 2408 -1163)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "FETCH" (rect -232 -824 -149 -805)(font "AniMe Vision - MB_EN" (color 85 85 255)(font_size 12)))
 (text "IF/ID" (rect 216 -824 279 -805)(font "AniMe Vision - MB_EN" (color 0 0 127)(font_size 12)))
 (text "EXECUTE" (rect 1424 -1024 1543 -1005)(font "AniMe Vision - MB_EN" (color 0 170 127)(font_size 12)))
@@ -5184,20 +5638,18 @@ on the Quartus Prime software download page.
 (text "executed twice, but even so since its deterministic, it should" (rect 744 -1288 1093 -1275)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "stalling later stages has no effect, the instruction would be " (rect 744 -1304 1086 -1291)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "Inputs to stall a particular stage of the pipline." (rect 744 -1336 1010 -1323)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "PIPELINED CPU DESIGN" (rect -264 -1216 357 -1171)(font "AniMe Vision - MB_EN" (color 170 0 255)(font_size 28)))
+(text "PIPELINED CPU DESIGN" (rect -256 -1216 365 -1171)(font "AniMe Vision - MB_EN" (color 170 0 255)(font_size 28)))
 (text "not create any problems." (rect 744 -1272 889 -1259)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "IF we load in a JMP or JAL or JR instruction, then we can directly execute it in this stage" (rect 488 -1184 989 -1171)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "Its a given then that any preceding stages are also stalled," (rect 744 -1320 1082 -1307)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "FOR HALT" (rect 384 -1104 444 -1091)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "Output goes directly to the instruction register" (rect 2448 -160 2717 -147)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "We write program in the RAM. PC addresses the ram" (rect 2448 -176 2753 -163)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "MEMORY" (rect 2392 -352 2501 -333)(font "AniMe Vision - MB_EN" (color 214 0 161)(font_size 12)))
+(text "FOR HALT" (rect 424 -1104 484 -1091)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "Output goes directly to the instruction register" (rect 2464 -176 2733 -163)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "We write program in the RAM. PC addresses the ram" (rect 2464 -192 2769 -179)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "MEMORY" (rect 2360 -568 2469 -549)(font "AniMe Vision - MB_EN" (color 214 0 161)(font_size 12)))
 (text "Forwarding output" (rect 570 -496 676 -483)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "SEVEN SEGMENT DISPLAY" (rect 2352 -528 2674 -509)(font "AniMe Vision - MB_EN" (color 85 0 255)(font_size 12)))
+(text "SEVEN SEGMENT DISPLAY" (rect 2352 -760 2674 -741)(font "AniMe Vision - MB_EN" (color 85 0 255)(font_size 12)))
 (text "JUMP & BRANCH" (rect 800 -192 997 -173)(font "AniMe Vision - MB_EN" (color 0 170 0)(font_size 12)))
-(text "Goes into SSD, MEMORY and" (rect 2336 -752 2503 -739)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "REGISTER FILE" (rect 2360 -736 2446 -723)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "SWITCH INPUT" (rect 1560 -1208 1732 -1189)(font "AniMe Vision - MB_EN" (color 230 115 172)(font_size 12)))
+(text "Goes into SSD, MEMORY and" (rect 2336 -848 2503 -835)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "REGISTER FILE" (rect 2360 -832 2446 -819)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "Even though not shown here if accessing memory from RAM we do it in this stage" (rect 1408 -112 1880 -99)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "so data is prepared for WB stage" (rect 1408 -96 1596 -83)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "turn 1 on only:" (rect 1832 -792 1915 -779)(font "DejaVu Sans Condensed" (font_size 8)))
@@ -5206,79 +5658,89 @@ on the Quartus Prime software download page.
 (text "Seven Segment Display" (rect 2880 -1344 3202 -1325)(font "AniMe Vision - MB_EN" (color 170 170 0)(font_size 12)))
 (text "status indicatorS" (rect 2672 -1424 2932 -1405)(font "AniMe Vision - MB_EN" (color 227 23 78)(font_size 12)))
 (text "pass destination registers of following stages" (rect 832 -360 1091 -347)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "device enable write bits:" (rect 2328 -848 2469 -835)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "device enable write bits:" (rect 2328 -944 2469 -931)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "DEVICE[0] - Register enable write" (rect 2336 -832 2531 -819)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "DEVICE[1] - RAM enable write" (rect 2336 -816 2510 -803)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "DEVICE[2] - SSD enable write" (rect 2336 -800 2507 -787)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "DEVICE[1] - RAM enable write" (rect 2336 -912 2510 -899)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "DEVICE[2] - SSD enable write" (rect 2336 -896 2507 -883)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "Operands give Memory Address to" (rect 2080 -560 2280 -547)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "* Memory here is accessed in decode, after a clock cycle the output is ready to be used in execute stage" (rect 2360 -120 2961 -107)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "* Memory here is accessed in decode, after a clock cycle the output is ready to be used in execute stage" (rect 2352 -152 2953 -139)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "Flags:" (rect 2056 -112 2090 -99)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "flag[1] - negative" (rect 2056 -80 2156 -67)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "flag[2] - zero" (rect 2056 -64 2130 -51)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "flag[0] - overflow" (rect 2056 -96 2155 -83)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "flag[3] - carry" (rect 2056 -48 2135 -35)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "They use same JMP signal on PC" (rect 800 -168 986 -155)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "[OPCODE] OR HALT" (rect 536 -952 652 -939)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "feed into Control unit." (rect 536 -936 662 -923)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "Feeding Halt creates" (rect 536 -920 655 -907)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "feedback loop of halt" (rect 536 -904 656 -891)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "instructions." (rect 536 -888 606 -875)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "to prevent/Minimise any bubbles or stalls in the pipeline." (rect 488 -1168 817 -1155)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "[OPCODE] OR HALT" (rect 528 -984 644 -971)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "feed into Control unit." (rect 528 -968 654 -955)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "Feeding Halt creates" (rect 528 -952 647 -939)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "feedback loop of halt" (rect 528 -936 648 -923)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "instructions." (rect 528 -920 598 -907)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "* Memory is accessed here, after a clock cycle " (rect 1128 -1176 1398 -1163)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "the output is ready to be used in execute stage" (rect 1136 -1160 1408 -1147)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "Funnel EXECUTE OUTPUT" (rect 1440 -992 1664 -978)(font "AniMe Vision - MB_EN" (color 170 0 127)(font_size 8)))
 (text "write back stage" (rect 2080 -544 2175 -531)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "This stage doesnt do much anymore lmao pretty useless but whatever" (rect 2336 -1048 2744 -1035)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "This stage doesnt do much anymore lmao pretty useless but whatever" (rect 2448 -1016 2856 -1003)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "*Not a pipeline register" (rect 2120 -216 2254 -203)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "OUTPUT[1] - EXO" (rect 1856 -760 1956 -747)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "OUTPUT[2] - IMMO" (rect 1856 -744 1965 -731)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "OUTPUT[3] - SHFTO" (rect 1856 -728 1970 -715)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "OUTPUT[4] - ALU2" (rect 1856 -712 1962 -699)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "OUTPUT[5] - MEMO" (rect 1856 -696 1969 -683)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "OUTSEL[1] - EXO" (rect 976 -1064 1075 -1051)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "OUTSEL[2] - IMMO" (rect 976 -1048 1084 -1035)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "OUTSEL[3] - SHFTO" (rect 976 -1032 1089 -1019)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "OUTSEL[4] - ALU2" (rect 976 -1016 1081 -1003)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "OUTSEL[5] - MEMO" (rect 976 -1000 1088 -987)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "OUTSEL[1] - EXO" (rect 944 -904 1043 -891)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "OUTSEL[2] - IMMO" (rect 944 -888 1052 -875)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "OUTSEL[3] - SHFTO" (rect 944 -872 1057 -859)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "OUTSEL[4] - ALU2" (rect 944 -856 1049 -843)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "OUTSEL[5] - MEMO" (rect 944 -840 1056 -827)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "This is for SW instruction" (rect 544 -720 686 -707)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "OUTPUT[6] - IMMB" (rect 1856 -680 1964 -667)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "OUTSEL[6] - IMMBO" (rect 976 -984 1092 -971)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "DEVICE[0] - Register enable write" (rect 952 -824 1147 -811)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "DEVICE[1] - RAM enable write" (rect 952 -808 1126 -795)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "OUTSEL[6] - IMMBO" (rect 944 -824 1060 -811)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "DEVICE[0] - Register enable write" (rect 944 -808 1139 -795)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "DEVICE[1] - RAM enable write" (rect 944 -776 1118 -763)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "HAZARD/FEEDBACK" (rect 520 -520 778 -501)(font "AniMe Vision - MB_EN" (color 0 85 0)(font_size 12)))
 (text "address is within the operands. Branches and jumps are executed in Decode stage to immediately change the PC, but require a" (rect -256 -1048 480 -1035)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "CMP instruction for setting the flags." (rect -256 -1032 -46 -1019)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "Each stage of the pipeline needs 1 clock cycle. There are no bubbles in the pipeline, Memory is accessed in the decode stage, as" (rect -256 -1064 482 -1051)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "REGISTERS" (rect 744 -720 886 -701)(font "AniMe Vision - MB_EN" (color 0 85 0)(font_size 12)))
-(text "Enable SW0 for slower clock speeds for debugging purposes." (rect -152 -112 194 -99)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "The Cursed and Basic CPU Design where clock frequency was not a design consideration." (rect -256 -1096 256 -1083)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "This only uses 3 pipeline stages, WB is redundant and can be moved into execute." (rect -256 -1080 218 -1067)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "CLOCK" (rect -200 -144 -117 -125)(font "AniMe Vision - MB_EN" (color 0 170 0)(font_size 12)))
+(text "CLOCK" (rect -152 -216 -69 -197)(font "AniMe Vision - MB_EN" (color 0 170 0)(font_size 12)))
 (text "OUTPUT[0] - SWO" (rect 1856 -776 1959 -763)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "OUTSEL[0] - SWO" (rect 976 -1080 1078 -1067)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "OUTSEL[0] - SWO" (rect 944 -920 1046 -907)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "'00' STAT1 - [OPCODE (decode)] [STACK AMT]" (rect 2944 -1424 3211 -1411)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "'01' STAT2 - [PROGRAM COUNTER]" (rect 2944 -1408 3148 -1395)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "'10' STAT3 - [OUTPUT SELECTION (decode)]" (rect 2944 -1392 3196 -1379)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "'11' STAT4 - [OUTPUT SELECTION (execute)]" (rect 2944 -1376 3201 -1363)(font "DejaVu Sans Condensed" (font_size 8)))
-(text "CONTROL UNIT" (rect 904 -1120 1086 -1101)(font "AniMe Vision - MB_EN" (color 0 85 0)(font_size 12)))
+(text "CONTROL UNIT" (rect 904 -1128 1086 -1109)(font "AniMe Vision - MB_EN" (color 0 85 0)(font_size 12)))
 (text "No need for stalling with current implementation" (rect 520 -1392 802 -1379)(font "DejaVu Sans Condensed" (color 255 0 127)(font_size 8)))
 (text "For debugging purposes. Ignore for sanity." (rect 2672 -1400 2915 -1387)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "If ALU2 and not being" (rect 1840 -192 1963 -179)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "written to Register" (rect 1840 -176 1948 -163)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "we know its CMP instr" (rect 1840 -160 1967 -147)(font "DejaVu Sans Condensed" (font_size 8)))
 (text "sometimes we need rd as rs1" (rect 528 -616 697 -603)(font "DejaVu Sans Condensed" (font_size 8)))
-(line (pt 1552 -920)(pt 1528 -1072)(color 255 85 127)(dashed)(line_width 3))
+(text "DEVICE[2] - SSD enable write" (rect 944 -760 1115 -747)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "Date: 23/10/2026 version: 2.0 " (rect -256 -1168 -9 -1154)(font "Cascadia Mono" (font_size 9)))
+(text "Destination Register Access" (rect 944 -936 1105 -923)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "Memory Out enable" (rect 944 -952 1059 -939)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "PC Count Two Enable" (rect 952 -1048 1074 -1035)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "Jump" (rect 952 -1032 981 -1019)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "Enable SW9 for slower clock speeds for debugging purposes." (rect -112 -88 234 -75)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "IF we load in a JMP or JAL or JR instruction, then " (rect 664 -144 942 -131)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "prevent/Minimise any bubbles or stalls in the pipeline." (rect 664 -112 977 -99)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "we can directly execute it in this stage to" (rect 664 -128 902 -115)(font "DejaVu Sans Condensed" (font_size 8)))
+(text "SWITCH INPUT" (rect 1424 -1192 1596 -1173)(font "AniMe Vision - MB_EN" (color 203 0 102)(font_size 12)))
+(text "MEM HAZARD" (rect 2376 -480 2542 -461)(font "AniMe Vision - MB_EN" (color 0 85 0)(font_size 12)))
+(text "fwded and O hold their value for 1 cycle" (rect 2344 -448 2572 -435)(font "DejaVu Sans Condensed" (font_size 8)))
 (rectangle (rect 2040 -1144 2272 -32)(color 0 0 127)(line_width 5))
 (rectangle (rect 1120 -1144 1368 -24)(color 0 0 127)(line_width 5))
-(rectangle (rect 2304 -1032 2904 -128)(color 171 212 36)(line_width 5))
+(rectangle (rect 2304 -1032 2912 -128)(color 171 212 36)(line_width 5))
 (rectangle (rect -256 -832 176 -296)(color 85 85 255)(line_width 5))
 (rectangle (rect 208 -832 456 -296)(color 0 0 127)(line_width 5))
 (rectangle (rect 488 -1144 1088 -24)(color 0 133 195)(line_width 5))
 (rectangle (rect 1392 -1032 2008 -128)(color 0 170 127)(line_width 5))
-(rectangle (rect 2344 -528 2896 -360)(color 85 0 255)(line_width 3))
-(rectangle (rect 2376 -352 2792 -144)(color 211 0 158)(line_width 3))
-(rectangle (rect 1528 -1216 1872 -1072)(color 255 85 127)(line_width 5))
-(rectangle (rect 2360 -1432 3176 -1080)(color 227 23 78)(line_width 5))
+(rectangle (rect 2344 -760 2896 -592)(color 85 0 255)(line_width 3))
+(rectangle (rect 2344 -576 2896 -160)(color 211 0 158)(line_width 3))
+(rectangle (rect 2360 -1432 3176 -1072)(color 227 23 78)(line_width 5))
 (rectangle (rect 2728 -1352 3160 -1152)(color 170 170 0)(line_width 3))
 (rectangle (rect 2864 -1136 3160 -1088)(color 255 85 0)(line_width 3))
-(rectangle (rect -248 -256 184 -96)(color 0 170 0)(line_width 5))
+(rectangle (rect -176 -232 256 -72)(color 0 170 0)(line_width 5))
+(rectangle (rect 1392 -1200 1736 -1056)(color 255 85 127)(line_width 5))

@@ -1,14 +1,14 @@
-Fitter Status : Successful - Wed Oct 14 18:38:50 2026
+Fitter Status : Successful - Sat Oct 24 05:23:46 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : BasicCPU
 Top-level Entity Name : BasicCPU
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 3,914 / 49,760 ( 8 % )
-    Total combinational functions : 2,965 / 49,760 ( 6 % )
-    Dedicated logic registers : 2,475 / 49,760 ( 5 % )
-Total registers : 2475
+Total logic elements : 12,286 / 49,760 ( 25 % )
+    Total combinational functions : 8,176 / 49,760 ( 16 % )
+    Dedicated logic registers : 8,708 / 49,760 ( 18 % )
+Total registers : 8708
 Total pins : 65 / 360 ( 18 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )

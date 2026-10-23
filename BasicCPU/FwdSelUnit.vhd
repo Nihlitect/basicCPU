@@ -59,6 +59,5 @@ begin
 				selexb <= '1';
 			end if;
 		end if;
-		
 	end process;
 end fwdCtrl;

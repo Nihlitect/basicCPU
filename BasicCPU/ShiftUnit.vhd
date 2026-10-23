@@ -37,7 +37,7 @@ begin
 			when "01" => -- SRL
 				O <= std_logic_vector(shift_right(unsigned(A), to_integer(unsigned(amt))));-- Left Circular Shift
 			when "10" => -- SRA
-				O <= std_logic_vector(shift_right(unsigned(A), to_integer(unsigned(amt))));-- Right Shift  
+				O <= std_logic_vector(shift_right(signed(A), to_integer(unsigned(amt))));-- Right Shift  
 				O(W-1) <= A(W-1); 
 			when "11" => -- ROL
 				O <= std_logic_vector(rotate_left(unsigned(A), to_integer(unsigned(amt))));-- Right Circular Shift

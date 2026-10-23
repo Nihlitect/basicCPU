@@ -24,7 +24,7 @@
 #
 # ASSUMED SEMANTICS (edit the expected constants if yours differ)
 #   * CMP Rs1,Rs2 sets flags from Rs1 - Rs2 (no destination), BNE tests them
-#   * INC DEC NOT NEG are unary: they use Rs1 and ignore Rs2
+#   * INC DEC NOT NEG take a single source register
 #   * a shift moves by its 4-bit amount operand (0..15): SLL left, SRL right
 #     with zero fill, SRA right with sign fill, ROL rotates left
 #   * MIN/MAX are signed, MINU/MAXU unsigned
@@ -64,13 +64,13 @@ CMP R3 R4
 BNE FAIL
 # T04  INC  0x1234 -> 0x1235
 LDI R6 0xE004
-INC R3 R1 R1
+INC R3 R1
 LDI R4 0x1235
 CMP R3 R4
 BNE FAIL
 # T05  DEC  0x1234 -> 0x1233
 LDI R6 0xE005
-DEC R3 R1 R1
+DEC R3 R1
 LDI R4 0x1233
 CMP R3 R4
 BNE FAIL
@@ -130,7 +130,7 @@ CMP R3 R4
 BNE FAIL
 # T14  NOT   ~0xF0F0 = 0x0F0F
 LDI R6 0xE00E
-NOT R3 R1 R1
+NOT R3 R1
 LDI R4 0x0F0F
 CMP R3 R4
 BNE FAIL
@@ -176,7 +176,7 @@ CMP R3 R4
 BNE FAIL
 # T21  NEG   -(3) = 0xFFFD
 LDI R6 0xE015
-NEG R3 R2 R2
+NEG R3 R2
 LDI R4 0xFFFD
 CMP R3 R4
 BNE FAIL
@@ -198,7 +198,7 @@ CMP R3 R4
 BNE FAIL
 # T24  SRA   0x8002 >> 9 = 0xFFC0 (all nine vacated bits get the sign)
 LDI R6 0xE018
-SRA R3 R1 9
+SRA R3 R1 9 # R1 = 8002
 LDI R4 0xFFC0
 CMP R3 R4
 BNE FAIL

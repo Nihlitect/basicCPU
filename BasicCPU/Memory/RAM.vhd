@@ -57,15 +57,17 @@ architecture rame of RAM is
 begin 
 	process(clk, EN, WE, ADDR_IN, ADDR_OUT1, DIN)
 	begin
-		if (EN = '1') then
-			if falling_edge(clk) then --WRITE
-				-- PORT A -
-				if (WE = '1') then -- If write enabled
-					CODE(to_integer(unsigned(ADDR_IN))) <= DIN; -- data in is set
-				end if;
+		if falling_edge(clk) then --WRITE
+			-- PORT A -
+			if (WE = '1') then -- If write enabled
+				CODE(to_integer(unsigned(ADDR_IN))) <= DIN; -- data in is set
 			end if;
-			if rising_edge(clk) then -- READ PORTS
-				
+		end if;
+		
+		if rising_edge(clk) then --READ
+			if (EN = '1') then
+			-- Read is accessed in decode stage so we need it to be synchronous with the pipeline registers which 
+			-- update every rising edge.
 				-- PORT 1 
 				DOUT <= CODE(to_integer(unsigned(ADDR_OUT1))); -- Data out 
 			end if; -- end ENABLED
