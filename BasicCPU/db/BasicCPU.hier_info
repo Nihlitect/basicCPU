@@ -9,8 +9,8 @@ HEX0[6] <= 16bit2SSD:inst1.HEX0[6]
 PB[0] => inst28.IN0
 PB[1] => inst27.IN0
 PB[1] => StartupReset:inst90.BTN_N
-MAX10_CLK2_50 => BUSMUX:inst71.dataa[0]
-MAX10_CLK2_50 => clock1Hz:inst.clk_50MHz
+ADC_CLK_10 => BUSMUX:inst71.dataa[0]
+ADC_CLK_10 => clock1Hz:inst.clk_50MHz
 SW[0] => BUSMUX:inst38.datab[0]
 SW[1] => BUSMUX:inst38.datab[1]
 SW[2] => BUSMUX:inst38.datab[2]
@@ -27,10 +27,11 @@ LED[2] <= inst49.DB_MAX_OUTPUT_PORT_TYPE
 LED[3] <= inst51.DB_MAX_OUTPUT_PORT_TYPE
 LED[4] <= inst53.DB_MAX_OUTPUT_PORT_TYPE
 LED[5] <= inst55.DB_MAX_OUTPUT_PORT_TYPE
-LED[6] <= <GND>
+LED[6] <= clock1Hz:clock2.clk_1Hz
 LED[7] <= inst8.DB_MAX_OUTPUT_PORT_TYPE
 LED[8] <= inst57.DB_MAX_OUTPUT_PORT_TYPE
-LED[9] <= ControlUnit:inst40.Halt
+LED[9] <= <GND>
+MAX10_CLK2_50 => clock1Hz:clock2.clk_50MHz
 HEX1[0] <= 16bit2SSD:inst1.HEX1[0]
 HEX1[1] <= 16bit2SSD:inst1.HEX1[1]
 HEX1[2] <= 16bit2SSD:inst1.HEX1[2]
@@ -719,7 +720,6 @@ clk_50MHz => counter[20].CLK
 clk_50MHz => counter[21].CLK
 clk_50MHz => counter[22].CLK
 clk_50MHz => counter[23].CLK
-clk_50MHz => counter[24].CLK
 reset => clk_reg.ACLR
 reset => counter[0].ACLR
 reset => counter[1].ACLR
@@ -745,7 +745,6 @@ reset => counter[20].ACLR
 reset => counter[21].ACLR
 reset => counter[22].ACLR
 reset => counter[23].ACLR
-reset => counter[24].ACLR
 clk_1Hz <= clk_reg.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -7317,7 +7316,7 @@ sel[0] => result_node[0].IN0
 sel[0] => _.IN0
 
 
-|BasicCPU|MemHazUnit:inst101
+|BasicCPU|MemHazUnit:HoldValuesOnMemoryHazard
 clk => O_reg[0].CLK
 clk => O_reg[1].CLK
 clk => O_reg[2].CLK
@@ -7441,7 +7440,7 @@ O[14] <= O_reg[14].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= O_reg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|BasicCPU|RAM:inst23
+|BasicCPU|RAM:RandomAccessMemory
 DIN[0] => CODE~24.DATAIN
 DIN[0] => CODE.DATAIN
 DIN[1] => CODE~23.DATAIN
@@ -8206,6 +8205,60 @@ sel[0] => result_node[1].IN0
 sel[0] => _.IN0
 sel[0] => result_node[0].IN0
 sel[0] => _.IN0
+
+
+|BasicCPU|clock1Hz:clock2
+clk_50MHz => clk_reg.CLK
+clk_50MHz => counter[0].CLK
+clk_50MHz => counter[1].CLK
+clk_50MHz => counter[2].CLK
+clk_50MHz => counter[3].CLK
+clk_50MHz => counter[4].CLK
+clk_50MHz => counter[5].CLK
+clk_50MHz => counter[6].CLK
+clk_50MHz => counter[7].CLK
+clk_50MHz => counter[8].CLK
+clk_50MHz => counter[9].CLK
+clk_50MHz => counter[10].CLK
+clk_50MHz => counter[11].CLK
+clk_50MHz => counter[12].CLK
+clk_50MHz => counter[13].CLK
+clk_50MHz => counter[14].CLK
+clk_50MHz => counter[15].CLK
+clk_50MHz => counter[16].CLK
+clk_50MHz => counter[17].CLK
+clk_50MHz => counter[18].CLK
+clk_50MHz => counter[19].CLK
+clk_50MHz => counter[20].CLK
+clk_50MHz => counter[21].CLK
+clk_50MHz => counter[22].CLK
+clk_50MHz => counter[23].CLK
+reset => clk_reg.ACLR
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+reset => counter[6].ACLR
+reset => counter[7].ACLR
+reset => counter[8].ACLR
+reset => counter[9].ACLR
+reset => counter[10].ACLR
+reset => counter[11].ACLR
+reset => counter[12].ACLR
+reset => counter[13].ACLR
+reset => counter[14].ACLR
+reset => counter[15].ACLR
+reset => counter[16].ACLR
+reset => counter[17].ACLR
+reset => counter[18].ACLR
+reset => counter[19].ACLR
+reset => counter[20].ACLR
+reset => counter[21].ACLR
+reset => counter[22].ACLR
+reset => counter[23].ACLR
+clk_1Hz <= clk_reg.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |BasicCPU|BUSMUX:debuggingOutput

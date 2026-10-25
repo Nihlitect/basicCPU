@@ -9,8 +9,8 @@ entity clock1Hz is
 end clock1Hz;
 
 architecture Behavioral of clock1Hz is
-    -- 50,000,000 / (2 * 2 Hz) = 12,500,000 counts per toggle
-    constant TOGGLE_LIMIT : integer := 25000000;
+    -- 10,000,000 / (2 * 2 Hz) = 12,500,000 counts per toggle
+    constant TOGGLE_LIMIT : integer := 10000000;
     signal counter        : integer range 0 to TOGGLE_LIMIT := 0;
     signal clk_reg        : STD_LOGIC := '0';
 begin

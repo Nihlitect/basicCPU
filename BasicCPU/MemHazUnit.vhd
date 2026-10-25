@@ -11,7 +11,7 @@ entity MemHazUnit is
 	);
 	port(
 		clk: in std_logic;
-		MRE: in std_logic;
+		MRE: in std_logic; -- Memory write enable in decode stage
 		deaddr: in std_logic_vector(AW-1 downto 0);  -- next read address
 		exaddr: in std_logic_vector(AW-1  downto 0);  --  address in Execute stage
 		wbaddr: in std_logic_vector(AW-1 downto 0); -- Current address in Writeback stage (yet to be written)

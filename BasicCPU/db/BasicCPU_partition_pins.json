@@ -32,15 +32,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "LED[9]",
-					"strict" : false
-				},
-				{
 					"name" : "LED[8]",
 					"strict" : false
 				},
 				{
 					"name" : "LED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[6]",
 					"strict" : false
 				},
 				{
@@ -253,6 +253,10 @@
 				},
 				{
 					"name" : "SW[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_CLK_10",
 					"strict" : false
 				},
 				{

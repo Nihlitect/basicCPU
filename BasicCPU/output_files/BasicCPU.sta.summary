@@ -2,100 +2,136 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK2_50'
-Slack : -16.467
-TNS   : -41113.222
+Type  : Slow 1200mV 85C Model Setup 'ADC_CLK_10'
+Slack : -14.266
+TNS   : -41834.130
 
 Type  : Slow 1200mV 85C Model Setup 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : -12.561
-TNS   : -65.027
+Slack : -12.698
+TNS   : -67.704
 
-Type  : Slow 1200mV 85C Model Hold 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : -0.529
-TNS   : -0.529
+Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK2_50'
+Slack : -2.346
+TNS   : -38.843
+
+Type  : Slow 1200mV 85C Model Hold 'ADC_CLK_10'
+Slack : -0.716
+TNS   : -0.716
 
 Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK2_50'
-Slack : 0.340
+Slack : 0.330
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'MAX10_CLK2_50'
-Slack : -1.571
-TNS   : -13.163
-
-Type  : Slow 1200mV 85C Model Removal 'MAX10_CLK2_50'
-Slack : 1.662
+Type  : Slow 1200mV 85C Model Hold 'NbitPR:DeviceSelRegister|Q[0]'
+Slack : 0.597
 TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'ADC_CLK_10'
+Slack : -1.363
+TNS   : -10.867
+
+Type  : Slow 1200mV 85C Model Removal 'ADC_CLK_10'
+Slack : 1.426
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ADC_CLK_10'
+Slack : -3.000
+TNS   : -12218.921
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MAX10_CLK2_50'
 Slack : -3.000
-TNS   : -12220.324
+TNS   : -38.075
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : 0.382
+Slack : 0.360
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK2_50'
-Slack : -15.256
-TNS   : -39143.537
+Type  : Slow 1200mV 0C Model Setup 'ADC_CLK_10'
+Slack : -13.280
+TNS   : -38579.966
 
 Type  : Slow 1200mV 0C Model Setup 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : -11.655
-TNS   : -60.646
+Slack : -11.625
+TNS   : -62.356
 
-Type  : Slow 1200mV 0C Model Hold 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : -0.491
-TNS   : -0.491
+Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK2_50'
+Slack : -2.095
+TNS   : -32.980
+
+Type  : Slow 1200mV 0C Model Hold 'ADC_CLK_10'
+Slack : -0.622
+TNS   : -0.751
 
 Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK2_50'
-Slack : 0.305
+Slack : 0.295
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'MAX10_CLK2_50'
-Slack : -1.471
-TNS   : -12.423
-
-Type  : Slow 1200mV 0C Model Removal 'MAX10_CLK2_50'
-Slack : 1.444
+Type  : Slow 1200mV 0C Model Hold 'NbitPR:DeviceSelRegister|Q[0]'
+Slack : 0.538
 TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'ADC_CLK_10'
+Slack : -1.269
+TNS   : -10.093
+
+Type  : Slow 1200mV 0C Model Removal 'ADC_CLK_10'
+Slack : 1.224
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ADC_CLK_10'
+Slack : -3.000
+TNS   : -12218.921
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK2_50'
 Slack : -3.000
-TNS   : -12220.324
+TNS   : -38.075
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : 0.326
+Slack : 0.385
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK2_50'
-Slack : -7.339
-TNS   : -11272.459
+Type  : Fast 1200mV 0C Model Setup 'ADC_CLK_10'
+Slack : -6.203
+TNS   : -13500.468
 
 Type  : Fast 1200mV 0C Model Setup 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : -4.586
-TNS   : -24.289
+Slack : -4.803
+TNS   : -26.662
 
-Type  : Fast 1200mV 0C Model Hold 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : -0.147
-TNS   : -0.147
+Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK2_50'
+Slack : -0.448
+TNS   : -2.973
+
+Type  : Fast 1200mV 0C Model Hold 'ADC_CLK_10'
+Slack : -0.686
+TNS   : -1.608
 
 Type  : Fast 1200mV 0C Model Hold 'MAX10_CLK2_50'
-Slack : 0.093
+Slack : 0.145
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'MAX10_CLK2_50'
-Slack : -0.251
-TNS   : -1.823
-
-Type  : Fast 1200mV 0C Model Removal 'MAX10_CLK2_50'
-Slack : 0.577
+Type  : Fast 1200mV 0C Model Hold 'NbitPR:DeviceSelRegister|Q[0]'
+Slack : 0.428
 TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'ADC_CLK_10'
+Slack : -0.097
+TNS   : -0.333
+
+Type  : Fast 1200mV 0C Model Removal 'ADC_CLK_10'
+Slack : 0.462
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ADC_CLK_10'
+Slack : -3.000
+TNS   : -10882.280
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK2_50'
 Slack : -3.000
-TNS   : -14914.285
+TNS   : -32.308
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : 0.222
+Slack : 0.248
 TNS   : 0.000
 
 ------------------------------------------------------------

@@ -15,7 +15,7 @@
 
 -- PROGRAM		"Quartus Prime"
 -- VERSION		"Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition"
--- CREATED		"Sat Oct 10 02:23:20 2026"
+-- CREATED		"Sun Oct 25 20:31:56 2026"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -29,9 +29,9 @@ ENTITY busmux_10 IS
 PORT 
 ( 
 	sel	:	IN	 STD_LOGIC;
-	dataa	:	IN	 STD_LOGIC_VECTOR(15 DOWNTO 0);
-	datab	:	IN	 STD_LOGIC_VECTOR(15 DOWNTO 0);
-	result	:	OUT	 STD_LOGIC_VECTOR(15 DOWNTO 0)
+	dataa	:	IN	 STD_LOGIC_VECTOR(0 TO 0);
+	datab	:	IN	 STD_LOGIC_VECTOR(0 TO 0);
+	result	:	OUT	 STD_LOGIC_VECTOR(0 TO 0)
 ); 
 END busmux_10;
 
@@ -40,8 +40,8 @@ BEGIN
 
 -- instantiate macrofunction 
 
-b2v_SelA : busmux
-GENERIC MAP(WIDTH => 16)
+b2v_inst71 : busmux
+GENERIC MAP(WIDTH => 1)
 PORT MAP(sel => sel,
 		 dataa => dataa,
 		 datab => datab,

@@ -48,7 +48,7 @@ begin
 			end if;
 		end if;
 		
-		if(FWEX='1') then -- since after in the process it will prioritise this if both are on.
+		if(FWEX='1') then -- since last in the process it will prioritise this if both are on.
 			if exdr = na then --overwrites the previous if
 				sela <= '1';
 				selexa <= '1';

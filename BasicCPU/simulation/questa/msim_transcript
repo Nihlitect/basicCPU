@@ -25,9 +25,49 @@
 # Copying C:/altera/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/clock1Hz.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:51 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/clock1Hz.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock1Hz
+# -- Compiling architecture Behavioral of clock1Hz
+# End time: 19:18:51 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitN_1MUX.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:51 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitN_1MUX.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity NbitN_1MUX
+# -- Compiling architecture muxmaxing of NbitN_1MUX
+# End time: 19:18:51 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU2.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:51 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU2.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity ALU2
+# -- Compiling architecture alyou2 of ALU2
+# End time: 19:18:51 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitDFF.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:05 on Oct 04,2026
+# Start time: 19:18:51 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitDFF.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -39,11 +79,11 @@
 # -- Loading package altera_primitives_components
 # -- Compiling entity NbitDFF
 # -- Compiling architecture reg of NbitDFF
-# End time: 20:38:05 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:51 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:05 on Oct 04,2026
+# Start time: 19:18:51 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -54,11 +94,11 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity ControlUnit
 # -- Compiling architecture orchestration of ControlUnit
-# End time: 20:38:05 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:51 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:05 on Oct 04,2026
+# Start time: 19:18:51 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -69,12 +109,12 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity ROM
 # -- Compiling architecture rame of ROM
-# ** Warning: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd(50): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-# End time: 20:38:05 on Oct 04,2026, Elapsed time: 0:00:00
+# ** Warning: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd(114): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+# End time: 19:18:51 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:05 on Oct 04,2026
+# Start time: 19:18:52 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -82,11 +122,11 @@
 # -- Loading package std_logic_1164
 # -- Compiling entity NbitRegister
 # -- Compiling architecture reg of NbitRegister
-# End time: 20:38:05 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:52 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/BitRegister2.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:05 on Oct 04,2026
+# Start time: 19:18:52 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/BitRegister2.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -94,11 +134,11 @@
 # -- Loading package std_logic_1164
 # -- Compiling entity BitRegister2
 # -- Compiling architecture flipper of BitRegister2
-# End time: 20:38:05 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:52 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitDEMUX.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:06 on Oct 04,2026
+# Start time: 19:18:52 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitDEMUX.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -107,11 +147,23 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity NbitDEMUX
 # -- Compiling architecture demux of NbitDEMUX
-# End time: 20:38:06 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:52 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Nbit2MUX.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:52 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Nbit2MUX.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Nbit2MUX
+# -- Compiling architecture busmux of Nbit2MUX
+# End time: 19:18:52 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Hex_To_7Seg.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:06 on Oct 04,2026
+# Start time: 19:18:52 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Hex_To_7Seg.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -119,11 +171,11 @@
 # -- Loading package std_logic_1164
 # -- Compiling entity Hex_To_7Seg
 # -- Compiling architecture Behavioral of Hex_To_7Seg
-# End time: 20:38:06 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:52 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:06 on Oct 04,2026
+# Start time: 19:18:52 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -133,11 +185,11 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity ALU
 # -- Compiling architecture alu of ALU
-# End time: 20:38:06 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:52 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Counter.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:06 on Oct 04,2026
+# Start time: 19:18:52 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Counter.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -146,24 +198,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity NbitCounter
 # -- Compiling architecture count of NbitCounter
-# End time: 20:38:06 on Oct 04,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/NbitN_1MUX.vhd}
-# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:06 on Oct 04,2026
-# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/NbitN_1MUX.vhd 
-# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity NbitN_1MUX
-# -- Compiling architecture muxmaxing of NbitN_1MUX
-# End time: 20:38:06 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:52 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:06 on Oct 04,2026
+# Start time: 19:18:52 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -175,11 +214,11 @@
 # -- Compiling entity RAM
 # -- Compiling architecture rame of RAM
 # ** Warning: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd(53): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-# End time: 20:38:06 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:52 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:06 on Oct 04,2026
+# Start time: 19:18:53 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -188,24 +227,128 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity FwdSelUnit
 # -- Compiling architecture fwdCtrl of FwdSelUnit
-# End time: 20:38:06 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:53 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/CmpBranchUnit.vhd}
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/BranchUnit.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:06 on Oct 04,2026
-# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/CmpBranchUnit.vhd 
+# Start time: 19:18:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/BranchUnit.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity CmpBranchUnit
-# -- Compiling architecture compareTheBranches of CmpBranchUnit
-# End time: 20:38:06 on Oct 04,2026, Elapsed time: 0:00:00
+# -- Compiling entity BranchUnit
+# -- Compiling architecture compareTheBranches of BranchUnit
+# End time: 19:18:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/ShiftUnit.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/ShiftUnit.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ShiftUnit
+# -- Compiling architecture shifty of ShiftUnit
+# End time: 19:18:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/Stack.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/Stack.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Stack
+# -- Compiling architecture stacker of Stack
+# End time: 19:18:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitLatch.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitLatch.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NbitLatch
+# -- Compiling architecture leach of NbitLatch
+# End time: 19:18:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitPR.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitPR.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity NbitPR
+# -- Compiling architecture rtl of NbitPR
+# End time: 19:18:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/output_files/Nbit4_1MUX.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/output_files/Nbit4_1MUX.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Nbit4_1MUX
+# -- Compiling architecture bdf_type of Nbit4_1MUX
+# End time: 19:18:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/IO.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/IO.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity IO
+# -- Compiling architecture intoout of IO
+# End time: 19:18:54 on Oct 25,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/StartupReset.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:54 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/StartupReset.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity StartupReset
+# -- Compiling architecture RTL of StartupReset
+# End time: 19:18:54 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/MemHazUnit.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:18:54 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/MemHazUnit.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MemHazUnit
+# -- Compiling architecture fwdCtrl of MemHazUnit
+# End time: 19:18:54 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/registers.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:07 on Oct 04,2026
+# Start time: 19:18:54 on Oct 25,2026
 # vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/registers.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -216,28 +359,416 @@
 # -- Loading package NUMERIC_STD
 # -- Loading entity NbitDEMUX
 # -- Loading entity NbitN_1MUX
-# End time: 20:38:07 on Oct 04,2026, Elapsed time: 0:00:00
+# End time: 19:18:54 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/../tester.vhd}
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd}
 # Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
-# Start time: 20:38:07 on Oct 04,2026
-# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/../tester.vhd 
+# Start time: 19:18:54 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd 
 # ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
 # -- Loading package STANDARD
-# ** Error (suppressible): C:/Users/Chamk/Desktop/Repo/BasicCPU/../tester.vhd(2): (vcom-1491) Empty source files.
-# End time: 20:38:07 on Oct 04,2026, Elapsed time: 0:00:00
+# ** Error (suppressible): C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(1): (vcom-1491) Empty source files.
+# End time: 19:18:54 on Oct 25,2026, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 0
 # ** Error: C:/altera/25.1std/questa_fse/win64/vcom failed.
-# Error in macro ./BasicCPU_run_msim_rtl_vhdl.do line 23
+# Error in macro ./BasicCPU_run_msim_rtl_vhdl.do line 34
 # C:/altera/25.1std/questa_fse/win64/vcom failed.
 #     while executing
-# "vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/../tester.vhd}"
-# Load canceled
-vsim -gui -l msim_transcript work.alu
+# "vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd}"
+do BasicCPU_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work rtl_work 
+# ** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/clock1Hz.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:51 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/clock1Hz.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock1Hz
+# -- Compiling architecture Behavioral of clock1Hz
+# End time: 19:43:51 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitN_1MUX.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:51 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitN_1MUX.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity NbitN_1MUX
+# -- Compiling architecture muxmaxing of NbitN_1MUX
+# End time: 19:43:51 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU2.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:51 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU2.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity ALU2
+# -- Compiling architecture alyou2 of ALU2
+# End time: 19:43:51 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitDFF.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:51 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitDFF.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Compiling entity NbitDFF
+# -- Compiling architecture reg of NbitDFF
+# End time: 19:43:52 on Oct 25,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:52 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity ControlUnit
+# -- Compiling architecture orchestration of ControlUnit
+# End time: 19:43:52 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:52 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity ROM
+# -- Compiling architecture rame of ROM
+# ** Warning: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd(114): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+# End time: 19:43:52 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:52 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitRegister.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NbitRegister
+# -- Compiling architecture reg of NbitRegister
+# End time: 19:43:52 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/BitRegister2.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:52 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/BitRegister2.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity BitRegister2
+# -- Compiling architecture flipper of BitRegister2
+# End time: 19:43:52 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitDEMUX.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:52 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/NbitDEMUX.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity NbitDEMUX
+# -- Compiling architecture demux of NbitDEMUX
+# End time: 19:43:52 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Nbit2MUX.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:52 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Nbit2MUX.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Nbit2MUX
+# -- Compiling architecture busmux of Nbit2MUX
+# End time: 19:43:52 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Hex_To_7Seg.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:52 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Hex_To_7Seg.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Hex_To_7Seg
+# -- Compiling architecture Behavioral of Hex_To_7Seg
+# End time: 19:43:52 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:52 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/ALU.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity ALU
+# -- Compiling architecture alu of ALU
+# End time: 19:43:53 on Oct 25,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Counter.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Counter.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity NbitCounter
+# -- Compiling architecture count of NbitCounter
+# End time: 19:43:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity RAM
+# -- Compiling architecture rame of RAM
+# ** Warning: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd(53): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+# End time: 19:43:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity FwdSelUnit
+# -- Compiling architecture fwdCtrl of FwdSelUnit
+# End time: 19:43:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/BranchUnit.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/BranchUnit.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BranchUnit
+# -- Compiling architecture compareTheBranches of BranchUnit
+# End time: 19:43:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/ShiftUnit.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/ShiftUnit.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ShiftUnit
+# -- Compiling architecture shifty of ShiftUnit
+# End time: 19:43:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/Stack.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/Stack.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Stack
+# -- Compiling architecture stacker of Stack
+# End time: 19:43:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitLatch.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitLatch.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NbitLatch
+# -- Compiling architecture leach of NbitLatch
+# End time: 19:43:53 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitPR.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:53 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitPR.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity NbitPR
+# -- Compiling architecture rtl of NbitPR
+# End time: 19:43:54 on Oct 25,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/output_files/Nbit4_1MUX.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:54 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/output_files/Nbit4_1MUX.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Nbit4_1MUX
+# -- Compiling architecture bdf_type of Nbit4_1MUX
+# End time: 19:43:54 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/IO.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:54 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/IO.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity IO
+# -- Compiling architecture intoout of IO
+# End time: 19:43:54 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/StartupReset.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:54 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/StartupReset.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity StartupReset
+# -- Compiling architecture RTL of StartupReset
+# End time: 19:43:54 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/MemHazUnit.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:54 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/MemHazUnit.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MemHazUnit
+# -- Compiling architecture fwdCtrl of MemHazUnit
+# End time: 19:43:54 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/registers.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:54 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/registers.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity REGISTERS
+# -- Compiling architecture regin of REGISTERS
+# -- Loading package NUMERIC_STD
+# -- Loading entity NbitDEMUX
+# -- Loading entity NbitN_1MUX
+# End time: 19:43:54 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd}
+# Questa Altera Starter FPGA Edition-64 vcom 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 19:43:54 on Oct 25,2026
+# vcom -reportprogress 300 -93 -work work C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd 
+# ** Note: (vcom-220) 'modelsim.ini' is used as the ini file.
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity BasicCPU_tb
+# -- Compiling architecture sim of BasicCPU_tb
+# ** Error: (vcom-11) Could not find work.basiccpu.
+# ** Error (suppressible): C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(28): (vcom-1195) Cannot find expanded name "work.BasicCPU".
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(28): Unknown expanded name.
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(101): (vcom-1136) Unknown identifier "to_string".
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(101): (vcom-1590) Bad expression in left operand of infix expression '&'.
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(101): (vcom-1590) Bad expression in left operand of infix expression '&'.
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(101): (vcom-1136) Unknown identifier "to_string".
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(101): (vcom-1590) Bad expression in left operand of infix expression '&'.
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(101): (vcom-1590) Bad expression in left operand of infix expression '&'.
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(102): (vcom-1136) Unknown identifier "to_string".
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(102): (vcom-1590) Bad expression in left operand of infix expression '&'.
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(102): (vcom-1590) Bad expression in left operand of infix expression '&'.
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(102): (vcom-1136) Unknown identifier "to_string".
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(102): Type error resolving infix expression "&" as type std.STANDARD.STRING.
+# ** Error: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(21): Nonresolved signal 'sim_done' has multiple sources.
+#   Drivers:
+#     C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(97):Process monitor
+#        Driven at:
+#           C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(104)
+#     C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(67):Process stim
+#        Driven at:
+#           C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(90)
+# ** Note: C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd(108): VHDL Compiler exiting
+# End time: 19:43:54 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 15, Warnings: 0
+# ** Error: C:/altera/25.1std/questa_fse/win64/vcom failed.
+# Error in macro ./BasicCPU_run_msim_rtl_vhdl.do line 34
+# C:/altera/25.1std/questa_fse/win64/vcom failed.
+#     while executing
+# "vcom -93 -work work {C:/Users/Chamk/Desktop/Repo/BasicCPU/../Testbenches/tb_BasicCPU.vhd}"
+vsim work.alu2
 # ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
-# vsim -gui -l msim_transcript work.alu 
-# Start time: 20:44:04 on Oct 04,2026
+# vsim work.alu2 
+# Start time: 19:44:46 on Oct 25,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
 # Loading std.standard
@@ -245,6 +776,33 @@ vsim -gui -l msim_transcript work.alu
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
-# Loading work.alu(alu)#1
-# End time: 01:00:51 on Oct 06,2026, Elapsed time: 28:16:47
+# Loading work.alu2(alyou2)#1
+vsim work.alu2
+# End time: 19:44:58 on Oct 25,2026, Elapsed time: 0:00:12
 # Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim work.alu2 
+# Start time: 19:44:58 on Oct 25,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.alu2(alyou2)#1
+vsim work.basiccpu_tb
+# End time: 19:45:00 on Oct 25,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim work.basiccpu_tb 
+# Start time: 19:45:00 on Oct 25,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Error: (vopt-13130) Failed to find design unit 'basiccpu_tb'.
+#         Searched libraries:
+#             work
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 19:45:00 on Oct 25,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
