@@ -19,7 +19,7 @@
 # Failure codes are loaded with LDI right before each check, so a broken ALU
 # cannot corrupt them. R6 and R7 are not tested individually.
 #
-# ASSUMED SEMANTICS (edit if yours differ)
+# ASSUMED SEMANTICS 
 #   * the immediate is a 16-bit value; for signed operations (MIN, MAX, BLT,
 #     BGE, BLE, BGT) 0xFFFF means -1, for unsigned ones it means 65535
 #   * CMP Rs1,imm sets flags from Rs1 - imm

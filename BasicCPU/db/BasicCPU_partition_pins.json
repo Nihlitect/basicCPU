@@ -208,7 +208,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "ADC_CLK_10",
+					"strict" : false
+				},
+				{
+					"name" : "PB[1]",
 					"strict" : false
 				},
 				{
@@ -216,7 +220,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "PB[1]",
+					"name" : "MAX10_CLK2_50",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
@@ -253,14 +261,6 @@
 				},
 				{
 					"name" : "SW[9]",
-					"strict" : false
-				},
-				{
-					"name" : "ADC_CLK_10",
-					"strict" : false
-				},
-				{
-					"name" : "MAX10_CLK2_50",
 					"strict" : false
 				}
 			]

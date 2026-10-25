@@ -3,135 +3,135 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'ADC_CLK_10'
-Slack : -14.266
-TNS   : -41834.130
+Slack : -12.597
+TNS   : -39756.025
 
 Type  : Slow 1200mV 85C Model Setup 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : -12.698
-TNS   : -67.704
+Slack : -8.174
+TNS   : -43.411
 
 Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK2_50'
-Slack : -2.346
-TNS   : -38.843
+Slack : -2.580
+TNS   : -40.300
 
 Type  : Slow 1200mV 85C Model Hold 'ADC_CLK_10'
-Slack : -0.716
-TNS   : -0.716
-
-Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK2_50'
-Slack : 0.330
-TNS   : 0.000
+Slack : -0.547
+TNS   : -0.547
 
 Type  : Slow 1200mV 85C Model Hold 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : 0.597
+Slack : -0.018
+TNS   : -0.018
+
+Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK2_50'
+Slack : 0.348
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'ADC_CLK_10'
-Slack : -1.363
-TNS   : -10.867
+Slack : -0.900
+TNS   : -6.300
 
 Type  : Slow 1200mV 85C Model Removal 'ADC_CLK_10'
-Slack : 1.426
+Slack : 0.988
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ADC_CLK_10'
 Slack : -3.000
-TNS   : -12218.921
+TNS   : -12183.846
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MAX10_CLK2_50'
 Slack : -3.000
 TNS   : -38.075
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : 0.360
+Slack : 0.363
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'ADC_CLK_10'
-Slack : -13.280
-TNS   : -38579.966
+Slack : -11.557
+TNS   : -36685.649
 
 Type  : Slow 1200mV 0C Model Setup 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : -11.625
-TNS   : -62.356
+Slack : -7.423
+TNS   : -39.860
 
 Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK2_50'
-Slack : -2.095
-TNS   : -32.980
+Slack : -2.223
+TNS   : -34.081
 
 Type  : Slow 1200mV 0C Model Hold 'ADC_CLK_10'
-Slack : -0.622
-TNS   : -0.751
-
-Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK2_50'
-Slack : 0.295
-TNS   : 0.000
+Slack : -0.452
+TNS   : -0.452
 
 Type  : Slow 1200mV 0C Model Hold 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : 0.538
+Slack : -0.028
+TNS   : -0.028
+
+Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK2_50'
+Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'ADC_CLK_10'
-Slack : -1.269
-TNS   : -10.093
+Slack : -0.872
+TNS   : -6.055
 
 Type  : Slow 1200mV 0C Model Removal 'ADC_CLK_10'
-Slack : 1.224
+Slack : 0.992
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ADC_CLK_10'
 Slack : -3.000
-TNS   : -12218.921
+TNS   : -12183.846
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK2_50'
 Slack : -3.000
 TNS   : -38.075
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : 0.385
+Slack : 0.398
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'ADC_CLK_10'
-Slack : -6.203
-TNS   : -13500.468
+Slack : -4.967
+TNS   : -12318.713
 
 Type  : Fast 1200mV 0C Model Setup 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : -4.803
-TNS   : -26.662
+Slack : -2.840
+TNS   : -15.016
 
 Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK2_50'
-Slack : -0.448
-TNS   : -2.973
+Slack : -0.435
+TNS   : -3.380
 
 Type  : Fast 1200mV 0C Model Hold 'ADC_CLK_10'
-Slack : -0.686
-TNS   : -1.608
-
-Type  : Fast 1200mV 0C Model Hold 'MAX10_CLK2_50'
-Slack : 0.145
-TNS   : 0.000
+Slack : -0.211
+TNS   : -0.384
 
 Type  : Fast 1200mV 0C Model Hold 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : 0.428
+Slack : 0.080
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'MAX10_CLK2_50'
+Slack : 0.153
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'ADC_CLK_10'
-Slack : -0.097
-TNS   : -0.333
+Slack : 0.382
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'ADC_CLK_10'
-Slack : 0.462
+Slack : 0.108
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ADC_CLK_10'
 Slack : -3.000
-TNS   : -10882.280
+TNS   : -10381.994
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK2_50'
 Slack : -3.000
-TNS   : -32.308
+TNS   : -32.227
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'NbitPR:DeviceSelRegister|Q[0]'
-Slack : 0.248
+Slack : 0.362
 TNS   : 0.000
 
 ------------------------------------------------------------

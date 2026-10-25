@@ -52,7 +52,9 @@ import java.util.TreeSet;
  *     other  ->  one hex word per line
  */
 public class Assembler {
+    // =========================================================================
     // 1. CONFIGURATION
+    // =========================================================================
     /** true = comma-separated operands, false = whitespace-separated. */
     static final boolean USE_CSV_INPUT = false;
     static final int INSTRUCTION_WIDTH = 16;   // bits per word

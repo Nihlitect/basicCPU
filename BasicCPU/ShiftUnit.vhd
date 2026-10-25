@@ -2,7 +2,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-
 entity ShiftUnit is
 	generic(
 		W : integer :=16);
@@ -14,20 +13,7 @@ entity ShiftUnit is
 		O: out std_logic_vector(W-1 downto 0) -- Ouptput the shifted
 	);
 end ShiftUnit;
-
--- SHIFT FUNCTIONS			
--- funct[2]	Description		
--- 0	Shift by constant written in instruction		
--- 1	Shift by amount sitting in a register		
-
--- funct[1..0]	MNEMONIC	Description	
--- 00	SLL	Slide left, fill with zeros	
--- 01	SRU	Slide right, fill with zeros - unsigned	
--- 10	SRS	Slide right - signed	
--- 11	ROT	Rotate 	
-
 architecture shifty of ShiftUnit is
-
 begin 
 	process(F, amt, A)
 	begin
@@ -45,3 +31,14 @@ begin
 		end case;
 	end process;
 end shifty;
+
+-- SHIFT FUNCTIONS			
+-- funct[2]	Description		
+-- 0	Shift by constant written in instruction		
+-- 1	Shift by amount sitting in a register		
+
+-- funct[1..0]	MNEMONIC	Description	
+-- 00	SLL	Slide left, fill with zeros	
+-- 01	SRU	Slide right, fill with zeros - unsigned	
+-- 10	SRS	Slide right - signed	
+-- 11	ROT	Rotate 	

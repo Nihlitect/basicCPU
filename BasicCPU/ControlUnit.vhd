@@ -47,8 +47,6 @@ entity ControlUnit is
 		SSEN: out std_logic -- Seven Segment Write Enable
 	);
 end ControlUnit;
-
--- Since registers open on rising edge then bits must change on falling edge.
 architecture orchestration of ControlUnit is
 begin
 	process(OPCODE, funct)
@@ -90,7 +88,7 @@ begin
 				REN   <= '1'; 	-- Register File write Enable 
 				
 			when "0010" =>  -- ALUI: rd = rs, imm16
-				CTE <= '1';
+				CTE <= '1';	-- 32 bit
 				REN   <= '1'; -- Register File write Enable
 				IMMBO <= '1'; -- enable immediate operand passthrough
 
@@ -104,7 +102,7 @@ begin
 				RDIN 	<= '1';
 				
 			when "0101" => -- LDI: rd <= imm16
-				CTE <= '1';
+				CTE <= '1'; -- 32 bit
 				REN	<= '1';
 				IMMO 	<= '1'; --select imm16 passthrough on bus
 			
@@ -130,7 +128,7 @@ begin
 				ALU2  <= '1';
 
 			when "1101" => -- ALU2I: 
-				CTE <= '1';
+				CTE <= '1'; -- 32 bit
 				if funct /= "111" then -- If not CMP Instruction
 					REN  	<= '1'; 
 				end if;
@@ -150,6 +148,7 @@ begin
 			when "1111" =>
 				Halt <= '1'; -- feeds op '1111' into instruction register (endless inescapable feedback)
 				CE   <= '0';
+				CTE <= '0';
 			when others =>
 				null;-- undefined opcode: hold safe defaults
 		end case;

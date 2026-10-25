@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BasicCPU
-Sun Oct 25 20:05:03 2026
+Sun Oct 25 23:14:46 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -108,15 +108,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Oct 25 20:05:03 2026           ;
+; Analysis & Synthesis Status        ; Successful - Sun Oct 25 23:14:46 2026           ;
 ; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                      ; BasicCPU                                        ;
 ; Top-level Entity Name              ; BasicCPU                                        ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 16,030                                          ;
-;     Total combinational functions  ; 7,635                                           ;
-;     Dedicated logic registers      ; 8,732                                           ;
-; Total registers                    ; 8732                                            ;
+; Total logic elements               ; 15,981                                          ;
+;     Total combinational functions  ; 7,586                                           ;
+;     Dedicated logic registers      ; 8,707                                           ;
+; Total registers                    ; 8707                                            ;
 ; Total pins                         ; 66                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -231,7 +231,7 @@ on the Quartus Prime software download page.
 ;     Processor 4            ;   0.2%      ;
 ;     Processor 5            ;   0.2%      ;
 ;     Processor 6            ;   0.2%      ;
-;     Processor 7            ;   0.1%      ;
+;     Processor 7            ;   0.2%      ;
 ;     Processor 8            ;   0.1%      ;
 ;     Processors 9-12        ;   0.1%      ;
 +----------------------------+-------------+
@@ -286,36 +286,36 @@ on the Quartus Prime software download page.
 +----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                      ;
-+---------------------------------------------+--------------------------------------------------------------------+
-; Resource                                    ; Usage                                                              ;
-+---------------------------------------------+--------------------------------------------------------------------+
-; Estimated Total logic elements              ; 16,030                                                             ;
-;                                             ;                                                                    ;
-; Total combinational functions               ; 7635                                                               ;
-; Logic element usage by number of LUT inputs ;                                                                    ;
-;     -- 4 input functions                    ; 7040                                                               ;
-;     -- 3 input functions                    ; 316                                                                ;
-;     -- <=2 input functions                  ; 279                                                                ;
-;                                             ;                                                                    ;
-; Logic elements by mode                      ;                                                                    ;
-;     -- normal mode                          ; 7463                                                               ;
-;     -- arithmetic mode                      ; 172                                                                ;
-;                                             ;                                                                    ;
-; Total registers                             ; 8732                                                               ;
-;     -- Dedicated logic registers            ; 8732                                                               ;
-;     -- I/O registers                        ; 0                                                                  ;
-;                                             ;                                                                    ;
-; I/O pins                                    ; 66                                                                 ;
-;                                             ;                                                                    ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                  ;
-;                                             ;                                                                    ;
-; Maximum fan-out node                        ; busmux:inst71|lpm_mux:$00000|mux_t5c:auto_generated|result_node[0] ;
-; Maximum fan-out                             ; 8683                                                               ;
-; Total fan-out                               ; 55714                                                              ;
-; Average fan-out                             ; 3.38                                                               ;
-+---------------------------------------------+--------------------------------------------------------------------+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Estimated Total logic elements              ; 15,981           ;
+;                                             ;                  ;
+; Total combinational functions               ; 7586             ;
+; Logic element usage by number of LUT inputs ;                  ;
+;     -- 4 input functions                    ; 6992             ;
+;     -- 3 input functions                    ; 340              ;
+;     -- <=2 input functions                  ; 254              ;
+;                                             ;                  ;
+; Logic elements by mode                      ;                  ;
+;     -- normal mode                          ; 7437             ;
+;     -- arithmetic mode                      ; 149              ;
+;                                             ;                  ;
+; Total registers                             ; 8707             ;
+;     -- Dedicated logic registers            ; 8707             ;
+;     -- I/O registers                        ; 0                ;
+;                                             ;                  ;
+; I/O pins                                    ; 66               ;
+;                                             ;                  ;
+; Embedded Multiplier 9-bit elements          ; 0                ;
+;                                             ;                  ;
+; Maximum fan-out node                        ; ADC_CLK_10~input ;
+; Maximum fan-out                             ; 8683             ;
+; Total fan-out                               ; 55495            ;
+; Average fan-out                             ; 3.38             ;
++---------------------------------------------+------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -323,19 +323,19 @@ on the Quartus Prime software download page.
 +------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                ; Entity Name    ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------+----------------+--------------+
-; |BasicCPU                                ; 7635 (5)            ; 8732 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |BasicCPU                                                                          ; BasicCPU       ; work         ;
+; |BasicCPU                                ; 7586 (5)            ; 8707 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 66   ; 0            ; 0          ; |BasicCPU                                                                          ; BasicCPU       ; work         ;
 ;    |16bit2SSD:inst1|                     ; 28 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|16bit2SSD:inst1                                                          ; 16bit2SSD      ; work         ;
 ;       |Hex_To_7Seg:inst4|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|16bit2SSD:inst1|Hex_To_7Seg:inst4                                        ; Hex_To_7Seg    ; work         ;
 ;       |Hex_To_7Seg:inst5|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|16bit2SSD:inst1|Hex_To_7Seg:inst5                                        ; Hex_To_7Seg    ; work         ;
 ;       |Hex_To_7Seg:inst6|                ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|16bit2SSD:inst1|Hex_To_7Seg:inst6                                        ; Hex_To_7Seg    ; work         ;
 ;       |Hex_To_7Seg:inst|                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|16bit2SSD:inst1|Hex_To_7Seg:inst                                         ; Hex_To_7Seg    ; work         ;
-;    |ALU2:inst39|                         ; 192 (192)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|ALU2:inst39                                                              ; ALU2           ; work         ;
-;    |ALU:inst29|                          ; 54 (54)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|ALU:inst29                                                               ; ALU            ; work         ;
+;    |ALU2:inst39|                         ; 207 (207)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|ALU2:inst39                                                              ; ALU2           ; work         ;
+;    |ALU:inst29|                          ; 38 (38)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|ALU:inst29                                                               ; ALU            ; work         ;
 ;    |ControlUnit:inst40|                  ; 23 (23)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|ControlUnit:inst40                                                       ; ControlUnit    ; work         ;
 ;    |FwdSelUnit:inst21|                   ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|FwdSelUnit:inst21                                                        ; FwdSelUnit     ; work         ;
 ;    |Hex_To_7Seg:inst13|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|Hex_To_7Seg:inst13                                                       ; Hex_To_7Seg    ; work         ;
 ;    |Hex_To_7Seg:inst15|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|Hex_To_7Seg:inst15                                                       ; Hex_To_7Seg    ; work         ;
-;    |MemHazUnit:HoldValuesOnMemoryHazard| ; 31 (31)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|MemHazUnit:HoldValuesOnMemoryHazard                                      ; MemHazUnit     ; work         ;
+;    |MemHazUnit:HoldValuesOnMemoryHazard| ; 55 (55)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|MemHazUnit:HoldValuesOnMemoryHazard                                      ; MemHazUnit     ; work         ;
 ;    |Nbit4_1MUX:inst66|                   ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|Nbit4_1MUX:inst66                                                        ; Nbit4_1MUX     ; work         ;
 ;       |Nbit2MUX:b2v_inst2|               ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|Nbit4_1MUX:inst66|Nbit2MUX:b2v_inst2                                     ; Nbit2MUX       ; work         ;
 ;          |bit2_1MUX:\gen:0:muxi|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|Nbit4_1MUX:inst66|Nbit2MUX:b2v_inst2|bit2_1MUX:\gen:0:muxi               ; bit2_1MUX      ; work         ;
@@ -522,44 +522,37 @@ on the Quartus Prime software download page.
 ;          |BitRegister2:\ffmap:7:ffi|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|REGISTERS:inst14|NbitRegister:\registe:7:regi|BitRegister2:\ffmap:7:ffi  ; BitRegister2   ; work         ;
 ;          |BitRegister2:\ffmap:8:ffi|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|REGISTERS:inst14|NbitRegister:\registe:7:regi|BitRegister2:\ffmap:8:ffi  ; BitRegister2   ; work         ;
 ;          |BitRegister2:\ffmap:9:ffi|     ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|REGISTERS:inst14|NbitRegister:\registe:7:regi|BitRegister2:\ffmap:9:ffi  ; BitRegister2   ; work         ;
-;    |ROM:inst45|                          ; 250 (250)           ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|ROM:inst45                                                               ; ROM            ; work         ;
-;    |ShiftUnit:inst9|                     ; 133 (133)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|ShiftUnit:inst9                                                          ; ShiftUnit      ; work         ;
+;    |ROM:inst45|                          ; 252 (252)           ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|ROM:inst45                                                               ; ROM            ; work         ;
+;    |ShiftUnit:inst9|                     ; 120 (120)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|ShiftUnit:inst9                                                          ; ShiftUnit      ; work         ;
 ;    |StartupReset:inst90|                 ; 16 (16)             ; 13 (13)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|StartupReset:inst90                                                      ; StartupReset   ; work         ;
-;    |busmux:Debugging|                    ; 32 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:Debugging                                                         ; busmux         ; work         ;
-;       |lpm_mux:$00000|                   ; 32 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:Debugging|lpm_mux:$00000                                          ; lpm_mux        ; work         ;
-;          |mux_j7c:auto_generated|        ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:Debugging|lpm_mux:$00000|mux_j7c:auto_generated                   ; mux_j7c        ; work         ;
 ;    |busmux:SelA9q|                       ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelA9q                                                            ; busmux         ; work         ;
 ;       |lpm_mux:$00000|                   ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelA9q|lpm_mux:$00000                                             ; lpm_mux        ; work         ;
 ;          |mux_v5c:auto_generated|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelA9q|lpm_mux:$00000|mux_v5c:auto_generated                      ; mux_v5c        ; work         ;
-;    |busmux:SelA|                         ; 100 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelA                                                              ; busmux         ; work         ;
-;       |lpm_mux:$00000|                   ; 100 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelA|lpm_mux:$00000                                               ; lpm_mux        ; work         ;
-;          |mux_j7c:auto_generated|        ; 100 (100)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelA|lpm_mux:$00000|mux_j7c:auto_generated                        ; mux_j7c        ; work         ;
-;    |busmux:SelB|                         ; 102 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelB                                                              ; busmux         ; work         ;
-;       |lpm_mux:$00000|                   ; 102 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelB|lpm_mux:$00000                                               ; lpm_mux        ; work         ;
-;          |mux_j7c:auto_generated|        ; 102 (102)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelB|lpm_mux:$00000|mux_j7c:auto_generated                        ; mux_j7c        ; work         ;
+;    |busmux:SelA|                         ; 101 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelA                                                              ; busmux         ; work         ;
+;       |lpm_mux:$00000|                   ; 101 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelA|lpm_mux:$00000                                               ; lpm_mux        ; work         ;
+;          |mux_j7c:auto_generated|        ; 101 (101)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelA|lpm_mux:$00000|mux_j7c:auto_generated                        ; mux_j7c        ; work         ;
+;    |busmux:SelB|                         ; 106 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelB                                                              ; busmux         ; work         ;
+;       |lpm_mux:$00000|                   ; 106 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelB|lpm_mux:$00000                                               ; lpm_mux        ; work         ;
+;          |mux_j7c:auto_generated|        ; 106 (106)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:SelB|lpm_mux:$00000|mux_j7c:auto_generated                        ; mux_j7c        ; work         ;
 ;    |busmux:immBMux|                      ; 16 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:immBMux                                                           ; busmux         ; work         ;
 ;       |lpm_mux:$00000|                   ; 16 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:immBMux|lpm_mux:$00000                                            ; lpm_mux        ; work         ;
 ;          |mux_j7c:auto_generated|        ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:immBMux|lpm_mux:$00000|mux_j7c:auto_generated                     ; mux_j7c        ; work         ;
-;    |busmux:inst33|                       ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst33                                                            ; busmux         ; work         ;
-;       |lpm_mux:$00000|                   ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst33|lpm_mux:$00000                                             ; lpm_mux        ; work         ;
-;          |mux_j7c:auto_generated|        ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst33|lpm_mux:$00000|mux_j7c:auto_generated                      ; mux_j7c        ; work         ;
-;    |busmux:inst34|                       ; 123 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst34                                                            ; busmux         ; work         ;
-;       |lpm_mux:$00000|                   ; 123 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst34|lpm_mux:$00000                                             ; lpm_mux        ; work         ;
-;          |mux_j7c:auto_generated|        ; 123 (123)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst34|lpm_mux:$00000|mux_j7c:auto_generated                      ; mux_j7c        ; work         ;
+;    |busmux:inst33|                       ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst33                                                            ; busmux         ; work         ;
+;       |lpm_mux:$00000|                   ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst33|lpm_mux:$00000                                             ; lpm_mux        ; work         ;
+;          |mux_j7c:auto_generated|        ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst33|lpm_mux:$00000|mux_j7c:auto_generated                      ; mux_j7c        ; work         ;
+;    |busmux:inst34|                       ; 116 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst34                                                            ; busmux         ; work         ;
+;       |lpm_mux:$00000|                   ; 116 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst34|lpm_mux:$00000                                             ; lpm_mux        ; work         ;
+;          |mux_j7c:auto_generated|        ; 116 (116)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst34|lpm_mux:$00000|mux_j7c:auto_generated                      ; mux_j7c        ; work         ;
 ;    |busmux:inst35|                       ; 12 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst35                                                            ; busmux         ; work         ;
 ;       |lpm_mux:$00000|                   ; 12 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst35|lpm_mux:$00000                                             ; lpm_mux        ; work         ;
 ;          |mux_j7c:auto_generated|        ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst35|lpm_mux:$00000|mux_j7c:auto_generated                      ; mux_j7c        ; work         ;
-;    |busmux:inst36|                       ; 22 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst36                                                            ; busmux         ; work         ;
-;       |lpm_mux:$00000|                   ; 22 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst36|lpm_mux:$00000                                             ; lpm_mux        ; work         ;
-;          |mux_j7c:auto_generated|        ; 22 (22)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst36|lpm_mux:$00000|mux_j7c:auto_generated                      ; mux_j7c        ; work         ;
-;    |busmux:inst71|                       ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst71                                                            ; busmux         ; work         ;
-;       |lpm_mux:$00000|                   ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst71|lpm_mux:$00000                                             ; lpm_mux        ; work         ;
-;          |mux_t5c:auto_generated|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst71|lpm_mux:$00000|mux_t5c:auto_generated                      ; mux_t5c        ; work         ;
+;    |busmux:inst36|                       ; 38 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst36                                                            ; busmux         ; work         ;
+;       |lpm_mux:$00000|                   ; 38 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst36|lpm_mux:$00000                                             ; lpm_mux        ; work         ;
+;          |mux_j7c:auto_generated|        ; 38 (38)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst36|lpm_mux:$00000|mux_j7c:auto_generated                      ; mux_j7c        ; work         ;
 ;    |busmux:inst94|                       ; 16 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst94                                                            ; busmux         ; work         ;
 ;       |lpm_mux:$00000|                   ; 16 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst94|lpm_mux:$00000                                             ; lpm_mux        ; work         ;
 ;          |mux_j7c:auto_generated|        ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|busmux:inst94|lpm_mux:$00000|mux_j7c:auto_generated                      ; mux_j7c        ; work         ;
 ;    |clock1Hz:clock2|                     ; 40 (40)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|clock1Hz:clock2                                                          ; clock1Hz       ; work         ;
-;    |clock1Hz:inst|                       ; 40 (40)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BasicCPU|clock1Hz:inst                                                            ; clock1Hz       ; work         ;
 +------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -573,8 +566,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; NbitLatch:FlagLatches|Q[1]                         ; inst3                  ; yes                    ;
 ; NbitLatch:FlagLatches|Q[0]                         ; inst3                  ; yes                    ;
 ; NbitLatch:FlagLatches|Q[3]                         ; inst3                  ; yes                    ;
-; FwdSelUnit:inst21|selexb                           ; FwdSelUnit:inst21|selb ; yes                    ;
 ; FwdSelUnit:inst21|selexa                           ; FwdSelUnit:inst21|sela ; yes                    ;
+; FwdSelUnit:inst21|selexb                           ; FwdSelUnit:inst21|selb ; yes                    ;
 ; Number of user-specified and inferred latches = 6  ;                        ;                        ;
 +----------------------------------------------------+------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -5595,7 +5588,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 8732  ;
+; Total registers                              ; 8707  ;
 ; Number of registers using Synchronous Clear  ; 36    ;
 ; Number of registers using Synchronous Load   ; 23    ;
 ; Number of registers using Asynchronous Clear ; 9     ;
@@ -5610,7 +5603,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; StartupReset:inst90|reset_active       ; 89      ;
+; StartupReset:inst90|reset_active       ; 98      ;
 ; StartupReset:inst90|btn_sync           ; 3       ;
 ; StartupReset:inst90|btn_prev           ; 2       ;
 ; StartupReset:inst90|btn_meta           ; 1       ;
@@ -5624,21 +5617,20 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
 ; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |BasicCPU|ProgramCounter:inst25|Stack:AddressStack|O[3]                                           ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |BasicCPU|MemHazUnit:HoldValuesOnMemoryHazard|O_reg[4]                                            ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |BasicCPU|StartupReset:inst90|counter[4]                                                          ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |BasicCPU|ProgramCounter:inst25|Stack:AddressStack|sp[2]                                          ;
-; 10:1               ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |BasicCPU|NbitPR:BBuffer|Q[3]                                                                     ;
-; 10:1               ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |BasicCPU|NbitPR:ABuffer|Q[13]                                                                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |BasicCPU|busmux:Debugging|lpm_mux:$00000|mux_j7c:auto_generated|result_node[14]                  ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |BasicCPU|Nbit4_1MUX:inst66|Nbit2MUX:b2v_inst2|bit2_1MUX:\gen:4:muxi|inst4                        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BasicCPU|ProgramCounter:inst25|NbitCounter:inst2|Cout[5]                                         ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |BasicCPU|ProgramCounter:inst25|busmux:inst5|lpm_mux:$00000|mux_56c:auto_generated|result_node[7] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |BasicCPU|MemHazUnit:HoldValuesOnMemoryHazard|O_reg[3]                                            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |BasicCPU|StartupReset:inst90|counter[1]                                                          ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |BasicCPU|ProgramCounter:inst25|Stack:AddressStack|sp[1]                                          ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |BasicCPU|NbitPR:BBuffer|Q[0]                                                                     ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |BasicCPU|NbitPR:ABuffer|Q[4]                                                                     ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |BasicCPU|Nbit4_1MUX:inst66|Nbit2MUX:b2v_inst2|bit2_1MUX:\gen:3:muxi|inst4                        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BasicCPU|ProgramCounter:inst25|NbitCounter:inst2|Cout[7]                                         ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |BasicCPU|ProgramCounter:inst25|busmux:inst5|lpm_mux:$00000|mux_56c:auto_generated|result_node[0] ;
 ; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |BasicCPU|ALU:inst29|Add0                                                                         ;
-; 20:1               ; 16 bits   ; 208 LEs       ; 64 LEs               ; 144 LEs                ; No         ; |BasicCPU|ALU2:inst39|O[13]                                                                       ;
+; 20:1               ; 16 bits   ; 208 LEs       ; 64 LEs               ; 144 LEs                ; No         ; |BasicCPU|ALU2:inst39|O[9]                                                                        ;
 ; 19:1               ; 3 bits    ; 36 LEs        ; 30 LEs               ; 6 LEs                  ; No         ; |BasicCPU|busmux:inst34|lpm_mux:$00000|mux_j7c:auto_generated|result_node[12]                     ;
-; 21:1               ; 3 bits    ; 42 LEs        ; 33 LEs               ; 9 LEs                  ; No         ; |BasicCPU|busmux:inst34|lpm_mux:$00000|mux_j7c:auto_generated|result_node[10]                     ;
-; 21:1               ; 3 bits    ; 42 LEs        ; 36 LEs               ; 6 LEs                  ; No         ; |BasicCPU|busmux:inst34|lpm_mux:$00000|mux_j7c:auto_generated|result_node[5]                      ;
-; 22:1               ; 2 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |BasicCPU|busmux:inst34|lpm_mux:$00000|mux_j7c:auto_generated|result_node[3]                      ;
+; 21:1               ; 3 bits    ; 42 LEs        ; 33 LEs               ; 9 LEs                  ; No         ; |BasicCPU|busmux:inst34|lpm_mux:$00000|mux_j7c:auto_generated|result_node[11]                     ;
+; 21:1               ; 3 bits    ; 42 LEs        ; 36 LEs               ; 6 LEs                  ; No         ; |BasicCPU|busmux:inst34|lpm_mux:$00000|mux_j7c:auto_generated|result_node[4]                      ;
+; 22:1               ; 2 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |BasicCPU|busmux:inst34|lpm_mux:$00000|mux_j7c:auto_generated|result_node[2]                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
 
 
@@ -6276,25 +6268,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 66                          ;
-; cycloneiii_ff         ; 8732                        ;
+; cycloneiii_ff         ; 8707                        ;
 ;     CLR SLD           ; 9                           ;
 ;     ENA               ; 8496                        ;
 ;     ENA SCLR          ; 22                          ;
 ;     SCLR SLD          ; 14                          ;
-;     plain             ; 191                         ;
-; cycloneiii_lcell_comb ; 7643                        ;
-;     arith             ; 172                         ;
-;         2 data inputs ; 76                          ;
+;     plain             ; 166                         ;
+; cycloneiii_lcell_comb ; 7594                        ;
+;     arith             ; 149                         ;
+;         2 data inputs ; 53                          ;
 ;         3 data inputs ; 96                          ;
-;     normal            ; 7471                        ;
+;     normal            ; 7445                        ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 147                         ;
-;         2 data inputs ; 62                          ;
-;         3 data inputs ; 220                         ;
-;         4 data inputs ; 7040                        ;
+;         1 data inputs ; 146                         ;
+;         2 data inputs ; 61                          ;
+;         3 data inputs ; 244                         ;
+;         4 data inputs ; 6992                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 16.50                       ;
-; Average LUT depth     ; 7.54                        ;
+; Max LUT depth         ; 13.50                       ;
+; Average LUT depth     ; 7.40                        ;
 +-----------------------+-----------------------------+
 
 
@@ -6313,7 +6305,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Sun Oct 25 20:04:43 2026
+    Info: Processing started: Sun Oct 25 23:14:27 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BasicCPU -c BasicCPU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -6333,7 +6325,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file memory/
     Info (12022): Found design unit 1: NbitDFF-reg File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitDFF.vhd Line: 23
     Info (12023): Found entity 1: NbitDFF File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitDFF.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file controlunit.vhd
-    Info (12022): Found design unit 1: ControlUnit-orchestration File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd Line: 52
+    Info (12022): Found design unit 1: ControlUnit-orchestration File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd Line: 50
     Info (12023): Found entity 1: ControlUnit File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ControlUnit.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file memory/rom.vhd
     Info (12022): Found design unit 1: ROM-rame File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd Line: 23
@@ -6397,8 +6389,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file cmpunit
     Info (12022): Found design unit 1: CmpUnit-compare File: C:/Users/Chamk/Desktop/Repo/BasicCPU/CmpUnit.vhd Line: 20
     Info (12023): Found entity 1: CmpUnit File: C:/Users/Chamk/Desktop/Repo/BasicCPU/CmpUnit.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file shiftunit.vhd
-    Info (12022): Found design unit 1: ShiftUnit-shifty File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ShiftUnit.vhd Line: 29
-    Info (12023): Found entity 1: ShiftUnit File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ShiftUnit.vhd Line: 6
+    Info (12022): Found design unit 1: ShiftUnit-shifty File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ShiftUnit.vhd Line: 16
+    Info (12023): Found entity 1: ShiftUnit File: C:/Users/Chamk/Desktop/Repo/BasicCPU/ShiftUnit.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file memory/stack.vhd
     Info (12022): Found design unit 1: Stack-stacker File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/Stack.vhd Line: 26
     Info (12023): Found entity 1: Stack File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/Stack.vhd Line: 5
@@ -6424,6 +6416,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file memhazu
     Info (12022): Found design unit 1: MemHazUnit-fwdCtrl File: C:/Users/Chamk/Desktop/Repo/BasicCPU/MemHazUnit.vhd Line: 30
     Info (12023): Found entity 1: MemHazUnit File: C:/Users/Chamk/Desktop/Repo/BasicCPU/MemHazUnit.vhd Line: 7
 Info (12127): Elaborating entity "BasicCPU" for the top level hierarchy
+Warning (275011): Block or symbol "GND" of instance "inst1012" overlaps another block or symbol
+Warning (275008): Primitive "VCC" of instance "inst30" not used
 Info (12128): Elaborating entity "16bit2SSD" for hierarchy "16bit2SSD:inst1"
 Info (12128): Elaborating entity "Hex_To_7Seg" for hierarchy "16bit2SSD:inst1|Hex_To_7Seg:inst6"
 Info (12128): Elaborating entity "BUSMUX" for hierarchy "BUSMUX:Debugging"
@@ -6446,7 +6440,6 @@ Info (12131): Elaborated megafunction instantiation "BUSMUX:inst71|lpm_mux:$0000
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_t5c.tdf
     Info (12023): Found entity 1: mux_t5c File: C:/Users/Chamk/Desktop/Repo/BasicCPU/db/mux_t5c.tdf Line: 23
 Info (12128): Elaborating entity "mux_t5c" for hierarchy "BUSMUX:inst71|lpm_mux:$00000|mux_t5c:auto_generated" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
-Info (12128): Elaborating entity "clock1Hz" for hierarchy "clock1Hz:inst"
 Info (12128): Elaborating entity "NbitPR" for hierarchy "NbitPR:DEVICESELECT"
 Info (12128): Elaborating entity "ControlUnit" for hierarchy "ControlUnit:inst40"
 Info (12128): Elaborating entity "BUSMUX" for hierarchy "BUSMUX:inst94"
@@ -6516,33 +6509,32 @@ Info (12131): Elaborated megafunction instantiation "BUSMUX:inst62|lpm_mux:$0000
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_06c.tdf
     Info (12023): Found entity 1: mux_06c File: C:/Users/Chamk/Desktop/Repo/BasicCPU/db/mux_06c.tdf Line: 23
 Info (12128): Elaborating entity "mux_06c" for hierarchy "BUSMUX:inst62|lpm_mux:$00000|mux_06c:auto_generated" File: c:/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Info (12128): Elaborating entity "clock1Hz" for hierarchy "clock1Hz:clock2"
 Info (12128): Elaborating entity "Nbit4_1MUX" for hierarchy "Nbit4_1MUX:inst66"
 Info (12128): Elaborating entity "Nbit2MUX" for hierarchy "Nbit4_1MUX:inst66|Nbit2MUX:b2v_inst" File: C:/Users/Chamk/Desktop/Repo/BasicCPU/output_files/Nbit4_1MUX.vhd Line: 60
 Info (12128): Elaborating entity "bit2_1MUX" for hierarchy "Nbit4_1MUX:inst66|Nbit2MUX:b2v_inst|bit2_1MUX:\gen:0:muxi" File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Misc/Nbit2MUX.vhd Line: 33
 Info (12128): Elaborating entity "IO" for hierarchy "IO:inst67"
-Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer busmux:inst71|lpm_mux:$00000|mux_t5c:auto_generated|result_node[0]~0 File: C:/Users/Chamk/Desktop/Repo/BasicCPU/db/mux_t5c.tdf Line: 30
 Info (276014): Found 3 instances of uninferred RAM logic
-    Info (276013): RAM logic "RAM:RandomAccessMemory|CODE" is uninferred because MIF is not supported for the selected family File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd Line: 31
     Info (276013): RAM logic "ROM:inst45|CODE" is uninferred because MIF is not supported for the selected family File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/ROM.vhd Line: 28
     Info (276007): RAM logic "ProgramCounter:inst25|Stack:AddressStack|stack_mem" is uninferred due to asynchronous read logic File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/Stack.vhd Line: 30
-Warning (13012): Latch FwdSelUnit:inst21|selexb has unsafe behavior File: C:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd Line: 27
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal NbitPR:DeviceSelRegister|Q[0] File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitPR.vhd Line: 43
+    Info (276013): RAM logic "RAM:RandomAccessMemory|CODE" is uninferred because MIF is not supported for the selected family File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/RAM.vhd Line: 31
 Warning (13012): Latch FwdSelUnit:inst21|selexa has unsafe behavior File: C:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd Line: 24
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal NbitPR:DeviceSelRegister|Q[0] File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitPR.vhd Line: 43
+Warning (13012): Latch FwdSelUnit:inst21|selexb has unsafe behavior File: C:/Users/Chamk/Desktop/Repo/BasicCPU/FwdSelUnit.vhd Line: 27
     Warning (13013): Ports D and ENA on the latch are fed by the same signal NbitPR:DeviceSelRegister|Q[0] File: C:/Users/Chamk/Desktop/Repo/BasicCPU/Memory/NbitPR.vhd Line: 43
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LED[9]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 16139 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 16090 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 16073 logic cells
+    Info (21061): Implemented 16024 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
     Info: Peak virtual memory: 5035 megabytes
-    Info: Processing ended: Sun Oct 25 20:05:03 2026
-    Info: Elapsed time: 00:00:20
+    Info: Processing ended: Sun Oct 25 23:14:46 2026
+    Info: Elapsed time: 00:00:19
     Info: Total CPU time (on all processors): 00:00:27
 
 
